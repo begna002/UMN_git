@@ -1,0 +1,768 @@
+(default.txt)> open test-data/common-1.txt			(default.txt)> open test-data/common-1.txt
+(test-data/common-1.txt)> open test-data/common-2.txt		(test-data/common-1.txt)> open test-data/common-2.txt
+(test-data/common-2.txt)> open test-data/common-3.txt		(test-data/common-2.txt)> open test-data/common-3.txt
+(test-data/common-3.txt)> close default.txt			(test-data/common-3.txt)> close default.txt
+(test-data/common-3.txt)> lists					(test-data/common-3.txt)> lists
+3 docs								3 docs
+- test-data/common-3.txt					- test-data/common-3.txt
+- test-data/common-2.txt					- test-data/common-2.txt
+- test-data/common-1.txt					- test-data/common-1.txt
+(test-data/common-3.txt)> open test-data/common-2.txt		(test-data/common-3.txt)> open test-data/common-2.txt
+ERROR: list 'test-data/common-2.txt' already exists		ERROR: list 'test-data/common-2.txt' already exists
+(test-data/common-3.txt)> lists					(test-data/common-3.txt)> lists
+3 docs								3 docs
+- test-data/common-3.txt					- test-data/common-3.txt
+- test-data/common-2.txt					- test-data/common-2.txt
+- test-data/common-1.txt					- test-data/common-1.txt
+(test-data/common-3.txt)> new test-data/first.tmp		(test-data/common-3.txt)> new test-data/first.tmp
+(test-data/first.tmp)> add party				(test-data/first.tmp)> add party
+(test-data/first.tmp)> add or					(test-data/first.tmp)> add or
+(test-data/first.tmp)> add way					(test-data/first.tmp)> add way
+(test-data/first.tmp)> add guess				(test-data/first.tmp)> add guess
+(test-data/first.tmp)> show					(test-data/first.tmp)> show
+--BEG LIST--							--BEG LIST--
+guess								guess
+or								or
+party								party
+way								way
+--END LIST--							--END LIST--
+(test-data/first.tmp)> merge test-data/common-2.txt		(test-data/first.tmp)> merge test-data/common-2.txt
+(test-data/first.tmp)> show					(test-data/first.tmp)> show
+--BEG LIST--							--BEG LIST--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+project								project
+pull								pull
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+until								until
+way								way
+yourself							yourself
+--END LIST--							--END LIST--
+(test-data/first.tmp)> showall					(test-data/first.tmp)> showall
+--List test-data/first.tmp--					--List test-data/first.tmp--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+project								project
+pull								pull
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+until								until
+way								way
+yourself							yourself
+
+--List test-data/common-3.txt--					--List test-data/common-3.txt--
+ability								ability
+another								another
+around								around
+check								check
+design								design
+effort								effort
+even								even
+green								green
+guess								guess
+my								my
+political							political
+program								program
+relate								relate
+role								role
+series								series
+serious								serious
+service								service
+single								single
+stand								stand
+strategy							strategy
+suggest								suggest
+task								task
+thus								thus
+tv								tv
+type								type
+
+--List test-data/common-2.txt--					--List test-data/common-2.txt--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+project								project
+pull								pull
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+until								until
+way								way
+yourself							yourself
+
+--List test-data/common-1.txt--					--List test-data/common-1.txt--
+after								after
+bit								bit
+career								career
+enough								enough
+far								far
+floor								floor
+involve								involve
+morning								morning
+nation								nation
+nearly								nearly
+professor							professor
+security							security
+soon								soon
+sure								sure
+thing								thing
+try								try
+violence							violence
+water								water
+whom								whom
+worker								worker
+
+(test-data/first.tmp)> addall hospital				(test-data/first.tmp)> addall hospital
+(test-data/first.tmp)> addall professor				(test-data/first.tmp)> addall professor
+(test-data/first.tmp)> addall relate				(test-data/first.tmp)> addall relate
+(test-data/first.tmp)> addall tv				(test-data/first.tmp)> addall tv
+(test-data/first.tmp)> showall					(test-data/first.tmp)> showall
+--List test-data/first.tmp--					--List test-data/first.tmp--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+
+--List test-data/common-3.txt--					--List test-data/common-3.txt--
+ability								ability
+another								another
+around								around
+check								check
+design								design
+effort								effort
+even								even
+green								green
+guess								guess
+hospital							hospital
+my								my
+political							political
+professor							professor
+program								program
+relate								relate
+role								role
+series								series
+serious								serious
+service								service
+single								single
+stand								stand
+strategy							strategy
+suggest								suggest
+task								task
+thus								thus
+tv								tv
+type								type
+
+--List test-data/common-2.txt--					--List test-data/common-2.txt--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+
+--List test-data/common-1.txt--					--List test-data/common-1.txt--
+after								after
+bit								bit
+career								career
+enough								enough
+far								far
+floor								floor
+hospital							hospital
+involve								involve
+morning								morning
+nation								nation
+nearly								nearly
+professor							professor
+relate								relate
+security							security
+soon								soon
+sure								sure
+thing								thing
+try								try
+tv								tv
+violence							violence
+water								water
+whom								whom
+worker								worker
+
+(test-data/first.tmp)> new test-data/second.tmp			(test-data/first.tmp)> new test-data/second.tmp
+(test-data/second.tmp)> lists					(test-data/second.tmp)> lists
+5 docs								5 docs
+- test-data/second.tmp						- test-data/second.tmp
+- test-data/first.tmp						- test-data/first.tmp
+- test-data/common-3.txt					- test-data/common-3.txt
+- test-data/common-2.txt					- test-data/common-2.txt
+- test-data/common-1.txt					- test-data/common-1.txt
+(test-data/second.tmp)> show					(test-data/second.tmp)> show
+--BEG LIST--							--BEG LIST--
+--END LIST--							--END LIST--
+(test-data/second.tmp)> merge test-data/common-1.txt		(test-data/second.tmp)> merge test-data/common-1.txt
+(test-data/second.tmp)> show					(test-data/second.tmp)> show
+--BEG LIST--							--BEG LIST--
+after								after
+bit								bit
+career								career
+enough								enough
+far								far
+floor								floor
+hospital							hospital
+involve								involve
+morning								morning
+nation								nation
+nearly								nearly
+professor							professor
+relate								relate
+security							security
+soon								soon
+sure								sure
+thing								thing
+try								try
+tv								tv
+violence							violence
+water								water
+whom								whom
+worker								worker
+--END LIST--							--END LIST--
+(test-data/second.tmp)> merge test-data/common-3.txt		(test-data/second.tmp)> merge test-data/common-3.txt
+(test-data/second.tmp)> show					(test-data/second.tmp)> show
+--BEG LIST--							--BEG LIST--
+ability								ability
+after								after
+another								another
+around								around
+bit								bit
+career								career
+check								check
+design								design
+effort								effort
+enough								enough
+even								even
+far								far
+floor								floor
+green								green
+guess								guess
+hospital							hospital
+involve								involve
+morning								morning
+my								my
+nation								nation
+nearly								nearly
+political							political
+professor							professor
+program								program
+relate								relate
+role								role
+security							security
+series								series
+serious								serious
+service								service
+single								single
+soon								soon
+stand								stand
+strategy							strategy
+suggest								suggest
+sure								sure
+task								task
+thing								thing
+thus								thus
+try								try
+tv								tv
+type								type
+violence							violence
+water								water
+whom								whom
+worker								worker
+--END LIST--							--END LIST--
+(test-data/second.tmp)> new test-data/third.tmp			(test-data/second.tmp)> new test-data/third.tmp
+(test-data/third.tmp)> mergeall					(test-data/third.tmp)> mergeall
+(test-data/third.tmp)> close test-data/common-3.txt		(test-data/third.tmp)> close test-data/common-3.txt
+(test-data/third.tmp)> close test-data/common-1.txt		(test-data/third.tmp)> close test-data/common-1.txt
+(test-data/third.tmp)> lists					(test-data/third.tmp)> lists
+4 docs								4 docs
+- test-data/third.tmp						- test-data/third.tmp
+- test-data/second.tmp						- test-data/second.tmp
+- test-data/first.tmp						- test-data/first.tmp
+- test-data/common-2.txt					- test-data/common-2.txt
+(test-data/third.tmp)> close test-data/common-2.txt		(test-data/third.tmp)> close test-data/common-2.txt
+(test-data/third.tmp)> lists					(test-data/third.tmp)> lists
+3 docs								3 docs
+- test-data/third.tmp						- test-data/third.tmp
+- test-data/second.tmp						- test-data/second.tmp
+- test-data/first.tmp						- test-data/first.tmp
+(test-data/third.tmp)> close test-data/common-1.txt		(test-data/third.tmp)> close test-data/common-1.txt
+ERROR: list 'test-data/common-1.txt' does not exist		ERROR: list 'test-data/common-1.txt' does not exist
+(test-data/third.tmp)> showall					(test-data/third.tmp)> showall
+--List test-data/third.tmp--					--List test-data/third.tmp--
+ability								ability
+act								act
+administration							administration
+after								after
+agree								agree
+and								and
+another								another
+any								any
+around								around
+bit								bit
+career								career
+check								check
+debate								debate
+design								design
+dream								dream
+early								early
+effort								effort
+enough								enough
+environment							environment
+even								even
+far								far
+floor								floor
+give								give
+green								green
+guess								guess
+hospital							hospital
+involve								involve
+leave								leave
+listen								listen
+morning								morning
+my								my
+nation								nation
+nearly								nearly
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+political							political
+professor							professor
+program								program
+project								project
+pull								pull
+relate								relate
+role								role
+run								run
+scientist							scientist
+security							security
+series								series
+serious								serious
+service								service
+single								single
+something							something
+soon								soon
+stand								stand
+strategy							strategy
+suggest								suggest
+sure								sure
+task								task
+thing								thing
+thus								thus
+tough								tough
+try								try
+tv								tv
+type								type
+until								until
+violence							violence
+water								water
+way								way
+whom								whom
+worker								worker
+yourself							yourself
+
+--List test-data/second.tmp--					--List test-data/second.tmp--
+ability								ability
+after								after
+another								another
+around								around
+bit								bit
+career								career
+check								check
+design								design
+effort								effort
+enough								enough
+even								even
+far								far
+floor								floor
+green								green
+guess								guess
+hospital							hospital
+involve								involve
+morning								morning
+my								my
+nation								nation
+nearly								nearly
+political							political
+professor							professor
+program								program
+relate								relate
+role								role
+security							security
+series								series
+serious								serious
+service								service
+single								single
+soon								soon
+stand								stand
+strategy							strategy
+suggest								suggest
+sure								sure
+task								task
+thing								thing
+thus								thus
+try								try
+tv								tv
+type								type
+violence							violence
+water								water
+whom								whom
+worker								worker
+
+--List test-data/first.tmp--					--List test-data/first.tmp--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+
+(test-data/third.tmp)> saveall					(test-data/third.tmp)> saveall
+(test-data/third.tmp)> new fourth.txt				(test-data/third.tmp)> new fourth.txt
+(fourth.txt)> close test-data/first.tmp				(fourth.txt)> close test-data/first.tmp
+(fourth.txt)> close test-data/second.tmp			(fourth.txt)> close test-data/second.tmp
+(fourth.txt)> close test-data/third.tmp				(fourth.txt)> close test-data/third.tmp
+(fourth.txt)> load test-data/first.tmp				(fourth.txt)> load test-data/first.tmp
+(fourth.txt)> show						(fourth.txt)> show
+--BEG LIST--							--BEG LIST--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+--END LIST--							--END LIST--
+(fourth.txt)> undo						(fourth.txt)> undo
+(fourth.txt)> redo						(fourth.txt)> redo
+(fourth.txt)> show						(fourth.txt)> show
+--BEG LIST--							--BEG LIST--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+--END LIST--							--END LIST--
+(fourth.txt)> clear						(fourth.txt)> clear
+(fourth.txt)> load test-data/second.tmp				(fourth.txt)> load test-data/second.tmp
+(fourth.txt)> mergein test-data/third.tmp			(fourth.txt)> mergein test-data/third.tmp
+(fourth.txt)> open test-data/first.tmp				(fourth.txt)> open test-data/first.tmp
+(test-data/first.tmp)> showall					(test-data/first.tmp)> showall
+--List test-data/first.tmp--					--List test-data/first.tmp--
+act								act
+administration							administration
+agree								agree
+and								and
+any								any
+debate								debate
+dream								dream
+early								early
+environment							environment
+give								give
+guess								guess
+hospital							hospital
+leave								leave
+listen								listen
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+professor							professor
+project								project
+pull								pull
+relate								relate
+run								run
+scientist							scientist
+something							something
+soon								soon
+tough								tough
+tv								tv
+until								until
+way								way
+yourself							yourself
+
+--List fourth.txt--						--List fourth.txt--
+ability								ability
+act								act
+administration							administration
+after								after
+agree								agree
+and								and
+another								another
+any								any
+around								around
+bit								bit
+career								career
+check								check
+debate								debate
+design								design
+dream								dream
+early								early
+effort								effort
+enough								enough
+environment							environment
+even								even
+far								far
+floor								floor
+give								give
+green								green
+guess								guess
+hospital							hospital
+involve								involve
+leave								leave
+listen								listen
+morning								morning
+my								my
+nation								nation
+nearly								nearly
+network								network
+or								or
+out								out
+pain								pain
+party								party
+pm								pm
+political							political
+professor							professor
+program								program
+project								project
+pull								pull
+relate								relate
+role								role
+run								run
+scientist							scientist
+security							security
+series								series
+serious								serious
+service								service
+single								single
+something							something
+soon								soon
+stand								stand
+strategy							strategy
+suggest								suggest
+sure								sure
+task								task
+thing								thing
+thus								thus
+tough								tough
+try								try
+tv								tv
+type								type
+until								until
+violence							violence
+water								water
+way								way
+whom								whom
+worker								worker
+yourself							yourself
+
+(test-data/first.tmp)> quit					(test-data/first.tmp)> quit
+
+Lists multi-managed!						Lists multi-managed!

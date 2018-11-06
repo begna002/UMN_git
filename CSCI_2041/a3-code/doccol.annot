@@ -1,0 +1,897 @@
+"doccol.ml" 16 782 786 "doccol.ml" 16 782 790
+type(
+  string -> 'a Document.document -> 'a doccol
+)
+ident(
+  def make "doccol.ml" 24 1089 1089 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 16 782 791 "doccol.ml" 16 782 795
+type(
+  string
+)
+ident(
+  def name "doccol.ml" 16 782 796 "doccol.ml" 18 888 901
+)
+"doccol.ml" 16 782 796 "doccol.ml" 16 782 799
+type(
+  'a Document.document
+)
+ident(
+  def doc "doccol.ml" 17 802 804 "doccol.ml" 18 888 901
+)
+"doccol.ml" 17 802 808 "doccol.ml" 17 802 818
+type(
+  'a doccol
+)
+ident(
+  def new_doccol "doccol.ml" 18 888 890 "doccol.ml" 18 888 901
+)
+"doccol.ml" 17 802 830 "doccol.ml" 17 802 831
+type(
+  int
+)
+"doccol.ml" 17 802 842 "doccol.ml" 17 802 845
+type(
+  'a Document.document
+)
+ident(
+  int_ref doc "doccol.ml" 16 782 796 "doccol.ml" 16 782 799
+)
+"doccol.ml" 17 802 857 "doccol.ml" 17 802 861
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 16 782 791 "doccol.ml" 16 782 795
+)
+"doccol.ml" 17 802 872 "doccol.ml" 17 802 876
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 16 782 791 "doccol.ml" 16 782 795
+)
+"doccol.ml" 17 802 878 "doccol.ml" 17 802 881
+type(
+  'a Document.document
+)
+ident(
+  int_ref doc "doccol.ml" 16 782 796 "doccol.ml" 16 782 799
+)
+"doccol.ml" 17 802 871 "doccol.ml" 17 802 882
+type(
+  string * 'a Document.document
+)
+"doccol.ml" 17 802 870 "doccol.ml" 17 802 883
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 17 802 821 "doccol.ml" 17 802 884
+type(
+  'a doccol
+)
+"doccol.ml" 18 888 890 "doccol.ml" 18 888 901
+type(
+  'a doccol
+)
+ident(
+  int_ref new_doccol "doccol.ml" 17 802 808 "doccol.ml" 17 802 818
+)
+"doccol.ml" 17 802 804 "doccol.ml" 18 888 901
+type(
+  'a doccol
+)
+"doccol.ml" 24 1089 1093 "doccol.ml" 24 1089 1096
+type(
+  'a doccol -> string -> 'a Document.document -> bool
+)
+ident(
+  def add "doccol.ml" 38 1597 1597 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+type(
+  'a doccol
+)
+ident(
+  def doccol "doccol.ml" 24 1089 1104 "doccol.ml" 30 1272 1279
+)
+"doccol.ml" 24 1089 1104 "doccol.ml" 24 1089 1108
+type(
+  string
+)
+ident(
+  def name "doccol.ml" 24 1089 1109 "doccol.ml" 30 1272 1279
+)
+"doccol.ml" 24 1089 1109 "doccol.ml" 24 1089 1112
+type(
+  'a Document.document
+)
+ident(
+  def doc "doccol.ml" 25 1115 1117 "doccol.ml" 30 1272 1279
+)
+"doccol.ml" 25 1115 1124 "doccol.ml" 25 1115 1138
+type(
+  string -> (string * 'a Document.document) list -> bool
+)
+ident(
+  ext_ref List.mem_assoc
+)
+"doccol.ml" 25 1115 1139 "doccol.ml" 25 1115 1143
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 24 1089 1104 "doccol.ml" 24 1089 1108
+)
+"doccol.ml" 25 1115 1144 "doccol.ml" 25 1115 1150
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+)
+"doccol.ml" 25 1115 1144 "doccol.ml" 25 1115 1155
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 25 1115 1123 "doccol.ml" 25 1115 1156
+call(
+  stack
+)
+type(
+  bool
+)
+"doccol.ml" 26 1162 1166 "doccol.ml" 26 1162 1170
+type(
+  bool
+)
+"doccol.ml" 26 1162 1174 "doccol.ml" 26 1162 1179
+type(
+  bool
+)
+"doccol.ml" 27 1180 1184 "doccol.ml" 27 1180 1189
+type(
+  bool
+)
+"doccol.ml" 28 1193 1195 "doccol.ml" 28 1193 1201
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+)
+"doccol.ml" 28 1193 1211 "doccol.ml" 28 1193 1217
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+)
+"doccol.ml" 28 1193 1211 "doccol.ml" 28 1193 1223
+type(
+  int
+)
+"doccol.ml" 28 1193 1224 "doccol.ml" 28 1193 1225
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"doccol.ml" 28 1193 1226 "doccol.ml" 28 1193 1227
+type(
+  int
+)
+"doccol.ml" 28 1193 1211 "doccol.ml" 28 1193 1227
+type(
+  int
+)
+"doccol.ml" 28 1193 1195 "doccol.ml" 28 1193 1227
+type(
+  unit
+)
+"doccol.ml" 29 1229 1231 "doccol.ml" 29 1229 1237
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+)
+"doccol.ml" 29 1229 1247 "doccol.ml" 29 1229 1251
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 24 1089 1104 "doccol.ml" 24 1089 1108
+)
+"doccol.ml" 29 1229 1253 "doccol.ml" 29 1229 1256
+type(
+  'a Document.document
+)
+ident(
+  int_ref doc "doccol.ml" 24 1089 1109 "doccol.ml" 24 1089 1112
+)
+"doccol.ml" 29 1229 1246 "doccol.ml" 29 1229 1257
+type(
+  string * 'a Document.document
+)
+"doccol.ml" 29 1229 1259 "doccol.ml" 29 1229 1265
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 24 1089 1097 "doccol.ml" 24 1089 1103
+)
+"doccol.ml" 29 1229 1259 "doccol.ml" 29 1229 1270
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 29 1229 1246 "doccol.ml" 29 1229 1270
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 29 1229 1231 "doccol.ml" 29 1229 1270
+type(
+  unit
+)
+"doccol.ml" 30 1272 1274 "doccol.ml" 30 1272 1279
+type(
+  bool
+)
+"doccol.ml" 29 1229 1231 "doccol.ml" 30 1272 1279
+type(
+  bool
+)
+"doccol.ml" 28 1193 1195 "doccol.ml" 30 1272 1279
+type(
+  bool
+)
+"doccol.ml" 25 1115 1117 "doccol.ml" 30 1272 1279
+type(
+  bool
+)
+"doccol.ml" 38 1597 1601 "doccol.ml" 38 1597 1607
+type(
+  'a doccol -> string -> bool
+)
+ident(
+  def remove "doccol.ml" 56 2215 2215 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+type(
+  'a doccol
+)
+ident(
+  def doccol "doccol.ml" 38 1597 1615 "doccol.ml" 47 1850 1859
+)
+"doccol.ml" 38 1597 1615 "doccol.ml" 38 1597 1619
+type(
+  string
+)
+ident(
+  def name "doccol.ml" 39 1622 1624 "doccol.ml" 47 1850 1859
+)
+"doccol.ml" 39 1622 1627 "doccol.ml" 39 1622 1633
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 39 1622 1627 "doccol.ml" 39 1622 1641
+type(
+  string
+)
+"doccol.ml" 39 1622 1642 "doccol.ml" 39 1622 1643
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"doccol.ml" 39 1622 1644 "doccol.ml" 39 1622 1648
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 38 1597 1615 "doccol.ml" 38 1597 1619
+)
+"doccol.ml" 39 1622 1627 "doccol.ml" 39 1622 1648
+type(
+  bool
+)
+"doccol.ml" 40 1654 1658 "doccol.ml" 40 1654 1663
+type(
+  bool
+)
+"doccol.ml" 42 1671 1682 "doccol.ml" 42 1671 1696
+type(
+  string -> (string * 'a Document.document) list -> bool
+)
+ident(
+  ext_ref List.mem_assoc
+)
+"doccol.ml" 42 1671 1697 "doccol.ml" 42 1671 1701
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 38 1597 1615 "doccol.ml" 38 1597 1619
+)
+"doccol.ml" 42 1671 1702 "doccol.ml" 42 1671 1708
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 42 1671 1702 "doccol.ml" 42 1671 1713
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 42 1671 1681 "doccol.ml" 42 1671 1714
+call(
+  stack
+)
+type(
+  bool
+)
+"doccol.ml" 43 1720 1726 "doccol.ml" 43 1720 1731
+type(
+  bool
+)
+"doccol.ml" 43 1720 1735 "doccol.ml" 43 1720 1740
+type(
+  bool
+)
+"doccol.ml" 44 1741 1747 "doccol.ml" 44 1741 1751
+type(
+  bool
+)
+"doccol.ml" 45 1755 1759 "doccol.ml" 45 1755 1765
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 45 1755 1775 "doccol.ml" 45 1755 1781
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 45 1755 1775 "doccol.ml" 45 1755 1787
+type(
+  int
+)
+"doccol.ml" 45 1755 1788 "doccol.ml" 45 1755 1789
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"doccol.ml" 45 1755 1790 "doccol.ml" 45 1755 1791
+type(
+  int
+)
+"doccol.ml" 45 1755 1775 "doccol.ml" 45 1755 1791
+type(
+  int
+)
+"doccol.ml" 45 1755 1759 "doccol.ml" 45 1755 1791
+type(
+  unit
+)
+"doccol.ml" 46 1793 1797 "doccol.ml" 46 1793 1803
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 46 1793 1813 "doccol.ml" 46 1793 1830
+type(
+  string ->
+  (string * 'a Document.document) list ->
+  (string * 'a Document.document) list
+)
+ident(
+  ext_ref List.remove_assoc
+)
+"doccol.ml" 46 1793 1831 "doccol.ml" 46 1793 1835
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 38 1597 1615 "doccol.ml" 38 1597 1619
+)
+"doccol.ml" 46 1793 1836 "doccol.ml" 46 1793 1842
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 38 1597 1608 "doccol.ml" 38 1597 1614
+)
+"doccol.ml" 46 1793 1836 "doccol.ml" 46 1793 1847
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 46 1793 1812 "doccol.ml" 46 1793 1848
+call(
+  stack
+)
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 46 1793 1797 "doccol.ml" 46 1793 1848
+type(
+  unit
+)
+"doccol.ml" 47 1850 1854 "doccol.ml" 47 1850 1859
+type(
+  bool
+)
+"doccol.ml" 46 1793 1797 "doccol.ml" 47 1850 1859
+type(
+  bool
+)
+"doccol.ml" 45 1755 1759 "doccol.ml" 47 1850 1859
+type(
+  bool
+)
+"doccol.ml" 42 1671 1675 "doccol.ml" 47 1850 1859
+type(
+  bool
+)
+"doccol.ml" 39 1622 1624 "doccol.ml" 47 1850 1859
+type(
+  bool
+)
+"doccol.ml" 56 2215 2219 "doccol.ml" 56 2215 2222
+type(
+  'a doccol -> string -> bool
+)
+ident(
+  def has "doccol.ml" 64 2439 2439 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 56 2215 2223 "doccol.ml" 56 2215 2229
+type(
+  'a doccol
+)
+ident(
+  def doccol "doccol.ml" 56 2215 2230 "doccol.ml" 59 2301 2319
+)
+"doccol.ml" 56 2215 2230 "doccol.ml" 56 2215 2234
+type(
+  string
+)
+ident(
+  def name "doccol.ml" 57 2237 2239 "doccol.ml" 59 2301 2319
+)
+"doccol.ml" 57 2237 2246 "doccol.ml" 57 2237 2260
+type(
+  string -> (string * 'a Document.document) list -> bool
+)
+ident(
+  ext_ref List.mem_assoc
+)
+"doccol.ml" 57 2237 2261 "doccol.ml" 57 2237 2265
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 56 2215 2230 "doccol.ml" 56 2215 2234
+)
+"doccol.ml" 57 2237 2266 "doccol.ml" 57 2237 2272
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 56 2215 2223 "doccol.ml" 56 2215 2229
+)
+"doccol.ml" 57 2237 2266 "doccol.ml" 57 2237 2277
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 57 2237 2245 "doccol.ml" 57 2237 2278
+call(
+  stack
+)
+type(
+  bool
+)
+"doccol.ml" 58 2284 2288 "doccol.ml" 58 2284 2292
+type(
+  bool
+)
+"doccol.ml" 58 2284 2296 "doccol.ml" 58 2284 2300
+type(
+  bool
+)
+"doccol.ml" 59 2301 2305 "doccol.ml" 59 2301 2310
+type(
+  bool
+)
+"doccol.ml" 59 2301 2314 "doccol.ml" 59 2301 2319
+type(
+  bool
+)
+"doccol.ml" 57 2237 2239 "doccol.ml" 59 2301 2319
+type(
+  bool
+)
+"doccol.ml" 64 2439 2443 "doccol.ml" 64 2439 2449
+type(
+  'a doccol -> string -> bool
+)
+ident(
+  def switch "doccol.ml" 77 2841 2841 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 64 2439 2450 "doccol.ml" 64 2439 2456
+type(
+  'a doccol
+)
+ident(
+  def doccol "doccol.ml" 64 2439 2457 "doccol.ml" 70 2618 2624
+)
+"doccol.ml" 64 2439 2457 "doccol.ml" 64 2439 2461
+type(
+  string
+)
+ident(
+  def name "doccol.ml" 65 2464 2466 "doccol.ml" 70 2618 2624
+)
+"doccol.ml" 65 2464 2473 "doccol.ml" 65 2464 2487
+type(
+  string -> (string * 'a Document.document) list -> bool
+)
+ident(
+  ext_ref List.mem_assoc
+)
+"doccol.ml" 65 2464 2488 "doccol.ml" 65 2464 2492
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 64 2439 2457 "doccol.ml" 64 2439 2461
+)
+"doccol.ml" 65 2464 2493 "doccol.ml" 65 2464 2499
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 64 2439 2450 "doccol.ml" 64 2439 2456
+)
+"doccol.ml" 65 2464 2493 "doccol.ml" 65 2464 2504
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 65 2464 2472 "doccol.ml" 65 2464 2505
+call(
+  stack
+)
+type(
+  bool
+)
+"doccol.ml" 66 2511 2515 "doccol.ml" 66 2511 2520
+type(
+  bool
+)
+"doccol.ml" 66 2511 2524 "doccol.ml" 66 2511 2529
+type(
+  bool
+)
+"doccol.ml" 67 2530 2534 "doccol.ml" 67 2530 2538
+type(
+  bool
+)
+"doccol.ml" 68 2542 2544 "doccol.ml" 68 2542 2550
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 64 2439 2450 "doccol.ml" 64 2439 2456
+)
+"doccol.ml" 68 2542 2562 "doccol.ml" 68 2542 2566
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 64 2439 2457 "doccol.ml" 64 2439 2461
+)
+"doccol.ml" 68 2542 2544 "doccol.ml" 68 2542 2566
+type(
+  unit
+)
+"doccol.ml" 69 2568 2570 "doccol.ml" 69 2568 2576
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 64 2439 2450 "doccol.ml" 64 2439 2456
+)
+"doccol.ml" 69 2568 2588 "doccol.ml" 69 2568 2598
+type(
+  string -> (string * 'a Document.document) list -> 'a Document.document
+)
+ident(
+  ext_ref List.assoc
+)
+"doccol.ml" 69 2568 2599 "doccol.ml" 69 2568 2603
+type(
+  string
+)
+ident(
+  int_ref name "doccol.ml" 64 2439 2457 "doccol.ml" 64 2439 2461
+)
+"doccol.ml" 69 2568 2604 "doccol.ml" 69 2568 2610
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 64 2439 2450 "doccol.ml" 64 2439 2456
+)
+"doccol.ml" 69 2568 2604 "doccol.ml" 69 2568 2615
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 69 2568 2587 "doccol.ml" 69 2568 2616
+call(
+  stack
+)
+type(
+  'a Document.document
+)
+"doccol.ml" 69 2568 2570 "doccol.ml" 69 2568 2616
+type(
+  unit
+)
+"doccol.ml" 70 2618 2620 "doccol.ml" 70 2618 2624
+type(
+  bool
+)
+"doccol.ml" 69 2568 2570 "doccol.ml" 70 2618 2624
+type(
+  bool
+)
+"doccol.ml" 68 2542 2544 "doccol.ml" 70 2618 2624
+type(
+  bool
+)
+"doccol.ml" 65 2464 2466 "doccol.ml" 70 2618 2624
+type(
+  bool
+)
+"doccol.ml" 77 2841 2845 "doccol.ml" 77 2841 2861
+type(
+  'a doccol -> string
+)
+ident(
+  def string_of_doccol "doccol.ml" 80 2979 3053 "doccol.ml" 1 0 -1
+)
+"doccol.ml" 77 2841 2862 "doccol.ml" 77 2841 2868
+type(
+  'a doccol
+)
+ident(
+  def doccol "doccol.ml" 78 2871 2873 "doccol.ml" 80 2979 3053
+)
+"doccol.ml" 78 2871 2877 "doccol.ml" 78 2871 2888
+type(
+  string list * 'a Document.document list
+)
+ident(
+  def split_assoc "doccol.ml" 79 2917 2919 "doccol.ml" 80 2979 3053
+)
+"doccol.ml" 78 2871 2891 "doccol.ml" 78 2871 2901
+type(
+  (string * 'a Document.document) list ->
+  string list * 'a Document.document list
+)
+ident(
+  ext_ref List.split
+)
+"doccol.ml" 78 2871 2902 "doccol.ml" 78 2871 2908
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 77 2841 2862 "doccol.ml" 77 2841 2868
+)
+"doccol.ml" 78 2871 2902 "doccol.ml" 78 2871 2913
+type(
+  (string * 'a Document.document) list
+)
+"doccol.ml" 78 2871 2891 "doccol.ml" 78 2871 2913
+call(
+  stack
+)
+type(
+  string list * 'a Document.document list
+)
+"doccol.ml" 79 2917 2923 "doccol.ml" 79 2917 2928
+type(
+  string list
+)
+ident(
+  def names "doccol.ml" 80 2979 2981 "doccol.ml" 80 2979 3053
+)
+"doccol.ml" 79 2917 2931 "doccol.ml" 79 2917 2939
+type(
+  (string -> string) -> string list -> string list
+)
+ident(
+  ext_ref List.map
+)
+"doccol.ml" 79 2917 2945 "doccol.ml" 79 2917 2946
+type(
+  string
+)
+ident(
+  def n "doccol.ml" 79 2917 2950 "doccol.ml" 79 2917 2956
+)
+"doccol.ml" 79 2917 2950 "doccol.ml" 79 2917 2954
+type(
+  string
+)
+"doccol.ml" 79 2917 2954 "doccol.ml" 79 2917 2955
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"doccol.ml" 79 2917 2955 "doccol.ml" 79 2917 2956
+type(
+  string
+)
+ident(
+  int_ref n "doccol.ml" 79 2917 2945 "doccol.ml" 79 2917 2946
+)
+"doccol.ml" 79 2917 2950 "doccol.ml" 79 2917 2956
+call(
+  tail
+)
+type(
+  string
+)
+"doccol.ml" 79 2917 2940 "doccol.ml" 79 2917 2957
+type(
+  string -> string
+)
+"doccol.ml" 79 2917 2959 "doccol.ml" 79 2917 2962
+type(
+  string list * 'a Document.document list -> string list
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"doccol.ml" 79 2917 2963 "doccol.ml" 79 2917 2974
+type(
+  string list * 'a Document.document list
+)
+ident(
+  int_ref split_assoc "doccol.ml" 78 2871 2877 "doccol.ml" 78 2871 2888
+)
+"doccol.ml" 79 2917 2958 "doccol.ml" 79 2917 2975
+type(
+  string list
+)
+"doccol.ml" 79 2917 2931 "doccol.ml" 79 2917 2975
+call(
+  stack
+)
+type(
+  string list
+)
+"doccol.ml" 80 2979 2982 "doccol.ml" 80 2979 2997
+type(
+  int -> string
+)
+ident(
+  ext_ref Pervasives.string_of_int
+)
+"doccol.ml" 80 2979 2998 "doccol.ml" 80 2979 3004
+type(
+  'a doccol
+)
+ident(
+  int_ref doccol "doccol.ml" 77 2841 2862 "doccol.ml" 77 2841 2868
+)
+"doccol.ml" 80 2979 2998 "doccol.ml" 80 2979 3010
+type(
+  int
+)
+"doccol.ml" 80 2979 2981 "doccol.ml" 80 2979 3011
+call(
+  stack
+)
+type(
+  string
+)
+"doccol.ml" 80 2979 3011 "doccol.ml" 80 2979 3012
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"doccol.ml" 80 2979 3012 "doccol.ml" 80 2979 3019
+type(
+  string
+)
+"doccol.ml" 80 2979 3019 "doccol.ml" 80 2979 3020
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"doccol.ml" 80 2979 3020 "doccol.ml" 80 2979 3024
+type(
+  string
+)
+"doccol.ml" 80 2979 3024 "doccol.ml" 80 2979 3025
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"doccol.ml" 80 2979 3026 "doccol.ml" 80 2979 3039
+type(
+  string -> string list -> string
+)
+ident(
+  ext_ref String.concat
+)
+"doccol.ml" 80 2979 3040 "doccol.ml" 80 2979 3044
+type(
+  string
+)
+"doccol.ml" 80 2979 3045 "doccol.ml" 80 2979 3052
+type(
+  string list
+)
+ident(
+  int_ref names "doccol.ml" 79 2917 2923 "doccol.ml" 79 2917 2928
+)
+"doccol.ml" 80 2979 3025 "doccol.ml" 80 2979 3053
+call(
+  stack
+)
+type(
+  string
+)
+"doccol.ml" 80 2979 3020 "doccol.ml" 80 2979 3053
+call(
+  stack
+)
+type(
+  string
+)
+"doccol.ml" 80 2979 3012 "doccol.ml" 80 2979 3053
+call(
+  stack
+)
+type(
+  string
+)
+"doccol.ml" 80 2979 2981 "doccol.ml" 80 2979 3053
+call(
+  tail
+)
+type(
+  string
+)
+"doccol.ml" 79 2917 2919 "doccol.ml" 80 2979 3053
+type(
+  string
+)
+"doccol.ml" 78 2871 2873 "doccol.ml" 80 2979 3053
+type(
+  string
+)

@@ -1,0 +1,474 @@
+"document.ml" 13 519 523 "document.ml" 13 519 527
+type(
+  'a -> 'a document
+)
+ident(
+  def make "document.ml" 21 750 750 "document.ml" 1 0 -1
+)
+"document.ml" 13 519 528 "document.ml" 13 519 535
+type(
+  'a
+)
+ident(
+  def initial "document.ml" 14 538 540 "document.ml" 15 611 620
+)
+"document.ml" 14 538 544 "document.ml" 14 538 551
+type(
+  'a document
+)
+ident(
+  def new_doc "document.ml" 15 611 613 "document.ml" 15 611 620
+)
+"document.ml" 14 538 565 "document.ml" 14 538 572
+type(
+  'a
+)
+ident(
+  int_ref initial "document.ml" 13 519 528 "document.ml" 13 519 535
+)
+"document.ml" 14 538 587 "document.ml" 14 538 589
+type(
+  'a list
+)
+"document.ml" 14 538 604 "document.ml" 14 538 606
+type(
+  'a list
+)
+"document.ml" 14 538 554 "document.ml" 14 538 607
+type(
+  'a document
+)
+"document.ml" 15 611 613 "document.ml" 15 611 620
+type(
+  'a document
+)
+ident(
+  int_ref new_doc "document.ml" 14 538 544 "document.ml" 14 538 551
+)
+"document.ml" 14 538 540 "document.ml" 15 611 620
+type(
+  'a document
+)
+"document.ml" 21 750 754 "document.ml" 21 750 757
+type(
+  'a document -> 'a -> unit
+)
+ident(
+  def set "document.ml" 30 1044 1044 "document.ml" 1 0 -1
+)
+"document.ml" 21 750 758 "document.ml" 21 750 766
+type(
+  'a document
+)
+ident(
+  def document "document.ml" 21 750 767 "document.ml" 24 866 894
+)
+"document.ml" 21 750 767 "document.ml" 21 750 771
+type(
+  'a
+)
+ident(
+  def data "document.ml" 22 774 776 "document.ml" 24 866 894
+)
+"document.ml" 22 774 776 "document.ml" 22 774 784
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 21 750 758 "document.ml" 21 750 766
+)
+"document.ml" 22 774 799 "document.ml" 22 774 807
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 21 750 758 "document.ml" 21 750 766
+)
+"document.ml" 22 774 799 "document.ml" 22 774 815
+type(
+  'a
+)
+"document.ml" 22 774 817 "document.ml" 22 774 825
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 21 750 758 "document.ml" 21 750 766
+)
+"document.ml" 22 774 817 "document.ml" 22 774 836
+type(
+  'a list
+)
+"document.ml" 22 774 799 "document.ml" 22 774 836
+type(
+  'a list
+)
+"document.ml" 22 774 776 "document.ml" 22 774 836
+type(
+  unit
+)
+"document.ml" 23 838 840 "document.ml" 23 838 848
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 21 750 758 "document.ml" 21 750 766
+)
+"document.ml" 23 838 860 "document.ml" 23 838 864
+type(
+  'a
+)
+ident(
+  int_ref data "document.ml" 21 750 767 "document.ml" 21 750 771
+)
+"document.ml" 23 838 840 "document.ml" 23 838 864
+type(
+  unit
+)
+"document.ml" 24 866 868 "document.ml" 24 866 876
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 21 750 758 "document.ml" 21 750 766
+)
+"document.ml" 24 866 891 "document.ml" 24 866 893
+type(
+  'a list
+)
+"document.ml" 24 866 868 "document.ml" 24 866 894
+type(
+  unit
+)
+"document.ml" 23 838 840 "document.ml" 24 866 894
+type(
+  unit
+)
+"document.ml" 22 774 776 "document.ml" 24 866 894
+type(
+  unit
+)
+"document.ml" 30 1044 1048 "document.ml" 30 1044 1052
+type(
+  'a document -> bool
+)
+ident(
+  def undo "document.ml" 46 1620 1620 "document.ml" 1 0 -1
+)
+"document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+type(
+  'a document
+)
+ident(
+  def document "document.ml" 31 1064 1066 "document.ml" 37 1279 1286
+)
+"document.ml" 31 1064 1072 "document.ml" 31 1064 1080
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 31 1064 1072 "document.ml" 31 1064 1091
+type(
+  'a list
+)
+"document.ml" 32 1097 1101 "document.ml" 32 1097 1103
+type(
+  'a list
+)
+"document.ml" 32 1097 1107 "document.ml" 32 1097 1112
+type(
+  bool
+)
+"document.ml" 33 1113 1117 "document.ml" 33 1113 1121
+type(
+  'a
+)
+ident(
+  def head "document.ml" 34 1131 1133 "document.ml" 37 1279 1286
+)
+"document.ml" 33 1113 1123 "document.ml" 33 1113 1127
+type(
+  'a list
+)
+ident(
+  def tail "document.ml" 34 1131 1133 "document.ml" 37 1279 1286
+)
+"document.ml" 33 1113 1117 "document.ml" 33 1113 1127
+type(
+  'a list
+)
+"document.ml" 34 1131 1133 "document.ml" 34 1131 1141
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 34 1131 1156 "document.ml" 34 1131 1164
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 34 1131 1156 "document.ml" 34 1131 1172
+type(
+  'a
+)
+"document.ml" 34 1131 1174 "document.ml" 34 1131 1182
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 34 1131 1174 "document.ml" 34 1131 1193
+type(
+  'a list
+)
+"document.ml" 34 1131 1156 "document.ml" 34 1131 1193
+type(
+  'a list
+)
+"document.ml" 34 1131 1133 "document.ml" 34 1131 1193
+type(
+  unit
+)
+"document.ml" 35 1195 1197 "document.ml" 35 1195 1205
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 35 1195 1218 "document.ml" 35 1195 1225
+type(
+  'a list -> 'a
+)
+ident(
+  ext_ref List.hd
+)
+"document.ml" 35 1195 1226 "document.ml" 35 1195 1234
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 35 1195 1226 "document.ml" 35 1195 1245
+type(
+  'a list
+)
+"document.ml" 35 1195 1217 "document.ml" 35 1195 1246
+call(
+  stack
+)
+type(
+  'a
+)
+"document.ml" 35 1195 1197 "document.ml" 35 1195 1246
+type(
+  unit
+)
+"document.ml" 36 1248 1250 "document.ml" 36 1248 1258
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 30 1044 1053 "document.ml" 30 1044 1061
+)
+"document.ml" 36 1248 1273 "document.ml" 36 1248 1277
+type(
+  'a list
+)
+ident(
+  int_ref tail "document.ml" 33 1113 1123 "document.ml" 33 1113 1127
+)
+"document.ml" 36 1248 1250 "document.ml" 36 1248 1277
+type(
+  unit
+)
+"document.ml" 37 1279 1281 "document.ml" 37 1279 1286
+type(
+  bool
+)
+"document.ml" 36 1248 1250 "document.ml" 37 1279 1286
+type(
+  bool
+)
+"document.ml" 35 1195 1197 "document.ml" 37 1279 1286
+type(
+  bool
+)
+"document.ml" 34 1131 1133 "document.ml" 37 1279 1286
+type(
+  bool
+)
+"document.ml" 31 1064 1066 "document.ml" 37 1279 1286
+type(
+  bool
+)
+"document.ml" 46 1620 1624 "document.ml" 46 1620 1628
+type(
+  'a document -> bool
+)
+ident(
+  def redo "document.ml" 53 1855 1862 "document.ml" 1 0 -1
+)
+"document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+type(
+  'a document
+)
+ident(
+  def document "document.ml" 47 1640 1642 "document.ml" 53 1855 1862
+)
+"document.ml" 47 1640 1648 "document.ml" 47 1640 1656
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 47 1640 1648 "document.ml" 47 1640 1667
+type(
+  'a list
+)
+"document.ml" 48 1673 1677 "document.ml" 48 1673 1679
+type(
+  'a list
+)
+"document.ml" 48 1673 1683 "document.ml" 48 1673 1688
+type(
+  bool
+)
+"document.ml" 49 1689 1693 "document.ml" 49 1689 1697
+type(
+  'a
+)
+ident(
+  def head "document.ml" 50 1707 1709 "document.ml" 53 1855 1862
+)
+"document.ml" 49 1689 1699 "document.ml" 49 1689 1703
+type(
+  'a list
+)
+ident(
+  def tail "document.ml" 50 1707 1709 "document.ml" 53 1855 1862
+)
+"document.ml" 49 1689 1693 "document.ml" 49 1689 1703
+type(
+  'a list
+)
+"document.ml" 50 1707 1709 "document.ml" 50 1707 1717
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 50 1707 1732 "document.ml" 50 1707 1740
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 50 1707 1732 "document.ml" 50 1707 1748
+type(
+  'a
+)
+"document.ml" 50 1707 1750 "document.ml" 50 1707 1758
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 50 1707 1750 "document.ml" 50 1707 1769
+type(
+  'a list
+)
+"document.ml" 50 1707 1732 "document.ml" 50 1707 1769
+type(
+  'a list
+)
+"document.ml" 50 1707 1709 "document.ml" 50 1707 1769
+type(
+  unit
+)
+"document.ml" 51 1771 1773 "document.ml" 51 1771 1781
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 51 1771 1794 "document.ml" 51 1771 1801
+type(
+  'a list -> 'a
+)
+ident(
+  ext_ref List.hd
+)
+"document.ml" 51 1771 1802 "document.ml" 51 1771 1810
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 51 1771 1802 "document.ml" 51 1771 1821
+type(
+  'a list
+)
+"document.ml" 51 1771 1793 "document.ml" 51 1771 1822
+call(
+  stack
+)
+type(
+  'a
+)
+"document.ml" 51 1771 1773 "document.ml" 51 1771 1822
+type(
+  unit
+)
+"document.ml" 52 1824 1826 "document.ml" 52 1824 1834
+type(
+  'a document
+)
+ident(
+  int_ref document "document.ml" 46 1620 1629 "document.ml" 46 1620 1637
+)
+"document.ml" 52 1824 1849 "document.ml" 52 1824 1853
+type(
+  'a list
+)
+ident(
+  int_ref tail "document.ml" 49 1689 1699 "document.ml" 49 1689 1703
+)
+"document.ml" 52 1824 1826 "document.ml" 52 1824 1853
+type(
+  unit
+)
+"document.ml" 53 1855 1857 "document.ml" 53 1855 1862
+type(
+  bool
+)
+"document.ml" 52 1824 1826 "document.ml" 53 1855 1862
+type(
+  bool
+)
+"document.ml" 51 1771 1773 "document.ml" 53 1855 1862
+type(
+  bool
+)
+"document.ml" 50 1707 1709 "document.ml" 53 1855 1862
+type(
+  bool
+)
+"document.ml" 47 1640 1642 "document.ml" 53 1855 1862
+type(
+  bool
+)

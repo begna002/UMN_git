@@ -1,0 +1,313 @@
+"map_modules.ml" 14 473 479 "map_modules.ml" 14 473 491
+type(
+  String.t -> String.t -> int
+)
+ident(
+  def compare_keys "map_modules.ml" 15 520 522 "map_modules.ml" 16 574 577
+)
+"map_modules.ml" 14 473 492 "map_modules.ml" 14 473 493
+type(
+  String.t
+)
+ident(
+  def x "map_modules.ml" 14 473 494 "map_modules.ml" 14 473 516
+)
+"map_modules.ml" 14 473 494 "map_modules.ml" 14 473 495
+type(
+  String.t
+)
+ident(
+  def y "map_modules.ml" 14 473 498 "map_modules.ml" 14 473 516
+)
+"map_modules.ml" 14 473 498 "map_modules.ml" 14 473 512
+type(
+  String.t -> String.t -> int
+)
+ident(
+  ext_ref String.compare
+)
+"map_modules.ml" 14 473 513 "map_modules.ml" 14 473 514
+type(
+  String.t
+)
+ident(
+  int_ref x "map_modules.ml" 14 473 492 "map_modules.ml" 14 473 493
+)
+"map_modules.ml" 14 473 515 "map_modules.ml" 14 473 516
+type(
+  String.t
+)
+ident(
+  int_ref y "map_modules.ml" 14 473 494 "map_modules.ml" 14 473 495
+)
+"map_modules.ml" 14 473 498 "map_modules.ml" 14 473 516
+call(
+  tail
+)
+type(
+  int
+)
+"map_modules.ml" 15 520 526 "map_modules.ml" 15 520 539
+type(
+  string -> string -> string
+)
+ident(
+  def keyval_string "map_modules.ml" 15 520 570 "map_modules.ml" 16 574 577
+)
+"map_modules.ml" 15 520 540 "map_modules.ml" 15 520 541
+type(
+  string
+)
+ident(
+  def k "map_modules.ml" 15 520 542 "map_modules.ml" 15 520 570
+)
+"map_modules.ml" 15 520 542 "map_modules.ml" 15 520 543
+type(
+  string
+)
+ident(
+  def v "map_modules.ml" 15 520 546 "map_modules.ml" 15 520 570
+)
+"map_modules.ml" 15 520 546 "map_modules.ml" 15 520 553
+type(
+  (string -> string -> string, unit, string) format ->
+  string -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"map_modules.ml" 15 520 554 "map_modules.ml" 15 520 566
+type(
+  (string -> string -> string, unit, string) format
+)
+"map_modules.ml" 15 520 567 "map_modules.ml" 15 520 568
+type(
+  string
+)
+ident(
+  int_ref k "map_modules.ml" 15 520 540 "map_modules.ml" 15 520 541
+)
+"map_modules.ml" 15 520 569 "map_modules.ml" 15 520 570
+type(
+  string
+)
+ident(
+  int_ref v "map_modules.ml" 15 520 542 "map_modules.ml" 15 520 543
+)
+"map_modules.ml" 15 520 546 "map_modules.ml" 15 520 570
+call(
+  tail
+)
+type(
+  string
+)
+"map_modules.ml" 22 646 671 "map_modules.ml" 22 646 699
+call(
+  stack
+)
+"map_modules.ml" 28 841 847 "map_modules.ml" 28 841 859
+type(
+  int * int -> int * int -> int
+)
+ident(
+  def compare_keys "map_modules.ml" 32 945 947 "map_modules.ml" 33 1014 1017
+)
+"map_modules.ml" 28 841 861 "map_modules.ml" 28 841 863
+type(
+  int
+)
+ident(
+  def x1 "map_modules.ml" 28 841 869 "map_modules.ml" 31 925 943
+)
+"map_modules.ml" 28 841 865 "map_modules.ml" 28 841 867
+type(
+  int
+)
+ident(
+  def x2 "map_modules.ml" 28 841 869 "map_modules.ml" 31 925 943
+)
+"map_modules.ml" 28 841 860 "map_modules.ml" 28 841 868
+type(
+  int * int
+)
+"map_modules.ml" 28 841 870 "map_modules.ml" 28 841 872
+type(
+  int
+)
+ident(
+  def y1 "map_modules.ml" 29 881 885 "map_modules.ml" 31 925 943
+)
+"map_modules.ml" 28 841 874 "map_modules.ml" 28 841 876
+type(
+  int
+)
+ident(
+  def y2 "map_modules.ml" 29 881 885 "map_modules.ml" 31 925 943
+)
+"map_modules.ml" 28 841 869 "map_modules.ml" 28 841 877
+type(
+  int * int
+)
+"map_modules.ml" 29 881 891 "map_modules.ml" 29 881 893
+type(
+  int
+)
+ident(
+  int_ref x1 "map_modules.ml" 28 841 861 "map_modules.ml" 28 841 863
+)
+"map_modules.ml" 29 881 894 "map_modules.ml" 29 881 895
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"map_modules.ml" 29 881 896 "map_modules.ml" 29 881 898
+type(
+  int
+)
+ident(
+  int_ref y1 "map_modules.ml" 28 841 870 "map_modules.ml" 28 841 872
+)
+"map_modules.ml" 29 881 891 "map_modules.ml" 29 881 898
+type(
+  int
+)
+"map_modules.ml" 30 905 911 "map_modules.ml" 30 905 912
+type(
+  int
+)
+"map_modules.ml" 30 905 916 "map_modules.ml" 30 905 918
+type(
+  int
+)
+ident(
+  int_ref x2 "map_modules.ml" 28 841 865 "map_modules.ml" 28 841 867
+)
+"map_modules.ml" 30 905 919 "map_modules.ml" 30 905 920
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"map_modules.ml" 30 905 921 "map_modules.ml" 30 905 923
+type(
+  int
+)
+ident(
+  int_ref y2 "map_modules.ml" 28 841 874 "map_modules.ml" 28 841 876
+)
+"map_modules.ml" 30 905 916 "map_modules.ml" 30 905 923
+type(
+  int
+)
+"map_modules.ml" 31 925 931 "map_modules.ml" 31 925 932
+type(
+  int
+)
+"map_modules.ml" 31 925 936 "map_modules.ml" 31 925 938
+type(
+  int
+)
+ident(
+  int_ref x1 "map_modules.ml" 28 841 861 "map_modules.ml" 28 841 863
+)
+"map_modules.ml" 31 925 939 "map_modules.ml" 31 925 940
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"map_modules.ml" 31 925 941 "map_modules.ml" 31 925 943
+type(
+  int
+)
+ident(
+  int_ref y1 "map_modules.ml" 28 841 870 "map_modules.ml" 28 841 872
+)
+"map_modules.ml" 31 925 936 "map_modules.ml" 31 925 943
+type(
+  int
+)
+"map_modules.ml" 29 881 885 "map_modules.ml" 31 925 943
+type(
+  int
+)
+"map_modules.ml" 32 945 951 "map_modules.ml" 32 945 964
+type(
+  int * int -> bool -> string
+)
+ident(
+  def keyval_string "map_modules.ml" 32 945 1010 "map_modules.ml" 33 1014 1017
+)
+"map_modules.ml" 32 945 966 "map_modules.ml" 32 945 968
+type(
+  int
+)
+ident(
+  def x1 "map_modules.ml" 32 945 974 "map_modules.ml" 32 945 1010
+)
+"map_modules.ml" 32 945 970 "map_modules.ml" 32 945 972
+type(
+  int
+)
+ident(
+  def x2 "map_modules.ml" 32 945 974 "map_modules.ml" 32 945 1010
+)
+"map_modules.ml" 32 945 965 "map_modules.ml" 32 945 973
+type(
+  int * int
+)
+"map_modules.ml" 32 945 974 "map_modules.ml" 32 945 975
+type(
+  bool
+)
+ident(
+  def b "map_modules.ml" 32 945 978 "map_modules.ml" 32 945 1010
+)
+"map_modules.ml" 32 945 978 "map_modules.ml" 32 945 985
+type(
+  (int -> int -> bool -> string, unit, string) format ->
+  int -> int -> bool -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"map_modules.ml" 32 945 986 "map_modules.ml" 32 945 1002
+type(
+  (int -> int -> bool -> string, unit, string) format
+)
+"map_modules.ml" 32 945 1003 "map_modules.ml" 32 945 1005
+type(
+  int
+)
+ident(
+  int_ref x1 "map_modules.ml" 32 945 966 "map_modules.ml" 32 945 968
+)
+"map_modules.ml" 32 945 1006 "map_modules.ml" 32 945 1008
+type(
+  int
+)
+ident(
+  int_ref x2 "map_modules.ml" 32 945 970 "map_modules.ml" 32 945 972
+)
+"map_modules.ml" 32 945 1009 "map_modules.ml" 32 945 1010
+type(
+  bool
+)
+ident(
+  int_ref b "map_modules.ml" 32 945 974 "map_modules.ml" 32 945 975
+)
+"map_modules.ml" 32 945 978 "map_modules.ml" 32 945 1010
+call(
+  tail
+)
+type(
+  string
+)
+"map_modules.ml" 37 1082 1106 "map_modules.ml" 37 1082 1133
+call(
+  stack
+)

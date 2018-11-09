@@ -1,0 +1,2512 @@
+"treemap.ml" 31 1027 1035 "treemap.ml" 31 1027 1040
+type(
+  treemap
+)
+ident(
+  def empty "treemap.ml" 40 1297 1301 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 31 1027 1043 "treemap.ml" 31 1027 1048
+type(
+  treemap
+)
+"treemap.ml" 40 1297 1309 "treemap.ml" 40 1297 1312
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t -> treemap
+)
+ident(
+  def add "treemap.ml" 40 1297 1301 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 40 1297 1313 "treemap.ml" 40 1297 1316
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 40 1297 1317 "treemap.ml" 52 2277 2336
+)
+"treemap.ml" 40 1297 1317 "treemap.ml" 40 1297 1320
+type(
+  KVMod.key_t
+)
+ident(
+  def key "treemap.ml" 40 1297 1321 "treemap.ml" 52 2277 2336
+)
+"treemap.ml" 40 1297 1321 "treemap.ml" 40 1297 1326
+type(
+  KVMod.value_t
+)
+ident(
+  def value "treemap.ml" 41 1330 1336 "treemap.ml" 52 2277 2336
+)
+"treemap.ml" 41 1330 1342 "treemap.ml" 41 1330 1345
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 40 1297 1313 "treemap.ml" 40 1297 1316
+)
+"treemap.ml" 42 1352 1360 "treemap.ml" 42 1352 1365
+type(
+  treemap
+)
+"treemap.ml" 43 1448 1466 "treemap.ml" 43 1448 1469
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 40 1297 1317 "treemap.ml" 40 1297 1320
+)
+"treemap.ml" 43 1448 1477 "treemap.ml" 43 1448 1482
+type(
+  KVMod.value_t
+)
+ident(
+  int_ref value "treemap.ml" 40 1297 1321 "treemap.ml" 40 1297 1326
+)
+"treemap.ml" 44 1553 1572 "treemap.ml" 44 1553 1577
+type(
+  treemap
+)
+"treemap.ml" 44 1553 1585 "treemap.ml" 44 1553 1590
+type(
+  treemap
+)
+"treemap.ml" 43 1448 1461 "treemap.ml" 44 1553 1591
+type(
+  treemap.Node
+)
+"treemap.ml" 43 1448 1457 "treemap.ml" 44 1553 1591
+type(
+  treemap
+)
+"treemap.ml" 45 1593 1606 "treemap.ml" 45 1593 1610
+ident(
+  def node "treemap.ml" 46 1671 1680 "treemap.ml" 52 2277 2336
+)
+"treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+type(
+  treemap.Node
+)
+"treemap.ml" 45 1593 1601 "treemap.ml" 45 1593 1611
+type(
+  treemap
+)
+"treemap.ml" 46 1671 1684 "treemap.ml" 46 1671 1688
+type(
+  int
+)
+ident(
+  def diff "treemap.ml" 47 1764 1773 "treemap.ml" 52 2277 2336
+)
+"treemap.ml" 46 1671 1691 "treemap.ml" 46 1671 1709
+type(
+  KVMod.key_t -> KVMod.key_t -> int
+)
+ident(
+  int_ref KVMod.compare_keys "treemap.ml" 16 602 604 "treemap.ml" 16 602 644
+)
+"treemap.ml" 46 1671 1710 "treemap.ml" 46 1671 1713
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 40 1297 1317 "treemap.ml" 40 1297 1320
+)
+"treemap.ml" 46 1671 1714 "treemap.ml" 46 1671 1718
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 46 1671 1714 "treemap.ml" 46 1671 1722
+type(
+  KVMod.key_t
+)
+"treemap.ml" 46 1671 1691 "treemap.ml" 46 1671 1722
+call(
+  stack
+)
+type(
+  int
+)
+"treemap.ml" 47 1764 1776 "treemap.ml" 47 1764 1780
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 46 1671 1684 "treemap.ml" 46 1671 1688
+)
+"treemap.ml" 47 1764 1781 "treemap.ml" 47 1764 1782
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"treemap.ml" 47 1764 1783 "treemap.ml" 47 1764 1784
+type(
+  int
+)
+"treemap.ml" 47 1764 1776 "treemap.ml" 47 1764 1784
+type(
+  bool
+)
+"treemap.ml" 48 1850 1866 "treemap.ml" 48 1850 1870
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 48 1850 1882 "treemap.ml" 48 1850 1887
+type(
+  KVMod.value_t
+)
+ident(
+  int_ref value "treemap.ml" 40 1297 1321 "treemap.ml" 40 1297 1326
+)
+"treemap.ml" 48 1850 1865 "treemap.ml" 48 1850 1888
+type(
+  treemap.Node
+)
+"treemap.ml" 48 1850 1861 "treemap.ml" 48 1850 1888
+type(
+  treemap
+)
+"treemap.ml" 49 1955 1972 "treemap.ml" 49 1955 1976
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 46 1671 1684 "treemap.ml" 46 1671 1688
+)
+"treemap.ml" 49 1955 1977 "treemap.ml" 49 1955 1978
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"treemap.ml" 49 1955 1979 "treemap.ml" 49 1955 1980
+type(
+  int
+)
+"treemap.ml" 49 1955 1972 "treemap.ml" 49 1955 1980
+type(
+  bool
+)
+"treemap.ml" 50 2061 2077 "treemap.ml" 50 2061 2081
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 50 2061 2093 "treemap.ml" 50 2061 2096
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t -> treemap
+)
+ident(
+  int_ref add "treemap.ml" 40 1297 1309 "treemap.ml" 40 1297 1312
+)
+"treemap.ml" 50 2061 2097 "treemap.ml" 50 2061 2101
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 50 2061 2097 "treemap.ml" 50 2061 2106
+type(
+  treemap
+)
+"treemap.ml" 50 2061 2107 "treemap.ml" 50 2061 2110
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 40 1297 1317 "treemap.ml" 40 1297 1320
+)
+"treemap.ml" 50 2061 2111 "treemap.ml" 50 2061 2116
+type(
+  KVMod.value_t
+)
+ident(
+  int_ref value "treemap.ml" 40 1297 1321 "treemap.ml" 40 1297 1326
+)
+"treemap.ml" 50 2061 2092 "treemap.ml" 50 2061 2117
+call(
+  stack
+)
+type(
+  treemap
+)
+"treemap.ml" 50 2061 2076 "treemap.ml" 50 2061 2118
+type(
+  treemap.Node
+)
+"treemap.ml" 50 2061 2072 "treemap.ml" 50 2061 2118
+type(
+  treemap
+)
+"treemap.ml" 52 2277 2293 "treemap.ml" 52 2277 2297
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 52 2277 2310 "treemap.ml" 52 2277 2313
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t -> treemap
+)
+ident(
+  int_ref add "treemap.ml" 40 1297 1309 "treemap.ml" 40 1297 1312
+)
+"treemap.ml" 52 2277 2314 "treemap.ml" 52 2277 2318
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 45 1593 1605 "treemap.ml" 45 1593 1611
+)
+"treemap.ml" 52 2277 2314 "treemap.ml" 52 2277 2324
+type(
+  treemap
+)
+"treemap.ml" 52 2277 2325 "treemap.ml" 52 2277 2328
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 40 1297 1317 "treemap.ml" 40 1297 1320
+)
+"treemap.ml" 52 2277 2329 "treemap.ml" 52 2277 2334
+type(
+  KVMod.value_t
+)
+ident(
+  int_ref value "treemap.ml" 40 1297 1321 "treemap.ml" 40 1297 1326
+)
+"treemap.ml" 52 2277 2309 "treemap.ml" 52 2277 2335
+call(
+  stack
+)
+type(
+  treemap
+)
+"treemap.ml" 52 2277 2292 "treemap.ml" 52 2277 2336
+type(
+  treemap.Node
+)
+"treemap.ml" 52 2277 2288 "treemap.ml" 52 2277 2336
+type(
+  treemap
+)
+"treemap.ml" 49 1955 1969 "treemap.ml" 52 2277 2336
+type(
+  treemap
+)
+"treemap.ml" 47 1764 1773 "treemap.ml" 52 2277 2336
+type(
+  treemap
+)
+"treemap.ml" 46 1671 1680 "treemap.ml" 52 2277 2336
+type(
+  treemap
+)
+"treemap.ml" 41 1330 1336 "treemap.ml" 52 2277 2336
+type(
+  treemap
+)
+"treemap.ml" 68 3075 3083 "treemap.ml" 68 3075 3094
+type(
+  treemap -> string
+)
+ident(
+  def tree_string "treemap.ml" 99 4576 4580 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 68 3075 3095 "treemap.ml" 68 3075 3098
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 69 3102 3108 "treemap.ml" 87 4237 4262
+)
+"treemap.ml" 69 3102 3112 "treemap.ml" 69 3102 3115
+type(
+  Buffer.t
+)
+ident(
+  def buf "treemap.ml" 71 3195 3201 "treemap.ml" 87 4237 4262
+)
+"treemap.ml" 69 3102 3118 "treemap.ml" 69 3102 3131
+type(
+  int -> Buffer.t
+)
+ident(
+  ext_ref Buffer.create
+)
+"treemap.ml" 69 3102 3132 "treemap.ml" 69 3102 3135
+type(
+  int
+)
+"treemap.ml" 69 3102 3118 "treemap.ml" 69 3102 3135
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"treemap.ml" 71 3195 3209 "treemap.ml" 71 3195 3214
+type(
+  treemap -> int -> unit
+)
+ident(
+  def build "treemap.ml" 71 3195 3201 "treemap.ml" 87 4237 4262
+)
+"treemap.ml" 71 3195 3215 "treemap.ml" 71 3195 3219
+type(
+  treemap
+)
+ident(
+  def tree "treemap.ml" 71 3195 3220 "treemap.ml" 83 3994 4031
+)
+"treemap.ml" 71 3195 3220 "treemap.ml" 71 3195 3225
+type(
+  int
+)
+ident(
+  def depth "treemap.ml" 72 3275 3283 "treemap.ml" 83 3994 4031
+)
+"treemap.ml" 72 3275 3289 "treemap.ml" 72 3275 3293
+type(
+  treemap
+)
+ident(
+  int_ref tree "treemap.ml" 71 3195 3215 "treemap.ml" 71 3195 3219
+)
+"treemap.ml" 73 3300 3310 "treemap.ml" 73 3300 3315
+type(
+  treemap
+)
+"treemap.ml" 73 3300 3319 "treemap.ml" 73 3300 3321
+type(
+  unit
+)
+"treemap.ml" 74 3398 3413 "treemap.ml" 74 3398 3417
+ident(
+  def node "treemap.ml" 75 3473 3484 "treemap.ml" 83 3994 4031
+)
+"treemap.ml" 74 3398 3412 "treemap.ml" 74 3398 3418
+type(
+  treemap.Node
+)
+"treemap.ml" 74 3398 3408 "treemap.ml" 74 3398 3418
+type(
+  treemap
+)
+"treemap.ml" 75 3473 3484 "treemap.ml" 75 3473 3489
+type(
+  treemap -> int -> unit
+)
+ident(
+  int_ref build "treemap.ml" 71 3195 3209 "treemap.ml" 71 3195 3214
+)
+"treemap.ml" 75 3473 3490 "treemap.ml" 75 3473 3494
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 74 3398 3412 "treemap.ml" 74 3398 3418
+)
+"treemap.ml" 75 3473 3490 "treemap.ml" 75 3473 3500
+type(
+  treemap
+)
+"treemap.ml" 75 3473 3502 "treemap.ml" 75 3473 3507
+type(
+  int
+)
+ident(
+  int_ref depth "treemap.ml" 71 3195 3220 "treemap.ml" 71 3195 3225
+)
+"treemap.ml" 75 3473 3507 "treemap.ml" 75 3473 3508
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"treemap.ml" 75 3473 3508 "treemap.ml" 75 3473 3509
+type(
+  int
+)
+"treemap.ml" 75 3473 3501 "treemap.ml" 75 3473 3510
+type(
+  int
+)
+"treemap.ml" 75 3473 3484 "treemap.ml" 75 3473 3510
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 76 3560 3577 "treemap.ml" 76 3560 3578
+type(
+  int
+)
+"treemap.ml" 76 3560 3582 "treemap.ml" 76 3560 3587
+type(
+  int
+)
+ident(
+  int_ref depth "treemap.ml" 71 3195 3220 "treemap.ml" 71 3195 3225
+)
+"treemap.ml" 77 3662 3675 "treemap.ml" 77 3662 3692
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"treemap.ml" 77 3662 3693 "treemap.ml" 77 3662 3696
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 69 3102 3112 "treemap.ml" 69 3102 3115
+)
+"treemap.ml" 77 3662 3697 "treemap.ml" 77 3662 3701
+type(
+  string
+)
+"treemap.ml" 77 3662 3675 "treemap.ml" 77 3662 3702
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 76 3560 3571 "treemap.ml" 78 3704 3719
+type(
+  unit
+)
+"treemap.ml" 79 3722 3737 "treemap.ml" 79 3722 3744
+type(
+  string
+)
+ident(
+  def datastr "treemap.ml" 82 3917 3928 "treemap.ml" 83 3994 4031
+)
+"treemap.ml" 80 3813 3826 "treemap.ml" 80 3813 3840
+type(
+  (int -> string -> string, unit, string) format -> int -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"treemap.ml" 80 3813 3841 "treemap.ml" 80 3813 3852
+type(
+  (int -> string -> string, unit, string) format
+)
+"treemap.ml" 80 3813 3853 "treemap.ml" 80 3813 3858
+type(
+  int
+)
+ident(
+  int_ref depth "treemap.ml" 71 3195 3220 "treemap.ml" 71 3195 3225
+)
+"treemap.ml" 80 3813 3860 "treemap.ml" 80 3813 3879
+type(
+  KVMod.key_t -> KVMod.value_t -> string
+)
+ident(
+  int_ref KVMod.keyval_string "treemap.ml" 17 646 648 "treemap.ml" 17 646 694
+)
+"treemap.ml" 80 3813 3880 "treemap.ml" 80 3813 3884
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 74 3398 3412 "treemap.ml" 74 3398 3418
+)
+"treemap.ml" 80 3813 3880 "treemap.ml" 80 3813 3888
+type(
+  KVMod.key_t
+)
+"treemap.ml" 80 3813 3889 "treemap.ml" 80 3813 3893
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 74 3398 3412 "treemap.ml" 74 3398 3418
+)
+"treemap.ml" 80 3813 3889 "treemap.ml" 80 3813 3899
+type(
+  KVMod.value_t
+)
+"treemap.ml" 80 3813 3859 "treemap.ml" 80 3813 3900
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 80 3813 3826 "treemap.ml" 80 3813 3900
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 82 3917 3928 "treemap.ml" 82 3917 3945
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"treemap.ml" 82 3917 3946 "treemap.ml" 82 3917 3949
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 69 3102 3112 "treemap.ml" 69 3102 3115
+)
+"treemap.ml" 82 3917 3950 "treemap.ml" 82 3917 3957
+type(
+  string
+)
+ident(
+  int_ref datastr "treemap.ml" 79 3722 3737 "treemap.ml" 79 3722 3744
+)
+"treemap.ml" 82 3917 3928 "treemap.ml" 82 3917 3957
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 83 3994 4005 "treemap.ml" 83 3994 4010
+type(
+  treemap -> int -> unit
+)
+ident(
+  int_ref build "treemap.ml" 71 3195 3209 "treemap.ml" 71 3195 3214
+)
+"treemap.ml" 83 3994 4011 "treemap.ml" 83 3994 4015
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 74 3398 3412 "treemap.ml" 74 3398 3418
+)
+"treemap.ml" 83 3994 4011 "treemap.ml" 83 3994 4020
+type(
+  treemap
+)
+"treemap.ml" 83 3994 4022 "treemap.ml" 83 3994 4027
+type(
+  int
+)
+ident(
+  int_ref depth "treemap.ml" 71 3195 3220 "treemap.ml" 71 3195 3225
+)
+"treemap.ml" 83 3994 4027 "treemap.ml" 83 3994 4028
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"treemap.ml" 83 3994 4028 "treemap.ml" 83 3994 4029
+type(
+  int
+)
+"treemap.ml" 83 3994 4021 "treemap.ml" 83 3994 4030
+type(
+  int
+)
+"treemap.ml" 83 3994 4005 "treemap.ml" 83 3994 4031
+call(
+  tail
+)
+type(
+  unit
+)
+"treemap.ml" 82 3917 3928 "treemap.ml" 83 3994 4031
+type(
+  unit
+)
+"treemap.ml" 79 3722 3733 "treemap.ml" 83 3994 4031
+type(
+  unit
+)
+"treemap.ml" 76 3560 3571 "treemap.ml" 83 3994 4031
+type(
+  unit
+)
+"treemap.ml" 75 3473 3484 "treemap.ml" 83 3994 4031
+type(
+  unit
+)
+"treemap.ml" 72 3275 3283 "treemap.ml" 83 3994 4031
+type(
+  unit
+)
+"treemap.ml" 86 4156 4162 "treemap.ml" 86 4156 4167
+type(
+  treemap -> int -> unit
+)
+ident(
+  int_ref build "treemap.ml" 71 3195 3209 "treemap.ml" 71 3195 3214
+)
+"treemap.ml" 86 4156 4168 "treemap.ml" 86 4156 4171
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 68 3075 3095 "treemap.ml" 68 3075 3098
+)
+"treemap.ml" 86 4156 4172 "treemap.ml" 86 4156 4173
+type(
+  int
+)
+"treemap.ml" 86 4156 4162 "treemap.ml" 86 4156 4173
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 87 4237 4243 "treemap.ml" 87 4237 4258
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"treemap.ml" 87 4237 4259 "treemap.ml" 87 4237 4262
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 69 3102 3112 "treemap.ml" 69 3102 3115
+)
+"treemap.ml" 87 4237 4243 "treemap.ml" 87 4237 4262
+call(
+  tail
+)
+type(
+  string
+)
+"treemap.ml" 86 4156 4162 "treemap.ml" 87 4237 4262
+type(
+  string
+)
+"treemap.ml" 71 3195 3201 "treemap.ml" 87 4237 4262
+type(
+  string
+)
+"treemap.ml" 69 3102 3108 "treemap.ml" 87 4237 4262
+type(
+  string
+)
+"treemap.ml" 99 4576 4588 "treemap.ml" 99 4576 4594
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t option
+)
+ident(
+  def getopt "treemap.ml" 99 4576 4580 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 99 4576 4595 "treemap.ml" 99 4576 4598
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 99 4576 4599 "treemap.ml" 109 4865 4897
+)
+"treemap.ml" 99 4576 4599 "treemap.ml" 99 4576 4602
+type(
+  KVMod.key_t
+)
+ident(
+  def key "treemap.ml" 100 4606 4612 "treemap.ml" 109 4865 4897
+)
+"treemap.ml" 100 4606 4618 "treemap.ml" 100 4606 4621
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 99 4576 4595 "treemap.ml" 99 4576 4598
+)
+"treemap.ml" 101 4628 4636 "treemap.ml" 101 4628 4641
+type(
+  treemap
+)
+"treemap.ml" 101 4628 4645 "treemap.ml" 101 4628 4649
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 102 4651 4664 "treemap.ml" 102 4651 4668
+ident(
+  def node "treemap.ml" 103 4674 4683 "treemap.ml" 109 4865 4897
+)
+"treemap.ml" 102 4651 4663 "treemap.ml" 102 4651 4669
+type(
+  treemap.Node
+)
+"treemap.ml" 102 4651 4659 "treemap.ml" 102 4651 4669
+type(
+  treemap
+)
+"treemap.ml" 103 4674 4687 "treemap.ml" 103 4674 4691
+type(
+  int
+)
+ident(
+  def diff "treemap.ml" 104 4730 4739 "treemap.ml" 109 4865 4897
+)
+"treemap.ml" 103 4674 4694 "treemap.ml" 103 4674 4712
+type(
+  KVMod.key_t -> KVMod.key_t -> int
+)
+ident(
+  int_ref KVMod.compare_keys "treemap.ml" 16 602 604 "treemap.ml" 16 602 644
+)
+"treemap.ml" 103 4674 4713 "treemap.ml" 103 4674 4716
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 99 4576 4599 "treemap.ml" 99 4576 4602
+)
+"treemap.ml" 103 4674 4717 "treemap.ml" 103 4674 4721
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 102 4651 4663 "treemap.ml" 102 4651 4669
+)
+"treemap.ml" 103 4674 4717 "treemap.ml" 103 4674 4725
+type(
+  KVMod.key_t
+)
+"treemap.ml" 103 4674 4694 "treemap.ml" 103 4674 4725
+call(
+  stack
+)
+type(
+  int
+)
+"treemap.ml" 104 4730 4742 "treemap.ml" 104 4730 4746
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 103 4674 4687 "treemap.ml" 103 4674 4691
+)
+"treemap.ml" 104 4730 4747 "treemap.ml" 104 4730 4748
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"treemap.ml" 104 4730 4749 "treemap.ml" 104 4730 4750
+type(
+  int
+)
+"treemap.ml" 104 4730 4742 "treemap.ml" 104 4730 4750
+type(
+  bool
+)
+"treemap.ml" 105 4757 4773 "treemap.ml" 105 4757 4777
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 102 4651 4663 "treemap.ml" 102 4651 4669
+)
+"treemap.ml" 105 4757 4773 "treemap.ml" 105 4757 4783
+type(
+  KVMod.value_t
+)
+"treemap.ml" 105 4757 4768 "treemap.ml" 105 4757 4783
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 106 4785 4802 "treemap.ml" 106 4785 4806
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 103 4674 4687 "treemap.ml" 103 4674 4691
+)
+"treemap.ml" 106 4785 4807 "treemap.ml" 106 4785 4808
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"treemap.ml" 106 4785 4809 "treemap.ml" 106 4785 4810
+type(
+  int
+)
+"treemap.ml" 106 4785 4802 "treemap.ml" 106 4785 4810
+type(
+  bool
+)
+"treemap.ml" 107 4817 4828 "treemap.ml" 107 4817 4834
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t option
+)
+ident(
+  int_ref getopt "treemap.ml" 99 4576 4588 "treemap.ml" 99 4576 4594
+)
+"treemap.ml" 107 4817 4835 "treemap.ml" 107 4817 4839
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 102 4651 4663 "treemap.ml" 102 4651 4669
+)
+"treemap.ml" 107 4817 4835 "treemap.ml" 107 4817 4844
+type(
+  treemap
+)
+"treemap.ml" 107 4817 4845 "treemap.ml" 107 4817 4848
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 99 4576 4599 "treemap.ml" 99 4576 4602
+)
+"treemap.ml" 107 4817 4828 "treemap.ml" 107 4817 4848
+call(
+  tail
+)
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 109 4865 4876 "treemap.ml" 109 4865 4882
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t option
+)
+ident(
+  int_ref getopt "treemap.ml" 99 4576 4588 "treemap.ml" 99 4576 4594
+)
+"treemap.ml" 109 4865 4883 "treemap.ml" 109 4865 4887
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 102 4651 4663 "treemap.ml" 102 4651 4669
+)
+"treemap.ml" 109 4865 4883 "treemap.ml" 109 4865 4893
+type(
+  treemap
+)
+"treemap.ml" 109 4865 4894 "treemap.ml" 109 4865 4897
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 99 4576 4599 "treemap.ml" 99 4576 4602
+)
+"treemap.ml" 109 4865 4876 "treemap.ml" 109 4865 4897
+call(
+  tail
+)
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 106 4785 4799 "treemap.ml" 109 4865 4897
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 104 4730 4739 "treemap.ml" 109 4865 4897
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 103 4674 4683 "treemap.ml" 109 4865 4897
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 100 4606 4612 "treemap.ml" 109 4865 4897
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 121 5143 5151 "treemap.ml" 121 5143 5163
+type(
+  treemap -> KVMod.key_t -> bool
+)
+ident(
+  def contains_key "treemap.ml" 142 5677 5681 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 121 5143 5164 "treemap.ml" 121 5143 5167
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 121 5143 5168 "treemap.ml" 125 5255 5277
+)
+"treemap.ml" 121 5143 5168 "treemap.ml" 121 5143 5171
+type(
+  KVMod.key_t
+)
+ident(
+  def str "treemap.ml" 122 5175 5181 "treemap.ml" 125 5255 5277
+)
+"treemap.ml" 122 5175 5185 "treemap.ml" 122 5175 5188
+type(
+  KVMod.value_t option
+)
+ident(
+  def opt "treemap.ml" 123 5210 5216 "treemap.ml" 125 5255 5277
+)
+"treemap.ml" 122 5175 5191 "treemap.ml" 122 5175 5197
+type(
+  treemap -> KVMod.key_t -> KVMod.value_t option
+)
+ident(
+  int_ref getopt "treemap.ml" 99 4576 4588 "treemap.ml" 99 4576 4594
+)
+"treemap.ml" 122 5175 5198 "treemap.ml" 122 5175 5201
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 121 5143 5164 "treemap.ml" 121 5143 5167
+)
+"treemap.ml" 122 5175 5202 "treemap.ml" 122 5175 5205
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref str "treemap.ml" 121 5143 5168 "treemap.ml" 121 5143 5171
+)
+"treemap.ml" 122 5175 5191 "treemap.ml" 122 5175 5205
+call(
+  stack
+)
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 123 5210 5222 "treemap.ml" 123 5210 5225
+type(
+  KVMod.value_t option
+)
+ident(
+  int_ref opt "treemap.ml" 122 5175 5185 "treemap.ml" 122 5175 5188
+)
+"treemap.ml" 124 5232 5240 "treemap.ml" 124 5232 5244
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 124 5232 5248 "treemap.ml" 124 5232 5253
+type(
+  bool
+)
+"treemap.ml" 125 5255 5268 "treemap.ml" 125 5255 5269
+type(
+  KVMod.value_t
+)
+ident(
+  def a "treemap.ml" 125 5255 5273 "treemap.ml" 125 5255 5277
+)
+"treemap.ml" 125 5255 5263 "treemap.ml" 125 5255 5269
+type(
+  KVMod.value_t option
+)
+"treemap.ml" 125 5255 5273 "treemap.ml" 125 5255 5277
+type(
+  bool
+)
+"treemap.ml" 123 5210 5216 "treemap.ml" 125 5255 5277
+type(
+  bool
+)
+"treemap.ml" 122 5175 5181 "treemap.ml" 125 5255 5277
+type(
+  bool
+)
+"treemap.ml" 142 5677 5689 "treemap.ml" 142 5677 5693
+type(
+  (KVMod.key_t -> KVMod.value_t -> 'a) -> treemap -> unit
+)
+ident(
+  def iter "treemap.ml" 142 5677 5681 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 142 5677 5694 "treemap.ml" 142 5677 5698
+type(
+  KVMod.key_t -> KVMod.value_t -> 'a
+)
+ident(
+  def func "treemap.ml" 142 5677 5699 "treemap.ml" 148 5836 5865
+)
+"treemap.ml" 142 5677 5699 "treemap.ml" 142 5677 5702
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 143 5706 5712 "treemap.ml" 148 5836 5865
+)
+"treemap.ml" 143 5706 5718 "treemap.ml" 143 5706 5721
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 142 5677 5699 "treemap.ml" 142 5677 5702
+)
+"treemap.ml" 144 5728 5736 "treemap.ml" 144 5728 5741
+type(
+  treemap
+)
+"treemap.ml" 144 5728 5745 "treemap.ml" 144 5728 5747
+type(
+  unit
+)
+"treemap.ml" 145 5749 5762 "treemap.ml" 145 5749 5766
+ident(
+  def node "treemap.ml" 146 5771 5779 "treemap.ml" 148 5836 5865
+)
+"treemap.ml" 145 5749 5761 "treemap.ml" 145 5749 5767
+type(
+  treemap.Node
+)
+"treemap.ml" 145 5749 5757 "treemap.ml" 145 5749 5767
+type(
+  treemap
+)
+"treemap.ml" 146 5771 5779 "treemap.ml" 146 5771 5783
+type(
+  (KVMod.key_t -> KVMod.value_t -> 'a) -> treemap -> unit
+)
+ident(
+  int_ref iter "treemap.ml" 142 5677 5689 "treemap.ml" 142 5677 5693
+)
+"treemap.ml" 146 5771 5784 "treemap.ml" 146 5771 5788
+type(
+  KVMod.key_t -> KVMod.value_t -> 'a
+)
+ident(
+  int_ref func "treemap.ml" 142 5677 5694 "treemap.ml" 142 5677 5698
+)
+"treemap.ml" 146 5771 5789 "treemap.ml" 146 5771 5793
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 145 5749 5761 "treemap.ml" 145 5749 5767
+)
+"treemap.ml" 146 5771 5789 "treemap.ml" 146 5771 5798
+type(
+  treemap
+)
+"treemap.ml" 146 5771 5779 "treemap.ml" 146 5771 5798
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 147 5801 5809 "treemap.ml" 147 5801 5813
+type(
+  KVMod.key_t -> KVMod.value_t -> 'a
+)
+ident(
+  int_ref func "treemap.ml" 142 5677 5694 "treemap.ml" 142 5677 5698
+)
+"treemap.ml" 147 5801 5814 "treemap.ml" 147 5801 5818
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 145 5749 5761 "treemap.ml" 145 5749 5767
+)
+"treemap.ml" 147 5801 5814 "treemap.ml" 147 5801 5822
+type(
+  KVMod.key_t
+)
+"treemap.ml" 147 5801 5823 "treemap.ml" 147 5801 5827
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 145 5749 5761 "treemap.ml" 145 5749 5767
+)
+"treemap.ml" 147 5801 5823 "treemap.ml" 147 5801 5833
+type(
+  KVMod.value_t
+)
+"treemap.ml" 147 5801 5809 "treemap.ml" 147 5801 5833
+call(
+  stack
+)
+type(
+  'a
+)
+"treemap.ml" 148 5836 5844 "treemap.ml" 148 5836 5848
+type(
+  (KVMod.key_t -> KVMod.value_t -> 'a) -> treemap -> unit
+)
+ident(
+  int_ref iter "treemap.ml" 142 5677 5689 "treemap.ml" 142 5677 5693
+)
+"treemap.ml" 148 5836 5849 "treemap.ml" 148 5836 5853
+type(
+  KVMod.key_t -> KVMod.value_t -> 'a
+)
+ident(
+  int_ref func "treemap.ml" 142 5677 5694 "treemap.ml" 142 5677 5698
+)
+"treemap.ml" 148 5836 5854 "treemap.ml" 148 5836 5858
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 145 5749 5761 "treemap.ml" 145 5749 5767
+)
+"treemap.ml" 148 5836 5854 "treemap.ml" 148 5836 5864
+type(
+  treemap
+)
+"treemap.ml" 148 5836 5844 "treemap.ml" 148 5836 5865
+call(
+  tail
+)
+type(
+  unit
+)
+"treemap.ml" 147 5801 5809 "treemap.ml" 148 5836 5865
+type(
+  unit
+)
+"treemap.ml" 146 5771 5779 "treemap.ml" 148 5836 5865
+type(
+  unit
+)
+"treemap.ml" 143 5706 5712 "treemap.ml" 148 5836 5865
+type(
+  unit
+)
+"treemap.ml" 164 6332 6344 "treemap.ml" 164 6332 6348
+type(
+  ('b -> KVMod.key_t -> KVMod.value_t -> 'b) -> 'b -> treemap -> 'b
+)
+ident(
+  def fold "treemap.ml" 164 6332 6336 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 164 6332 6349 "treemap.ml" 164 6332 6353
+type(
+  'b -> KVMod.key_t -> KVMod.value_t -> 'b
+)
+ident(
+  def func "treemap.ml" 164 6332 6354 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 164 6332 6354 "treemap.ml" 164 6332 6357
+type(
+  'b
+)
+ident(
+  def cur "treemap.ml" 164 6332 6358 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 164 6332 6358 "treemap.ml" 164 6332 6361
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 165 6365 6371 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 165 6365 6377 "treemap.ml" 165 6365 6380
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 164 6332 6358 "treemap.ml" 164 6332 6361
+)
+"treemap.ml" 166 6387 6395 "treemap.ml" 166 6387 6400
+type(
+  treemap
+)
+"treemap.ml" 166 6387 6404 "treemap.ml" 166 6387 6407
+type(
+  'b
+)
+ident(
+  int_ref cur "treemap.ml" 164 6332 6354 "treemap.ml" 164 6332 6357
+)
+"treemap.ml" 167 6409 6422 "treemap.ml" 167 6409 6426
+ident(
+  def node "treemap.ml" 168 6431 6439 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 167 6409 6421 "treemap.ml" 167 6409 6427
+type(
+  treemap.Node
+)
+"treemap.ml" 167 6409 6417 "treemap.ml" 167 6409 6427
+type(
+  treemap
+)
+"treemap.ml" 168 6431 6443 "treemap.ml" 168 6431 6447
+type(
+  'b
+)
+ident(
+  def val1 "treemap.ml" 169 6478 6486 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 168 6431 6450 "treemap.ml" 168 6431 6454
+type(
+  ('b -> KVMod.key_t -> KVMod.value_t -> 'b) -> 'b -> treemap -> 'b
+)
+ident(
+  int_ref fold "treemap.ml" 164 6332 6344 "treemap.ml" 164 6332 6348
+)
+"treemap.ml" 168 6431 6455 "treemap.ml" 168 6431 6459
+type(
+  'b -> KVMod.key_t -> KVMod.value_t -> 'b
+)
+ident(
+  int_ref func "treemap.ml" 164 6332 6349 "treemap.ml" 164 6332 6353
+)
+"treemap.ml" 168 6431 6460 "treemap.ml" 168 6431 6463
+type(
+  'b
+)
+ident(
+  int_ref cur "treemap.ml" 164 6332 6354 "treemap.ml" 164 6332 6357
+)
+"treemap.ml" 168 6431 6464 "treemap.ml" 168 6431 6468
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 167 6409 6421 "treemap.ml" 167 6409 6427
+)
+"treemap.ml" 168 6431 6464 "treemap.ml" 168 6431 6473
+type(
+  treemap
+)
+"treemap.ml" 168 6431 6450 "treemap.ml" 168 6431 6473
+call(
+  stack
+)
+type(
+  'b
+)
+"treemap.ml" 169 6478 6490 "treemap.ml" 169 6478 6494
+type(
+  'b
+)
+ident(
+  def val2 "treemap.ml" 170 6531 6539 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 169 6478 6497 "treemap.ml" 169 6478 6501
+type(
+  'b -> KVMod.key_t -> KVMod.value_t -> 'b
+)
+ident(
+  int_ref func "treemap.ml" 164 6332 6349 "treemap.ml" 164 6332 6353
+)
+"treemap.ml" 169 6478 6502 "treemap.ml" 169 6478 6506
+type(
+  'b
+)
+ident(
+  int_ref val1 "treemap.ml" 168 6431 6443 "treemap.ml" 168 6431 6447
+)
+"treemap.ml" 169 6478 6507 "treemap.ml" 169 6478 6511
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 167 6409 6421 "treemap.ml" 167 6409 6427
+)
+"treemap.ml" 169 6478 6507 "treemap.ml" 169 6478 6515
+type(
+  KVMod.key_t
+)
+"treemap.ml" 169 6478 6516 "treemap.ml" 169 6478 6520
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 167 6409 6421 "treemap.ml" 167 6409 6427
+)
+"treemap.ml" 169 6478 6516 "treemap.ml" 169 6478 6526
+type(
+  KVMod.value_t
+)
+"treemap.ml" 169 6478 6497 "treemap.ml" 169 6478 6526
+call(
+  stack
+)
+type(
+  'b
+)
+"treemap.ml" 170 6531 6543 "treemap.ml" 170 6531 6547
+type(
+  'b
+)
+ident(
+  def val3 "treemap.ml" 171 6580 6588 "treemap.ml" 171 6580 6592
+)
+"treemap.ml" 170 6531 6550 "treemap.ml" 170 6531 6554
+type(
+  ('b -> KVMod.key_t -> KVMod.value_t -> 'b) -> 'b -> treemap -> 'b
+)
+ident(
+  int_ref fold "treemap.ml" 164 6332 6344 "treemap.ml" 164 6332 6348
+)
+"treemap.ml" 170 6531 6555 "treemap.ml" 170 6531 6559
+type(
+  'b -> KVMod.key_t -> KVMod.value_t -> 'b
+)
+ident(
+  int_ref func "treemap.ml" 164 6332 6349 "treemap.ml" 164 6332 6353
+)
+"treemap.ml" 170 6531 6560 "treemap.ml" 170 6531 6564
+type(
+  'b
+)
+ident(
+  int_ref val2 "treemap.ml" 169 6478 6490 "treemap.ml" 169 6478 6494
+)
+"treemap.ml" 170 6531 6565 "treemap.ml" 170 6531 6569
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 167 6409 6421 "treemap.ml" 167 6409 6427
+)
+"treemap.ml" 170 6531 6565 "treemap.ml" 170 6531 6575
+type(
+  treemap
+)
+"treemap.ml" 170 6531 6550 "treemap.ml" 170 6531 6575
+call(
+  stack
+)
+type(
+  'b
+)
+"treemap.ml" 171 6580 6588 "treemap.ml" 171 6580 6592
+type(
+  'b
+)
+ident(
+  int_ref val3 "treemap.ml" 170 6531 6543 "treemap.ml" 170 6531 6547
+)
+"treemap.ml" 170 6531 6539 "treemap.ml" 171 6580 6592
+type(
+  'b
+)
+"treemap.ml" 169 6478 6486 "treemap.ml" 171 6580 6592
+type(
+  'b
+)
+"treemap.ml" 168 6431 6439 "treemap.ml" 171 6580 6592
+type(
+  'b
+)
+"treemap.ml" 165 6365 6371 "treemap.ml" 171 6580 6592
+type(
+  'b
+)
+"treemap.ml" 190 7113 7121 "treemap.ml" 190 7113 7130
+type(
+  treemap -> string
+)
+ident(
+  def to_string "treemap.ml" 226 8252 8256 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 190 7113 7131 "treemap.ml" 190 7113 7134
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 191 7138 7144 "treemap.ml" 212 7790 7827
+)
+"treemap.ml" 191 7138 7150 "treemap.ml" 191 7138 7153
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 190 7113 7131 "treemap.ml" 190 7113 7134
+)
+"treemap.ml" 192 7160 7168 "treemap.ml" 192 7160 7173
+type(
+  treemap
+)
+"treemap.ml" 192 7160 7177 "treemap.ml" 192 7160 7181
+type(
+  string
+)
+"treemap.ml" 193 7183 7191 "treemap.ml" 193 7183 7192
+type(
+  treemap
+)
+"treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+type(
+  Buffer.t
+)
+ident(
+  def buf "treemap.ml" 195 7237 7245 "treemap.ml" 212 7790 7827
+)
+"treemap.ml" 194 7197 7215 "treemap.ml" 194 7197 7228
+type(
+  int -> Buffer.t
+)
+ident(
+  ext_ref Buffer.create
+)
+"treemap.ml" 194 7197 7229 "treemap.ml" 194 7197 7232
+type(
+  int
+)
+"treemap.ml" 194 7197 7215 "treemap.ml" 194 7197 7232
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"treemap.ml" 195 7237 7245 "treemap.ml" 195 7237 7262
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"treemap.ml" 195 7237 7263 "treemap.ml" 195 7237 7266
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 195 7237 7267 "treemap.ml" 195 7237 7269
+type(
+  string
+)
+"treemap.ml" 195 7237 7245 "treemap.ml" 195 7237 7269
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 196 7272 7288 "treemap.ml" 196 7272 7293
+type(
+  treemap -> unit
+)
+ident(
+  def build "treemap.ml" 196 7272 7280 "treemap.ml" 212 7790 7827
+)
+"treemap.ml" 196 7272 7294 "treemap.ml" 196 7272 7298
+type(
+  treemap
+)
+ident(
+  def tree "treemap.ml" 197 7302 7312 "treemap.ml" 206 7624 7654
+)
+"treemap.ml" 197 7302 7318 "treemap.ml" 197 7302 7322
+type(
+  treemap
+)
+ident(
+  int_ref tree "treemap.ml" 196 7272 7294 "treemap.ml" 196 7272 7298
+)
+"treemap.ml" 198 7329 7341 "treemap.ml" 198 7329 7346
+type(
+  treemap
+)
+"treemap.ml" 198 7329 7350 "treemap.ml" 198 7329 7352
+type(
+  unit
+)
+"treemap.ml" 199 7354 7371 "treemap.ml" 199 7354 7375
+ident(
+  def node "treemap.ml" 200 7381 7394 "treemap.ml" 206 7624 7654
+)
+"treemap.ml" 199 7354 7370 "treemap.ml" 199 7354 7376
+type(
+  treemap.Node
+)
+"treemap.ml" 199 7354 7366 "treemap.ml" 199 7354 7376
+type(
+  treemap
+)
+"treemap.ml" 200 7381 7394 "treemap.ml" 200 7381 7399
+type(
+  treemap -> unit
+)
+ident(
+  int_ref build "treemap.ml" 196 7272 7288 "treemap.ml" 196 7272 7293
+)
+"treemap.ml" 200 7381 7400 "treemap.ml" 200 7381 7404
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 199 7354 7370 "treemap.ml" 199 7354 7376
+)
+"treemap.ml" 200 7381 7400 "treemap.ml" 200 7381 7409
+type(
+  treemap
+)
+"treemap.ml" 200 7381 7394 "treemap.ml" 200 7381 7409
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 201 7412 7427 "treemap.ml" 201 7412 7444
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"treemap.ml" 201 7412 7445 "treemap.ml" 201 7412 7448
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 201 7412 7449 "treemap.ml" 201 7412 7451
+type(
+  string
+)
+"treemap.ml" 201 7412 7427 "treemap.ml" 201 7412 7451
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 202 7454 7471 "treemap.ml" 202 7454 7478
+type(
+  string
+)
+ident(
+  def datastr "treemap.ml" 205 7579 7592 "treemap.ml" 206 7624 7654
+)
+"treemap.ml" 203 7482 7497 "treemap.ml" 203 7482 7511
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"treemap.ml" 203 7482 7512 "treemap.ml" 203 7482 7518
+type(
+  (string -> string, unit, string) format
+)
+"treemap.ml" 203 7482 7520 "treemap.ml" 203 7482 7539
+type(
+  KVMod.key_t -> KVMod.value_t -> string
+)
+ident(
+  int_ref KVMod.keyval_string "treemap.ml" 17 646 648 "treemap.ml" 17 646 694
+)
+"treemap.ml" 203 7482 7540 "treemap.ml" 203 7482 7544
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 199 7354 7370 "treemap.ml" 199 7354 7376
+)
+"treemap.ml" 203 7482 7540 "treemap.ml" 203 7482 7548
+type(
+  KVMod.key_t
+)
+"treemap.ml" 203 7482 7549 "treemap.ml" 203 7482 7553
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 199 7354 7370 "treemap.ml" 199 7354 7376
+)
+"treemap.ml" 203 7482 7549 "treemap.ml" 203 7482 7559
+type(
+  KVMod.value_t
+)
+"treemap.ml" 203 7482 7519 "treemap.ml" 203 7482 7560
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 203 7482 7497 "treemap.ml" 203 7482 7560
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 205 7579 7592 "treemap.ml" 205 7579 7609
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"treemap.ml" 205 7579 7610 "treemap.ml" 205 7579 7613
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 205 7579 7614 "treemap.ml" 205 7579 7621
+type(
+  string
+)
+ident(
+  int_ref datastr "treemap.ml" 202 7454 7471 "treemap.ml" 202 7454 7478
+)
+"treemap.ml" 205 7579 7592 "treemap.ml" 205 7579 7621
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 206 7624 7637 "treemap.ml" 206 7624 7642
+type(
+  treemap -> unit
+)
+ident(
+  int_ref build "treemap.ml" 196 7272 7288 "treemap.ml" 196 7272 7293
+)
+"treemap.ml" 206 7624 7643 "treemap.ml" 206 7624 7647
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 199 7354 7370 "treemap.ml" 199 7354 7376
+)
+"treemap.ml" 206 7624 7643 "treemap.ml" 206 7624 7653
+type(
+  treemap
+)
+"treemap.ml" 206 7624 7637 "treemap.ml" 206 7624 7654
+call(
+  tail
+)
+type(
+  unit
+)
+"treemap.ml" 205 7579 7592 "treemap.ml" 206 7624 7654
+type(
+  unit
+)
+"treemap.ml" 202 7454 7467 "treemap.ml" 206 7624 7654
+type(
+  unit
+)
+"treemap.ml" 201 7412 7427 "treemap.ml" 206 7624 7654
+type(
+  unit
+)
+"treemap.ml" 200 7381 7394 "treemap.ml" 206 7624 7654
+type(
+  unit
+)
+"treemap.ml" 197 7302 7312 "treemap.ml" 206 7624 7654
+type(
+  unit
+)
+"treemap.ml" 209 7670 7678 "treemap.ml" 209 7670 7683
+type(
+  treemap -> unit
+)
+ident(
+  int_ref build "treemap.ml" 196 7272 7288 "treemap.ml" 196 7272 7293
+)
+"treemap.ml" 209 7670 7684 "treemap.ml" 209 7670 7687
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 190 7113 7131 "treemap.ml" 190 7113 7134
+)
+"treemap.ml" 209 7670 7678 "treemap.ml" 209 7670 7687
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 210 7690 7702 "treemap.ml" 210 7690 7705
+type(
+  int
+)
+ident(
+  def len "treemap.ml" 211 7756 7764 "treemap.ml" 212 7790 7827
+)
+"treemap.ml" 210 7690 7710 "treemap.ml" 210 7690 7723
+type(
+  string -> int
+)
+ident(
+  ext_ref String.length
+)
+"treemap.ml" 210 7690 7725 "treemap.ml" 210 7690 7740
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"treemap.ml" 210 7690 7741 "treemap.ml" 210 7690 7744
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 210 7690 7724 "treemap.ml" 210 7690 7745
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 210 7690 7709 "treemap.ml" 210 7690 7746
+type(
+  int
+)
+"treemap.ml" 210 7690 7747 "treemap.ml" 210 7690 7748
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"treemap.ml" 210 7690 7749 "treemap.ml" 210 7690 7750
+type(
+  int
+)
+"treemap.ml" 210 7690 7708 "treemap.ml" 210 7690 7751
+type(
+  int
+)
+"treemap.ml" 211 7756 7764 "treemap.ml" 211 7756 7779
+type(
+  Buffer.t -> int -> unit
+)
+ident(
+  ext_ref Buffer.truncate
+)
+"treemap.ml" 211 7756 7780 "treemap.ml" 211 7756 7783
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 211 7756 7784 "treemap.ml" 211 7756 7787
+type(
+  int
+)
+ident(
+  int_ref len "treemap.ml" 210 7690 7702 "treemap.ml" 210 7690 7705
+)
+"treemap.ml" 211 7756 7764 "treemap.ml" 211 7756 7787
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap.ml" 212 7790 7798 "treemap.ml" 212 7790 7801
+type(
+  string
+)
+"treemap.ml" 212 7790 7801 "treemap.ml" 212 7790 7802
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"treemap.ml" 212 7790 7803 "treemap.ml" 212 7790 7818
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"treemap.ml" 212 7790 7819 "treemap.ml" 212 7790 7822
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "treemap.ml" 194 7197 7209 "treemap.ml" 194 7197 7212
+)
+"treemap.ml" 212 7790 7802 "treemap.ml" 212 7790 7823
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 212 7790 7823 "treemap.ml" 212 7790 7824
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"treemap.ml" 212 7790 7824 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 212 7790 7802 "treemap.ml" 212 7790 7827
+call(
+  stack
+)
+type(
+  string
+)
+"treemap.ml" 212 7790 7798 "treemap.ml" 212 7790 7827
+call(
+  tail
+)
+type(
+  string
+)
+"treemap.ml" 211 7756 7764 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 210 7690 7698 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 209 7670 7678 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 196 7272 7280 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 195 7237 7245 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 194 7197 7205 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 191 7138 7144 "treemap.ml" 212 7790 7827
+type(
+  string
+)
+"treemap.ml" 226 8252 8264 "treemap.ml" 226 8252 8278
+type(
+  treemap -> KVMod.key_t * KVMod.value_t
+)
+ident(
+  def findmin_keyval "treemap.ml" 226 8252 8256 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 226 8252 8279 "treemap.ml" 226 8252 8282
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 227 8286 8292 "treemap.ml" 233 8471 8505
+)
+"treemap.ml" 227 8286 8298 "treemap.ml" 227 8286 8301
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 226 8252 8279 "treemap.ml" 226 8252 8282
+)
+"treemap.ml" 228 8308 8316 "treemap.ml" 228 8308 8321
+type(
+  treemap
+)
+"treemap.ml" 228 8308 8325 "treemap.ml" 228 8308 8333
+type(
+  string -> KVMod.key_t * KVMod.value_t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"treemap.ml" 228 8308 8334 "treemap.ml" 228 8308 8363
+type(
+  string
+)
+"treemap.ml" 228 8308 8325 "treemap.ml" 228 8308 8363
+call(
+  tail
+)
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 229 8365 8378 "treemap.ml" 229 8365 8382
+ident(
+  def node "treemap.ml" 230 8388 8396 "treemap.ml" 233 8471 8505
+)
+"treemap.ml" 229 8365 8377 "treemap.ml" 229 8365 8383
+type(
+  treemap.Node
+)
+"treemap.ml" 229 8365 8373 "treemap.ml" 229 8365 8383
+type(
+  treemap
+)
+"treemap.ml" 230 8388 8399 "treemap.ml" 230 8388 8403
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 229 8365 8377 "treemap.ml" 229 8365 8383
+)
+"treemap.ml" 230 8388 8399 "treemap.ml" 230 8388 8408
+type(
+  treemap
+)
+"treemap.ml" 230 8388 8409 "treemap.ml" 230 8388 8410
+type(
+  treemap -> treemap -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"treemap.ml" 230 8388 8411 "treemap.ml" 230 8388 8416
+type(
+  treemap
+)
+"treemap.ml" 230 8388 8399 "treemap.ml" 230 8388 8416
+type(
+  bool
+)
+"treemap.ml" 231 8423 8434 "treemap.ml" 231 8423 8438
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 229 8365 8377 "treemap.ml" 229 8365 8383
+)
+"treemap.ml" 231 8423 8434 "treemap.ml" 231 8423 8442
+type(
+  KVMod.key_t
+)
+"treemap.ml" 231 8423 8444 "treemap.ml" 231 8423 8448
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 229 8365 8377 "treemap.ml" 229 8365 8383
+)
+"treemap.ml" 231 8423 8444 "treemap.ml" 231 8423 8454
+type(
+  KVMod.value_t
+)
+"treemap.ml" 231 8423 8433 "treemap.ml" 231 8423 8455
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 233 8471 8481 "treemap.ml" 233 8471 8495
+type(
+  treemap -> KVMod.key_t * KVMod.value_t
+)
+ident(
+  int_ref findmin_keyval "treemap.ml" 226 8252 8264 "treemap.ml" 226 8252 8278
+)
+"treemap.ml" 233 8471 8496 "treemap.ml" 233 8471 8500
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 229 8365 8377 "treemap.ml" 229 8365 8383
+)
+"treemap.ml" 233 8471 8496 "treemap.ml" 233 8471 8505
+type(
+  treemap
+)
+"treemap.ml" 233 8471 8481 "treemap.ml" 233 8471 8505
+call(
+  tail
+)
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 230 8388 8396 "treemap.ml" 233 8471 8505
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 227 8286 8292 "treemap.ml" 233 8471 8505
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 250 9125 9137 "treemap.ml" 250 9125 9147
+type(
+  treemap -> KVMod.key_t -> treemap
+)
+ident(
+  def remove_key "treemap.ml" 250 9125 9129 "treemap.ml" 270 9869 9872
+)
+"treemap.ml" 250 9125 9148 "treemap.ml" 250 9125 9151
+type(
+  treemap
+)
+ident(
+  def map "treemap.ml" 250 9125 9152 "treemap.ml" 267 9799 9857
+)
+"treemap.ml" 250 9125 9152 "treemap.ml" 250 9125 9155
+type(
+  KVMod.key_t
+)
+ident(
+  def key "treemap.ml" 251 9159 9163 "treemap.ml" 267 9799 9857
+)
+"treemap.ml" 251 9159 9169 "treemap.ml" 251 9159 9172
+type(
+  treemap
+)
+ident(
+  int_ref map "treemap.ml" 250 9125 9148 "treemap.ml" 250 9125 9151
+)
+"treemap.ml" 252 9179 9185 "treemap.ml" 252 9179 9190
+type(
+  treemap
+)
+"treemap.ml" 252 9179 9194 "treemap.ml" 252 9179 9199
+type(
+  treemap
+)
+"treemap.ml" 253 9201 9212 "treemap.ml" 253 9201 9216
+ident(
+  def node "treemap.ml" 254 9222 9229 "treemap.ml" 267 9799 9857
+)
+"treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+type(
+  treemap.Node
+)
+"treemap.ml" 253 9201 9207 "treemap.ml" 253 9201 9217
+type(
+  treemap
+)
+"treemap.ml" 254 9222 9233 "treemap.ml" 254 9222 9237
+type(
+  int
+)
+ident(
+  def diff "treemap.ml" 255 9276 9283 "treemap.ml" 267 9799 9857
+)
+"treemap.ml" 254 9222 9240 "treemap.ml" 254 9222 9258
+type(
+  KVMod.key_t -> KVMod.key_t -> int
+)
+ident(
+  int_ref KVMod.compare_keys "treemap.ml" 16 602 604 "treemap.ml" 16 602 644
+)
+"treemap.ml" 254 9222 9259 "treemap.ml" 254 9222 9262
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 250 9125 9152 "treemap.ml" 250 9125 9155
+)
+"treemap.ml" 254 9222 9263 "treemap.ml" 254 9222 9267
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 254 9222 9263 "treemap.ml" 254 9222 9271
+type(
+  KVMod.key_t
+)
+"treemap.ml" 254 9222 9240 "treemap.ml" 254 9222 9271
+call(
+  stack
+)
+type(
+  int
+)
+"treemap.ml" 255 9276 9286 "treemap.ml" 255 9276 9290
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 254 9222 9233 "treemap.ml" 254 9222 9237
+)
+"treemap.ml" 255 9276 9291 "treemap.ml" 255 9276 9292
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"treemap.ml" 255 9276 9293 "treemap.ml" 255 9276 9294
+type(
+  int
+)
+"treemap.ml" 255 9276 9286 "treemap.ml" 255 9276 9294
+type(
+  bool
+)
+"treemap.ml" 256 9301 9316 "treemap.ml" 256 9301 9320
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 256 9301 9316 "treemap.ml" 256 9301 9325
+type(
+  treemap
+)
+"treemap.ml" 256 9301 9327 "treemap.ml" 256 9301 9331
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 256 9301 9327 "treemap.ml" 256 9301 9337
+type(
+  treemap
+)
+"treemap.ml" 256 9301 9316 "treemap.ml" 256 9301 9337
+type(
+  treemap * treemap
+)
+"treemap.ml" 257 9344 9355 "treemap.ml" 257 9344 9360
+type(
+  treemap
+)
+"treemap.ml" 257 9344 9362 "treemap.ml" 257 9344 9367
+type(
+  treemap
+)
+"treemap.ml" 257 9344 9355 "treemap.ml" 257 9344 9367
+type(
+  treemap * treemap
+)
+"treemap.ml" 257 9344 9371 "treemap.ml" 257 9344 9376
+type(
+  treemap
+)
+"treemap.ml" 258 9378 9389 "treemap.ml" 258 9378 9390
+type(
+  treemap
+)
+"treemap.ml" 258 9378 9393 "treemap.ml" 258 9378 9398
+type(
+  treemap
+)
+"treemap.ml" 258 9378 9389 "treemap.ml" 258 9378 9398
+type(
+  treemap * treemap
+)
+"treemap.ml" 258 9378 9402 "treemap.ml" 258 9378 9406
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 258 9378 9402 "treemap.ml" 258 9378 9411
+type(
+  treemap
+)
+"treemap.ml" 259 9413 9424 "treemap.ml" 259 9413 9429
+type(
+  treemap
+)
+"treemap.ml" 259 9413 9431 "treemap.ml" 259 9413 9432
+type(
+  treemap
+)
+"treemap.ml" 259 9413 9424 "treemap.ml" 259 9413 9432
+type(
+  treemap * treemap
+)
+"treemap.ml" 259 9413 9436 "treemap.ml" 259 9413 9440
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 259 9413 9436 "treemap.ml" 259 9413 9446
+type(
+  treemap
+)
+"treemap.ml" 260 9448 9459 "treemap.ml" 260 9448 9460
+type(
+  treemap
+)
+"treemap.ml" 260 9448 9463 "treemap.ml" 260 9448 9464
+type(
+  treemap
+)
+"treemap.ml" 260 9448 9459 "treemap.ml" 260 9448 9464
+type(
+  treemap * treemap
+)
+"treemap.ml" 261 9469 9486 "treemap.ml" 261 9469 9494
+type(
+  KVMod.key_t
+)
+ident(
+  def succ_key "treemap.ml" 262 9538 9550 "treemap.ml" 262 9538 9646
+)
+"treemap.ml" 261 9469 9496 "treemap.ml" 261 9469 9504
+type(
+  KVMod.value_t
+)
+ident(
+  def succ_val "treemap.ml" 262 9538 9550 "treemap.ml" 262 9538 9646
+)
+"treemap.ml" 261 9469 9485 "treemap.ml" 261 9469 9505
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 261 9469 9508 "treemap.ml" 261 9469 9522
+type(
+  treemap -> KVMod.key_t * KVMod.value_t
+)
+ident(
+  int_ref findmin_keyval "treemap.ml" 226 8252 8264 "treemap.ml" 226 8252 8278
+)
+"treemap.ml" 261 9469 9523 "treemap.ml" 261 9469 9527
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 261 9469 9523 "treemap.ml" 261 9469 9533
+type(
+  treemap
+)
+"treemap.ml" 261 9469 9508 "treemap.ml" 261 9469 9533
+call(
+  stack
+)
+type(
+  KVMod.key_t * KVMod.value_t
+)
+"treemap.ml" 262 9538 9561 "treemap.ml" 262 9538 9569
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref succ_key "treemap.ml" 261 9469 9486 "treemap.ml" 261 9469 9494
+)
+"treemap.ml" 262 9538 9579 "treemap.ml" 262 9538 9587
+type(
+  KVMod.value_t
+)
+ident(
+  int_ref succ_val "treemap.ml" 261 9469 9496 "treemap.ml" 261 9469 9504
+)
+"treemap.ml" 262 9538 9596 "treemap.ml" 262 9538 9600
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 262 9538 9596 "treemap.ml" 262 9538 9605
+type(
+  treemap
+)
+"treemap.ml" 262 9538 9615 "treemap.ml" 262 9538 9625
+type(
+  treemap -> KVMod.key_t -> treemap
+)
+ident(
+  int_ref remove_key "treemap.ml" 250 9125 9137 "treemap.ml" 250 9125 9147
+)
+"treemap.ml" 262 9538 9626 "treemap.ml" 262 9538 9630
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 262 9538 9626 "treemap.ml" 262 9538 9636
+type(
+  treemap
+)
+"treemap.ml" 262 9538 9637 "treemap.ml" 262 9538 9645
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref succ_key "treemap.ml" 261 9469 9486 "treemap.ml" 261 9469 9494
+)
+"treemap.ml" 262 9538 9615 "treemap.ml" 262 9538 9645
+call(
+  stack
+)
+type(
+  treemap
+)
+"treemap.ml" 262 9538 9554 "treemap.ml" 262 9538 9646
+type(
+  treemap.Node
+)
+"treemap.ml" 262 9538 9550 "treemap.ml" 262 9538 9646
+type(
+  treemap
+)
+"treemap.ml" 261 9469 9481 "treemap.ml" 262 9538 9646
+type(
+  treemap
+)
+"treemap.ml" 256 9301 9310 "treemap.ml" 262 9538 9646
+type(
+  treemap
+)
+"treemap.ml" 264 9698 9713 "treemap.ml" 264 9698 9717
+type(
+  int
+)
+ident(
+  int_ref diff "treemap.ml" 254 9222 9233 "treemap.ml" 254 9222 9237
+)
+"treemap.ml" 264 9698 9718 "treemap.ml" 264 9698 9719
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"treemap.ml" 264 9698 9720 "treemap.ml" 264 9698 9721
+type(
+  int
+)
+"treemap.ml" 264 9698 9713 "treemap.ml" 264 9698 9721
+type(
+  bool
+)
+"treemap.ml" 265 9728 9742 "treemap.ml" 265 9728 9746
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 265 9728 9758 "treemap.ml" 265 9728 9768
+type(
+  treemap -> KVMod.key_t -> treemap
+)
+ident(
+  int_ref remove_key "treemap.ml" 250 9125 9137 "treemap.ml" 250 9125 9147
+)
+"treemap.ml" 265 9728 9769 "treemap.ml" 265 9728 9773
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 265 9728 9769 "treemap.ml" 265 9728 9778
+type(
+  treemap
+)
+"treemap.ml" 265 9728 9779 "treemap.ml" 265 9728 9782
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 250 9125 9152 "treemap.ml" 250 9125 9155
+)
+"treemap.ml" 265 9728 9757 "treemap.ml" 265 9728 9783
+call(
+  stack
+)
+type(
+  treemap
+)
+"treemap.ml" 265 9728 9741 "treemap.ml" 265 9728 9784
+type(
+  treemap.Node
+)
+"treemap.ml" 265 9728 9737 "treemap.ml" 265 9728 9784
+type(
+  treemap
+)
+"treemap.ml" 267 9799 9813 "treemap.ml" 267 9799 9817
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 267 9799 9830 "treemap.ml" 267 9799 9840
+type(
+  treemap -> KVMod.key_t -> treemap
+)
+ident(
+  int_ref remove_key "treemap.ml" 250 9125 9137 "treemap.ml" 250 9125 9147
+)
+"treemap.ml" 267 9799 9841 "treemap.ml" 267 9799 9845
+type(
+  treemap.Node
+)
+ident(
+  int_ref node "treemap.ml" 253 9201 9211 "treemap.ml" 253 9201 9217
+)
+"treemap.ml" 267 9799 9841 "treemap.ml" 267 9799 9851
+type(
+  treemap
+)
+"treemap.ml" 267 9799 9852 "treemap.ml" 267 9799 9855
+type(
+  KVMod.key_t
+)
+ident(
+  int_ref key "treemap.ml" 250 9125 9152 "treemap.ml" 250 9125 9155
+)
+"treemap.ml" 267 9799 9829 "treemap.ml" 267 9799 9856
+call(
+  stack
+)
+type(
+  treemap
+)
+"treemap.ml" 267 9799 9812 "treemap.ml" 267 9799 9857
+type(
+  treemap.Node
+)
+"treemap.ml" 267 9799 9808 "treemap.ml" 267 9799 9857
+type(
+  treemap
+)
+"treemap.ml" 264 9698 9710 "treemap.ml" 267 9799 9857
+type(
+  treemap
+)
+"treemap.ml" 255 9276 9283 "treemap.ml" 267 9799 9857
+type(
+  treemap
+)
+"treemap.ml" 254 9222 9229 "treemap.ml" 267 9799 9857
+type(
+  treemap
+)
+"treemap.ml" 251 9159 9163 "treemap.ml" 267 9799 9857
+type(
+  treemap
+)

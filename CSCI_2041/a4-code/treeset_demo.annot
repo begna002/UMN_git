@@ -1,0 +1,468 @@
+"treeset_demo.ml" 9 307 313 "treeset_demo.ml" 9 307 320
+type(
+  int -> int -> int
+)
+ident(
+  def compare "treeset_demo.ml" 10 335 337 "treeset_demo.ml" 11 371 374
+)
+"treeset_demo.ml" 9 307 321 "treeset_demo.ml" 9 307 322
+type(
+  int
+)
+ident(
+  def x "treeset_demo.ml" 9 307 323 "treeset_demo.ml" 9 307 332
+)
+"treeset_demo.ml" 9 307 323 "treeset_demo.ml" 9 307 324
+type(
+  int
+)
+ident(
+  def y "treeset_demo.ml" 9 307 327 "treeset_demo.ml" 9 307 332
+)
+"treeset_demo.ml" 9 307 327 "treeset_demo.ml" 9 307 328
+type(
+  int
+)
+ident(
+  int_ref x "treeset_demo.ml" 9 307 321 "treeset_demo.ml" 9 307 322
+)
+"treeset_demo.ml" 9 307 329 "treeset_demo.ml" 9 307 330
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"treeset_demo.ml" 9 307 331 "treeset_demo.ml" 9 307 332
+type(
+  int
+)
+ident(
+  int_ref y "treeset_demo.ml" 9 307 323 "treeset_demo.ml" 9 307 324
+)
+"treeset_demo.ml" 9 307 327 "treeset_demo.ml" 9 307 332
+type(
+  int
+)
+"treeset_demo.ml" 10 335 341 "treeset_demo.ml" 10 335 352
+type(
+  int -> string
+)
+ident(
+  def elem_string "treeset_demo.ml" 10 335 368 "treeset_demo.ml" 11 371 374
+)
+"treeset_demo.ml" 10 335 355 "treeset_demo.ml" 10 335 368
+type(
+  int -> string
+)
+ident(
+  ext_ref Pervasives.string_of_int
+)
+"treeset_demo.ml" 18 659 665 "treeset_demo.ml" 18 659 672
+type(
+  String.t -> String.t -> int
+)
+ident(
+  def compare "treeset_demo.ml" 19 692 694 "treeset_demo.ml" 20 718 721
+)
+"treeset_demo.ml" 18 659 675 "treeset_demo.ml" 18 659 689
+type(
+  String.t -> String.t -> int
+)
+ident(
+  ext_ref String.compare
+)
+"treeset_demo.ml" 19 692 698 "treeset_demo.ml" 19 692 709
+type(
+  'a -> 'a
+)
+ident(
+  def elem_string "treeset_demo.ml" 19 692 715 "treeset_demo.ml" 20 718 721
+)
+"treeset_demo.ml" 19 692 710 "treeset_demo.ml" 19 692 711
+type(
+  'a
+)
+ident(
+  def x "treeset_demo.ml" 19 692 714 "treeset_demo.ml" 19 692 715
+)
+"treeset_demo.ml" 19 692 714 "treeset_demo.ml" 19 692 715
+type(
+  'a
+)
+ident(
+  int_ref x "treeset_demo.ml" 19 692 710 "treeset_demo.ml" 19 692 711
+)
+"treeset_demo.ml" 33 1287 1293 "treeset_demo.ml" 33 1287 1300
+type(
+  city -> city -> int
+)
+ident(
+  def compare "treeset_demo.ml" 36 1345 1347 "treeset_demo.ml" 40 1448 1451
+)
+"treeset_demo.ml" 33 1287 1301 "treeset_demo.ml" 33 1287 1302
+type(
+  city
+)
+ident(
+  def c "treeset_demo.ml" 33 1287 1303 "treeset_demo.ml" 34 1307 1339
+)
+"treeset_demo.ml" 33 1287 1303 "treeset_demo.ml" 33 1287 1304
+type(
+  city
+)
+ident(
+  def d "treeset_demo.ml" 34 1307 1311 "treeset_demo.ml" 34 1307 1339
+)
+"treeset_demo.ml" 34 1307 1311 "treeset_demo.ml" 34 1307 1325
+type(
+  String.t -> String.t -> int
+)
+ident(
+  ext_ref String.compare
+)
+"treeset_demo.ml" 34 1307 1326 "treeset_demo.ml" 34 1307 1327
+type(
+  city
+)
+ident(
+  int_ref c "treeset_demo.ml" 33 1287 1301 "treeset_demo.ml" 33 1287 1302
+)
+"treeset_demo.ml" 34 1307 1326 "treeset_demo.ml" 34 1307 1332
+type(
+  String.t
+)
+"treeset_demo.ml" 34 1307 1333 "treeset_demo.ml" 34 1307 1334
+type(
+  city
+)
+ident(
+  int_ref d "treeset_demo.ml" 33 1287 1303 "treeset_demo.ml" 33 1287 1304
+)
+"treeset_demo.ml" 34 1307 1333 "treeset_demo.ml" 34 1307 1339
+type(
+  String.t
+)
+"treeset_demo.ml" 34 1307 1311 "treeset_demo.ml" 34 1307 1339
+type(
+  int
+)
+"treeset_demo.ml" 36 1345 1351 "treeset_demo.ml" 36 1345 1362
+type(
+  city -> string
+)
+ident(
+  def elem_string "treeset_demo.ml" 38 1409 1442 "treeset_demo.ml" 40 1448 1451
+)
+"treeset_demo.ml" 36 1345 1363 "treeset_demo.ml" 36 1345 1364
+type(
+  city
+)
+ident(
+  def c "treeset_demo.ml" 37 1367 1371 "treeset_demo.ml" 38 1409 1442
+)
+"treeset_demo.ml" 37 1367 1371 "treeset_demo.ml" 37 1367 1385
+type(
+  (string -> string -> float -> string, unit, string) format ->
+  string -> string -> float -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"treeset_demo.ml" 37 1367 1386 "treeset_demo.ml" 37 1367 1408
+type(
+  (string -> string -> float -> string, unit, string) format
+)
+"treeset_demo.ml" 38 1409 1415 "treeset_demo.ml" 38 1409 1416
+type(
+  city
+)
+ident(
+  int_ref c "treeset_demo.ml" 36 1345 1363 "treeset_demo.ml" 36 1345 1364
+)
+"treeset_demo.ml" 38 1409 1415 "treeset_demo.ml" 38 1409 1421
+type(
+  string
+)
+"treeset_demo.ml" 38 1409 1422 "treeset_demo.ml" 38 1409 1423
+type(
+  city
+)
+ident(
+  int_ref c "treeset_demo.ml" 36 1345 1363 "treeset_demo.ml" 36 1345 1364
+)
+"treeset_demo.ml" 38 1409 1422 "treeset_demo.ml" 38 1409 1431
+type(
+  string
+)
+"treeset_demo.ml" 38 1409 1432 "treeset_demo.ml" 38 1409 1433
+type(
+  city
+)
+ident(
+  int_ref c "treeset_demo.ml" 36 1345 1363 "treeset_demo.ml" 36 1345 1364
+)
+"treeset_demo.ml" 38 1409 1432 "treeset_demo.ml" 38 1409 1442
+type(
+  float
+)
+"treeset_demo.ml" 37 1367 1371 "treeset_demo.ml" 38 1409 1442
+type(
+  string
+)
+"treeset_demo.ml" 44 1550 1554 "treeset_demo.ml" 44 1550 1555
+type(
+  '_a
+)
+"treeset_demo.ml" 46 1586 1592 "treeset_demo.ml" 46 1586 1600
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  def inttree1 "treeset_demo.ml" 47 1623 1625 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 46 1586 1603 "treeset_demo.ml" 46 1586 1619
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref IntTreeset.empty
+)
+"treeset_demo.ml" 47 1623 1629 "treeset_demo.ml" 47 1623 1637
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  def inttree2 "treeset_demo.ml" 48 1670 1672 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 47 1623 1640 "treeset_demo.ml" 47 1623 1654
+type(
+  IntTreeset.ElTreemap.treemap ->
+  IntTreeset.ElemKeyVal.key_t -> IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref IntTreeset.add
+)
+"treeset_demo.ml" 47 1623 1655 "treeset_demo.ml" 47 1623 1663
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  int_ref inttree1 "treeset_demo.ml" 46 1586 1592 "treeset_demo.ml" 46 1586 1600
+)
+"treeset_demo.ml" 47 1623 1664 "treeset_demo.ml" 47 1623 1666
+type(
+  IntTreeset.ElemKeyVal.key_t
+)
+"treeset_demo.ml" 47 1623 1640 "treeset_demo.ml" 47 1623 1666
+type(
+  IntTreeset.ElTreemap.treemap
+)
+"treeset_demo.ml" 48 1670 1676 "treeset_demo.ml" 48 1670 1684
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  def inttree3 "treeset_demo.ml" 49 1717 1719 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 48 1670 1687 "treeset_demo.ml" 48 1670 1701
+type(
+  IntTreeset.ElTreemap.treemap ->
+  IntTreeset.ElemKeyVal.key_t -> IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref IntTreeset.add
+)
+"treeset_demo.ml" 48 1670 1702 "treeset_demo.ml" 48 1670 1710
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  int_ref inttree2 "treeset_demo.ml" 47 1623 1629 "treeset_demo.ml" 47 1623 1637
+)
+"treeset_demo.ml" 48 1670 1711 "treeset_demo.ml" 48 1670 1713
+type(
+  IntTreeset.ElemKeyVal.key_t
+)
+"treeset_demo.ml" 48 1670 1687 "treeset_demo.ml" 48 1670 1713
+type(
+  IntTreeset.ElTreemap.treemap
+)
+"treeset_demo.ml" 49 1717 1719 "treeset_demo.ml" 49 1717 1725
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treeset_demo.ml" 49 1717 1726 "treeset_demo.ml" 49 1717 1743
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treeset_demo.ml" 49 1717 1745 "treeset_demo.ml" 49 1717 1767
+type(
+  IntTreeset.ElTreemap.treemap -> string
+)
+ident(
+  ext_ref IntTreeset.tree_string
+)
+"treeset_demo.ml" 49 1717 1768 "treeset_demo.ml" 49 1717 1776
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  int_ref inttree3 "treeset_demo.ml" 48 1670 1676 "treeset_demo.ml" 48 1670 1684
+)
+"treeset_demo.ml" 49 1717 1744 "treeset_demo.ml" 49 1717 1777
+type(
+  string
+)
+"treeset_demo.ml" 49 1717 1719 "treeset_demo.ml" 49 1717 1777
+type(
+  unit
+)
+"treeset_demo.ml" 51 1780 1786 "treeset_demo.ml" 51 1780 1794
+type(
+  int list
+)
+ident(
+  def int_list "treeset_demo.ml" 52 1837 1839 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 51 1780 1798 "treeset_demo.ml" 51 1780 1800
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1802 "treeset_demo.ml" 51 1780 1804
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1806 "treeset_demo.ml" 51 1780 1808
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1810 "treeset_demo.ml" 51 1780 1812
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1814 "treeset_demo.ml" 51 1780 1816
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1818 "treeset_demo.ml" 51 1780 1820
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1822 "treeset_demo.ml" 51 1780 1824
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1826 "treeset_demo.ml" 51 1780 1828
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1830 "treeset_demo.ml" 51 1780 1832
+type(
+  int
+)
+"treeset_demo.ml" 51 1780 1797 "treeset_demo.ml" 51 1780 1833
+type(
+  int list
+)
+"treeset_demo.ml" 52 1837 1843 "treeset_demo.ml" 52 1837 1851
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  def inttree4 "treeset_demo.ml" 55 1919 1921 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 53 1854 1858 "treeset_demo.ml" 53 1854 1872
+type(
+  (IntTreeset.ElTreemap.treemap ->
+   IntTreeset.ElemKeyVal.key_t -> IntTreeset.ElTreemap.treemap) ->
+  IntTreeset.ElTreemap.treemap ->
+  IntTreeset.ElemKeyVal.key_t list -> IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref List.fold_left
+)
+"treeset_demo.ml" 53 1854 1873 "treeset_demo.ml" 53 1854 1887
+type(
+  IntTreeset.ElTreemap.treemap ->
+  IntTreeset.ElemKeyVal.key_t -> IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref IntTreeset.add
+)
+"treeset_demo.ml" 53 1854 1888 "treeset_demo.ml" 53 1854 1904
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  ext_ref IntTreeset.empty
+)
+"treeset_demo.ml" 53 1854 1905 "treeset_demo.ml" 53 1854 1913
+type(
+  IntTreeset.ElemKeyVal.key_t list
+)
+ident(
+  int_ref int_list "treeset_demo.ml" 51 1780 1786 "treeset_demo.ml" 51 1780 1794
+)
+"treeset_demo.ml" 53 1854 1858 "treeset_demo.ml" 53 1854 1913
+type(
+  IntTreeset.ElTreemap.treemap
+)
+"treeset_demo.ml" 55 1919 1921 "treeset_demo.ml" 55 1919 1927
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treeset_demo.ml" 55 1919 1928 "treeset_demo.ml" 55 1919 1945
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treeset_demo.ml" 55 1919 1947 "treeset_demo.ml" 55 1919 1969
+type(
+  IntTreeset.ElTreemap.treemap -> string
+)
+ident(
+  ext_ref IntTreeset.tree_string
+)
+"treeset_demo.ml" 55 1919 1970 "treeset_demo.ml" 55 1919 1978
+type(
+  IntTreeset.ElTreemap.treemap
+)
+ident(
+  int_ref inttree4 "treeset_demo.ml" 52 1837 1843 "treeset_demo.ml" 52 1837 1851
+)
+"treeset_demo.ml" 55 1919 1946 "treeset_demo.ml" 55 1919 1979
+type(
+  string
+)
+"treeset_demo.ml" 55 1919 1921 "treeset_demo.ml" 55 1919 1979
+type(
+  unit
+)
+"treeset_demo.ml" 56 1981 1987 "treeset_demo.ml" 56 1981 1990
+type(
+  '_b
+)
+ident(
+  def sum "treeset_demo.ml" 57 2027 2029 "treeset_demo.ml" 97 3828 3892
+)
+"treeset_demo.ml" 56 1981 1993 "treeset_demo.ml" 56 1981 2008
+type(
+  (int -> IntTreeset.ElemKeyVal.key_t -> IntTreeset.ElemKeyVal.value_t -> int) ->
+  int -> IntTreeset.ElTreemap.treemap -> int
+)
+ident(
+  ext_ref IntTreeset.fold
+)
+"treeset_demo.ml" 56 1981 2009 "treeset_demo.ml" 56 1981 2012
+type(
+  int -> IntTreeset.ElemKeyVal.key_t -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)

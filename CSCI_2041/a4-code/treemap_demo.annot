@@ -1,0 +1,1035 @@
+"treemap_demo.ml" 10 253 259 "treemap_demo.ml" 10 253 271
+type(
+  int -> int -> int
+)
+ident(
+  def compare_keys "treemap_demo.ml" 11 286 288 "treemap_demo.ml" 12 339 342
+)
+"treemap_demo.ml" 10 253 272 "treemap_demo.ml" 10 253 273
+type(
+  int
+)
+ident(
+  def x "treemap_demo.ml" 10 253 274 "treemap_demo.ml" 10 253 283
+)
+"treemap_demo.ml" 10 253 274 "treemap_demo.ml" 10 253 275
+type(
+  int
+)
+ident(
+  def y "treemap_demo.ml" 10 253 278 "treemap_demo.ml" 10 253 283
+)
+"treemap_demo.ml" 10 253 278 "treemap_demo.ml" 10 253 279
+type(
+  int
+)
+ident(
+  int_ref x "treemap_demo.ml" 10 253 272 "treemap_demo.ml" 10 253 273
+)
+"treemap_demo.ml" 10 253 280 "treemap_demo.ml" 10 253 281
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"treemap_demo.ml" 10 253 282 "treemap_demo.ml" 10 253 283
+type(
+  int
+)
+ident(
+  int_ref y "treemap_demo.ml" 10 253 274 "treemap_demo.ml" 10 253 275
+)
+"treemap_demo.ml" 10 253 278 "treemap_demo.ml" 10 253 283
+type(
+  int
+)
+"treemap_demo.ml" 11 286 292 "treemap_demo.ml" 11 286 305
+type(
+  int -> int -> string
+)
+ident(
+  def keyval_string "treemap_demo.ml" 11 286 336 "treemap_demo.ml" 12 339 342
+)
+"treemap_demo.ml" 11 286 306 "treemap_demo.ml" 11 286 307
+type(
+  int
+)
+ident(
+  def k "treemap_demo.ml" 11 286 308 "treemap_demo.ml" 11 286 336
+)
+"treemap_demo.ml" 11 286 308 "treemap_demo.ml" 11 286 309
+type(
+  int
+)
+ident(
+  def v "treemap_demo.ml" 11 286 312 "treemap_demo.ml" 11 286 336
+)
+"treemap_demo.ml" 11 286 312 "treemap_demo.ml" 11 286 319
+type(
+  (int -> int -> string, unit, string) format -> int -> int -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"treemap_demo.ml" 11 286 320 "treemap_demo.ml" 11 286 332
+type(
+  (int -> int -> string, unit, string) format
+)
+"treemap_demo.ml" 11 286 333 "treemap_demo.ml" 11 286 334
+type(
+  int
+)
+ident(
+  int_ref k "treemap_demo.ml" 11 286 306 "treemap_demo.ml" 11 286 307
+)
+"treemap_demo.ml" 11 286 335 "treemap_demo.ml" 11 286 336
+type(
+  int
+)
+ident(
+  int_ref v "treemap_demo.ml" 11 286 308 "treemap_demo.ml" 11 286 309
+)
+"treemap_demo.ml" 11 286 312 "treemap_demo.ml" 11 286 336
+call(
+  tail
+)
+type(
+  string
+)
+"treemap_demo.ml" 14 346 365 "treemap_demo.ml" 14 346 387
+call(
+  stack
+)
+"treemap_demo.ml" 16 391 395 "treemap_demo.ml" 16 391 396
+type(
+  unit
+)
+"treemap_demo.ml" 17 399 405 "treemap_demo.ml" 17 399 409
+type(
+  IntIntMap.treemap
+)
+ident(
+  def map1 "treemap_demo.ml" 18 451 453 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 17 399 412 "treemap_demo.ml" 17 399 425
+type(
+  IntIntMap.treemap ->
+  IntIntKV.key_t -> IntIntKV.value_t -> IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.add
+)
+"treemap_demo.ml" 17 399 426 "treemap_demo.ml" 17 399 441
+type(
+  IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.empty
+)
+"treemap_demo.ml" 17 399 442 "treemap_demo.ml" 17 399 444
+type(
+  IntIntKV.key_t
+)
+"treemap_demo.ml" 17 399 445 "treemap_demo.ml" 17 399 447
+type(
+  IntIntKV.value_t
+)
+"treemap_demo.ml" 17 399 412 "treemap_demo.ml" 17 399 447
+call(
+  stack
+)
+type(
+  IntIntMap.treemap
+)
+"treemap_demo.ml" 18 451 457 "treemap_demo.ml" 18 451 461
+type(
+  IntIntMap.treemap
+)
+ident(
+  def map2 "treemap_demo.ml" 19 492 494 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 18 451 464 "treemap_demo.ml" 18 451 477
+type(
+  IntIntMap.treemap ->
+  IntIntKV.key_t -> IntIntKV.value_t -> IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.add
+)
+"treemap_demo.ml" 18 451 478 "treemap_demo.ml" 18 451 482
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map1 "treemap_demo.ml" 17 399 405 "treemap_demo.ml" 17 399 409
+)
+"treemap_demo.ml" 18 451 483 "treemap_demo.ml" 18 451 485
+type(
+  IntIntKV.key_t
+)
+"treemap_demo.ml" 18 451 486 "treemap_demo.ml" 18 451 488
+type(
+  IntIntKV.value_t
+)
+"treemap_demo.ml" 18 451 464 "treemap_demo.ml" 18 451 488
+call(
+  stack
+)
+type(
+  IntIntMap.treemap
+)
+"treemap_demo.ml" 19 492 498 "treemap_demo.ml" 19 492 502
+type(
+  IntIntMap.treemap
+)
+ident(
+  def map3 "treemap_demo.ml" 20 533 535 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 19 492 505 "treemap_demo.ml" 19 492 518
+type(
+  IntIntMap.treemap ->
+  IntIntKV.key_t -> IntIntKV.value_t -> IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.add
+)
+"treemap_demo.ml" 19 492 519 "treemap_demo.ml" 19 492 523
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map2 "treemap_demo.ml" 18 451 457 "treemap_demo.ml" 18 451 461
+)
+"treemap_demo.ml" 19 492 524 "treemap_demo.ml" 19 492 526
+type(
+  IntIntKV.key_t
+)
+"treemap_demo.ml" 19 492 527 "treemap_demo.ml" 19 492 529
+type(
+  IntIntKV.value_t
+)
+"treemap_demo.ml" 19 492 505 "treemap_demo.ml" 19 492 529
+call(
+  stack
+)
+type(
+  IntIntMap.treemap
+)
+"treemap_demo.ml" 20 533 535 "treemap_demo.ml" 20 533 541
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treemap_demo.ml" 20 533 542 "treemap_demo.ml" 20 533 555
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treemap_demo.ml" 20 533 557 "treemap_demo.ml" 20 533 576
+type(
+  IntIntMap.treemap -> string
+)
+ident(
+  ext_ref IntIntMap.to_string
+)
+"treemap_demo.ml" 20 533 577 "treemap_demo.ml" 20 533 581
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map3 "treemap_demo.ml" 19 492 498 "treemap_demo.ml" 19 492 502
+)
+"treemap_demo.ml" 20 533 556 "treemap_demo.ml" 20 533 582
+call(
+  stack
+)
+type(
+  string
+)
+"treemap_demo.ml" 20 533 535 "treemap_demo.ml" 20 533 582
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap_demo.ml" 21 584 590 "treemap_demo.ml" 21 584 594
+type(
+  IntIntMap.treemap
+)
+ident(
+  def map4 "treemap_demo.ml" 22 624 626 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 21 584 597 "treemap_demo.ml" 21 584 610
+type(
+  IntIntMap.treemap ->
+  IntIntKV.key_t -> IntIntKV.value_t -> IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.add
+)
+"treemap_demo.ml" 21 584 611 "treemap_demo.ml" 21 584 615
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map3 "treemap_demo.ml" 19 492 498 "treemap_demo.ml" 19 492 502
+)
+"treemap_demo.ml" 21 584 616 "treemap_demo.ml" 21 584 617
+type(
+  IntIntKV.key_t
+)
+"treemap_demo.ml" 21 584 618 "treemap_demo.ml" 21 584 620
+type(
+  IntIntKV.value_t
+)
+"treemap_demo.ml" 21 584 597 "treemap_demo.ml" 21 584 620
+call(
+  stack
+)
+type(
+  IntIntMap.treemap
+)
+"treemap_demo.ml" 22 624 630 "treemap_demo.ml" 22 624 634
+type(
+  IntIntMap.treemap
+)
+ident(
+  def map5 "treemap_demo.ml" 23 664 666 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 22 624 637 "treemap_demo.ml" 22 624 650
+type(
+  IntIntMap.treemap ->
+  IntIntKV.key_t -> IntIntKV.value_t -> IntIntMap.treemap
+)
+ident(
+  ext_ref IntIntMap.add
+)
+"treemap_demo.ml" 22 624 651 "treemap_demo.ml" 22 624 655
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map4 "treemap_demo.ml" 21 584 590 "treemap_demo.ml" 21 584 594
+)
+"treemap_demo.ml" 22 624 656 "treemap_demo.ml" 22 624 657
+type(
+  IntIntKV.key_t
+)
+"treemap_demo.ml" 22 624 658 "treemap_demo.ml" 22 624 660
+type(
+  IntIntKV.value_t
+)
+"treemap_demo.ml" 22 624 637 "treemap_demo.ml" 22 624 660
+call(
+  stack
+)
+type(
+  IntIntMap.treemap
+)
+"treemap_demo.ml" 23 664 666 "treemap_demo.ml" 23 664 672
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treemap_demo.ml" 23 664 673 "treemap_demo.ml" 23 664 686
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treemap_demo.ml" 23 664 688 "treemap_demo.ml" 23 664 709
+type(
+  IntIntMap.treemap -> string
+)
+ident(
+  ext_ref IntIntMap.tree_string
+)
+"treemap_demo.ml" 23 664 710 "treemap_demo.ml" 23 664 714
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map5 "treemap_demo.ml" 22 624 630 "treemap_demo.ml" 22 624 634
+)
+"treemap_demo.ml" 23 664 687 "treemap_demo.ml" 23 664 715
+call(
+  stack
+)
+type(
+  string
+)
+"treemap_demo.ml" 23 664 666 "treemap_demo.ml" 23 664 715
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap_demo.ml" 24 717 723 "treemap_demo.ml" 24 717 730
+type(
+  int -> 'a -> int -> int
+)
+ident(
+  def addvals "treemap_demo.ml" 25 750 752 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 24 717 731 "treemap_demo.ml" 24 717 734
+type(
+  int
+)
+ident(
+  def tot "treemap_demo.ml" 24 717 735 "treemap_demo.ml" 24 717 746
+)
+"treemap_demo.ml" 24 717 735 "treemap_demo.ml" 24 717 736
+type(
+  'a
+)
+"treemap_demo.ml" 24 717 737 "treemap_demo.ml" 24 717 738
+type(
+  int
+)
+ident(
+  def v "treemap_demo.ml" 24 717 741 "treemap_demo.ml" 24 717 746
+)
+"treemap_demo.ml" 24 717 741 "treemap_demo.ml" 24 717 744
+type(
+  int
+)
+ident(
+  int_ref tot "treemap_demo.ml" 24 717 731 "treemap_demo.ml" 24 717 734
+)
+"treemap_demo.ml" 24 717 744 "treemap_demo.ml" 24 717 745
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"treemap_demo.ml" 24 717 745 "treemap_demo.ml" 24 717 746
+type(
+  int
+)
+ident(
+  int_ref v "treemap_demo.ml" 24 717 737 "treemap_demo.ml" 24 717 738
+)
+"treemap_demo.ml" 24 717 741 "treemap_demo.ml" 24 717 746
+type(
+  int
+)
+"treemap_demo.ml" 25 750 756 "treemap_demo.ml" 25 750 762
+type(
+  int
+)
+ident(
+  def valsum "treemap_demo.ml" 26 798 800 "treemap_demo.ml" 26 798 829
+)
+"treemap_demo.ml" 25 750 765 "treemap_demo.ml" 25 750 779
+type(
+  (int -> IntIntKV.key_t -> IntIntKV.value_t -> int) ->
+  int -> IntIntMap.treemap -> int
+)
+ident(
+  ext_ref IntIntMap.fold
+)
+"treemap_demo.ml" 25 750 780 "treemap_demo.ml" 25 750 787
+type(
+  int -> IntIntKV.key_t -> IntIntKV.value_t -> int
+)
+ident(
+  int_ref addvals "treemap_demo.ml" 24 717 723 "treemap_demo.ml" 24 717 730
+)
+"treemap_demo.ml" 25 750 788 "treemap_demo.ml" 25 750 789
+type(
+  int
+)
+"treemap_demo.ml" 25 750 790 "treemap_demo.ml" 25 750 794
+type(
+  IntIntMap.treemap
+)
+ident(
+  int_ref map5 "treemap_demo.ml" 22 624 630 "treemap_demo.ml" 22 624 634
+)
+"treemap_demo.ml" 25 750 765 "treemap_demo.ml" 25 750 794
+call(
+  stack
+)
+type(
+  int
+)
+"treemap_demo.ml" 26 798 800 "treemap_demo.ml" 26 798 806
+type(
+  (int -> unit, out_channel, unit) format -> int -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treemap_demo.ml" 26 798 807 "treemap_demo.ml" 26 798 821
+type(
+  (int -> unit, out_channel, unit) format
+)
+"treemap_demo.ml" 26 798 822 "treemap_demo.ml" 26 798 828
+type(
+  int
+)
+ident(
+  int_ref valsum "treemap_demo.ml" 25 750 756 "treemap_demo.ml" 25 750 762
+)
+"treemap_demo.ml" 26 798 800 "treemap_demo.ml" 26 798 829
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap_demo.ml" 25 750 752 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 24 717 719 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 23 664 666 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 22 624 626 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 21 584 586 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 20 533 535 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 19 492 494 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 18 451 453 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 17 399 401 "treemap_demo.ml" 26 798 829
+type(
+  unit
+)
+"treemap_demo.ml" 31 873 877 "treemap_demo.ml" 31 873 878
+type(
+  unit
+)
+"treemap_demo.ml" 33 931 937 "treemap_demo.ml" 33 931 941
+type(
+  SSM.treemap
+)
+ident(
+  def map1 "treemap_demo.ml" 34 957 959 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 33 931 944 "treemap_demo.ml" 33 931 953
+type(
+  SSM.treemap
+)
+ident(
+  ext_ref SSM.empty
+)
+"treemap_demo.ml" 34 957 963 "treemap_demo.ml" 34 957 967
+type(
+  SSM.treemap
+)
+ident(
+  def map2 "treemap_demo.ml" 35 1003 1005 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 34 957 970 "treemap_demo.ml" 34 957 977
+type(
+  SSM.treemap ->
+  Map_modules.StringStringKV.key_t ->
+  Map_modules.StringStringKV.value_t -> SSM.treemap
+)
+ident(
+  ext_ref SSM.add
+)
+"treemap_demo.ml" 34 957 978 "treemap_demo.ml" 34 957 982
+type(
+  SSM.treemap
+)
+ident(
+  int_ref map1 "treemap_demo.ml" 33 931 937 "treemap_demo.ml" 33 931 941
+)
+"treemap_demo.ml" 34 957 983 "treemap_demo.ml" 34 957 987
+type(
+  Map_modules.StringStringKV.key_t
+)
+"treemap_demo.ml" 34 957 988 "treemap_demo.ml" 34 957 999
+type(
+  Map_modules.StringStringKV.value_t
+)
+"treemap_demo.ml" 34 957 970 "treemap_demo.ml" 34 957 999
+call(
+  stack
+)
+type(
+  SSM.treemap
+)
+"treemap_demo.ml" 35 1003 1009 "treemap_demo.ml" 35 1003 1013
+type(
+  SSM.treemap
+)
+ident(
+  def map3 "treemap_demo.ml" 36 1051 1053 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 35 1003 1016 "treemap_demo.ml" 35 1003 1023
+type(
+  SSM.treemap ->
+  Map_modules.StringStringKV.key_t ->
+  Map_modules.StringStringKV.value_t -> SSM.treemap
+)
+ident(
+  ext_ref SSM.add
+)
+"treemap_demo.ml" 35 1003 1024 "treemap_demo.ml" 35 1003 1028
+type(
+  SSM.treemap
+)
+ident(
+  int_ref map2 "treemap_demo.ml" 34 957 963 "treemap_demo.ml" 34 957 967
+)
+"treemap_demo.ml" 35 1003 1029 "treemap_demo.ml" 35 1003 1033
+type(
+  Map_modules.StringStringKV.key_t
+)
+"treemap_demo.ml" 35 1003 1034 "treemap_demo.ml" 35 1003 1047
+type(
+  Map_modules.StringStringKV.value_t
+)
+"treemap_demo.ml" 35 1003 1016 "treemap_demo.ml" 35 1003 1047
+call(
+  stack
+)
+type(
+  SSM.treemap
+)
+"treemap_demo.ml" 36 1051 1053 "treemap_demo.ml" 36 1051 1059
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treemap_demo.ml" 36 1051 1060 "treemap_demo.ml" 36 1051 1073
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treemap_demo.ml" 36 1051 1075 "treemap_demo.ml" 36 1051 1090
+type(
+  SSM.treemap -> string
+)
+ident(
+  ext_ref SSM.tree_string
+)
+"treemap_demo.ml" 36 1051 1091 "treemap_demo.ml" 36 1051 1095
+type(
+  SSM.treemap
+)
+ident(
+  int_ref map3 "treemap_demo.ml" 35 1003 1009 "treemap_demo.ml" 35 1003 1013
+)
+"treemap_demo.ml" 36 1051 1074 "treemap_demo.ml" 36 1051 1096
+call(
+  stack
+)
+type(
+  string
+)
+"treemap_demo.ml" 36 1051 1053 "treemap_demo.ml" 36 1051 1096
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap_demo.ml" 39 1149 1155 "treemap_demo.ml" 39 1149 1158
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 40 1175 1177 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 39 1149 1161 "treemap_demo.ml" 39 1149 1171
+type(
+  IPBM.treemap
+)
+ident(
+  ext_ref IPBM.empty
+)
+"treemap_demo.ml" 40 1175 1181 "treemap_demo.ml" 40 1175 1184
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 41 1216 1218 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 40 1175 1187 "treemap_demo.ml" 40 1175 1195
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 40 1175 1196 "treemap_demo.ml" 40 1175 1199
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 39 1149 1155 "treemap_demo.ml" 39 1149 1158
+)
+"treemap_demo.ml" 40 1175 1201 "treemap_demo.ml" 40 1175 1202
+type(
+  int
+)
+"treemap_demo.ml" 40 1175 1203 "treemap_demo.ml" 40 1175 1205
+type(
+  int
+)
+"treemap_demo.ml" 40 1175 1200 "treemap_demo.ml" 40 1175 1206
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 40 1175 1207 "treemap_demo.ml" 40 1175 1211
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 40 1175 1187 "treemap_demo.ml" 40 1175 1211
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 41 1216 1222 "treemap_demo.ml" 41 1216 1225
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 42 1257 1259 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 41 1216 1228 "treemap_demo.ml" 41 1216 1236
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 41 1216 1237 "treemap_demo.ml" 41 1216 1240
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 40 1175 1181 "treemap_demo.ml" 40 1175 1184
+)
+"treemap_demo.ml" 41 1216 1242 "treemap_demo.ml" 41 1216 1244
+type(
+  int
+)
+"treemap_demo.ml" 41 1216 1245 "treemap_demo.ml" 41 1216 1246
+type(
+  int
+)
+"treemap_demo.ml" 41 1216 1241 "treemap_demo.ml" 41 1216 1247
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 41 1216 1248 "treemap_demo.ml" 41 1216 1253
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 41 1216 1228 "treemap_demo.ml" 41 1216 1253
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 42 1257 1263 "treemap_demo.ml" 42 1257 1266
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 43 1298 1300 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 42 1257 1269 "treemap_demo.ml" 42 1257 1277
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 42 1257 1278 "treemap_demo.ml" 42 1257 1281
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 41 1216 1222 "treemap_demo.ml" 41 1216 1225
+)
+"treemap_demo.ml" 42 1257 1283 "treemap_demo.ml" 42 1257 1285
+type(
+  int
+)
+"treemap_demo.ml" 42 1257 1286 "treemap_demo.ml" 42 1257 1287
+type(
+  int
+)
+"treemap_demo.ml" 42 1257 1282 "treemap_demo.ml" 42 1257 1288
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 42 1257 1289 "treemap_demo.ml" 42 1257 1294
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 42 1257 1269 "treemap_demo.ml" 42 1257 1294
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 43 1298 1304 "treemap_demo.ml" 43 1298 1307
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 44 1338 1340 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 43 1298 1310 "treemap_demo.ml" 43 1298 1318
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 43 1298 1319 "treemap_demo.ml" 43 1298 1322
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 42 1257 1263 "treemap_demo.ml" 42 1257 1266
+)
+"treemap_demo.ml" 43 1298 1324 "treemap_demo.ml" 43 1298 1325
+type(
+  int
+)
+"treemap_demo.ml" 43 1298 1326 "treemap_demo.ml" 43 1298 1328
+type(
+  int
+)
+"treemap_demo.ml" 43 1298 1323 "treemap_demo.ml" 43 1298 1329
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 43 1298 1330 "treemap_demo.ml" 43 1298 1334
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 43 1298 1310 "treemap_demo.ml" 43 1298 1334
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 44 1338 1344 "treemap_demo.ml" 44 1338 1347
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 45 1378 1380 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 44 1338 1350 "treemap_demo.ml" 44 1338 1358
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 44 1338 1359 "treemap_demo.ml" 44 1338 1362
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 43 1298 1304 "treemap_demo.ml" 43 1298 1307
+)
+"treemap_demo.ml" 44 1338 1364 "treemap_demo.ml" 44 1338 1365
+type(
+  int
+)
+"treemap_demo.ml" 44 1338 1366 "treemap_demo.ml" 44 1338 1367
+type(
+  int
+)
+"treemap_demo.ml" 44 1338 1363 "treemap_demo.ml" 44 1338 1368
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 44 1338 1369 "treemap_demo.ml" 44 1338 1374
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 44 1338 1350 "treemap_demo.ml" 44 1338 1374
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 45 1378 1384 "treemap_demo.ml" 45 1378 1387
+type(
+  IPBM.treemap
+)
+ident(
+  def map "treemap_demo.ml" 46 1418 1420 "treemap_demo.ml" 46 1418 1463
+)
+"treemap_demo.ml" 45 1378 1390 "treemap_demo.ml" 45 1378 1398
+type(
+  IPBM.treemap ->
+  Map_modules.IntpairBoolKV.key_t ->
+  Map_modules.IntpairBoolKV.value_t -> IPBM.treemap
+)
+ident(
+  ext_ref IPBM.add
+)
+"treemap_demo.ml" 45 1378 1399 "treemap_demo.ml" 45 1378 1402
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 44 1338 1344 "treemap_demo.ml" 44 1338 1347
+)
+"treemap_demo.ml" 45 1378 1404 "treemap_demo.ml" 45 1378 1405
+type(
+  int
+)
+"treemap_demo.ml" 45 1378 1406 "treemap_demo.ml" 45 1378 1407
+type(
+  int
+)
+"treemap_demo.ml" 45 1378 1403 "treemap_demo.ml" 45 1378 1408
+type(
+  Map_modules.IntpairBoolKV.key_t
+)
+"treemap_demo.ml" 45 1378 1409 "treemap_demo.ml" 45 1378 1414
+type(
+  Map_modules.IntpairBoolKV.value_t
+)
+"treemap_demo.ml" 45 1378 1390 "treemap_demo.ml" 45 1378 1414
+call(
+  stack
+)
+type(
+  IPBM.treemap
+)
+"treemap_demo.ml" 46 1418 1420 "treemap_demo.ml" 46 1418 1426
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"treemap_demo.ml" 46 1418 1427 "treemap_demo.ml" 46 1418 1439
+type(
+  (string -> unit, out_channel, unit) format
+)
+"treemap_demo.ml" 46 1418 1441 "treemap_demo.ml" 46 1418 1457
+type(
+  IPBM.treemap -> string
+)
+ident(
+  ext_ref IPBM.tree_string
+)
+"treemap_demo.ml" 46 1418 1458 "treemap_demo.ml" 46 1418 1461
+type(
+  IPBM.treemap
+)
+ident(
+  int_ref map "treemap_demo.ml" 45 1378 1384 "treemap_demo.ml" 45 1378 1387
+)
+"treemap_demo.ml" 46 1418 1440 "treemap_demo.ml" 46 1418 1462
+call(
+  stack
+)
+type(
+  string
+)
+"treemap_demo.ml" 46 1418 1420 "treemap_demo.ml" 46 1418 1463
+call(
+  stack
+)
+type(
+  unit
+)
+"treemap_demo.ml" 45 1378 1380 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 44 1338 1340 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 43 1298 1300 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 42 1257 1259 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 41 1216 1218 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 40 1175 1177 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 39 1149 1151 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 38 1099 1101 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 36 1051 1053 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 35 1003 1005 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 34 957 959 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 33 931 933 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)
+"treemap_demo.ml" 32 881 883 "treemap_demo.ml" 46 1418 1463
+type(
+  unit
+)

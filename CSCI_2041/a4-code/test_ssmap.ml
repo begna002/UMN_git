@@ -151,7 +151,7 @@ Mltest.main [|
 (fun () ->
   (* getopt calls in an empty tree *)
   let map = Ssmap.empty in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt map key in
@@ -173,7 +173,7 @@ Mltest.main [|
   (* getopt calls in a singleton tree *)
   let map = Ssmap.empty in
   let map = Ssmap.add map "Mario"    "plumber"  in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt map key in
@@ -201,7 +201,7 @@ Mltest.main [|
 
 (fun () ->
   (* successful getopt calls in a small tree *)
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt smallmap key in
@@ -237,7 +237,7 @@ Mltest.main [|
 
 (fun () ->
   (* failure getopt calls in a small tree *)
-  
+
   (* BEG_TEST *)
   let key = "Bowser" in
   let actual = Ssmap.getopt smallmap key in
@@ -378,7 +378,7 @@ Mltest.main [|
 (fun () ->
   (* contains_key calls 1 *)
   let map = Ssmap.empty in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.contains_key map key in
@@ -484,7 +484,7 @@ Mltest.main [|
   let msg = make_iterfold_msg empty funcstr (string_of_int expect) (string_of_int actual) in
   __check__ ( expect = actual );
   (* END_TEST *)
-);  
+);
 
 (fun () ->
   (* iter calls on small/big map 1 *)
@@ -1589,4 +1589,4 @@ Mltest.main [|
   (* END_TEST *)
 );
 
-|];;    
+|];;

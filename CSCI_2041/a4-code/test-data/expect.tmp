@@ -1,29 +1,29 @@
 
-         4: {Whale -> 29}
-       3: {Wart -> 14}
-     2: {Tweeter -> 6}
-         4: {Tryclyde -> 17}
-           5: {Trouter -> 20}
-       3: {Toad -> 10}
-   1: {Spark -> 3}
-         4: {Snifit -> 21}
-           5: {ShyGuy -> 23}
-               7: {Princess -> 26}
-             6: {Porcupo -> 24}
-       3: {Pokey -> 7}
-           5: {Pidgit -> 11}
-         4: {Phanto -> 8}
-             6: {Panser -> 27}
-           5: {Ostro -> 12}
-             6: {Ninji -> 22}
-     2: {Mouser -> 4}
-           5: {Mario -> 16}
-             6: {Luigi -> 25}
-         4: {Hoopster -> 15}
+           5: {Whale -> 29}
+         4: {Wart -> 14}
+       3: {Tweeter -> 6}
+           5: {Tryclyde -> 17}
+             6: {Trouter -> 20}
+         4: {Toad -> 10}
+     2: {Spark -> 3}
+           5: {Snifit -> 21}
+             6: {ShyGuy -> 23}
+                 8: {Princess -> 26}
+               7: {Porcupo -> 24}
+         4: {Pokey -> 7}
+             6: {Pidgit -> 11}
+           5: {Phanto -> 8}
+               7: {Panser -> 27}
+             6: {Ostro -> 12}
+               7: {Ninji -> 22}
+       3: {Mouser -> 4}
+             6: {Mario -> 16}
+               7: {Luigi -> 25}
+           5: {Hoopster -> 15}
              6: {Hawkmouth -> 19}
-           5: {Flurry -> 18}
-       3: {Cobrat -> 5}
-         4: {Clawgrip -> 28}
+         4: {Cobrat -> 5}
+           5: {Clawgrip -> 28}
+   1: {Bob-omb -> 2}
  0: {Beezo -> 1}
      2: {Autobomb -> 13}
    1: {Albatoss -> 9}

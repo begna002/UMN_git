@@ -131,7 +131,12 @@ let contains_key map str =
    or Array.iter.
 *)
 let rec iter func map =
-  ()
+  match map with
+  | Empty -> ()
+  | Node(node)->
+    iter func node.left;
+    func node.key node.value;
+    iter func node.right;
 ;;
 
 (* IMPLEMENT
@@ -148,7 +153,13 @@ let rec iter func map =
    List.fold_left or Array.fold_left.
 *)
 let rec fold func cur map =
-  cur
+  match map with
+  | Empty -> cur
+  | Node(node)->
+    let val1 = fold func cur node.left in
+    let val2 = func val1 node.key node.value in
+    let val3 = fold func val2 node.right in
+    val3
 ;;
 
 
@@ -167,8 +178,29 @@ let rec fold func cur map =
    in-order traversal to produce the string efficiently. May make use
    of a higher-order map function such as iter or fold.
 *)
-let to_string map =                                 (* verbose version: no use of iter *)
-  ""
+let to_string map =
+  match map with
+  | Empty -> "[]"
+  | _ ->
+    let buf = Buffer.create 256 in
+    Buffer.add_string buf "";
+    let rec build tree =
+      match tree with
+      | Empty -> ()
+      | Node(node) ->
+         build node.left;
+           Buffer.add_string buf "";
+         let datastr =
+           sprintf "{%s -> %s}, " node.key node.value
+         in
+         Buffer.add_string buf datastr;
+         build node.right;
+    in
+
+    build map;
+    let len = ((String.length (Buffer.contents buf)) - 2) in
+    Buffer.truncate buf len;
+    "["^(Buffer.contents buf)^"]"
 ;;
 
 (* IMPLEMENT
@@ -183,7 +215,13 @@ let to_string map =                                 (* verbose version: no use o
    the minimum key is at the left-most node.
 *)
 let rec findmin_keyval map =
-  ("test", "test")
+  match map with
+  | Empty -> failwith "No minimum in an empty tree"
+  | Node(node) ->
+    if node.left = Empty then
+      (node.key, node.value)
+    else
+      findmin_keyval node.left
 ;;
 
 (* IMPLEMENT
@@ -201,5 +239,21 @@ let rec findmin_keyval map =
    the minimum of on the right child branch.
 *)
 let rec remove_key map key =
-  map
+match map with
+| Empty -> Empty
+| Node(node) ->
+   let diff = String.compare key node.key in
+   if diff = 0 then
+     match node.left, node.right with
+     | Empty, Empty -> Empty
+     | _ , Empty -> node.left
+     | Empty, _ -> node.right
+     | _ , _ ->
+        let (succ_key, succ_val) = findmin_keyval node.right in
+        Node{key = succ_key; value = succ_val; left = node.left; right = remove_key node.right succ_key}
+        (*(remove_key node.right succ_key)*)
+   else if diff < 0 then
+     Node{node with left=(remove_key node.left key)}
+   else
+     Node{node with right=(remove_key node.right key)}
 ;;

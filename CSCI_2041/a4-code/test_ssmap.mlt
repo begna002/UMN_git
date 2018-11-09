@@ -151,7 +151,7 @@ Mltest.main [|
 (fun () ->
   (* getopt calls in an empty tree *)
   let map = Ssmap.empty in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt map key in
@@ -173,7 +173,7 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:168"; msg
   (* getopt calls in a singleton tree *)
   let map = Ssmap.empty in
   let map = Ssmap.add map "Mario"    "plumber"  in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt map key in
@@ -201,7 +201,7 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:198"; msg
 
 (fun () ->
   (* successful getopt calls in a small tree *)
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.getopt smallmap key in
@@ -237,7 +237,7 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:234"; msg
 
 (fun () ->
   (* failure getopt calls in a small tree *)
-  
+
   (* BEG_TEST *)
   let key = "Bowser" in
   let actual = Ssmap.getopt smallmap key in
@@ -378,7 +378,7 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:373"; msg
 (fun () ->
   (* contains_key calls 1 *)
   let map = Ssmap.empty in
-  
+
   (* BEG_TEST *)
   let key = "Mario" in
   let actual = Ssmap.contains_key map key in
@@ -484,7 +484,7 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:474"; msg
   let msg = make_iterfold_msg empty funcstr (string_of_int expect) (string_of_int actual) in
 if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:485"; msg=msg; code="478:  let sum = ref 0 in\n479:  let add_values k v = sum := !sum + (int_of_string v) in\n480:  let funcstr = \"add all values in a ref\" in\n481:  Ssmap.iter add_values empty;\n482:  let expect = 0 in\n483:  let actual = !sum in\n484:  let msg = make_iterfold_msg empty funcstr (string_of_int expect) (string_of_int actual) in\n485:  __check__ ( expect = actual );\n"}) else ();
   (* END_TEST *)
-);  
+);
 
 (fun () ->
   (* iter calls on small/big map 1 *)
@@ -1589,4 +1589,4 @@ if not ( ( expect = actual )) then raise (TestFail {loc="test_ssmap.ml:1588"; ms
   (* END_TEST *)
 );
 
-|];;    
+|];;

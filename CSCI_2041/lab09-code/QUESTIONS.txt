@@ -25,7 +25,10 @@ PROBLEM 1: Memfunc1 Module
      must the parameter module have according to its signature?
   3. The module that is created by the functor has several internal
      bindings but only one of them is publicly visible. What is it and
-     how is this visibility control enforced?
+     how is this visibility control enforced? 
+
+
+The name of the module is Memoize, with a parameter module FuncMod that must have the following parameters: a type arg_t and reg_t, a function that takes in arg_t and returns ret_t, and a comparison function that compares 2 arg_t variable and returns an int. The call function is visible since the module created a signature for it.
 
 
 (B)
@@ -37,6 +40,10 @@ PROBLEM 1: Memfunc1 Module
   their names and what their purpose appears to be. Describe how
   bindings of the parameter module are used in these nested modules.
 
+The module MapInterface creates bindings for a type and a comparison function which are necessary in order to use the Set/Map functors later on. The parameter module is used here by binding FuncMod.arg_t to type t, and FuncMod.compare_arg to the comparison function.
+
+The module MemoMap is a mapping of the MapInterface module by using Map.make. MemoMap is used later on for various methods.
+
 
 (C)
 ~~~
@@ -44,6 +51,9 @@ PROBLEM 1: Memfunc1 Module
   Analyze the bindings for `arg_ret_map' and the function `call'.
   Describe how these are used in conjunction the a function carried by
   the parameter module.
+
+A mutable empty mapping is bound to arg_ret_map. The call function uses arg_ret_map in order to find/add an argument. If it wasn’t found, the parameter function in the module FuncMod is called (using FuncMod.func).
+
 
 
 PROBLEM 2: fib Program
@@ -57,6 +67,8 @@ PROBLEM 2: fib Program
   description of how the parameter module to the functor is created.
 
 
+The functor Memoize is used to create a memorized version of a Fibonacci function. The parameter module MemoFib is created by binding Memfunc1.Memoize(FibFunc) to it, where FibFunc is a module that implements the Fibonacci function.
+
 (B)
 ~~~
 
@@ -68,6 +80,13 @@ PROBLEM 2: fib Program
   2. Identify where the results of these calls are stored.
   3. Describe what function is used to gather timing information on how
      long the repeated function calls take.
+
+Calls to fib and MemoFib.func are called in each instance where values are being added to arrays farr for fib, and marr for MemoFub.func. This occurs twice for each function. The values are stored in these arrays, since they are mutable. Sys.time() is used to gather timing information, and the functions are being called n times where n is the nth Fibonacci number provided as an argument by the user.
+
+
+
+
+
 
 
 (C)
@@ -81,6 +100,76 @@ PROBLEM 2: fib Program
   30 as the parameter.
 
 
+Running loops on fib/mem functions
+fib time: 0.0781 secs
+mem time: 0.0781 secs
+fib( 1) =        1  | MemoFib.call( 1) =        1
+fib( 2) =        1  | MemoFib.call( 2) =        1
+fib( 3) =        2  | MemoFib.call( 3) =        2
+fib( 4) =        3  | MemoFib.call( 4) =        3
+fib( 5) =        5  | MemoFib.call( 5) =        5
+fib( 6) =        8  | MemoFib.call( 6) =        8
+fib( 7) =       13  | MemoFib.call( 7) =       13
+fib( 8) =       21  | MemoFib.call( 8) =       21
+fib( 9) =       34  | MemoFib.call( 9) =       34
+fib(10) =       55  | MemoFib.call(10) =       55
+fib(11) =       89  | MemoFib.call(11) =       89
+fib(12) =      144  | MemoFib.call(12) =      144
+fib(13) =      233  | MemoFib.call(13) =      233
+fib(14) =      377  | MemoFib.call(14) =      377
+fib(15) =      610  | MemoFib.call(15) =      610
+fib(16) =      987  | MemoFib.call(16) =      987
+fib(17) =     1597  | MemoFib.call(17) =     1597
+fib(18) =     2584  | MemoFib.call(18) =     2584
+fib(19) =     4181  | MemoFib.call(19) =     4181
+fib(20) =     6765  | MemoFib.call(20) =     6765
+fib(21) =    10946  | MemoFib.call(21) =    10946
+fib(22) =    17711  | MemoFib.call(22) =    17711
+fib(23) =    28657  | MemoFib.call(23) =    28657
+fib(24) =    46368  | MemoFib.call(24) =    46368
+fib(25) =    75025  | MemoFib.call(25) =    75025
+fib(26) =   121393  | MemoFib.call(26) =   121393
+fib(27) =   196418  | MemoFib.call(27) =   196418
+fib(28) =   317811  | MemoFib.call(28) =   317811
+fib(29) =   514229  | MemoFib.call(29) =   514229
+fib(30) =   832040  | MemoFib.call(30) =   832040
+---------------------------------
+Re-running loops on fib/mem again
+fib time: 0.0781 secs
+mem time: 0.0000 secs
+fib( 1) =        1  | MemoFib.call( 1) =        1
+fib( 2) =        1  | MemoFib.call( 2) =        1
+fib( 3) =        2  | MemoFib.call( 3) =        2
+fib( 4) =        3  | MemoFib.call( 4) =        3
+fib( 5) =        5  | MemoFib.call( 5) =        5
+fib( 6) =        8  | MemoFib.call( 6) =        8
+fib( 7) =       13  | MemoFib.call( 7) =       13
+fib( 8) =       21  | MemoFib.call( 8) =       21
+fib( 9) =       34  | MemoFib.call( 9) =       34
+fib(10) =       55  | MemoFib.call(10) =       55
+fib(11) =       89  | MemoFib.call(11) =       89
+fib(12) =      144  | MemoFib.call(12) =      144
+fib(13) =      233  | MemoFib.call(13) =      233
+fib(14) =      377  | MemoFib.call(14) =      377
+fib(15) =      610  | MemoFib.call(15) =      610
+fib(16) =      987  | MemoFib.call(16) =      987
+fib(17) =     1597  | MemoFib.call(17) =     1597
+fib(18) =     2584  | MemoFib.call(18) =     2584
+fib(19) =     4181  | MemoFib.call(19) =     4181
+fib(20) =     6765  | MemoFib.call(20) =     6765
+fib(21) =    10946  | MemoFib.call(21) =    10946
+fib(22) =    17711  | MemoFib.call(22) =    17711
+fib(23) =    28657  | MemoFib.call(23) =    28657
+fib(24) =    46368  | MemoFib.call(24) =    46368
+fib(25) =    75025  | MemoFib.call(25) =    75025
+fib(26) =   121393  | MemoFib.call(26) =   121393
+fib(27) =   196418  | MemoFib.call(27) =   196418
+fib(28) =   317811  | MemoFib.call(28) =   317811
+fib(29) =   514229  | MemoFib.call(29) =   514229
+fib(30) =   832040  | MemoFib.call(30) =   832040
+
+
+
 (D)
 ~~~
 
@@ -88,6 +177,9 @@ PROBLEM 2: fib Program
   in the first timing loop but drastically different in the second
   timing loop. Relate your answer to the internal workings of the
   `Memofunc1.Memoize' functor.
+
+The first time that fib and MemoFib.call are used, MemoFib does not already have stored Fibonacci values, thus it must use the fib function to calculate the values from 1 to n. The second time that the functions are called however, MemoFib already has the values stored in the mutable mapping arg_ret_map. Thus, the argument n is used as a key to find the value associated with it in the Fibonacci sequence, eliminating the need to constantly call the fib function.
+
 
 
 Optional Enrichment Problems

@@ -1023,133 +1023,1464 @@ type(
 )
 "ssmap.ml" 133 4931 4939 "ssmap.ml" 133 4931 4943
 type(
-  'a -> 'b -> unit
+  (string -> string -> 'a) -> ssmap -> unit
 )
 ident(
   def iter "ssmap.ml" 133 4931 4931 "ssmap.ml" 1 0 -1
 )
 "ssmap.ml" 133 4931 4944 "ssmap.ml" 133 4931 4948
 type(
-  'a
+  string -> string -> 'a
 )
 ident(
-  def func "ssmap.ml" 133 4931 4949 "ssmap.ml" 134 4955 4959
+  def func "ssmap.ml" 133 4931 4949 "ssmap.ml" 139 5060 5085
 )
 "ssmap.ml" 133 4931 4949 "ssmap.ml" 133 4931 4952
 type(
-  'b
+  ssmap
 )
 ident(
-  def map "ssmap.ml" 134 4955 4957 "ssmap.ml" 134 4955 4959
+  def map "ssmap.ml" 134 4955 4957 "ssmap.ml" 139 5060 5085
 )
-"ssmap.ml" 134 4955 4957 "ssmap.ml" 134 4955 4959
+"ssmap.ml" 134 4955 4963 "ssmap.ml" 134 4955 4966
+type(
+  ssmap
+)
+ident(
+  int_ref map "ssmap.ml" 133 4931 4949 "ssmap.ml" 133 4931 4952
+)
+"ssmap.ml" 135 4972 4976 "ssmap.ml" 135 4972 4981
+type(
+  ssmap
+)
+"ssmap.ml" 135 4972 4985 "ssmap.ml" 135 4972 4987
 type(
   unit
 )
-"ssmap.ml" 150 5370 5378 "ssmap.ml" 150 5370 5382
+"ssmap.ml" 136 4988 4997 "ssmap.ml" 136 4988 5001
+ident(
+  def node "ssmap.ml" 137 5005 5009 "ssmap.ml" 139 5060 5085
+)
+"ssmap.ml" 136 4988 4996 "ssmap.ml" 136 4988 5002
 type(
-  'a -> 'b -> 'c -> 'b
+  ssmap.Node
+)
+"ssmap.ml" 136 4988 4992 "ssmap.ml" 136 4988 5002
+type(
+  ssmap
+)
+"ssmap.ml" 137 5005 5009 "ssmap.ml" 137 5005 5013
+type(
+  (string -> string -> 'a) -> ssmap -> unit
 )
 ident(
-  def fold "ssmap.ml" 150 5370 5370 "ssmap.ml" 1 0 -1
+  int_ref iter "ssmap.ml" 133 4931 4939 "ssmap.ml" 133 4931 4943
 )
-"ssmap.ml" 150 5370 5383 "ssmap.ml" 150 5370 5387
+"ssmap.ml" 137 5005 5014 "ssmap.ml" 137 5005 5018
+type(
+  string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 133 4931 4944 "ssmap.ml" 133 4931 4948
+)
+"ssmap.ml" 137 5005 5019 "ssmap.ml" 137 5005 5023
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 136 4988 4996 "ssmap.ml" 136 4988 5002
+)
+"ssmap.ml" 137 5005 5019 "ssmap.ml" 137 5005 5028
+type(
+  ssmap
+)
+"ssmap.ml" 137 5005 5009 "ssmap.ml" 137 5005 5028
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 138 5030 5034 "ssmap.ml" 138 5030 5038
+type(
+  string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 133 4931 4944 "ssmap.ml" 133 4931 4948
+)
+"ssmap.ml" 138 5030 5039 "ssmap.ml" 138 5030 5043
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 136 4988 4996 "ssmap.ml" 136 4988 5002
+)
+"ssmap.ml" 138 5030 5039 "ssmap.ml" 138 5030 5047
+type(
+  string
+)
+"ssmap.ml" 138 5030 5048 "ssmap.ml" 138 5030 5052
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 136 4988 4996 "ssmap.ml" 136 4988 5002
+)
+"ssmap.ml" 138 5030 5048 "ssmap.ml" 138 5030 5058
+type(
+  string
+)
+"ssmap.ml" 138 5030 5034 "ssmap.ml" 138 5030 5058
+call(
+  stack
+)
+type(
+  'a
+)
+"ssmap.ml" 139 5060 5064 "ssmap.ml" 139 5060 5068
+type(
+  (string -> string -> 'a) -> ssmap -> unit
+)
+ident(
+  int_ref iter "ssmap.ml" 133 4931 4939 "ssmap.ml" 133 4931 4943
+)
+"ssmap.ml" 139 5060 5069 "ssmap.ml" 139 5060 5073
+type(
+  string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 133 4931 4944 "ssmap.ml" 133 4931 4948
+)
+"ssmap.ml" 139 5060 5074 "ssmap.ml" 139 5060 5078
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 136 4988 4996 "ssmap.ml" 136 4988 5002
+)
+"ssmap.ml" 139 5060 5074 "ssmap.ml" 139 5060 5084
+type(
+  ssmap
+)
+"ssmap.ml" 139 5060 5064 "ssmap.ml" 139 5060 5085
+call(
+  tail
+)
+type(
+  unit
+)
+"ssmap.ml" 138 5030 5034 "ssmap.ml" 139 5060 5085
+type(
+  unit
+)
+"ssmap.ml" 137 5005 5009 "ssmap.ml" 139 5060 5085
+type(
+  unit
+)
+"ssmap.ml" 134 4955 4957 "ssmap.ml" 139 5060 5085
+type(
+  unit
+)
+"ssmap.ml" 155 5496 5504 "ssmap.ml" 155 5496 5508
+type(
+  ('a -> string -> string -> 'a) -> 'a -> ssmap -> 'a
+)
+ident(
+  def fold "ssmap.ml" 155 5496 5496 "ssmap.ml" 1 0 -1
+)
+"ssmap.ml" 155 5496 5509 "ssmap.ml" 155 5496 5513
+type(
+  'a -> string -> string -> 'a
+)
+ident(
+  def func "ssmap.ml" 155 5496 5514 "ssmap.ml" 162 5709 5717
+)
+"ssmap.ml" 155 5496 5514 "ssmap.ml" 155 5496 5517
 type(
   'a
 )
 ident(
-  def func "ssmap.ml" 150 5370 5388 "ssmap.ml" 151 5398 5403
+  def cur "ssmap.ml" 155 5496 5518 "ssmap.ml" 162 5709 5717
 )
-"ssmap.ml" 150 5370 5388 "ssmap.ml" 150 5370 5391
+"ssmap.ml" 155 5496 5518 "ssmap.ml" 155 5496 5521
 type(
-  'b
+  ssmap
 )
 ident(
-  def cur "ssmap.ml" 150 5370 5392 "ssmap.ml" 151 5398 5403
+  def map "ssmap.ml" 156 5524 5526 "ssmap.ml" 162 5709 5717
 )
-"ssmap.ml" 150 5370 5392 "ssmap.ml" 150 5370 5395
+"ssmap.ml" 156 5524 5532 "ssmap.ml" 156 5524 5535
 type(
-  'c
+  ssmap
 )
 ident(
-  def map "ssmap.ml" 151 5398 5400 "ssmap.ml" 151 5398 5403
+  int_ref map "ssmap.ml" 155 5496 5518 "ssmap.ml" 155 5496 5521
 )
-"ssmap.ml" 151 5398 5400 "ssmap.ml" 151 5398 5403
+"ssmap.ml" 157 5541 5545 "ssmap.ml" 157 5541 5550
 type(
-  'b
+  ssmap
 )
-ident(
-  int_ref cur "ssmap.ml" 150 5370 5388 "ssmap.ml" 150 5370 5391
-)
-"ssmap.ml" 170 5861 5865 "ssmap.ml" 170 5861 5874
-type(
-  'a -> string
-)
-ident(
-  def to_string "ssmap.ml" 185 6330 6330 "ssmap.ml" 1 0 -1
-)
-"ssmap.ml" 170 5861 5875 "ssmap.ml" 170 5861 5878
+"ssmap.ml" 157 5541 5554 "ssmap.ml" 157 5541 5557
 type(
   'a
 )
 ident(
-  def map "ssmap.ml" 171 5951 5953 "ssmap.ml" 171 5951 5955
+  int_ref cur "ssmap.ml" 155 5496 5514 "ssmap.ml" 155 5496 5517
 )
-"ssmap.ml" 171 5951 5953 "ssmap.ml" 171 5951 5955
-type(
-  string
-)
-"ssmap.ml" 185 6330 6338 "ssmap.ml" 185 6330 6352
-type(
-  'a -> string * string
-)
+"ssmap.ml" 158 5558 5567 "ssmap.ml" 158 5558 5571
 ident(
-  def findmin_keyval "ssmap.ml" 185 6330 6330 "ssmap.ml" 1 0 -1
+  def node "ssmap.ml" 159 5575 5579 "ssmap.ml" 162 5709 5717
 )
-"ssmap.ml" 185 6330 6353 "ssmap.ml" 185 6330 6356
+"ssmap.ml" 158 5558 5566 "ssmap.ml" 158 5558 5572
+type(
+  ssmap.Node
+)
+"ssmap.ml" 158 5558 5562 "ssmap.ml" 158 5558 5572
+type(
+  ssmap
+)
+"ssmap.ml" 159 5575 5583 "ssmap.ml" 159 5575 5587
 type(
   'a
 )
 ident(
-  def map "ssmap.ml" 186 6359 6361 "ssmap.ml" 186 6359 6377
+  def val1 "ssmap.ml" 160 5617 5621 "ssmap.ml" 162 5709 5717
 )
-"ssmap.ml" 186 6359 6362 "ssmap.ml" 186 6359 6368
+"ssmap.ml" 159 5575 5590 "ssmap.ml" 159 5575 5594
+type(
+  ('a -> string -> string -> 'a) -> 'a -> ssmap -> 'a
+)
+ident(
+  int_ref fold "ssmap.ml" 155 5496 5504 "ssmap.ml" 155 5496 5508
+)
+"ssmap.ml" 159 5575 5595 "ssmap.ml" 159 5575 5599
+type(
+  'a -> string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 155 5496 5509 "ssmap.ml" 155 5496 5513
+)
+"ssmap.ml" 159 5575 5600 "ssmap.ml" 159 5575 5603
+type(
+  'a
+)
+ident(
+  int_ref cur "ssmap.ml" 155 5496 5514 "ssmap.ml" 155 5496 5517
+)
+"ssmap.ml" 159 5575 5604 "ssmap.ml" 159 5575 5608
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 158 5558 5566 "ssmap.ml" 158 5558 5572
+)
+"ssmap.ml" 159 5575 5604 "ssmap.ml" 159 5575 5613
+type(
+  ssmap
+)
+"ssmap.ml" 159 5575 5590 "ssmap.ml" 159 5575 5613
+call(
+  stack
+)
+type(
+  'a
+)
+"ssmap.ml" 160 5617 5625 "ssmap.ml" 160 5617 5629
+type(
+  'a
+)
+ident(
+  def val2 "ssmap.ml" 161 5665 5669 "ssmap.ml" 162 5709 5717
+)
+"ssmap.ml" 160 5617 5632 "ssmap.ml" 160 5617 5636
+type(
+  'a -> string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 155 5496 5509 "ssmap.ml" 155 5496 5513
+)
+"ssmap.ml" 160 5617 5637 "ssmap.ml" 160 5617 5641
+type(
+  'a
+)
+ident(
+  int_ref val1 "ssmap.ml" 159 5575 5583 "ssmap.ml" 159 5575 5587
+)
+"ssmap.ml" 160 5617 5642 "ssmap.ml" 160 5617 5646
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 158 5558 5566 "ssmap.ml" 158 5558 5572
+)
+"ssmap.ml" 160 5617 5642 "ssmap.ml" 160 5617 5650
 type(
   string
 )
-"ssmap.ml" 186 6359 6370 "ssmap.ml" 186 6359 6376
+"ssmap.ml" 160 5617 5651 "ssmap.ml" 160 5617 5655
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 158 5558 5566 "ssmap.ml" 158 5558 5572
+)
+"ssmap.ml" 160 5617 5651 "ssmap.ml" 160 5617 5661
 type(
   string
 )
-"ssmap.ml" 186 6359 6361 "ssmap.ml" 186 6359 6377
+"ssmap.ml" 160 5617 5632 "ssmap.ml" 160 5617 5661
+call(
+  stack
+)
+type(
+  'a
+)
+"ssmap.ml" 161 5665 5673 "ssmap.ml" 161 5665 5677
+type(
+  'a
+)
+ident(
+  def val3 "ssmap.ml" 162 5709 5713 "ssmap.ml" 162 5709 5717
+)
+"ssmap.ml" 161 5665 5680 "ssmap.ml" 161 5665 5684
+type(
+  ('a -> string -> string -> 'a) -> 'a -> ssmap -> 'a
+)
+ident(
+  int_ref fold "ssmap.ml" 155 5496 5504 "ssmap.ml" 155 5496 5508
+)
+"ssmap.ml" 161 5665 5685 "ssmap.ml" 161 5665 5689
+type(
+  'a -> string -> string -> 'a
+)
+ident(
+  int_ref func "ssmap.ml" 155 5496 5509 "ssmap.ml" 155 5496 5513
+)
+"ssmap.ml" 161 5665 5690 "ssmap.ml" 161 5665 5694
+type(
+  'a
+)
+ident(
+  int_ref val2 "ssmap.ml" 160 5617 5625 "ssmap.ml" 160 5617 5629
+)
+"ssmap.ml" 161 5665 5695 "ssmap.ml" 161 5665 5699
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 158 5558 5566 "ssmap.ml" 158 5558 5572
+)
+"ssmap.ml" 161 5665 5695 "ssmap.ml" 161 5665 5705
+type(
+  ssmap
+)
+"ssmap.ml" 161 5665 5680 "ssmap.ml" 161 5665 5705
+call(
+  stack
+)
+type(
+  'a
+)
+"ssmap.ml" 162 5709 5713 "ssmap.ml" 162 5709 5717
+type(
+  'a
+)
+ident(
+  int_ref val3 "ssmap.ml" 161 5665 5673 "ssmap.ml" 161 5665 5677
+)
+"ssmap.ml" 161 5665 5669 "ssmap.ml" 162 5709 5717
+type(
+  'a
+)
+"ssmap.ml" 160 5617 5621 "ssmap.ml" 162 5709 5717
+type(
+  'a
+)
+"ssmap.ml" 159 5575 5579 "ssmap.ml" 162 5709 5717
+type(
+  'a
+)
+"ssmap.ml" 156 5524 5526 "ssmap.ml" 162 5709 5717
+type(
+  'a
+)
+"ssmap.ml" 181 6175 6179 "ssmap.ml" 181 6175 6188
+type(
+  ssmap -> string
+)
+ident(
+  def to_string "ssmap.ml" 217 7133 7133 "ssmap.ml" 1 0 -1
+)
+"ssmap.ml" 181 6175 6189 "ssmap.ml" 181 6175 6192
+type(
+  ssmap
+)
+ident(
+  def map "ssmap.ml" 182 6195 6197 "ssmap.ml" 203 6725 6758
+)
+"ssmap.ml" 182 6195 6203 "ssmap.ml" 182 6195 6206
+type(
+  ssmap
+)
+ident(
+  int_ref map "ssmap.ml" 181 6175 6189 "ssmap.ml" 181 6175 6192
+)
+"ssmap.ml" 183 6212 6216 "ssmap.ml" 183 6212 6221
+type(
+  ssmap
+)
+"ssmap.ml" 183 6212 6225 "ssmap.ml" 183 6212 6229
+type(
+  string
+)
+"ssmap.ml" 184 6230 6234 "ssmap.ml" 184 6230 6235
+type(
+  ssmap
+)
+"ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+type(
+  Buffer.t
+)
+ident(
+  def buf "ssmap.ml" 186 6274 6278 "ssmap.ml" 203 6725 6758
+)
+"ssmap.ml" 185 6239 6253 "ssmap.ml" 185 6239 6266
+type(
+  int -> Buffer.t
+)
+ident(
+  ext_ref Buffer.create
+)
+"ssmap.ml" 185 6239 6267 "ssmap.ml" 185 6239 6270
+type(
+  int
+)
+"ssmap.ml" 185 6239 6253 "ssmap.ml" 185 6239 6270
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"ssmap.ml" 186 6274 6278 "ssmap.ml" 186 6274 6295
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"ssmap.ml" 186 6274 6296 "ssmap.ml" 186 6274 6299
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 186 6274 6300 "ssmap.ml" 186 6274 6302
+type(
+  string
+)
+"ssmap.ml" 186 6274 6278 "ssmap.ml" 186 6274 6302
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 187 6304 6316 "ssmap.ml" 187 6304 6321
+type(
+  ssmap -> unit
+)
+ident(
+  def build "ssmap.ml" 187 6304 6308 "ssmap.ml" 203 6725 6758
+)
+"ssmap.ml" 187 6304 6322 "ssmap.ml" 187 6304 6326
+type(
+  ssmap
+)
+ident(
+  def tree "ssmap.ml" 188 6329 6335 "ssmap.ml" 197 6585 6611
+)
+"ssmap.ml" 188 6329 6341 "ssmap.ml" 188 6329 6345
+type(
+  ssmap
+)
+ident(
+  int_ref tree "ssmap.ml" 187 6304 6322 "ssmap.ml" 187 6304 6326
+)
+"ssmap.ml" 189 6351 6359 "ssmap.ml" 189 6351 6364
+type(
+  ssmap
+)
+"ssmap.ml" 189 6351 6368 "ssmap.ml" 189 6351 6370
+type(
+  unit
+)
+"ssmap.ml" 190 6371 6384 "ssmap.ml" 190 6371 6388
+ident(
+  def node "ssmap.ml" 191 6393 6402 "ssmap.ml" 197 6585 6611
+)
+"ssmap.ml" 190 6371 6383 "ssmap.ml" 190 6371 6389
+type(
+  ssmap.Node
+)
+"ssmap.ml" 190 6371 6379 "ssmap.ml" 190 6371 6389
+type(
+  ssmap
+)
+"ssmap.ml" 191 6393 6402 "ssmap.ml" 191 6393 6407
+type(
+  ssmap -> unit
+)
+ident(
+  int_ref build "ssmap.ml" 187 6304 6316 "ssmap.ml" 187 6304 6321
+)
+"ssmap.ml" 191 6393 6408 "ssmap.ml" 191 6393 6412
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 190 6371 6383 "ssmap.ml" 190 6371 6389
+)
+"ssmap.ml" 191 6393 6408 "ssmap.ml" 191 6393 6417
+type(
+  ssmap
+)
+"ssmap.ml" 191 6393 6402 "ssmap.ml" 191 6393 6417
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 192 6419 6430 "ssmap.ml" 192 6419 6447
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"ssmap.ml" 192 6419 6448 "ssmap.ml" 192 6419 6451
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 192 6419 6452 "ssmap.ml" 192 6419 6454
+type(
+  string
+)
+"ssmap.ml" 192 6419 6430 "ssmap.ml" 192 6419 6454
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 193 6456 6469 "ssmap.ml" 193 6456 6476
+type(
+  string
+)
+ident(
+  def datastr "ssmap.ml" 196 6545 6554 "ssmap.ml" 197 6585 6611
+)
+"ssmap.ml" 194 6479 6490 "ssmap.ml" 194 6479 6497
+type(
+  (string -> string -> string, unit, string) format ->
+  string -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"ssmap.ml" 194 6479 6498 "ssmap.ml" 194 6479 6512
+type(
+  (string -> string -> string, unit, string) format
+)
+"ssmap.ml" 194 6479 6513 "ssmap.ml" 194 6479 6517
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 190 6371 6383 "ssmap.ml" 190 6371 6389
+)
+"ssmap.ml" 194 6479 6513 "ssmap.ml" 194 6479 6521
+type(
+  string
+)
+"ssmap.ml" 194 6479 6522 "ssmap.ml" 194 6479 6526
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 190 6371 6383 "ssmap.ml" 190 6371 6389
+)
+"ssmap.ml" 194 6479 6522 "ssmap.ml" 194 6479 6532
+type(
+  string
+)
+"ssmap.ml" 194 6479 6490 "ssmap.ml" 194 6479 6532
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap.ml" 196 6545 6554 "ssmap.ml" 196 6545 6571
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"ssmap.ml" 196 6545 6572 "ssmap.ml" 196 6545 6575
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 196 6545 6576 "ssmap.ml" 196 6545 6583
+type(
+  string
+)
+ident(
+  int_ref datastr "ssmap.ml" 193 6456 6469 "ssmap.ml" 193 6456 6476
+)
+"ssmap.ml" 196 6545 6554 "ssmap.ml" 196 6545 6583
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 197 6585 6594 "ssmap.ml" 197 6585 6599
+type(
+  ssmap -> unit
+)
+ident(
+  int_ref build "ssmap.ml" 187 6304 6316 "ssmap.ml" 187 6304 6321
+)
+"ssmap.ml" 197 6585 6600 "ssmap.ml" 197 6585 6604
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 190 6371 6383 "ssmap.ml" 190 6371 6389
+)
+"ssmap.ml" 197 6585 6600 "ssmap.ml" 197 6585 6610
+type(
+  ssmap
+)
+"ssmap.ml" 197 6585 6594 "ssmap.ml" 197 6585 6611
+call(
+  tail
+)
+type(
+  unit
+)
+"ssmap.ml" 196 6545 6554 "ssmap.ml" 197 6585 6611
+type(
+  unit
+)
+"ssmap.ml" 193 6456 6465 "ssmap.ml" 197 6585 6611
+type(
+  unit
+)
+"ssmap.ml" 192 6419 6430 "ssmap.ml" 197 6585 6611
+type(
+  unit
+)
+"ssmap.ml" 191 6393 6402 "ssmap.ml" 197 6585 6611
+type(
+  unit
+)
+"ssmap.ml" 188 6329 6335 "ssmap.ml" 197 6585 6611
+type(
+  unit
+)
+"ssmap.ml" 200 6620 6624 "ssmap.ml" 200 6620 6629
+type(
+  ssmap -> unit
+)
+ident(
+  int_ref build "ssmap.ml" 187 6304 6316 "ssmap.ml" 187 6304 6321
+)
+"ssmap.ml" 200 6620 6630 "ssmap.ml" 200 6620 6633
+type(
+  ssmap
+)
+ident(
+  int_ref map "ssmap.ml" 181 6175 6189 "ssmap.ml" 181 6175 6192
+)
+"ssmap.ml" 200 6620 6624 "ssmap.ml" 200 6620 6633
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 201 6635 6643 "ssmap.ml" 201 6635 6646
+type(
+  int
+)
+ident(
+  def len "ssmap.ml" 202 6696 6700 "ssmap.ml" 203 6725 6758
+)
+"ssmap.ml" 201 6635 6651 "ssmap.ml" 201 6635 6664
+type(
+  string -> int
+)
+ident(
+  ext_ref String.length
+)
+"ssmap.ml" 201 6635 6666 "ssmap.ml" 201 6635 6681
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"ssmap.ml" 201 6635 6682 "ssmap.ml" 201 6635 6685
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 201 6635 6665 "ssmap.ml" 201 6635 6686
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap.ml" 201 6635 6650 "ssmap.ml" 201 6635 6687
+type(
+  int
+)
+"ssmap.ml" 201 6635 6688 "ssmap.ml" 201 6635 6689
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"ssmap.ml" 201 6635 6690 "ssmap.ml" 201 6635 6691
+type(
+  int
+)
+"ssmap.ml" 201 6635 6649 "ssmap.ml" 201 6635 6692
+type(
+  int
+)
+"ssmap.ml" 202 6696 6700 "ssmap.ml" 202 6696 6715
+type(
+  Buffer.t -> int -> unit
+)
+ident(
+  ext_ref Buffer.truncate
+)
+"ssmap.ml" 202 6696 6716 "ssmap.ml" 202 6696 6719
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 202 6696 6720 "ssmap.ml" 202 6696 6723
+type(
+  int
+)
+ident(
+  int_ref len "ssmap.ml" 201 6635 6643 "ssmap.ml" 201 6635 6646
+)
+"ssmap.ml" 202 6696 6700 "ssmap.ml" 202 6696 6723
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap.ml" 203 6725 6729 "ssmap.ml" 203 6725 6732
+type(
+  string
+)
+"ssmap.ml" 203 6725 6732 "ssmap.ml" 203 6725 6733
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"ssmap.ml" 203 6725 6734 "ssmap.ml" 203 6725 6749
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"ssmap.ml" 203 6725 6750 "ssmap.ml" 203 6725 6753
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "ssmap.ml" 185 6239 6247 "ssmap.ml" 185 6239 6250
+)
+"ssmap.ml" 203 6725 6733 "ssmap.ml" 203 6725 6754
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap.ml" 203 6725 6754 "ssmap.ml" 203 6725 6755
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"ssmap.ml" 203 6725 6755 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 203 6725 6733 "ssmap.ml" 203 6725 6758
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap.ml" 203 6725 6729 "ssmap.ml" 203 6725 6758
+call(
+  tail
+)
+type(
+  string
+)
+"ssmap.ml" 202 6696 6700 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 201 6635 6639 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 200 6620 6624 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 187 6304 6308 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 186 6274 6278 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 185 6239 6243 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 182 6195 6197 "ssmap.ml" 203 6725 6758
+type(
+  string
+)
+"ssmap.ml" 217 7133 7141 "ssmap.ml" 217 7133 7155
+type(
+  ssmap -> string * string
+)
+ident(
+  def findmin_keyval "ssmap.ml" 217 7133 7133 "ssmap.ml" 1 0 -1
+)
+"ssmap.ml" 217 7133 7156 "ssmap.ml" 217 7133 7159
+type(
+  ssmap
+)
+ident(
+  def map "ssmap.ml" 218 7162 7164 "ssmap.ml" 224 7317 7347
+)
+"ssmap.ml" 218 7162 7170 "ssmap.ml" 218 7162 7173
+type(
+  ssmap
+)
+ident(
+  int_ref map "ssmap.ml" 217 7133 7156 "ssmap.ml" 217 7133 7159
+)
+"ssmap.ml" 219 7179 7183 "ssmap.ml" 219 7179 7188
+type(
+  ssmap
+)
+"ssmap.ml" 219 7179 7192 "ssmap.ml" 219 7179 7200
+type(
+  string -> string * string
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"ssmap.ml" 219 7179 7201 "ssmap.ml" 219 7179 7230
+type(
+  string
+)
+"ssmap.ml" 219 7179 7192 "ssmap.ml" 219 7179 7230
+call(
+  tail
+)
 type(
   string * string
 )
-"ssmap.ml" 203 6932 6940 "ssmap.ml" 203 6932 6950
+"ssmap.ml" 220 7231 7240 "ssmap.ml" 220 7231 7244
+ident(
+  def node "ssmap.ml" 221 7249 7253 "ssmap.ml" 224 7317 7347
+)
+"ssmap.ml" 220 7231 7239 "ssmap.ml" 220 7231 7245
 type(
-  'a -> 'b -> 'a
+  ssmap.Node
+)
+"ssmap.ml" 220 7231 7235 "ssmap.ml" 220 7231 7245
+type(
+  ssmap
+)
+"ssmap.ml" 221 7249 7256 "ssmap.ml" 221 7249 7260
+type(
+  ssmap.Node
 )
 ident(
-  def remove_key "ssmap.ml" 203 6932 6932 "ssmap.ml" 1 0 -1
+  int_ref node "ssmap.ml" 220 7231 7239 "ssmap.ml" 220 7231 7245
 )
-"ssmap.ml" 203 6932 6951 "ssmap.ml" 203 6932 6954
+"ssmap.ml" 221 7249 7256 "ssmap.ml" 221 7249 7265
 type(
-  'a
+  ssmap
+)
+"ssmap.ml" 221 7249 7266 "ssmap.ml" 221 7249 7267
+type(
+  ssmap -> ssmap -> bool
 )
 ident(
-  def map "ssmap.ml" 203 6932 6955 "ssmap.ml" 204 6961 6966
+  ext_ref Pervasives.( = )
 )
-"ssmap.ml" 203 6932 6955 "ssmap.ml" 203 6932 6958
+"ssmap.ml" 221 7249 7268 "ssmap.ml" 221 7249 7273
 type(
-  'b
+  ssmap
+)
+"ssmap.ml" 221 7249 7256 "ssmap.ml" 221 7249 7273
+type(
+  bool
+)
+"ssmap.ml" 222 7279 7286 "ssmap.ml" 222 7279 7290
+type(
+  ssmap.Node
 )
 ident(
-  def key "ssmap.ml" 204 6961 6963 "ssmap.ml" 204 6961 6966
+  int_ref node "ssmap.ml" 220 7231 7239 "ssmap.ml" 220 7231 7245
 )
-"ssmap.ml" 204 6961 6963 "ssmap.ml" 204 6961 6966
+"ssmap.ml" 222 7279 7286 "ssmap.ml" 222 7279 7294
 type(
-  'a
+  string
+)
+"ssmap.ml" 222 7279 7296 "ssmap.ml" 222 7279 7300
+type(
+  ssmap.Node
 )
 ident(
-  int_ref map "ssmap.ml" 203 6932 6951 "ssmap.ml" 203 6932 6954
+  int_ref node "ssmap.ml" 220 7231 7239 "ssmap.ml" 220 7231 7245
+)
+"ssmap.ml" 222 7279 7296 "ssmap.ml" 222 7279 7306
+type(
+  string
+)
+"ssmap.ml" 222 7279 7285 "ssmap.ml" 222 7279 7307
+type(
+  string * string
+)
+"ssmap.ml" 224 7317 7323 "ssmap.ml" 224 7317 7337
+type(
+  ssmap -> string * string
+)
+ident(
+  int_ref findmin_keyval "ssmap.ml" 217 7133 7141 "ssmap.ml" 217 7133 7155
+)
+"ssmap.ml" 224 7317 7338 "ssmap.ml" 224 7317 7342
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 220 7231 7239 "ssmap.ml" 220 7231 7245
+)
+"ssmap.ml" 224 7317 7338 "ssmap.ml" 224 7317 7347
+type(
+  ssmap
+)
+"ssmap.ml" 224 7317 7323 "ssmap.ml" 224 7317 7347
+call(
+  tail
+)
+type(
+  string * string
+)
+"ssmap.ml" 221 7249 7253 "ssmap.ml" 224 7317 7347
+type(
+  string * string
+)
+"ssmap.ml" 218 7162 7164 "ssmap.ml" 224 7317 7347
+type(
+  string * string
+)
+"ssmap.ml" 241 7902 7910 "ssmap.ml" 241 7902 7920
+type(
+  ssmap -> String.t -> ssmap
+)
+ident(
+  def remove_key "ssmap.ml" 241 7902 7902 "ssmap.ml" 1 0 -1
+)
+"ssmap.ml" 241 7902 7921 "ssmap.ml" 241 7902 7924
+type(
+  ssmap
+)
+ident(
+  def map "ssmap.ml" 241 7902 7925 "ssmap.ml" 258 8487 8541
+)
+"ssmap.ml" 241 7902 7925 "ssmap.ml" 241 7902 7928
+type(
+  String.t
+)
+ident(
+  def key "ssmap.ml" 242 7931 7931 "ssmap.ml" 258 8487 8541
+)
+"ssmap.ml" 242 7931 7937 "ssmap.ml" 242 7931 7940
+type(
+  ssmap
+)
+ident(
+  int_ref map "ssmap.ml" 241 7902 7921 "ssmap.ml" 241 7902 7924
+)
+"ssmap.ml" 243 7946 7948 "ssmap.ml" 243 7946 7953
+type(
+  ssmap
+)
+"ssmap.ml" 243 7946 7957 "ssmap.ml" 243 7946 7962
+type(
+  ssmap
+)
+"ssmap.ml" 244 7963 7970 "ssmap.ml" 244 7963 7974
+ident(
+  def node "ssmap.ml" 245 7979 7982 "ssmap.ml" 258 8487 8541
+)
+"ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+type(
+  ssmap.Node
+)
+"ssmap.ml" 244 7963 7965 "ssmap.ml" 244 7963 7975
+type(
+  ssmap
+)
+"ssmap.ml" 245 7979 7986 "ssmap.ml" 245 7979 7990
+type(
+  int
+)
+ident(
+  def diff "ssmap.ml" 246 8024 8027 "ssmap.ml" 258 8487 8541
+)
+"ssmap.ml" 245 7979 7993 "ssmap.ml" 245 7979 8007
+type(
+  String.t -> String.t -> int
+)
+ident(
+  ext_ref String.compare
+)
+"ssmap.ml" 245 7979 8008 "ssmap.ml" 245 7979 8011
+type(
+  String.t
+)
+ident(
+  int_ref key "ssmap.ml" 241 7902 7925 "ssmap.ml" 241 7902 7928
+)
+"ssmap.ml" 245 7979 8012 "ssmap.ml" 245 7979 8016
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 245 7979 8012 "ssmap.ml" 245 7979 8020
+type(
+  String.t
+)
+"ssmap.ml" 245 7979 7993 "ssmap.ml" 245 7979 8020
+call(
+  stack
+)
+type(
+  int
+)
+"ssmap.ml" 246 8024 8030 "ssmap.ml" 246 8024 8034
+type(
+  int
+)
+ident(
+  int_ref diff "ssmap.ml" 245 7979 7986 "ssmap.ml" 245 7979 7990
+)
+"ssmap.ml" 246 8024 8035 "ssmap.ml" 246 8024 8036
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"ssmap.ml" 246 8024 8037 "ssmap.ml" 246 8024 8038
+type(
+  int
+)
+"ssmap.ml" 246 8024 8030 "ssmap.ml" 246 8024 8038
+type(
+  bool
+)
+"ssmap.ml" 247 8044 8055 "ssmap.ml" 247 8044 8059
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 247 8044 8055 "ssmap.ml" 247 8044 8064
+type(
+  ssmap
+)
+"ssmap.ml" 247 8044 8066 "ssmap.ml" 247 8044 8070
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 247 8044 8066 "ssmap.ml" 247 8044 8076
+type(
+  ssmap
+)
+"ssmap.ml" 247 8044 8055 "ssmap.ml" 247 8044 8076
+type(
+  ssmap * ssmap
+)
+"ssmap.ml" 248 8082 8089 "ssmap.ml" 248 8082 8094
+type(
+  ssmap
+)
+"ssmap.ml" 248 8082 8096 "ssmap.ml" 248 8082 8101
+type(
+  ssmap
+)
+"ssmap.ml" 248 8082 8089 "ssmap.ml" 248 8082 8101
+type(
+  ssmap * ssmap
+)
+"ssmap.ml" 248 8082 8105 "ssmap.ml" 248 8082 8110
+type(
+  ssmap
+)
+"ssmap.ml" 249 8111 8118 "ssmap.ml" 249 8111 8119
+type(
+  ssmap
+)
+"ssmap.ml" 249 8111 8122 "ssmap.ml" 249 8111 8127
+type(
+  ssmap
+)
+"ssmap.ml" 249 8111 8118 "ssmap.ml" 249 8111 8127
+type(
+  ssmap * ssmap
+)
+"ssmap.ml" 249 8111 8131 "ssmap.ml" 249 8111 8135
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 249 8111 8131 "ssmap.ml" 249 8111 8140
+type(
+  ssmap
+)
+"ssmap.ml" 250 8141 8148 "ssmap.ml" 250 8141 8153
+type(
+  ssmap
+)
+"ssmap.ml" 250 8141 8155 "ssmap.ml" 250 8141 8156
+type(
+  ssmap
+)
+"ssmap.ml" 250 8141 8148 "ssmap.ml" 250 8141 8156
+type(
+  ssmap * ssmap
+)
+"ssmap.ml" 250 8141 8160 "ssmap.ml" 250 8141 8164
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 250 8141 8160 "ssmap.ml" 250 8141 8170
+type(
+  ssmap
+)
+"ssmap.ml" 251 8171 8178 "ssmap.ml" 251 8171 8179
+type(
+  ssmap
+)
+"ssmap.ml" 251 8171 8182 "ssmap.ml" 251 8171 8183
+type(
+  ssmap
+)
+"ssmap.ml" 251 8171 8178 "ssmap.ml" 251 8171 8183
+type(
+  ssmap * ssmap
+)
+"ssmap.ml" 252 8187 8200 "ssmap.ml" 252 8187 8208
+type(
+  string
+)
+ident(
+  def succ_key "ssmap.ml" 253 8251 8259 "ssmap.ml" 253 8251 8355
+)
+"ssmap.ml" 252 8187 8210 "ssmap.ml" 252 8187 8218
+type(
+  string
+)
+ident(
+  def succ_val "ssmap.ml" 253 8251 8259 "ssmap.ml" 253 8251 8355
+)
+"ssmap.ml" 252 8187 8199 "ssmap.ml" 252 8187 8219
+type(
+  string * string
+)
+"ssmap.ml" 252 8187 8222 "ssmap.ml" 252 8187 8236
+type(
+  ssmap -> string * string
+)
+ident(
+  int_ref findmin_keyval "ssmap.ml" 217 7133 7141 "ssmap.ml" 217 7133 7155
+)
+"ssmap.ml" 252 8187 8237 "ssmap.ml" 252 8187 8241
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 252 8187 8237 "ssmap.ml" 252 8187 8247
+type(
+  ssmap
+)
+"ssmap.ml" 252 8187 8222 "ssmap.ml" 252 8187 8247
+call(
+  stack
+)
+type(
+  string * string
+)
+"ssmap.ml" 253 8251 8270 "ssmap.ml" 253 8251 8278
+type(
+  string
+)
+ident(
+  int_ref succ_key "ssmap.ml" 252 8187 8200 "ssmap.ml" 252 8187 8208
+)
+"ssmap.ml" 253 8251 8288 "ssmap.ml" 253 8251 8296
+type(
+  string
+)
+ident(
+  int_ref succ_val "ssmap.ml" 252 8187 8210 "ssmap.ml" 252 8187 8218
+)
+"ssmap.ml" 253 8251 8305 "ssmap.ml" 253 8251 8309
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 253 8251 8305 "ssmap.ml" 253 8251 8314
+type(
+  ssmap
+)
+"ssmap.ml" 253 8251 8324 "ssmap.ml" 253 8251 8334
+type(
+  ssmap -> String.t -> ssmap
+)
+ident(
+  int_ref remove_key "ssmap.ml" 241 7902 7910 "ssmap.ml" 241 7902 7920
+)
+"ssmap.ml" 253 8251 8335 "ssmap.ml" 253 8251 8339
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 253 8251 8335 "ssmap.ml" 253 8251 8345
+type(
+  ssmap
+)
+"ssmap.ml" 253 8251 8346 "ssmap.ml" 253 8251 8354
+type(
+  String.t
+)
+ident(
+  int_ref succ_key "ssmap.ml" 252 8187 8200 "ssmap.ml" 252 8187 8208
+)
+"ssmap.ml" 253 8251 8324 "ssmap.ml" 253 8251 8354
+call(
+  stack
+)
+type(
+  ssmap
+)
+"ssmap.ml" 253 8251 8263 "ssmap.ml" 253 8251 8355
+type(
+  ssmap.Node
+)
+"ssmap.ml" 253 8251 8259 "ssmap.ml" 253 8251 8355
+type(
+  ssmap
+)
+"ssmap.ml" 252 8187 8195 "ssmap.ml" 253 8251 8355
+type(
+  ssmap
+)
+"ssmap.ml" 247 8044 8049 "ssmap.ml" 253 8251 8355
+type(
+  ssmap
+)
+"ssmap.ml" 255 8401 8412 "ssmap.ml" 255 8401 8416
+type(
+  int
+)
+ident(
+  int_ref diff "ssmap.ml" 245 7979 7986 "ssmap.ml" 245 7979 7990
+)
+"ssmap.ml" 255 8401 8417 "ssmap.ml" 255 8401 8418
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"ssmap.ml" 255 8401 8419 "ssmap.ml" 255 8401 8420
+type(
+  int
+)
+"ssmap.ml" 255 8401 8412 "ssmap.ml" 255 8401 8420
+type(
+  bool
+)
+"ssmap.ml" 256 8426 8436 "ssmap.ml" 256 8426 8440
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 256 8426 8452 "ssmap.ml" 256 8426 8462
+type(
+  ssmap -> String.t -> ssmap
+)
+ident(
+  int_ref remove_key "ssmap.ml" 241 7902 7910 "ssmap.ml" 241 7902 7920
+)
+"ssmap.ml" 256 8426 8463 "ssmap.ml" 256 8426 8467
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 256 8426 8463 "ssmap.ml" 256 8426 8472
+type(
+  ssmap
+)
+"ssmap.ml" 256 8426 8473 "ssmap.ml" 256 8426 8476
+type(
+  String.t
+)
+ident(
+  int_ref key "ssmap.ml" 241 7902 7925 "ssmap.ml" 241 7902 7928
+)
+"ssmap.ml" 256 8426 8451 "ssmap.ml" 256 8426 8477
+call(
+  stack
+)
+type(
+  ssmap
+)
+"ssmap.ml" 256 8426 8435 "ssmap.ml" 256 8426 8478
+type(
+  ssmap.Node
+)
+"ssmap.ml" 256 8426 8431 "ssmap.ml" 256 8426 8478
+type(
+  ssmap
+)
+"ssmap.ml" 258 8487 8497 "ssmap.ml" 258 8487 8501
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 258 8487 8514 "ssmap.ml" 258 8487 8524
+type(
+  ssmap -> String.t -> ssmap
+)
+ident(
+  int_ref remove_key "ssmap.ml" 241 7902 7910 "ssmap.ml" 241 7902 7920
+)
+"ssmap.ml" 258 8487 8525 "ssmap.ml" 258 8487 8529
+type(
+  ssmap.Node
+)
+ident(
+  int_ref node "ssmap.ml" 244 7963 7969 "ssmap.ml" 244 7963 7975
+)
+"ssmap.ml" 258 8487 8525 "ssmap.ml" 258 8487 8535
+type(
+  ssmap
+)
+"ssmap.ml" 258 8487 8536 "ssmap.ml" 258 8487 8539
+type(
+  String.t
+)
+ident(
+  int_ref key "ssmap.ml" 241 7902 7925 "ssmap.ml" 241 7902 7928
+)
+"ssmap.ml" 258 8487 8513 "ssmap.ml" 258 8487 8540
+call(
+  stack
+)
+type(
+  ssmap
+)
+"ssmap.ml" 258 8487 8496 "ssmap.ml" 258 8487 8541
+type(
+  ssmap.Node
+)
+"ssmap.ml" 258 8487 8492 "ssmap.ml" 258 8487 8541
+type(
+  ssmap
+)
+"ssmap.ml" 255 8401 8409 "ssmap.ml" 258 8487 8541
+type(
+  ssmap
+)
+"ssmap.ml" 246 8024 8027 "ssmap.ml" 258 8487 8541
+type(
+  ssmap
+)
+"ssmap.ml" 245 7979 7982 "ssmap.ml" 258 8487 8541
+type(
+  ssmap
+)
+"ssmap.ml" 242 7931 7931 "ssmap.ml" 258 8487 8541
+type(
+  ssmap
 )

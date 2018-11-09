@@ -1,0 +1,386 @@
+(* Thu Nov 8 09:16:11 CST 2018 : Bug fix for missing Float module in
+   older OCaml's, replaced Float.compare with Pervasives.compare *)
+open Printf;;
+open Mltest;;
+
+
+(* files for diffing *)
+let actual_file = "test-data/actual.tmp";;
+let expect_file = "test-data/expect.tmp";;
+let diff_file   = "test-data/diff.tmp"  ;;
+let msgref = ref "";;
+
+let str_of_opt to_string o =
+  match o with
+  | None -> "None"
+  | Some x -> sprintf "Some %s" (to_string x)
+;;
+
+let str_of_fopt = str_of_opt string_of_float;;
+
+let make_getopt_msg key mapstr expect actual =
+  let lines = [
+      sprintf "Key:    %s" key;
+      sprintf "EXPECT: %s" expect;
+      sprintf "ACTUAL: %s" actual;
+      sprintf "Tree String for Map:\n%s" mapstr;
+    ]
+  in
+  String.concat "\n" lines
+;;
+
+let make_iterfold_msg mapstr funcstr expect actual =
+  let lines = [
+      sprintf "%s" funcstr;
+      sprintf "EXPECT: %s" expect;
+      sprintf "ACTUAL: %s" actual;
+      sprintf "Tree String for Map:\n%s" mapstr;
+    ]
+  in
+  String.concat "\n" lines
+;;
+
+let make_remove_msg key original_str =
+  let lines = [
+      sprintf "REMOVAL PRODUCES WRONG TREE";
+      sprintf "- Remove Key: %s" key;
+      sprintf "- Original Tree:";
+      sprintf "%s\n" original_str;
+    ] in
+  String.concat "\n" lines
+;;
+
+Mltest.main [|
+(******************************************)
+(* treeset.ml tests *)
+
+(fun () ->
+  (* basic functionality, empty + add + tree_string *)
+  let module FloatType = struct
+      type element = float;;
+      let compare = Pervasives.compare;;
+      let elem_string f = sprintf "%.4f" f;;
+    end
+  in
+  let module FS = Treeset.Make(FloatType) in
+
+  (* BEG_TEST *)
+  let set = FS.empty in
+  let set = FS.add set 5.5 in
+  let actual_str = FS.tree_string set in
+  let expect_str = "
+ 0: 5.5000
+" 
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file msgref )) then raise (TestFail {loc="test_treeset.ml:75"; msg=(!msgref); code="68:  let set = FS.empty in\n69:  let set = FS.add set 5.5 in\n70:  let actual_str = FS.tree_string set in\n71:  let expect_str = \"\n72: 0: 5.5000\n73:\" \n74:  in\n75:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file msgref );\n"}) else ();
+  (* END_TEST *)
+);
+
+(fun () ->
+  (* basic functionality, empty + add + tree_string *)
+  let module FloatType = struct
+      type element = float;;
+      let compare = Pervasives.compare;;
+      let elem_string = string_of_float;;
+    end
+  in
+  let module FS = Treeset.Make(FloatType) in
+  let fset =
+    let elems = [5.5; 8.2; 12.6; 9.4; 2.1; 4.5; 7.6; 1.9; 3.3; 3.6; 3.9; 3.1; 4.98] in
+    List.fold_left FS.add FS.empty elems
+  in
+  let fsetstr = FS.tree_string fset in
+
+  (* BEG_TEST *)
+  let el = 2.1 in
+  let actual = FS.getopt fset el in
+  let expect = Some 2.1 in
+  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:99"; msg=msg; code="95:  let el = 2.1 in\n96:  let actual = FS.getopt fset el in\n97:  let expect = Some 2.1 in\n98:  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in\n99:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+  (* BEG_TEST *)
+  let el = 6.66 in
+  let actual = FS.getopt fset el in
+  let expect = None in
+  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:107"; msg=msg; code="103:  let el = 6.66 in\n104:  let actual = FS.getopt fset el in\n105:  let expect = None in\n106:  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in\n107:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+);
+
+(fun () ->
+  (* basic functionality, empty + add + tree_string *)
+  let module FloatType = struct
+      type element = float;;
+      let compare = Pervasives.compare;;
+      let elem_string = string_of_float;;
+    end
+  in
+  let module FS = Treeset.Make(FloatType) in
+  let fset =
+    let elems = [5.5; 8.2; 12.6; 9.4; 2.1; 4.5; 7.6; 1.9; 3.3; 3.6; 3.9; 3.1; 4.98] in
+    List.fold_left FS.add FS.empty elems
+  in
+  let fsetstr = FS.tree_string fset in
+
+  (* BEG_TEST *)
+  let el = 4.98 in
+  let actual = FS.getopt fset el in
+  let expect = Some 4.98 in
+  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:132"; msg=msg; code="128:  let el = 4.98 in\n129:  let actual = FS.getopt fset el in\n130:  let expect = Some 4.98 in\n131:  let msg = make_getopt_msg (string_of_float el) fsetstr (str_of_fopt expect) (str_of_fopt actual) in\n132:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+  (* BEG_TEST *)
+  let el = 8.2 in
+  let actual = FS.contains fset el in
+  let expect = true in
+  let msg = make_getopt_msg (string_of_float el) fsetstr (string_of_bool expect) (string_of_bool actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:140"; msg=msg; code="136:  let el = 8.2 in\n137:  let actual = FS.contains fset el in\n138:  let expect = true in\n139:  let msg = make_getopt_msg (string_of_float el) fsetstr (string_of_bool expect) (string_of_bool actual) in\n140:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+  (* BEG_TEST *)
+  let el = 7.64 in
+  let actual = FS.contains fset el in
+  let expect = false in
+  let msg = make_getopt_msg (string_of_float el) fsetstr (string_of_bool expect) (string_of_bool actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:148"; msg=msg; code="144:  let el = 7.64 in\n145:  let actual = FS.contains fset el in\n146:  let expect = false in\n147:  let msg = make_getopt_msg (string_of_float el) fsetstr (string_of_bool expect) (string_of_bool actual) in\n148:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+);
+
+(fun () ->
+  (* iter *)
+  let module ISType = struct
+      type element = int * string;;
+      let compare = Pervasives.compare;;
+      let elem_string (i,s) = sprintf "(%d, %s)" i s;;
+    end
+  in
+  let module ISSet = Treeset.Make(ISType) in
+  let isset =
+    let els = [5,"odd"; 8,"even"; 12,"even"; 9,"odd"; 2,"even"; 4,"even"; 7,"odd"; 1,"odd"] in
+    List.fold_left ISSet.add ISSet.empty els
+  in
+  let issetstr = ISSet.tree_string isset in
+
+  (* BEG_TEST *)
+  let str = ref "" in
+  let concat_els (i,s) = str := !str ^ (sprintf "%d is %s " i s) in
+  let funcstr = "concatenate all int/strin pairs in a ref" in
+  ISSet.iter concat_els isset;
+  let expect = "1 is odd 2 is even 4 is even 5 is odd 7 is odd 8 is even 9 is odd 12 is even " in
+  let actual = !str in
+  let msg = make_iterfold_msg issetstr funcstr expect actual in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:176"; msg=msg; code="169:  let str = ref \"\" in\n170:  let concat_els (i,s) = str := !str ^ (sprintf \"%d is %s \" i s) in\n171:  let funcstr = \"concatenate all int/strin pairs in a ref\" in\n172:  ISSet.iter concat_els isset;\n173:  let expect = \"1 is odd 2 is even 4 is even 5 is odd 7 is odd 8 is even 9 is odd 12 is even \" in\n174:  let actual = !str in\n175:  let msg = make_iterfold_msg issetstr funcstr expect actual in\n176:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+);
+
+(fun () ->
+  (* fold *)
+  let module ISType = struct
+      type element = int * string;;
+      let compare = Pervasives.compare;;
+      let elem_string (i,s) = sprintf "(%d, %s)" i s;;
+    end
+  in
+  let module ISSet = Treeset.Make(ISType) in
+  let isset =
+    let els = [5,"odd"; 8,"even"; 12,"even"; 9,"odd"; 2,"even"; 4,"even"; 7,"odd"; 1,"odd"] in
+    List.fold_left ISSet.add ISSet.empty els
+  in
+  let issetstr = ISSet.tree_string isset in
+
+  (* BEG_TEST *)
+  let accum_kv (ksum,vcat) (k,v) = (ksum+k, (vcat^v^" ")) in
+  let funcstr = "sums keys, concatenates value strings" in
+  let (ksum,vcat) = ISSet.fold accum_kv (0,"") isset in
+  let actual = ksum in
+  let expect = 48 in
+  let msg = make_iterfold_msg issetstr funcstr (string_of_int expect) (string_of_int actual) in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:202"; msg=msg; code="196:  let accum_kv (ksum,vcat) (k,v) = (ksum+k, (vcat^v^\" \")) in\n197:  let funcstr = \"sums keys, concatenates value strings\" in\n198:  let (ksum,vcat) = ISSet.fold accum_kv (0,\"\") isset in\n199:  let actual = ksum in\n200:  let expect = 48 in\n201:  let msg = make_iterfold_msg issetstr funcstr (string_of_int expect) (string_of_int actual) in\n202:  __check__ ( expect = actual );\n"}) else ();
+  let actual = vcat in
+  let expect = "odd even even odd odd even odd even " in
+  let msg = make_iterfold_msg issetstr funcstr expect actual in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:206"; msg=msg; code="196:  let accum_kv (ksum,vcat) (k,v) = (ksum+k, (vcat^v^\" \")) in\n197:  let funcstr = \"sums keys, concatenates value strings\" in\n198:  let (ksum,vcat) = ISSet.fold accum_kv (0,\"\") isset in\n199:  let actual = ksum in\n200:  let expect = 48 in\n201:  let msg = make_iterfold_msg issetstr funcstr (string_of_int expect) (string_of_int actual) in\n202:  __check__ ( expect = actual );\n203:  let actual = vcat in\n204:  let expect = \"odd even even odd odd even odd even \" in\n205:  let msg = make_iterfold_msg issetstr funcstr expect actual in\n206:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+);
+
+(fun () ->
+  (* to_string *)
+  let module ISType = struct
+      type element = int * string;;
+      let compare = Pervasives.compare;;
+      let elem_string (i,s) = sprintf "(%d, %s)" i s;;
+    end
+  in
+  let module ISSet = Treeset.Make(ISType) in
+  let isset =
+    let els = [5,"odd"; 8,"even"; 12,"even"; 9,"odd"; 2,"even"; 4,"even"; 7,"odd"; 1,"odd"] in
+    List.fold_left ISSet.add ISSet.empty els
+  in
+
+  (* BEG_TEST *)
+  let actual = ISSet.to_string ISSet.empty in
+  let expect = "[]" in
+  let msg = sprintf "to_string incorrect\nEXPECT: %s\nACTUAL: %s\n" expect actual in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:228"; msg=msg; code="225:  let actual = ISSet.to_string ISSet.empty in\n226:  let expect = \"[]\" in\n227:  let msg = sprintf \"to_string incorrect\\nEXPECT: %s\\nACTUAL: %s\\n\" expect actual in\n228:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+  (* BEG_TEST *)
+  let actual = ISSet.to_string isset in
+  let expect = "[(1, odd), (2, even), (4, even), (5, odd), (7, odd), (8, even), (9, odd), (12, even)]" in
+  let msg = sprintf "to_string incorrect\nEXPECT: %s\nACTUAL: %s\n" expect actual in
+if not ( ( expect = actual )) then raise (TestFail {loc="test_treeset.ml:235"; msg=msg; code="232:  let actual = ISSet.to_string isset in\n233:  let expect = \"[(1, odd), (2, even), (4, even), (5, odd), (7, odd), (8, even), (9, odd), (12, even)]\" in\n234:  let msg = sprintf \"to_string incorrect\\nEXPECT: %s\\nACTUAL: %s\\n\" expect actual in\n235:  __check__ ( expect = actual );\n"}) else ();
+  (* END_TEST *)
+
+);
+
+(fun () ->
+  (* remove *)
+  let module SIType = struct
+      type element = string * int;;
+      let compare = Pervasives.compare;;
+      let elem_string (s,i) = sprintf "%s is %d" s i;;
+    end
+  in
+  let module SISet = Treeset.Make(SIType) in
+  let siset =
+    let els = ["seven",7; "two",2; "five",5; "one",1; "nine",9; "twelve",12; "eight",8] in
+    List.fold_left SISet.add SISet.empty els
+  in
+  let siset_str = SISet.tree_string siset in
+
+  (* BEG_TEST *)
+  let (s,i) as el = ("ten",10) in
+  let initmsg = make_remove_msg (sprintf "(%s,%d)" s i) siset_str in
+  let actual_str = (SISet.tree_string (SISet.remove siset el)) in
+  let expect_str = "
+   1: two is 2
+     2: twelve is 12
+ 0: seven is 7
+     2: one is 1
+       3: nine is 9
+   1: five is 5
+     2: eight is 8
+"
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref )) then raise (TestFail {loc="test_treeset.ml:269"; msg=(!msgref); code="256:  let (s,i) as el = (\"ten\",10) in\n257:  let initmsg = make_remove_msg (sprintf \"(%s,%d)\" s i) siset_str in\n258:  let actual_str = (SISet.tree_string (SISet.remove siset el)) in\n259:  let expect_str = \"\n260:   1: two is 2\n261:     2: twelve is 12\n262: 0: seven is 7\n263:     2: one is 1\n264:       3: nine is 9\n265:   1: five is 5\n266:     2: eight is 8\n267:\"\n268:  in\n269:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref );\n"}) else ();
+  (* END_TEST *)
+
+  (* BEG_TEST *)
+  let (s,i) as el = ("one",1) in
+  let initmsg = make_remove_msg (sprintf "(%s,%d)" s i) siset_str in
+  let actual_str = (SISet.tree_string (SISet.remove siset el)) in
+  let expect_str = "
+   1: two is 2
+     2: twelve is 12
+ 0: seven is 7
+     2: nine is 9
+   1: five is 5
+     2: eight is 8
+"
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref )) then raise (TestFail {loc="test_treeset.ml:285"; msg=(!msgref); code="273:  let (s,i) as el = (\"one\",1) in\n274:  let initmsg = make_remove_msg (sprintf \"(%s,%d)\" s i) siset_str in\n275:  let actual_str = (SISet.tree_string (SISet.remove siset el)) in\n276:  let expect_str = \"\n277:   1: two is 2\n278:     2: twelve is 12\n279: 0: seven is 7\n280:     2: nine is 9\n281:   1: five is 5\n282:     2: eight is 8\n283:\"\n284:  in\n285:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref );\n"}) else ();
+  (* END_TEST *)
+);
+
+(fun () ->
+  (* remove *)
+  let module SIType = struct
+      type element = string * int;;
+      let compare = Pervasives.compare;;
+      let elem_string (s,i) = sprintf "%s is %d" s i;;
+    end
+  in
+  let module SISet = Treeset.Make(SIType) in
+  let siset =
+    let els = ["seven",7; "two",2; "five",5; "one",1; "nine",9; "twelve",12; "eight",8] in
+    List.fold_left SISet.add SISet.empty els
+  in
+  let siset_str = SISet.tree_string siset in
+
+  (* BEG_TEST *)
+  let (s,i) as el = ("seven",7) in
+  let initmsg = make_remove_msg (sprintf "(%s,%d)" s i) siset_str in
+  let actual_str = (SISet.tree_string (SISet.remove siset el)) in
+  let expect_str = "
+   1: two is 2
+ 0: twelve is 12
+     2: one is 1
+       3: nine is 9
+   1: five is 5
+     2: eight is 8
+"
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref )) then raise (TestFail {loc="test_treeset.ml:317"; msg=(!msgref); code="305:  let (s,i) as el = (\"seven\",7) in\n306:  let initmsg = make_remove_msg (sprintf \"(%s,%d)\" s i) siset_str in\n307:  let actual_str = (SISet.tree_string (SISet.remove siset el)) in\n308:  let expect_str = \"\n309:   1: two is 2\n310: 0: twelve is 12\n311:     2: one is 1\n312:       3: nine is 9\n313:   1: five is 5\n314:     2: eight is 8\n315:\"\n316:  in\n317:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref );\n"}) else ();
+  (* END_TEST *)
+);
+
+(fun () ->
+  (* remove *)
+  let module SIType = struct
+      type element = string * int;;
+      let compare = Pervasives.compare;;
+      let elem_string (s,i) = sprintf "%s is %d" s i;;
+    end
+  in
+  let module SISet = Treeset.Make(SIType) in
+  let siset =
+    let els = ["seven",7; "two",2; "five",5; "one",1; "nine",9; "twelve",12; "eight",8] in
+    List.fold_left SISet.add SISet.empty els
+  in
+  let siset_str = SISet.tree_string siset in
+
+  (* BEG_TEST *)
+  let (s,i) as el = ("twelve",12) in
+  let initmsg = make_remove_msg (sprintf "(%s,%d)" s i) siset_str in
+  let actual_str = (SISet.tree_string (SISet.remove siset el)) in
+  let expect_str = "
+   1: two is 2
+ 0: seven is 7
+     2: one is 1
+       3: nine is 9
+   1: five is 5
+     2: eight is 8
+"
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref )) then raise (TestFail {loc="test_treeset.ml:349"; msg=(!msgref); code="337:  let (s,i) as el = (\"twelve\",12) in\n338:  let initmsg = make_remove_msg (sprintf \"(%s,%d)\" s i) siset_str in\n339:  let actual_str = (SISet.tree_string (SISet.remove siset el)) in\n340:  let expect_str = \"\n341:   1: two is 2\n342: 0: seven is 7\n343:     2: one is 1\n344:       3: nine is 9\n345:   1: five is 5\n346:     2: eight is 8\n347:\"\n348:  in\n349:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref );\n"}) else ();
+  (* END_TEST *)
+
+);
+
+(fun () ->
+  (* remove *)
+  let module SIType = struct
+      type element = string * int;;
+      let compare = Pervasives.compare;;
+      let elem_string (s,i) = sprintf "%s is %d" s i;;
+    end
+  in
+  let module SISet = Treeset.Make(SIType) in
+  let siset =
+    let els = ["seven",7; "two",2; "five",5; "one",1; "nine",9; "twelve",12; "eight",8] in
+    List.fold_left SISet.add SISet.empty els
+  in
+  let siset_str = SISet.tree_string siset in
+
+  (* BEG_TEST *)
+  let (s,i) as el = ("eighteen",18) in
+  let initmsg = make_remove_msg (sprintf "(%s,%d)" s i) siset_str in
+  let actual_str = (SISet.tree_string (SISet.remove siset el)) in
+  let expect_str = "
+   1: two is 2
+     2: twelve is 12
+ 0: seven is 7
+     2: one is 1
+       3: nine is 9
+   1: five is 5
+     2: eight is 8
+"
+  in
+if not ( ( check_diff ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref )) then raise (TestFail {loc="test_treeset.ml:383"; msg=(!msgref); code="370:  let (s,i) as el = (\"eighteen\",18) in\n371:  let initmsg = make_remove_msg (sprintf \"(%s,%d)\" s i) siset_str in\n372:  let actual_str = (SISet.tree_string (SISet.remove siset el)) in\n373:  let expect_str = \"\n374:   1: two is 2\n375:     2: twelve is 12\n376: 0: seven is 7\n377:     2: one is 1\n378:       3: nine is 9\n379:   1: five is 5\n380:     2: eight is 8\n381:\"\n382:  in\n383:  __check_output__ ( check_diff  ~expect_str expect_file ~actual_str actual_file diff_file ~initmsg msgref );\n"}) else ();
+  (* END_TEST *)
+);
+|];;    

@@ -54,13 +54,19 @@ module Make (ElMod : ELEM_SIG) = struct
   (* Higher order iterate function on a set for side-effects. func
      accepts one argument, an element from the set. *)
   let iter func set =
-    ElTreemap.iter func set
+    let help key value =
+      func key
+    in
+    ElTreemap.iter help set;
   ;;
 
   (* Higher order folding function on a set. func accepts two
      argument, the current result and an element from the set. *)
   let fold func init set =
-    ElTreemap.fold func init set
+    let help init key value =
+      func init key
+    in
+    ElTreemap.fold help init set;
   ;;
 
   (* Create a string version of the set. *)

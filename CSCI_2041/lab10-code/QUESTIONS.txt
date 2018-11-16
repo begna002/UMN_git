@@ -30,13 +30,13 @@ PROBLEM 1: lexer.ml
      process the entire string and to produce a list of the tokens that
      are found.
 
-The base case of the recursion is when the pointer “pos” is >= the length of the string “len”. At this point, an empty list is returned. If the base case is not met, then pattern matching is used on every character of the string to determine it’s type. Whitespace is ignored.
+The base case of the recursion is when the pointer “pos” is >= the length of the string “len”. At this point, an empty list is returned. If the base case is not met, then patter mattern matching is used on every character of the string to determine it’s type. Whitespace is ignored.
 
 
   2. There is a loop associated with digits. Why is this needed while no
      loop is needed for the other cases of tokens?
 
-It is possible for the integer to be greater than one digit (in this case, greater than one character). Thus, we must loop until we have found the last digit in the sequence, get the substring that holds the number, parse it as an integer, and then add it to the list of lexed tokens.
+It is possible for the integer to be greater than one digit (in this case, greater than one character). Thus, we must loop until we have found the last digit in the sequence, get the substring that holds the number, parse it to an integer, and then add it to the list of lexed tokens.
 
 
 

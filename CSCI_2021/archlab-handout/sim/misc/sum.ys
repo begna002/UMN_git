@@ -1,0 +1,54 @@
+#Moti Begna, begna002
+
+.pos 0
+irmovq stack, %rsp
+call main
+halt
+
+
+# Sample linked list
+.align 8
+ele1:
+    .quad 0xa00
+    .quad ele2
+ele2:
+    .quad 0x0b0
+    .quad ele3
+ele3:
+    .quad 0x00c
+    .quad 0
+
+
+main:
+    irmovq ele1,%rdi
+    call sum
+    ret
+
+sum:
+	pushq	%rbp
+	rrmovq	%rsp, %rbp
+	rmmovq	%rdi, -24(%rbp)
+    irmovq  $0, %r11
+	rmmovq	%r11, -8(%rbp)
+	jmp	L2
+L3:
+	mrmovq	-24(%rbp), %rax
+	mrmovq	(%rax), %rax
+    mrmovq  -8(%rbp), %r11
+	addq	%rax, %r11
+    rmmovq  %r11, -8(%rbp)
+	mrmovq	-24(%rbp), %rax
+	mrmovq	8(%rax), %rax
+	rmmovq	%rax, -24(%rbp)
+L2:
+    mrmovq    -24(%rbp), %r11
+    irmovq    $0, %r10
+	subq	%r10, %r11
+	jne	L3
+	mrmovq	-8(%rbp), %rax
+	popq	%rbp
+	ret
+
+
+	.pos 0x200
+stack:

@@ -1,0 +1,54 @@
+                            | #Moti Begna, begna002
+                            | 
+0x000:                      | .pos 0
+0x000: 30f40002000000000000 | irmovq stack, %rsp
+0x00a: 804800000000000000   | call main
+0x013: 00                   | halt
+                            | 
+                            | 
+                            | # Sample linked list
+0x018:                      | .align 8
+0x018:                      | ele1:
+0x018: 000a000000000000     |     .quad 0xa00
+0x020: 2800000000000000     |     .quad ele2
+0x028:                      | ele2:
+0x028: b000000000000000     |     .quad 0x0b0
+0x030: 3800000000000000     |     .quad ele3
+0x038:                      | ele3:
+0x038: 0c00000000000000     |     .quad 0x00c
+0x040: 0000000000000000     |     .quad 0
+                            | 
+                            | 
+0x048:                      | main:
+0x048: 30f71800000000000000 |     irmovq ele1,%rdi
+0x052: 805c00000000000000   |     call sum
+0x05b: 90                   |     ret
+                            | 
+0x05c:                      | sum:
+0x05c: a05f                 | 	pushq	%rbp
+0x05e: 2045                 | 	rrmovq	%rsp, %rbp
+0x060: 4075e8ffffffffffffff | 	rmmovq	%rdi, -24(%rbp)
+0x06a: 30fb0000000000000000 |     irmovq  $0, %r11
+0x074: 40b5f8ffffffffffffff | 	rmmovq	%r11, -8(%rbp)
+0x07e: 70cf00000000000000   | 	jmp	L2
+0x087:                      | L3:
+0x087: 5005e8ffffffffffffff | 	mrmovq	-24(%rbp), %rax
+0x091: 50000000000000000000 | 	mrmovq	(%rax), %rax
+0x09b: 50b5f8ffffffffffffff |     mrmovq  -8(%rbp), %r11
+0x0a5: 600b                 | 	addq	%rax, %r11
+0x0a7: 40b5f8ffffffffffffff |     rmmovq  %r11, -8(%rbp)
+0x0b1: 5005e8ffffffffffffff | 	mrmovq	-24(%rbp), %rax
+0x0bb: 50000800000000000000 | 	mrmovq	8(%rax), %rax
+0x0c5: 4005e8ffffffffffffff | 	rmmovq	%rax, -24(%rbp)
+0x0cf:                      | L2:
+0x0cf: 50b5e8ffffffffffffff |     mrmovq    -24(%rbp), %r11
+0x0d9: 30fa0000000000000000 |     irmovq    $0, %r10
+0x0e3: 61ab                 | 	subq	%r10, %r11
+0x0e5: 748700000000000000   | 	jne	L3
+0x0ee: 5005f8ffffffffffffff | 	mrmovq	-8(%rbp), %rax
+0x0f8: b05f                 | 	popq	%rbp
+0x0fa: 90                   | 	ret
+                            | 
+                            | 
+0x200:                      | 	.pos 0x200
+0x200:                      | stack:

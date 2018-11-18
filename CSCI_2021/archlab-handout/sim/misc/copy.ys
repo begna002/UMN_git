@@ -1,0 +1,76 @@
+# Moti Begna, begna002
+
+.pos 0
+irmovq stack, %rsp
+call main
+halt			
+
+
+.align 8
+# Source block
+src:
+    .quad 0x001
+    .quad 0x002
+    .quad 0x004
+# Destination block
+dest:
+    .quad 0x111
+    .quad 0x222
+    .quad 0x333
+
+
+main:
+    irmovq src, %rdi
+    irmovq dest, %rsi
+    irmovq $3, %rdx
+    call copy_block
+    ret
+
+copy_block:
+	pushq	%rbp
+	rrmovq	%rsp, %rbp
+	rmmovq	%rdi, -24(%rbp)
+	rmmovq	%rsi, -32(%rbp)
+	rmmovq	%rdx, -40(%rbp)
+    irmovq  $0, %r11
+	rmmovq	%r11, -16(%rbp)
+	jmp	L9
+L10:
+	mrmovq	-24(%rbp), %rax
+
+    rrmovq  %rax, %rdx
+    irmovq  $8, %r11
+    addq    %r11, %rdx
+	#leaq	8(%rax), %rdx
+	rmmovq	%rdx, -24(%rbp)
+	mrmovq	(%rax), %rax
+	rmmovq	%rax, -8(%rbp)
+	mrmovq	-32(%rbp), %rax
+
+    rrmovq  %rax, %rdx
+    irmovq  $8, %r11
+    addq    %r11, %rdx
+	#leaq	8(%rax), %rdx
+	rmmovq	%rdx, -32(%rbp)
+	mrmovq	-8(%rbp), %rdx
+	rmmovq	%rdx, (%rax)
+	mrmovq	-8(%rbp), %rax
+    mrmovq  -16(%rbp), %r11
+	xorq	%rax, %r11
+    rmmovq  %r11, -16(%rbp)
+    irmovq  $1, %r10
+    mrmovq  -40(%rbp), %r11
+    subq	%r10, %r11
+    rmmovq  %r11, -40(%rbp)
+L9:
+    irmovq  $0, %r10
+    mrmovq  -40(%rbp), %r11
+	subq	%r10, %r11
+	jg	L10
+	mrmovq	-16(%rbp), %rax
+	popq	%rbp
+	ret
+
+# The stack starts here and grows to lower addresses
+	.pos 0x200
+stack:

@@ -445,10 +445,10 @@ let parsetree_string expr =
        build c.if_expr   (depth+2);
        indent (depth+1);
        Buffer.add_string buf ".then_expr:\n";
-       build c.else_expr (depth+2);
+       build c.then_expr (depth+2);
        indent (depth+1);
        Buffer.add_string buf ".else_expr:\n";
-       build c.then_expr (depth+2);
+       build c.else_expr (depth+2);
     | Letin(l) ->
        Buffer.add_string buf (sprintf "Letin( %s )\n" l.var_name);
        indent (depth+1);

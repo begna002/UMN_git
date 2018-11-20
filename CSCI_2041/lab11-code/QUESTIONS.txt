@@ -146,6 +146,9 @@ PROBLEM 1: Lexer and Parser
   and how the lexer creates these tokens versus variable name `Ident'
   tokens.
 
+Once a character substring is created which represents a possible letter or word, the substring is matched with a possible keyword such as let, if, then, etc. If the substring matches one of these keywords, the associated value for that keyword is returned. If the substring is not one of those keywords, an identifier for that substring is instead returned.
+
+
 
 (B)
 ~~~
@@ -156,6 +159,8 @@ PROBLEM 1: Lexer and Parser
   type that correspond to `if/then/else' and `let/in'
   constructs. Describe their parts and whether expression trees will
   always be binary trees.
+
+Both the let/in and the if/then/else entries are record types that hold corresponding data. The let/in record holds a string variable name, expression that will be bound to the variable name, and an expression that follows the “in” format of a let binding. The if/then/else record holds an expression that will be checked (bound to if_expr), an expression that will be executed if if_expr is true, and an expression that will be executed if if_expr is false. Expression trees that utilize these entries will no longer be strictly binary, but have segments that incorporate three children instead of just a left and right child.
 
 
 (C)
@@ -185,6 +190,10 @@ PROBLEM 1: Lexer and Parser
      an addition.  Is the same done by `parse_letin' and `parse_cond'?
      Why or why not?
 
+1) The parse_letin and parse_cond expressions are of higher precedence than adding and multiplying.
+2) Parse_letin and parse_cond do not make recursive to themselves, but rather calls to the top-level function parse_expr because the record values that will be assigned to these variant types can be full expressions as well as simple identifiers.
+3) The same is not done, since these expressions must pattern matched inputted tokens immediately. This is because if they were to first call the higher precedence function parse_ident, a syntax error would occur.
+
 
 PROBLEM 2: Evaluator
 ====================
@@ -207,6 +216,9 @@ PROBLEM 2: Evaluator
      standard functor is used?
   3. Will the variable maps be mutable or immutable?
 
+1) The valval_t type can only have two variants, an Integer and a Boolean value. 
+2) Map.make is used with a String module input to create a Varmap module that will have functions like add, remove, and find.
+3) The variable maps will be immutable since Map.make is creates immutable maps 
 
 (B)
 ~~~
@@ -225,6 +237,10 @@ PROBLEM 2: Evaluator
   4. Analyze the `Letin' case within `eval_expr'. Describe how a new
      binding is created in a `let/in' expression.
 
+1) Evl_expr takes varmap, which is a variable map of type varmap_t, and an expression tree of type expr.
+2) The value associated with the variable name is searched in varmap using the Varmap.find_opt function, and then matched. If the value is found, it is returned. Otherwise, a “No variable..” error is raised.
+3) The arithmetic expressions are all evaluated the same, where the left and right sub-expressions are recursively evaluated, whereby another case of pattern matching is used when we have found left and right data. At this point, we once again use matching to evaluate the left and right data based on what the original expression was (Add, Sub, Mul, Div). 
+4) The var_expr child of the Letin expression is evaluated and then added to a new map using it as the value, and the var_name child of the Letin expression as the key. The top level eval_expr function is then called using the new map and the in_expr child of the Letin expression as the rest of the expression to be evaluated.
 
 (C)
 ~~~
@@ -237,6 +253,20 @@ PROBLEM 2: Evaluator
   - When b is false, evaluate c.else_expr
 
   Paste your code below as your solution.
+
+| Cond(c) -> begin                                          
+   let test = eval_expr varmap c.if_expr in                
+   match test with
+      | Bool b ->                                          
+          if b = true then
+            eval_expr varmap c.then_expr
+          else
+            eval_expr varmap c.else_expr
+      | _ ->                                               
+         let msg = sprintf "Expected Bool for if <expr>, found '%s'"
+(data_string test) in
+         raise (EvalError{msg})
+    end
 
 
 Optional Extras

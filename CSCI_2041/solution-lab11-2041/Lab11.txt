@@ -380,7 +380,7 @@ SOLUTION                                                      :solution:
   `----
 
 
-Optional Extras
+Optional Extras DONE IN CODE
 ===============
 
   Currently the lexer/parser/evaluator does not handle numeric

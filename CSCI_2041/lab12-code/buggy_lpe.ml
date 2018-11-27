@@ -1,7 +1,5 @@
-(* Mon Nov 19 10:22:07 CST 2018 :: Bug fix to establish higher
-   precedence for subtraction and division. *)
-
-(* lex_parse_eval.ml:  *)
+(* buggy_lpe.ml: Contains subtle bugs which can be diagnosed via the
+   debugger.  *)
 open Printf;;
 
 (**********************************************************************************)
@@ -16,9 +14,6 @@ type token =
   | Plus  | Times | Minus | Slash
   | Let | In | Equal
   | If | Then | Else
-  | Less
-  | Greater
-  | Not_Equal
 ;;
 
 
@@ -54,9 +49,6 @@ let lex_string string =
       |'(' -> OParen :: (lex (pos+1))        (* and open/close parens *)
       |')' -> CParen :: (lex (pos+1))
       |'=' -> Equal  :: (lex (pos+1))
-      |'<' -> Less :: (lex (pos + 1))
-      |'>' -> Greater :: (lex (pos + 1))
-      |'!' when string.[pos+1] = '='-> Not_Equal :: (lex (pos +2))
       | d when is_digit d ->                 (* see a digit *)
          let stop = ref pos in               (* scan through until a non-digit is found *)
          while !stop < len && is_digit string.[!stop] do
@@ -108,10 +100,6 @@ type expr =
   | Sub of expr * expr
   | Mul of expr * expr
   | Div of expr * expr
-  | Equal_to of expr * expr
-  | Not_Equal_to of expr * expr
-  | Less_than of expr * expr
-  | Greater_than of expr * expr
   | Letin of {var_name: string;               (* let expression binding a var_name *)
               var_expr: expr;                 (* to resutls of var_expr then evaluating *)
               in_expr:  expr;}                (* in_expr to get results *)
@@ -124,74 +112,40 @@ type expr =
    tree from a series of tokens. Starts a series of mutually recursive
    functions. *)
 let rec parse_expr tokens =
-  let (expr, rest) as result = parse_equal tokens in
+  let (expr, rest) as result = parse_addsub tokens in
   result
 
-(* parse addition and subtraction *)
-and parse_equal toks =
-  let (lexpr, rest) = parse_not_equal toks in
-  match rest with
-  | Equal::tail ->
-      let (rexpr, rest) = parse_equal tail in
-      (Equal_to(lexpr, rexpr), rest)
-  | _ -> (lexpr, rest)
+(* parse addition and subtraction: this version builds "left-heavy"
+   parse trees to avoid the need for different precedence between
+   add/sub *)
+and parse_addsub toks =
+  let rec iter lexpr toks =                     (* loop through adjacent + and - expressions *)
+    match toks with
+    | Plus :: rest ->                           (* found + *)
+       let (rexpr,rest) = parse_muldiv rest in  (* consume a higher-prec expression *)
+       iter (Add(lexpr,rexpr)) rest             (* create an Add tree and iterate again *)
+    | Minus :: rest ->                          (* found - *)
+       let (rexpr,rest) = parse_letin rest in   (* consume a higher-prec expression *)
+       iter (Sub(lexpr,rexpr)) rest             (* create a  Sub tree and iterate again *)
+    | _ -> (lexpr, toks)
+  in
+  let (lexpr, rest) = parse_muldiv toks in      (* create the initial left expression *)
+  iter lexpr rest                               (* start iterating *)
 
-and parse_not_equal toks =
-  let (lexpr, rest) = parse_greater toks in
-  match rest with
-  | Not_Equal::tail ->
-      let (rexpr, rest) = parse_not_equal tail in
-      (Not_Equal_to(lexpr, rexpr), rest)
-  | _ -> (lexpr, rest)
-
-and parse_greater toks =
-  let (lexpr, rest) = parse_less toks in
-  match rest with
-  | Greater::tail ->
-      let (rexpr, rest) = parse_greater tail in
-      (Greater_than(lexpr, rexpr), rest)
-  | _ -> (lexpr, rest)
-
-and parse_less toks =
-  let (lexpr, rest) = parse_add toks in
-  match rest with
-  | Less::tail ->
-      let (rexpr, rest) = parse_less tail in
-      (Less_than(lexpr, rexpr), rest)
-  | _ -> (lexpr, rest)
-
-and parse_add toks =
-  let (lexpr, rest) = parse_sub toks in       (* try higher precdence expression first *)
-  match rest with
-  | Plus :: tail ->                           (* + is first *)
-     let (rexpr,rest) = parse_add tail in     (* recursively generate right-had expression *)
-     (Add(lexpr,rexpr), rest)                 (* return addition of these two *)
-  | _ -> (lexpr, rest)                        (* not an addition so return expression and remaining tokens *)
-
-and parse_sub toks =
-  let (lexpr, rest) = parse_mul toks in       (* try higher precdence expression first *)
-  match rest with
-  | Minus :: tail ->                          (* - is first *)
-     let (rexpr,rest) = parse_sub tail in     (* recursively generate right-had expression *)
-     (Sub(lexpr,rexpr), rest)                 (* return subtraction of these two *)
-  | _ -> (lexpr, rest)                        (* not subtraction so return expression and remaining tokens *)
-
-(* parse multiplication and division *)
-and parse_mul toks =
-  let (lexpr, rest) = parse_div toks in     (* try higher precdence expression first *)
-  match rest with
-  | Times :: tail ->                          (* * is first *)
-     let (rexpr,rest) = parse_mul tail in     (* recursively generate right-had expression *)
-     (Mul(lexpr,rexpr), rest)                 (* return multiplication of these two *)
-  | _ -> (lexpr, rest)                        (* not a multiply so return expression and remaining tokens *)
-
-and parse_div toks =
-  let (lexpr, rest) = parse_letin toks in     (* try higher precdence expression first *)
-  match rest with
-  | Slash :: tail ->                          (* / is first *)
-     let (rexpr,rest) = parse_div tail in     (* recursively generate right-had expression *)
-     (Div(lexpr,rexpr), rest)                 (* return division of these two *)
-  | _ -> (lexpr, rest)                        (* not division so return expression and remaining tokens *)
+(* parse multiplication and division, same principle as parse_addsub *)
+and parse_muldiv toks =
+  let rec iter lexpr toks =
+    match toks with
+    | Times :: rest ->
+       let (rexpr,rest) = parse_ident rest in
+       iter (Mul(lexpr,rexpr)) rest
+    | Slash :: rest ->
+       let (rexpr,rest) = parse_ident rest in
+       iter (Div(lexpr,rexpr)) rest
+    | _ -> (lexpr, toks)
+  in
+  let (lexpr, rest) = parse_letin toks in
+  iter lexpr rest
 
 (* parse a let/in expression *)
 and parse_letin toks =
@@ -206,25 +160,7 @@ and parse_letin toks =
        | _ -> raise (ParseError{msg="Expected 'in' after 'let'"; toks=rest})
        end
      end
-  | _ -> parse_cond toks                               (* didn't find 'let', recurse lower *)
-
-(* parse an if/then/else experssion *)
-and parse_cond toks =
-  match toks with
-  | If :: rest ->                                          (* look for an 'if <expr>' *)
-     let (if_expr,rest) = parse_expr rest in               (* parse the <expr> *)
-     begin match rest with
-      | Then :: rest ->                                    (* look for 'then <expr>'  *)
-         let (then_expr,rest) = parse_expr rest in         (* parse the <expr> *)
-         begin match rest with
-          | Else :: rest ->                                (* look for an 'else <expr>' *)
-             let (else_expr,rest) = parse_expr rest in     (* parse the <expr> *)
-             (Cond{if_expr; then_expr; else_expr}, rest)   (* return the result and rest of tokens *)
-          | _ -> raise (ParseError{msg="Expected 'else' ";toks=rest})
-         end
-      | _ -> raise (ParseError{msg="Expected 'then' ";toks=rest})
-     end
-  | _ -> parse_ident toks
+  | _ -> parse_ident toks                               (* didn't find 'let', recurse lower *)
 
 (* parse identifiers, integers, booleans, and open/close parentheses *)
 and parse_ident toks =
@@ -308,50 +244,17 @@ let rec eval_expr varmap expr =
          let msg = sprintf "Expect Int for right arithmetic expression, found '%s'" (data_string lerr) in
          raise (EvalError{msg})
     end
-  | Greater_than(lexpr,rexpr) | Less_than(lexpr,rexpr)
-  | Equal_to(lexpr, rexpr) | Not_Equal_to(lexpr, rexpr)-> begin           (* a left/right branch *)
-      let ldata = eval_expr varmap lexpr in                (* evaluate left *)
-      let rdata = eval_expr varmap rexpr in                (* evaluate right *)
-      match ldata,rdata with
-      | (Int li),(Int ri) -> begin                         (* check that the results on both sides are ints *)
-        match expr with                                  (* match to perform the correct operation *)
-          | Greater_than _   ->
-              Bool(li>ri)
-          | Less_than _   ->
-              Bool(li<ri)
-          | Equal_to _   ->
-              Bool(li=ri)
-          | Not_Equal_to _ ->
-              Bool(li!=ri)
-          | _ -> failwith "impossible case (right?)"       (* keep the compiler happy about pattern matching *)
-        end
-      | Int li,rerr ->                                     (* error: left/right expression was not an int *)
-        let msg = sprintf "Expect Int for right arithmetic expression, found '%s'" (data_string rerr) in
-        raise (EvalError{msg})
-      | lerr,_ ->
-        let msg = sprintf "Expect Int for right arithmetic expression, found '%s'" (data_string lerr) in
-        raise (EvalError{msg})
-      end
   | Letin(l) ->                                            (* eval a let binding *)
-     let var_data = eval_expr varmap l.var_expr in         (* evaluate the let-expr to determine the variable's value *)
-     let new_varmap =
-       Varmap.add l.var_name var_data varmap               (* add the binding to the variable map *)
-     in
-     eval_expr new_varmap l.in_expr                        (* evaluate the in expression with the variable bound *)
-
+      let var_data = eval_expr varmap l.var_expr in         (* evaluate the let-expr to determine the variable's value *)
+      let new_varmap =
+        Varmap.add l.var_name var_data varmap               (* add the binding to the variable map *)
+      in
+      eval_expr new_varmap l.in_expr                                (* evaluate the in expression with the variable bound *)
   (* COMPLETE THIS CASE *)
   | Cond(c) -> begin                                       (* eval a condition *)
-      let test = eval_expr varmap c.if_expr in               (* evaluate the test in c.if_expr *)
-      match test with
-      | Bool b ->                                          (* ensure result of <expr> was a true/false value  *)
-          if b = true then
-            eval_expr varmap c.then_expr
-          else
-            eval_expr varmap c.else_expr
-      | _ ->                                               (* error: 'if <expr>' did not give a true/false *)
-         let msg = sprintf "Expected Bool for if <expr>, found '%s'" (data_string test) in
-         raise (EvalError{msg})
+      raise (EvalError{msg="Cond not implemented"})
     end
+
 ;;
 
 (**********************************************************************************)
@@ -372,9 +275,6 @@ let tokenlist_string tokens =
       | Minus    -> "Minus"
       | Slash    -> "Slash"
       | Equal    -> "Equal"
-      | Not_Equal -> "Not Equal"
-      | Greater  -> "Greater"
-      | Less     -> "Less"
       | OParen   -> "OParen"
       | CParen   -> "CParen"
       | If       -> "If"
@@ -411,16 +311,10 @@ let parsetree_string expr =
     | BConst(b)  -> Buffer.add_string buf (sprintf "BConst(%b)\n" b);
     | Varname(s) -> Buffer.add_string buf (sprintf "Varname(%s)\n" s);
     | Add(left,right) | Sub(left,right)
-    | Mul(left,right) | Div(left,right)
-    | Equal_to(left, right) | Not_Equal_to(left, right)
-    | Less_than(left, right) | Greater_than(left, right) ->
+    | Mul(left,right) | Div(left,right) ->
        let str = match expr with
          | Add _ -> "Add" | Sub _ -> "Sub"
          | Mul _ -> "Mul" | Div _ -> "Div"
-         | Equal_to _ -> "Equal to"
-         | Not_Equal_to _ -> "Not Equal to"
-         | Greater_than _-> "Greater than"
-         | Less_than _-> "Less than"
          | _ -> failwith "impossible to reach (right?)"
        in
        Buffer.add_string buf (sprintf "%s\n" str);

@@ -35,9 +35,8 @@ def hash_insert(table,hashtag,hash_function):
 #Deletes the requested Hashtag object in the table, replacing it with DELETED.
 #   returns either the index at which the object was found, or None it wasn't.
 def hash_delete(table,hashtag,hash_function):
-    found = False
     i = 0
-    while found != True:
+    for i in range(len(table)):
         j = hash_function(hashtag, i)
         if table[j] == hashtag:
             table[j] = DELETED

@@ -1,0 +1,848 @@
+"ssmap_demo.ml" 6 115 119 "ssmap_demo.ml" 6 115 120
+type(
+  unit
+)
+"ssmap_demo.ml" 8 151 157 "ssmap_demo.ml" 8 151 161
+type(
+  Ssmap.ssmap
+)
+ident(
+  def map1 "ssmap_demo.ml" 9 179 181 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 8 151 164 "ssmap_demo.ml" 8 151 175
+type(
+  Ssmap.ssmap
+)
+ident(
+  ext_ref Ssmap.empty
+)
+"ssmap_demo.ml" 9 179 185 "ssmap_demo.ml" 9 179 189
+type(
+  Ssmap.ssmap
+)
+ident(
+  def map2 "ssmap_demo.ml" 10 227 229 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 9 179 192 "ssmap_demo.ml" 9 179 201
+type(
+  Ssmap.ssmap -> String.t -> string -> Ssmap.ssmap
+)
+ident(
+  ext_ref Ssmap.add
+)
+"ssmap_demo.ml" 9 179 202 "ssmap_demo.ml" 9 179 206
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map1 "ssmap_demo.ml" 8 151 157 "ssmap_demo.ml" 8 151 161
+)
+"ssmap_demo.ml" 9 179 207 "ssmap_demo.ml" 9 179 211
+type(
+  String.t
+)
+"ssmap_demo.ml" 9 179 212 "ssmap_demo.ml" 9 179 223
+type(
+  string
+)
+"ssmap_demo.ml" 9 179 192 "ssmap_demo.ml" 9 179 223
+call(
+  stack
+)
+type(
+  Ssmap.ssmap
+)
+"ssmap_demo.ml" 10 227 233 "ssmap_demo.ml" 10 227 237
+type(
+  Ssmap.ssmap
+)
+ident(
+  def map3 "ssmap_demo.ml" 11 277 279 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 10 227 240 "ssmap_demo.ml" 10 227 249
+type(
+  Ssmap.ssmap -> String.t -> string -> Ssmap.ssmap
+)
+ident(
+  ext_ref Ssmap.add
+)
+"ssmap_demo.ml" 10 227 250 "ssmap_demo.ml" 10 227 254
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map2 "ssmap_demo.ml" 9 179 185 "ssmap_demo.ml" 9 179 189
+)
+"ssmap_demo.ml" 10 227 255 "ssmap_demo.ml" 10 227 259
+type(
+  String.t
+)
+"ssmap_demo.ml" 10 227 260 "ssmap_demo.ml" 10 227 273
+type(
+  string
+)
+"ssmap_demo.ml" 10 227 240 "ssmap_demo.ml" 10 227 273
+call(
+  stack
+)
+type(
+  Ssmap.ssmap
+)
+"ssmap_demo.ml" 11 277 279 "ssmap_demo.ml" 11 277 285
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 11 277 286 "ssmap_demo.ml" 11 277 299
+type(
+  (string -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 11 277 301 "ssmap_demo.ml" 11 277 318
+type(
+  Ssmap.ssmap -> string
+)
+ident(
+  ext_ref Ssmap.tree_string
+)
+"ssmap_demo.ml" 11 277 319 "ssmap_demo.ml" 11 277 323
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map3 "ssmap_demo.ml" 10 227 233 "ssmap_demo.ml" 10 227 237
+)
+"ssmap_demo.ml" 11 277 300 "ssmap_demo.ml" 11 277 324
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap_demo.ml" 11 277 279 "ssmap_demo.ml" 11 277 324
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 13 327 333 "ssmap_demo.ml" 13 327 341
+type(
+  (string * string) list
+)
+ident(
+  def int_list "ssmap_demo.ml" 19 606 608 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 13 327 345 "ssmap_demo.ml" 13 327 349
+type(
+  string
+)
+"ssmap_demo.ml" 13 327 350 "ssmap_demo.ml" 13 327 357
+type(
+  string
+)
+"ssmap_demo.ml" 13 327 345 "ssmap_demo.ml" 13 327 357
+type(
+  string * string
+)
+"ssmap_demo.ml" 13 327 364 "ssmap_demo.ml" 13 327 368
+type(
+  string
+)
+"ssmap_demo.ml" 13 327 369 "ssmap_demo.ml" 13 327 382
+type(
+  string
+)
+"ssmap_demo.ml" 13 327 364 "ssmap_demo.ml" 13 327 382
+type(
+  string * string
+)
+"ssmap_demo.ml" 14 384 402 "ssmap_demo.ml" 14 384 406
+type(
+  string
+)
+"ssmap_demo.ml" 14 384 407 "ssmap_demo.ml" 14 384 418
+type(
+  string
+)
+"ssmap_demo.ml" 14 384 402 "ssmap_demo.ml" 14 384 418
+type(
+  string * string
+)
+"ssmap_demo.ml" 14 384 421 "ssmap_demo.ml" 14 384 425
+type(
+  string
+)
+"ssmap_demo.ml" 14 384 426 "ssmap_demo.ml" 14 384 434
+type(
+  string
+)
+"ssmap_demo.ml" 14 384 421 "ssmap_demo.ml" 14 384 434
+type(
+  string * string
+)
+"ssmap_demo.ml" 15 436 454 "ssmap_demo.ml" 15 436 458
+type(
+  string
+)
+"ssmap_demo.ml" 15 436 459 "ssmap_demo.ml" 15 436 471
+type(
+  string
+)
+"ssmap_demo.ml" 15 436 454 "ssmap_demo.ml" 15 436 471
+type(
+  string * string
+)
+"ssmap_demo.ml" 15 436 473 "ssmap_demo.ml" 15 436 477
+type(
+  string
+)
+"ssmap_demo.ml" 15 436 478 "ssmap_demo.ml" 15 436 489
+type(
+  string
+)
+"ssmap_demo.ml" 15 436 473 "ssmap_demo.ml" 15 436 489
+type(
+  string * string
+)
+"ssmap_demo.ml" 16 491 509 "ssmap_demo.ml" 16 491 513
+type(
+  string
+)
+"ssmap_demo.ml" 16 491 514 "ssmap_demo.ml" 16 491 527
+type(
+  string
+)
+"ssmap_demo.ml" 16 491 509 "ssmap_demo.ml" 16 491 527
+type(
+  string * string
+)
+"ssmap_demo.ml" 16 491 528 "ssmap_demo.ml" 16 491 532
+type(
+  string
+)
+"ssmap_demo.ml" 16 491 533 "ssmap_demo.ml" 16 491 543
+type(
+  string
+)
+"ssmap_demo.ml" 16 491 528 "ssmap_demo.ml" 16 491 543
+type(
+  string * string
+)
+"ssmap_demo.ml" 17 545 563 "ssmap_demo.ml" 17 545 567
+type(
+  string
+)
+"ssmap_demo.ml" 17 545 568 "ssmap_demo.ml" 17 545 582
+type(
+  string
+)
+"ssmap_demo.ml" 17 545 563 "ssmap_demo.ml" 17 545 582
+type(
+  string * string
+)
+"ssmap_demo.ml" 13 327 344 "ssmap_demo.ml" 18 584 602
+type(
+  (string * string) list
+)
+"ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+type(
+  Ssmap.ssmap
+)
+ident(
+  def map4 "ssmap_demo.ml" 23 715 717 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 20 619 627 "ssmap_demo.ml" 20 619 631
+type(
+  Ssmap.ssmap -> String.t * string -> Ssmap.ssmap
+)
+ident(
+  def help "ssmap_demo.ml" 21 665 669 "ssmap_demo.ml" 21 665 709
+)
+"ssmap_demo.ml" 20 619 632 "ssmap_demo.ml" 20 619 635
+type(
+  Ssmap.ssmap
+)
+ident(
+  def map "ssmap_demo.ml" 20 619 636 "ssmap_demo.ml" 20 619 661
+)
+"ssmap_demo.ml" 20 619 637 "ssmap_demo.ml" 20 619 638
+type(
+  String.t
+)
+ident(
+  def k "ssmap_demo.ml" 20 619 644 "ssmap_demo.ml" 20 619 661
+)
+"ssmap_demo.ml" 20 619 639 "ssmap_demo.ml" 20 619 640
+type(
+  string
+)
+ident(
+  def v "ssmap_demo.ml" 20 619 644 "ssmap_demo.ml" 20 619 661
+)
+"ssmap_demo.ml" 20 619 636 "ssmap_demo.ml" 20 619 641
+type(
+  String.t * string
+)
+"ssmap_demo.ml" 20 619 644 "ssmap_demo.ml" 20 619 653
+type(
+  Ssmap.ssmap -> String.t -> string -> Ssmap.ssmap
+)
+ident(
+  ext_ref Ssmap.add
+)
+"ssmap_demo.ml" 20 619 654 "ssmap_demo.ml" 20 619 657
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map "ssmap_demo.ml" 20 619 632 "ssmap_demo.ml" 20 619 635
+)
+"ssmap_demo.ml" 20 619 658 "ssmap_demo.ml" 20 619 659
+type(
+  String.t
+)
+ident(
+  int_ref k "ssmap_demo.ml" 20 619 637 "ssmap_demo.ml" 20 619 638
+)
+"ssmap_demo.ml" 20 619 660 "ssmap_demo.ml" 20 619 661
+type(
+  string
+)
+ident(
+  int_ref v "ssmap_demo.ml" 20 619 639 "ssmap_demo.ml" 20 619 640
+)
+"ssmap_demo.ml" 20 619 644 "ssmap_demo.ml" 20 619 661
+call(
+  tail
+)
+type(
+  Ssmap.ssmap
+)
+"ssmap_demo.ml" 21 665 669 "ssmap_demo.ml" 21 665 683
+type(
+  (Ssmap.ssmap -> String.t * string -> Ssmap.ssmap) ->
+  Ssmap.ssmap -> (String.t * string) list -> Ssmap.ssmap
+)
+ident(
+  ext_ref List.fold_left
+)
+"ssmap_demo.ml" 21 665 684 "ssmap_demo.ml" 21 665 688
+type(
+  Ssmap.ssmap -> String.t * string -> Ssmap.ssmap
+)
+ident(
+  int_ref help "ssmap_demo.ml" 20 619 627 "ssmap_demo.ml" 20 619 631
+)
+"ssmap_demo.ml" 21 665 689 "ssmap_demo.ml" 21 665 700
+type(
+  Ssmap.ssmap
+)
+ident(
+  ext_ref Ssmap.empty
+)
+"ssmap_demo.ml" 21 665 701 "ssmap_demo.ml" 21 665 709
+type(
+  (String.t * string) list
+)
+ident(
+  int_ref int_list "ssmap_demo.ml" 13 327 333 "ssmap_demo.ml" 13 327 341
+)
+"ssmap_demo.ml" 21 665 669 "ssmap_demo.ml" 21 665 709
+call(
+  stack
+)
+type(
+  Ssmap.ssmap
+)
+"ssmap_demo.ml" 20 619 623 "ssmap_demo.ml" 21 665 709
+type(
+  Ssmap.ssmap
+)
+"ssmap_demo.ml" 23 715 717 "ssmap_demo.ml" 23 715 723
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 23 715 724 "ssmap_demo.ml" 23 715 737
+type(
+  (string -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 23 715 739 "ssmap_demo.ml" 23 715 756
+type(
+  Ssmap.ssmap -> string
+)
+ident(
+  ext_ref Ssmap.tree_string
+)
+"ssmap_demo.ml" 23 715 757 "ssmap_demo.ml" 23 715 761
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map4 "ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+)
+"ssmap_demo.ml" 23 715 738 "ssmap_demo.ml" 23 715 762
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap_demo.ml" 23 715 717 "ssmap_demo.ml" 23 715 762
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 25 765 767 "ssmap_demo.ml" 25 765 773
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 25 765 774 "ssmap_demo.ml" 25 765 796
+type(
+  (string -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 25 765 798 "ssmap_demo.ml" 25 765 813
+type(
+  Ssmap.ssmap -> string
+)
+ident(
+  ext_ref Ssmap.to_string
+)
+"ssmap_demo.ml" 25 765 814 "ssmap_demo.ml" 25 765 818
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map4 "ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+)
+"ssmap_demo.ml" 25 765 797 "ssmap_demo.ml" 25 765 819
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap_demo.ml" 25 765 767 "ssmap_demo.ml" 25 765 819
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 27 822 828 "ssmap_demo.ml" 27 822 836
+type(
+  int -> string -> 'a -> int
+)
+ident(
+  def sum_keys "ssmap_demo.ml" 28 882 884 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 27 822 837 "ssmap_demo.ml" 27 822 840
+type(
+  int
+)
+ident(
+  def cur "ssmap_demo.ml" 27 822 841 "ssmap_demo.ml" 27 822 878
+)
+"ssmap_demo.ml" 27 822 841 "ssmap_demo.ml" 27 822 844
+type(
+  string
+)
+ident(
+  def key "ssmap_demo.ml" 27 822 845 "ssmap_demo.ml" 27 822 878
+)
+"ssmap_demo.ml" 27 822 845 "ssmap_demo.ml" 27 822 850
+type(
+  'a
+)
+ident(
+  def value "ssmap_demo.ml" 27 822 853 "ssmap_demo.ml" 27 822 878
+)
+"ssmap_demo.ml" 27 822 853 "ssmap_demo.ml" 27 822 856
+type(
+  int
+)
+ident(
+  int_ref cur "ssmap_demo.ml" 27 822 837 "ssmap_demo.ml" 27 822 840
+)
+"ssmap_demo.ml" 27 822 857 "ssmap_demo.ml" 27 822 858
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"ssmap_demo.ml" 27 822 860 "ssmap_demo.ml" 27 822 873
+type(
+  string -> int
+)
+ident(
+  ext_ref Pervasives.int_of_string
+)
+"ssmap_demo.ml" 27 822 874 "ssmap_demo.ml" 27 822 877
+type(
+  string
+)
+ident(
+  int_ref key "ssmap_demo.ml" 27 822 841 "ssmap_demo.ml" 27 822 844
+)
+"ssmap_demo.ml" 27 822 859 "ssmap_demo.ml" 27 822 878
+type(
+  int
+)
+"ssmap_demo.ml" 27 822 853 "ssmap_demo.ml" 27 822 878
+type(
+  int
+)
+"ssmap_demo.ml" 28 882 888 "ssmap_demo.ml" 28 882 891
+type(
+  int
+)
+ident(
+  def sum "ssmap_demo.ml" 29 924 926 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 28 882 894 "ssmap_demo.ml" 28 882 904
+type(
+  (int -> string -> string -> int) -> int -> Ssmap.ssmap -> int
+)
+ident(
+  ext_ref Ssmap.fold
+)
+"ssmap_demo.ml" 28 882 905 "ssmap_demo.ml" 28 882 913
+type(
+  int -> string -> string -> int
+)
+ident(
+  int_ref sum_keys "ssmap_demo.ml" 27 822 828 "ssmap_demo.ml" 27 822 836
+)
+"ssmap_demo.ml" 28 882 914 "ssmap_demo.ml" 28 882 915
+type(
+  int
+)
+"ssmap_demo.ml" 28 882 916 "ssmap_demo.ml" 28 882 920
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map4 "ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+)
+"ssmap_demo.ml" 28 882 894 "ssmap_demo.ml" 28 882 920
+call(
+  stack
+)
+type(
+  int
+)
+"ssmap_demo.ml" 29 924 926 "ssmap_demo.ml" 29 924 932
+type(
+  (int -> unit, out_channel, unit) format -> int -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 29 924 933 "ssmap_demo.ml" 29 924 954
+type(
+  (int -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 29 924 955 "ssmap_demo.ml" 29 924 958
+type(
+  int
+)
+ident(
+  int_ref sum "ssmap_demo.ml" 28 882 888 "ssmap_demo.ml" 28 882 891
+)
+"ssmap_demo.ml" 29 924 926 "ssmap_demo.ml" 29 924 958
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 31 961 967 "ssmap_demo.ml" 31 961 978
+type(
+  string -> 'b -> string -> string
+)
+ident(
+  def concat_vals "ssmap_demo.ml" 32 1012 1014 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 31 961 979 "ssmap_demo.ml" 31 961 982
+type(
+  string
+)
+ident(
+  def cur "ssmap_demo.ml" 31 961 983 "ssmap_demo.ml" 31 961 1008
+)
+"ssmap_demo.ml" 31 961 983 "ssmap_demo.ml" 31 961 986
+type(
+  'b
+)
+ident(
+  def key "ssmap_demo.ml" 31 961 987 "ssmap_demo.ml" 31 961 1008
+)
+"ssmap_demo.ml" 31 961 987 "ssmap_demo.ml" 31 961 992
+type(
+  string
+)
+ident(
+  def value "ssmap_demo.ml" 31 961 995 "ssmap_demo.ml" 31 961 1008
+)
+"ssmap_demo.ml" 31 961 995 "ssmap_demo.ml" 31 961 998
+type(
+  string
+)
+ident(
+  int_ref cur "ssmap_demo.ml" 31 961 979 "ssmap_demo.ml" 31 961 982
+)
+"ssmap_demo.ml" 31 961 998 "ssmap_demo.ml" 31 961 999
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"ssmap_demo.ml" 31 961 999 "ssmap_demo.ml" 31 961 1002
+type(
+  string
+)
+"ssmap_demo.ml" 31 961 1002 "ssmap_demo.ml" 31 961 1003
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"ssmap_demo.ml" 31 961 1003 "ssmap_demo.ml" 31 961 1008
+type(
+  string
+)
+ident(
+  int_ref value "ssmap_demo.ml" 31 961 987 "ssmap_demo.ml" 31 961 992
+)
+"ssmap_demo.ml" 31 961 999 "ssmap_demo.ml" 31 961 1008
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap_demo.ml" 31 961 995 "ssmap_demo.ml" 31 961 1008
+call(
+  tail
+)
+type(
+  string
+)
+"ssmap_demo.ml" 32 1012 1018 "ssmap_demo.ml" 32 1012 1026
+type(
+  string
+)
+ident(
+  def all_vals "ssmap_demo.ml" 33 1063 1065 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 32 1012 1029 "ssmap_demo.ml" 32 1012 1039
+type(
+  (string -> string -> string -> string) -> string -> Ssmap.ssmap -> string
+)
+ident(
+  ext_ref Ssmap.fold
+)
+"ssmap_demo.ml" 32 1012 1040 "ssmap_demo.ml" 32 1012 1051
+type(
+  string -> string -> string -> string
+)
+ident(
+  int_ref concat_vals "ssmap_demo.ml" 31 961 967 "ssmap_demo.ml" 31 961 978
+)
+"ssmap_demo.ml" 32 1012 1052 "ssmap_demo.ml" 32 1012 1054
+type(
+  string
+)
+"ssmap_demo.ml" 32 1012 1055 "ssmap_demo.ml" 32 1012 1059
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map4 "ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+)
+"ssmap_demo.ml" 32 1012 1029 "ssmap_demo.ml" 32 1012 1059
+call(
+  stack
+)
+type(
+  string
+)
+"ssmap_demo.ml" 33 1063 1065 "ssmap_demo.ml" 33 1063 1071
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 33 1063 1072 "ssmap_demo.ml" 33 1063 1088
+type(
+  (string -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 33 1063 1089 "ssmap_demo.ml" 33 1063 1097
+type(
+  string
+)
+ident(
+  int_ref all_vals "ssmap_demo.ml" 32 1012 1018 "ssmap_demo.ml" 32 1012 1026
+)
+"ssmap_demo.ml" 33 1063 1065 "ssmap_demo.ml" 33 1063 1097
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 35 1102 1108 "ssmap_demo.ml" 35 1102 1121
+type(
+  string -> string -> unit
+)
+ident(
+  def print_keyvals "ssmap_demo.ml" 36 1177 1179 "ssmap_demo.ml" 36 1177 1209
+)
+"ssmap_demo.ml" 35 1102 1122 "ssmap_demo.ml" 35 1102 1125
+type(
+  string
+)
+ident(
+  def key "ssmap_demo.ml" 35 1102 1126 "ssmap_demo.ml" 35 1102 1173
+)
+"ssmap_demo.ml" 35 1102 1126 "ssmap_demo.ml" 35 1102 1131
+type(
+  string
+)
+ident(
+  def value "ssmap_demo.ml" 35 1102 1134 "ssmap_demo.ml" 35 1102 1173
+)
+"ssmap_demo.ml" 35 1102 1134 "ssmap_demo.ml" 35 1102 1140
+type(
+  (string -> string -> unit, out_channel, unit) format ->
+  string -> string -> unit
+)
+ident(
+  ext_ref Printf.printf
+)
+"ssmap_demo.ml" 35 1102 1141 "ssmap_demo.ml" 35 1102 1163
+type(
+  (string -> string -> unit, out_channel, unit) format
+)
+"ssmap_demo.ml" 35 1102 1164 "ssmap_demo.ml" 35 1102 1167
+type(
+  string
+)
+ident(
+  int_ref key "ssmap_demo.ml" 35 1102 1122 "ssmap_demo.ml" 35 1102 1125
+)
+"ssmap_demo.ml" 35 1102 1168 "ssmap_demo.ml" 35 1102 1173
+type(
+  string
+)
+ident(
+  int_ref value "ssmap_demo.ml" 35 1102 1126 "ssmap_demo.ml" 35 1102 1131
+)
+"ssmap_demo.ml" 35 1102 1134 "ssmap_demo.ml" 35 1102 1173
+call(
+  tail
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 36 1177 1179 "ssmap_demo.ml" 36 1177 1189
+type(
+  (string -> string -> unit) -> Ssmap.ssmap -> unit
+)
+ident(
+  ext_ref Ssmap.iter
+)
+"ssmap_demo.ml" 36 1177 1190 "ssmap_demo.ml" 36 1177 1203
+type(
+  string -> string -> unit
+)
+ident(
+  int_ref print_keyvals "ssmap_demo.ml" 35 1102 1108 "ssmap_demo.ml" 35 1102 1121
+)
+"ssmap_demo.ml" 36 1177 1204 "ssmap_demo.ml" 36 1177 1208
+type(
+  Ssmap.ssmap
+)
+ident(
+  int_ref map4 "ssmap_demo.ml" 19 606 612 "ssmap_demo.ml" 19 606 616
+)
+"ssmap_demo.ml" 36 1177 1179 "ssmap_demo.ml" 36 1177 1209
+call(
+  stack
+)
+type(
+  unit
+)
+"ssmap_demo.ml" 35 1102 1104 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 33 1063 1065 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 32 1012 1014 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 31 961 963 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 29 924 926 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 28 882 884 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 27 822 824 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 25 765 767 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 23 715 717 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 19 606 608 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 13 327 329 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 11 277 279 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 10 227 229 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 9 179 181 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)
+"ssmap_demo.ml" 8 151 153 "ssmap_demo.ml" 36 1177 1209
+type(
+  unit
+)

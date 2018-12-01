@@ -1,0 +1,131 @@
+| #/* $begin ncopy-ys */
+                           | ##################################################################
+                           | # ncopy.ys - Copy a src block of len words to dst.
+                           | # Return the number of positive words (>0) contained in src.
+                           | #
+                           | # Moti Begna, begna002
+                           | #
+                           | # Insert iaddq wherever possible.
+                           | # Apply loop unrolling.
+                           | # Move jumps to right after subtracting from len.
+                           | #
+                           | ##################################################################
+                           | # Do not modify this portion
+                           | # Function prologue.
+                           | # %rdi = src, %rsi = dst, %rdx = len
+0x000:                      | ncopy:
+                           |
+                           | ##################################################################
+                           | # You can modify this portion
+                           |
+                           | ##################################################################
+                           | # ORIGINAL
+                           | #  # Loop header
+                           | #  xorq %rax,%rax        # count = 0;
+                           | #  andq %rdx,%rdx        # len <= 0?
+                           | #  jle Done              # if so, goto Done:
+                           | #
+                           | #Loop:
+                           | #  mrmovq (%rdi), %r10   # read val from src
+                           | #  andq %r10, %r10       # val <= 0?
+                           | #  jle Npos              # if so, goto Npos:
+                           | #  iaddq $1, %rax        # count ++
+                           | #Npos:
+                           | #  rmmovq %r10, (%rsi)   # store val to dst
+                           | #  iaddq $-1, %rdx       # len--
+                           | #  iaddq $8, %rdi        # src++
+                           | #  iaddq $8, %rsi        # dst++
+                           | #  andq %rdx,%rdx        # len > 0?
+                           | #  jg Loop               # if so, goto Loop:
+                           | ##################################################################
+                           |
+                           |
+                           | # Loop header
+0x000: 6222                 |     andq %rdx,%rdx          # len <= 0?
+0x002: 761600000000000000   |     jg Loop                 # if so, goto Loop:
+0x00b: 700402000000000000   |     jmp Done                # else, goto Done:
+0x014:                      | Setup:
+0x014: 6300                 |     xorq %rax,%rax          # count = 0;
+                           |
+0x016:                      | Loop:
+0x016: 50a70000000000000000 |     mrmovq (%rdi), %r10     # read val1 from src
+0x020: 50b70800000000000000 |     mrmovq $8(%rdi), %r11   # read val2 from src+8
+0x02a: 40a60000000000000000 |     rmmovq %r10, (%rsi)     # store val1 to dest
+0x034: 62aa                 |     andq %r10, %r10         # val1 > 0?
+0x036: 714900000000000000   |     jle L1                  # if not, goto L1:
+0x03f: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x049:                      | L1:
+0x049: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x053: 766500000000000000   |     jg L2                   # if len > 0, goto L2:
+0x05c: 700402000000000000   |     jmp Done                # else, goto Done:
+0x065:                      | L2:
+0x065: 50a71000000000000000 |     mrmovq $16(%rdi), %r10  # read val3 from src+16
+0x06f: 40b60800000000000000 |     rmmovq %r11, $8(%rsi)   # store val2 to dest+8
+0x079: 62bb                 |     andq %r11, %r11         # val2 > 0?
+0x07b: 718e00000000000000   |     jle L3                  # if not, goto L3:
+0x084: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x08e:                      | L3:
+0x08e: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x098: 76aa00000000000000   |     jg L4                   # if len > 0, goto L4:
+0x0a1: 700402000000000000   |     jmp Done                # else, goto Done:
+0x0aa:                      | L4:
+0x0aa: 50b71800000000000000 |     mrmovq $24(%rdi), %r11  # read val4 from src+24
+0x0b4: 40a61000000000000000 |     rmmovq %r10, $16(%rsi)  # store val3 to dest+16
+0x0be: 62aa                 |     andq %r10, %r10         # val3 > 0?
+0x0c0: 71d300000000000000   |     jle L5                  # if not, goto L5:
+0x0c9: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x0d3:                      | L5:
+0x0d3: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x0dd: 76ef00000000000000   |     jg L6                   # if len > 0, goto L6:
+0x0e6: 700402000000000000   |     jmp Done                # else, goto Done:
+0x0ef:                      | L6:
+0x0ef: 50a72000000000000000 |     mrmovq $32(%rdi), %r10  # read val5 from src+32
+0x0f9: 40b61800000000000000 |     rmmovq %r11, $24(%rsi)  # store val4 to dest+24
+0x103: 62bb                 |     andq %r11, %r11         # val4 > 0?
+0x105: 711801000000000000   |     jle L7                  # if not, goto L7:
+0x10e: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x118:                      | L7:
+0x118: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x122: 763401000000000000   |     jg L8                   # if len > 0, goto L8:
+0x12b: 700402000000000000   |     jmp Done                # else, goto Done:
+0x134:                      | L8:
+0x134: 50b72800000000000000 |     mrmovq $40(%rdi), %r11  # read val6 from src+40
+0x13e: 40a62000000000000000 |     rmmovq %r10, $32(%rsi)  # store val5 to dest+32
+0x148: 62aa                 |     andq %r10, %r10         # val5 > 0?
+0x14a: 715d01000000000000   |     jle L9                  # if not, goto L9:
+0x153: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x15d:                      | L9:
+0x15d: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x167: 767901000000000000   |     jg L10                   # if len > 0, goto L10:
+0x170: 700402000000000000   |     jmp Done                # else, goto Done:
+0x179:                      | L10:
+0x179: 50a73000000000000000 |     mrmovq $48(%rdi), %r10  # read val7 from src+48
+0x183: 40b62800000000000000 |     rmmovq %r11, $40(%rsi)  # store val6 to dest+40
+0x18d: 62bb                 |     andq %r11, %r11         # val6 > 0?
+0x18f: 71a201000000000000   |     jle L11                 # if not, goto L11:
+0x198: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x1a2:                      | L11:
+0x1a2: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x1ac: 76be01000000000000   |     jg L12                  # if len > 0, goto L12:
+0x1b5: 700402000000000000   |     jmp Done                # else, goto Done:
+0x1be:                      | L12:
+0x1be: 40a63000000000000000 |     rmmovq %r10, $48(%rsi)  # store val7 to dest+48
+0x1c8: 62aa                 |     andq %r10, %r10         # val3 > 0?
+0x1ca: 71dd01000000000000   |     jle L13                 # if not, goto L13:
+0x1d3: c0f00100000000000000 |     iaddq $1, %rax          # count++
+0x1dd:                      | L13:
+0x1dd: c0f73800000000000000 |     iaddq $56, %rdi         # src += 7
+0x1e7: c0f63800000000000000 |     iaddq $56, %rsi         # dest += 7
+0x1f1: c0f2ffffffffffffffff |     iaddq $-1, %rdx         # len--
+0x1fb: 761600000000000000   |     jg Loop                 # if len > 0, goto Loop:
+                           |
+                           |
+                           | ##################################################################
+                           | # Do not modify the following section of code
+                           | # Function epilogue.
+0x204:                      | Done:
+0x204: 90                   |   ret
+                           | ##################################################################
+                           | # Keep the following label at the end of your function
+0x205:                      | End:
+                           | #/* $end ncopy-ys */

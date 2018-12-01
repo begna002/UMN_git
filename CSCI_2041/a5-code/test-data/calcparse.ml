@@ -21,7 +21,7 @@ type intop =
 
 (* PATCH PROBLEM: type for operations on two booleans boolean *)
 type boolop =
-  | And | Or
+  | And | Or 
 ;;
 
 
@@ -38,21 +38,21 @@ type expr =
                 rexpr      : expr; }
   | Cond    of {if_expr    : expr;            (* if/then/else, expressions associated with each  *)
                 then_expr  : expr;
-                else_expr  : expr; }
+                else_expr  : expr; }  
   | Letin   of {var_name   : string;          (* let expression binding a new name *)
                 var_expr   : expr;
                 in_expr    : expr; }
   | Lambda  of {param_name : string;          (* create a function with named parameter *)
                 code_expr  : expr; }
   | Apply   of {func_expr  : expr;            (* apply a function to a single parameter *)
-                param_expr : expr; }
+                param_expr : expr; }       
 ;;
 
 (* Create a string version of the given parsed expression tree *)
 let parsetree_string expr =
   let buf = Buffer.create 256 in                    (* extensibel character buffer *)
   let indent n =
-    for i=1 to n do
+    for i=1 to n do                           
       Buffer.add_string buf "  ";
     done;
   in
@@ -75,7 +75,7 @@ let parsetree_string expr =
        build o.rexpr (depth+1);
     | Boolop(o) ->
        let opstr = match o.op with
-         | And -> "And" | Or -> "Or"
+         | And -> "And" | Or -> "Or" 
        in
        Buffer.add_string buf (sprintf "%s\n" opstr);
        build o.lexpr (depth+1);
@@ -165,7 +165,7 @@ and parse_muldiv toks =
 and parse_letin toks =
   match toks with
   | Let :: Ident var_name :: Equal :: rest ->          (* look for a sequence of 'let name = ...' *)
-     begin
+     begin 
        let (var_expr,rest) = parse_expr rest in        (* parse the rest of the expression *)
        match rest with
        | In :: rest ->                                 (* check that it ends with an 'in' *)
@@ -177,26 +177,14 @@ and parse_letin toks =
 
 (* parse a conditional if <expr> then <expr> else <expr> *)
 and parse_cond toks =
-match toks with
-  | If :: rest ->                                          (* look for an 'if <expr>' *)
-     let (if_expr,rest) = parse_expr rest in               (* parse the <expr> *)
-     begin match rest with
-      | Then :: rest ->                                    (* look for 'then <expr>'  *)
-         let (then_expr,rest) = parse_expr rest in         (* parse the <expr> *)
-         begin match rest with
-          | Else :: rest ->                                (* look for an 'else <expr>' *)
-             let (else_expr,rest) = parse_expr rest in     (* parse the <expr> *)
-             (Cond{if_expr; then_expr; else_expr}, rest)   (* return the result and rest of tokens *)
-          | _ -> raise (ParseError{msg="Expected 'else' ";toks=rest})
-         end
-      | _ -> raise (ParseError{msg="Expected 'then' ";toks=rest})
-     end
+  match toks with
+  (* P1: FILL IN CASES to parse if/then/else *)
   | _ -> parse_lambda toks
 
 (* parse a lambda @x <expr> *)
 and parse_lambda toks =
   (* P3: Fill in cases to m *)
-  match toks with
+  match toks with 
   | _ -> parse_apply toks
 
 (* Parse a function application which is left-associative. Repeatedly
@@ -210,7 +198,7 @@ and parse_apply toks =
     | _ -> (lexpr,toks)
   in
   let (lexpr, rest) = parse_ident toks in
-  iter lexpr rest
+  iter lexpr rest 
 
 (* parse identifiers, integers, booleans, and open/close parentheses *)
 and parse_ident toks =

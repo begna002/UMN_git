@@ -1,5 +1,3 @@
-# includes milestone test targets
-
 COMPFLAGS = -g -annot
 OCC = ocamlc $(COMPFLAGS)
 LIBS = 
@@ -45,19 +43,3 @@ calculon : calclex.cmo calcparse.cmo calceval.cmo calculon.ml
 clean :
 	rm -f *.cmo *.cmi *.mlt *.annot $(PROGRAMS) $(TEST_PROGRAMS) 
 
-########################################
-# Testing Targets
-test : test-p1 # test-p2 test-p3 test-p4 test-p5
-
-clean-tmp : test-data
-	rm -f test-data/*.tmp
-
-test-data :
-	mkdir -p test-data
-
-# PROBLEM 1
-test-p1 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for P1===\n"
-	./test_calculon.sh test_p1_data.sh
-	@printf "\n"

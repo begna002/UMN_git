@@ -22,7 +22,7 @@ and varmap_t = data_t Varmap.t;;
 let empty_varmap : varmap_t = Varmap.empty;;
 
 (* Creates a short string version of the a data_t value. *)
-let rec data_string data =
+let rec data_string data = 
   match data with
   | IntDat(i)  -> sprintf "IntDat(%d)"  i
   | BoolDat(b) -> sprintf "BoolDat(%b)" b
@@ -36,7 +36,7 @@ and data_long_string data =
   | Closure(c) ->
      sprintf "Closure(param_name: %s, varmap=%s code=\n%s)"
        c.param_name (varmap_string c.varmap) (Calcparse.parsetree_string c.code_expr)
-
+                     
 (* Creates a string version of a varmap_t by iterating through all its
    names (keys) and appending string versions of the associated data
    (values) *)
@@ -51,7 +51,7 @@ and varmap_string varmap =
   if varmap <> Varmap.empty then
     Buffer.truncate buf ((Buffer.length buf)-2);
   Buffer.add_string buf "}";
-  Buffer.contents buf
+  Buffer.contents buf           
 ;;
 
 (* Exception associated with evaluation errors. All strings to enable
@@ -86,7 +86,7 @@ let rec eval_expr varmap expr =
        | None ->
           let msg = sprintf "No variable '%s' bound" varname in
           raise (eval_error msg varmap expr)
-     end
+     end 
 
   | Intop(o) ->                                                      (* integer operations like + - * / *)
      begin
@@ -116,19 +116,10 @@ let rec eval_expr varmap expr =
        raise (eval_error "Boolean operations not yet impelemented" varmap expr)
      end
 
-  | Cond(c) ->
-    begin                                                (* IMPLEMENT #1: conditionals *)
-    let test = eval_expr varmap c.if_expr in               (* evaluate the test in c.if_expr *)
-    match test with
-    | BoolDat(b) ->                                          (* ensure result of <expr> was a true/false value  *)
-        if b = true then
-          eval_expr varmap c.then_expr
-        else
-          eval_expr varmap c.else_expr
-    | _ ->                                               (* error: 'if <expr>' did not give a true/false *)
-       let msg = sprintf "Expected Bool for if <expr>, found '%s'" (data_string test) in
-       raise (eval_error msg varmap expr)
-    end
+  | Cond(c) ->                                                       (* IMPLEMENT #1: conditionals *)
+     begin
+       raise (eval_error "Conditional if/then/else not yet implemented" varmap expr)
+     end
 
   | Letin(l) ->                                                      (* let/in expressions *)
      begin
@@ -145,7 +136,7 @@ let rec eval_expr varmap expr =
   | Apply(apply) ->                                                  (* function application *)
      begin                                                           (* IMPLEMENT #4: evaluate the application expression *)
        raise (eval_error "Function application is not yet implemented" varmap expr)
-     end
+     end              
 ;;
 
 (********************************************************************************)
@@ -169,7 +160,7 @@ let rec eval_expr varmap expr =
              IntExp 2),
         IntExp 3)
 
-   and is not optimized/transformed by this function.
+   and is not optimized/transformed by this function. 
 
    Optimizes code within coditionals eliminating branches if possible
    and also within lambda code expressions.

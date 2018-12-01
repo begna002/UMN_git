@@ -7,13 +7,13 @@ open Printf;;
 type token =
   | Plus | Times | Minus | Slash
   | LessThan | GreatThan | Equal
-  | OParen | CParen
-  | If | Then | Else
+  | OParen | CParen 
+  | If | Then | Else 
   | At | Let | In
-  | Def | Semicolon
+  | Def | Semicolon 
   | IntTok of int
   | BoolTok of bool
-  | Ident of string
+  | Ident of string 
   | AndTok | OrTok                                           (* PATCH PROBLEM *)
 ;;
 
@@ -48,7 +48,7 @@ let tokenlist_string tokens =
       | Semicolon  -> "Semicolon "
       | IntTok(i)  -> sprintf "IntTok(%d)" i
       | BoolTok(b) -> sprintf "BoolTok(%b)" b
-      | Ident(s)   -> sprintf "Ident(%s)" s
+      | Ident(s)   -> sprintf "Ident(%s)" s 
     in
     Buffer.add_string buf (sprintf "%s; " str);
     toks := List.tl !toks;
@@ -57,7 +57,7 @@ let tokenlist_string tokens =
   if tokens <> [] then
     Buffer.truncate buf ((Buffer.length buf)-2);
   Buffer.add_string buf "]";
-  Buffer.contents buf
+  Buffer.contents buf           
 ;;
 
 
@@ -91,7 +91,7 @@ let lex_string string =
       match string.[pos] with                                (* match a single character *)
       |' ' | '\t' | '\n' -> lex (pos+1)                      (* skip whitespace *)
       |'+' -> Plus      :: (lex (pos+1))                     (* single char ops become operators *)
-      |'-' -> Minus     :: (lex (pos+1))
+      |'-' -> Minus     :: (lex (pos+1))        
       |'*' -> Times     :: (lex (pos+1))
       |'/' -> Slash     :: (lex (pos+1))
       |'@' -> At        :: (lex (pos+1))
@@ -113,16 +113,13 @@ let lex_string string =
            incr stop;
          done;
          let ident = String.sub string pos (!stop - pos) in  (* substring is the identifier *)
-         let tok =
+         let tok = 
            match ident with
            | "def"   -> Def
            | "let"   -> Let
            | "in"    -> In
            | "true"  -> BoolTok true
            | "false" -> BoolTok false
-           | "if"    -> If
-           | "then"  -> Then
-           | "else"  -> Else
            | _ -> Ident(ident)
          in
          tok :: (lex !stop)                                  (* and tack onto the stream of tokens *)
@@ -132,3 +129,4 @@ let lex_string string =
   in                                                         (* end helper *)
   lex 0                                                      (* call helper *)
 ;;
+

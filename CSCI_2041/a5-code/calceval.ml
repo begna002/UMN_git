@@ -126,7 +126,7 @@ let rec eval_expr varmap expr =
         else
           eval_expr varmap c.else_expr
     | _ ->                                               (* error: 'if <expr>' did not give a true/false *)
-       let msg = sprintf "Expected Bool for if <expr>, found '%s'" (data_string test) in
+       let msg = sprintf "Expected Bool for if (), found '%s'" (data_string test) in
        raise (eval_error msg varmap expr)
     end
 

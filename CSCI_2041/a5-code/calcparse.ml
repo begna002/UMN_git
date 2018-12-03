@@ -120,7 +120,7 @@ let parsetree_string expr =
    tree from a series of tokens. Starts a series of mutually recursive
    functions. *)
 let rec parse_expr tokens =
-  let (expr, rest) as result = parse_addsub tokens in
+  let (expr, rest) as result = parse_compare tokens in
   result
 
 (* parse a number comparison using <, >, or =. These cannot be chained
@@ -128,7 +128,15 @@ let rec parse_expr tokens =
 and parse_compare toks =
   let (lexpr, rest) = parse_addsub toks in
   match rest with
-  (* FILL IN CASES for comparison of values *)
+  | GreatThan::tail ->
+      let (rexpr, rest) = parse_addsub tail in
+      (Intop{op=Greater;lexpr;rexpr}, rest)
+  | LessThan::tail ->
+      let (rexpr, rest) = parse_addsub tail in
+      (Intop{op=Less;lexpr;rexpr}, rest)
+  | Equal::tail ->
+      let (rexpr, rest) = parse_addsub tail in
+      (Intop{op=Equal;lexpr;rexpr}, rest)
   | _ -> (lexpr, rest)
 
 (* parse addition and subtraction, left-associative *)
@@ -197,6 +205,11 @@ match toks with
 and parse_lambda toks =
   (* P3: Fill in cases to m *)
   match toks with
+  | At :: Ident param_name :: rest ->
+      let (code_expr, rest) = parse_expr rest in
+      (Lambda{param_name; code_expr}, rest)
+  | At :: _ :: rest->
+    raise (ParseError{msg="Expected identifier in lambda expression after @";toks=rest})
   | _ -> parse_apply toks
 
 (* Parse a function application which is left-associative. Repeatedly

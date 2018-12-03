@@ -100,9 +100,13 @@ let rec eval_expr varmap expr =
           | Sub     -> IntDat  (li - ri)
           | Mul     -> IntDat  (li * ri)
           | Div     -> IntDat  (li / ri)
-          | _       ->
-             raise (eval_error "Integer Operation not implemented" varmap expr)
+          | Greater -> BoolDat (li > ri)
+          | Less    -> BoolDat (li < ri)
+          | Equal   -> BoolDat (li = ri)
         end
+      | (BoolDat li), rerr ->
+        let msg = sprintf "WARNING: Great Shatner's ghost!\nWARNING: The following tokens remain and will NOT be evaluated\n%s" (data_string rerr) in
+        raise (eval_error msg varmap expr)
       | (IntDat li),rerr ->
          let msg = sprintf "Expect Int for right arithmetic expression, found '%s'" (data_string rerr) in
          raise (eval_error msg varmap expr)
@@ -138,9 +142,7 @@ let rec eval_expr varmap expr =
      end
 
   | Lambda(l) ->                                                     (* lambda expressions *)
-     begin                                                           (* IMPLEMENT #3: Build a Closure *)
-       raise (eval_error "Lambda expressions not yet implemented" varmap expr)
-     end
+     Closure{param_name = l.param_name; code_expr = l.code_expr; varmap = varmap}
 
   | Apply(apply) ->                                                  (* function application *)
      begin                                                           (* IMPLEMENT #4: evaluate the application expression *)

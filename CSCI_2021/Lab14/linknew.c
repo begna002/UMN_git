@@ -2,7 +2,7 @@
 int if_compute(int);
 int i = 1; /* Answer 1a: weak, strong or neither? */
 int j = 10;
-int k; /* Answer 1b: weak, strong or neither? */
+int k = 5; /* Answer 1b: weak, strong or neither? */
  /* Answer 1c: Does it matter if k is weak or strong? */
 static int a = 7; /* Answer 1d: weak, strong, or neither? */
 int main() {

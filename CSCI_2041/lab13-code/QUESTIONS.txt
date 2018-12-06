@@ -54,7 +54,8 @@ PROBLEM 1: `lazy_calls.ml'
 
 The function either_args prints out the first or second argument value which depends on whether or not Flag1 or Flag2 are respectively set to True. Arg1 and Arg2 are calculated Fibonacci values which are computed during the call to either_args
 
-Because eager arguments first evaluates the arguments that are passed into a function, and then calls the function with the results, the computed times are the same since the Fibonacci value given is always being computed twice.
+Because eager arguments first evaluate the arguments that are passed into a function, and then calls the function with the results, the computed times are the same since the Fibonacci value given is always being computed twice.
+
 (B)
 ~~~
 
@@ -73,6 +74,9 @@ Because eager arguments first evaluates the arguments that are passed into a fun
   3. Explain why some of the times in section (1) and (2) differ and
      some are the same.
 
+1. Rather than the computed fibonncai values being passed into the function, a “suspension” is passed in as an argument.
+2. Because of this suspension, only when the arguments are called within the body of either_susp are the Fibonacci values calculated. Because of this, if the values have to be calculated (when either or both flags are true), then the calculation will cost some time.
+3. There is one instance when sections (1) and (2) cost roughly the same amount of time: when the Fibonacci value of n has to be evaluated both times. This happens all four times in section (2), but only once in section (2) when both flags are set to true.
 
 (C)
 ~~~
@@ -88,7 +92,8 @@ Because eager arguments first evaluates the arguments that are passed into a fun
   2. Compare the timings from output section (2) and (3) to each other
      and explain any similarities or differences.
 
-
+1. In section (3), a Lazy evaluation strategy is used rather than suspension as in section (2). This function uses the Ocaml integrated Lazy module, using calls to lazy() and Lazy.force.
+2. Both section (3) and (2) have relatively similar timings since they are both doing essentially the same thing. Only when the flags are set to true will a call to fib actually be executed, which occurs in the body of both respective functions.
 (D)
 ~~~
 
@@ -99,6 +104,8 @@ Because eager arguments first evaluates the arguments that are passed into a fun
   Contrast the code associated with (4) and the previous use of
   suspensions in (2): how do the codes differ? Explain why their timings
   are the same or why there are differences.
+
+Rather than passing the suspension itself to the function either_susp, an instance of the suspension is being called through the assignment of (fib_susp) to this suspension. While this slightly changes the syntax of section (4) from section (2), the timings are relatively the same because they utilize the same method of only calling the fib function when the flags are set to true.
 
 
 (E)
@@ -113,6 +120,8 @@ Because eager arguments first evaluates the arguments that are passed into a fun
   Contrast the code associated with (5) and the previous use of
   suspensions in (3): how do the codes differ? Explain why their timings
   are the same or why there are differences.
+
+Like before, rather than passing the lazy implementation of the fib function itself to the function either_lazy, an instance of the implementation is being called through the assignment of (fib_lazy) to this implementation. This time however, the timings are different. Because the arguments passed into either_lazy are the same instance of fib_lazy which implements a lazy evaluation strategy, the fib function is only needed once before the information is “memoized”. Thus, after the first instance of a flag being set to true, any subsequent calls to either_lazy will take virtually no time to compute.
 
 
 PROBLEM 2: Streams of Data
@@ -139,6 +148,9 @@ PROBLEM 2: Streams of Data
   3. Why does the output of the program differed between the list and
      stream from one iteration to the next?
 
+1. The Stream module is used in the program, specifically the function Stream.of_list. In this case, a list is passed to create the stateful stream.
+2. Stream.count returns the index of the each element in the list. List.hd returns the first element of the list, while Stream.next continually moves the Stream pointer forward, printing out the next item in the list. 
+3. The Stream.next function continually alters the pointer which is positioned somewhere in the list to move one step forward. Thus, subsequent items are printed rather than the same one.
 
 (B)
 ~~~
@@ -158,6 +170,11 @@ PROBLEM 2: Streams of Data
      reasons why or why not?
   4. Explain why this stream can produce a lot of data but requires very
      little memory to represent.
+
+1. The Stream module is once again used, and in this case the function Stream.from is used since this time, a function is being passed in.
+2. Stream.count and Stream.next are once again used, but this time they are used on a function rather than a list.
+3. The stream will never run out of data since the data type used is a function that makes continues modifications to a reference variable (specifically multiplying it by two). Because of this, there is no “end”.
+4. Memory is not an issue in this instance of a stream since the stream only holds one value that is continually being changed using a reference. Because of this mutability, past value are not saved.
 
 
 Optional Extras

@@ -146,7 +146,16 @@ let rec eval_expr varmap expr =
 
   | Apply(apply) ->                                                  (* function application *)
      begin                                                           (* IMPLEMENT #4: evaluate the application expression *)
-       raise (eval_error "Function application is not yet implemented" varmap expr)
+       let func = eval_expr varmap apply.func_expr in
+       match func with
+       | Closure(c) ->
+          let param = eval_expr varmap apply.param_expr in
+          let new_varmap = Varmap.add c.param_name param c.varmap in
+          eval_expr new_varmap c.code_expr
+       | _ ->
+        let msg = sprintf "Expected Closure for application, found '%s'" (data_string func) in
+        raise (eval_error msg varmap expr)
+
      end
 ;;
 

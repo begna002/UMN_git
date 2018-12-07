@@ -1,14 +1,29 @@
-calculon> if true then if false then 1 else 2 else 3;
-- : IntDat(2)
-calculon> if if true 
-      then false 
-      else true 
-   then if false 
-        then 1 
-        else 2
-   else if false 
-        then 3 
-        else 4;
-- : IntDat(4)
+calculon> def transum = 
+@trans
+  let help = @n
+    if n=0 
+    then 0
+    else (trans n) + (help (n-1))
+  in
+  help;
+transum : Closure(trans, <fun>)
+calculon> def double = @n n*2;
+double : Closure(n, <fun>)
+calculon> def incr   = @x x+1;
+incr : Closure(x, <fun>)
+calculon> transum double 10;
+ERROR: I'm not familiar with the type of thing I'm seeing...
+Calceval.EvalError("No variable 'help' bound", "{n: IntDat(10), trans: Closure(n, <fun>), transum: Closure(trans, <fun>)}", "\nVarname(help)\n")
+calculon> transum incr 20;
+ERROR: I'm not familiar with the type of thing I'm seeing...
+Calceval.EvalError("No variable 'help' bound", "{n: IntDat(20), trans: Closure(x, <fun>), transum: Closure(trans, <fun>)}", "\nVarname(help)\n")
+calculon> let fib = @n
+  if n=0 then 0
+  else if n=1 then 1
+  else (fib (n-1)) + (fib (n-2))
+in
+transum fib 8;
+ERROR: I'm not familiar with the type of thing I'm seeing...
+Calceval.EvalError("No variable 'fib' bound", "{double: Closure(n, <fun>), incr: Closure(x, <fun>), n: IntDat(8), transum: Closure(trans, <fun>)}", "\nVarname(fib)\n")
 calculon> 
 That was so terrible I think you gave me cancer!

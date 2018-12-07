@@ -1,0 +1,30 @@
+***EXPECT***						   |	***ACTUAL***
+calculon> def transum = 					calculon> def transum = 
+@trans								@trans
+  let help = @n							  let help = @n
+    if n=0 							    if n=0 
+    then 0							    then 0
+    else (trans n) + (help (n-1))				    else (trans n) + (help (n-1))
+  in								  in
+  help;								  help;
+transum : Closure(trans, <fun>)					transum : Closure(trans, <fun>)
+calculon> def double = @n n*2;					calculon> def double = @n n*2;
+double : Closure(n, <fun>)					double : Closure(n, <fun>)
+calculon> def incr   = @x x+1;					calculon> def incr   = @x x+1;
+incr : Closure(x, <fun>)					incr : Closure(x, <fun>)
+calculon> transum double 10;					calculon> transum double 10;
+- : IntDat(110)						   |	ERROR: I'm not familiar with the type of thing I'm seein
+							   >	Calceval.EvalError("No variable 'help' bound", "{n: IntD
+calculon> transum incr 20;					calculon> transum incr 20;
+- : IntDat(230)						   |	ERROR: I'm not familiar with the type of thing I'm seein
+							   >	Calceval.EvalError("No variable 'help' bound", "{n: IntD
+calculon> let fib = @n						calculon> let fib = @n
+  if n=0 then 0							  if n=0 then 0
+  else if n=1 then 1						  else if n=1 then 1
+  else (fib (n-1)) + (fib (n-2))				  else (fib (n-1)) + (fib (n-2))
+in								in
+transum fib 8;							transum fib 8;
+- : IntDat(54)						   |	ERROR: I'm not familiar with the type of thing I'm seein
+							   >	Calceval.EvalError("No variable 'fib' bound", "{double: 
+calculon> 							calculon> 
+That was so terrible I think you gave me cancer!		That was so terrible I think you gave me cancer!

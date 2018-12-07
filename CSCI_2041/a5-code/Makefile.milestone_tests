@@ -1,5 +1,3 @@
-# includes milestone test targets
-
 COMPFLAGS = -g -annot
 OCC = ocamlc $(COMPFLAGS)
 LIBS = 

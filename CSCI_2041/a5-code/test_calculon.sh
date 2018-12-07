@@ -2,6 +2,16 @@
 
 generate=1
 
+# Determine column width of the terminal
+if [[ -z "$COLUMNS" ]]; then
+    printf "Setting COLUMNS based on stty\n"
+    COLUMNS=$(stty size | gawk '{print $2}')
+fi
+if (($COLUMNS == 0)); then
+    COLUMNS=126
+fi
+
+printf "COLUMNS is $COLUMNS\n"
 DIFF="diff -bBy -W $COLUMNS"                    # -b ignore whitespace, -B ignore blank lines, -y do side-by-side comparison, -W to increase width of columns
 
 # INPUT=test-data/input.tmp                  # name for input file
@@ -61,7 +71,7 @@ for i in $all_tests; do
     printf "%s\n" "${output[i]}" > $EXPECT
 
     # Check for output differences, print side-by-side diff if problems
-    if ! cmp -s $EXPECT $ACTUAL
+    if ! $DIFF $EXPECT $ACTUAL > /dev/null
     then
         printf "FAIL: Output Mismatch\n"
         minor_sep

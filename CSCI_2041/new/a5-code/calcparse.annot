@@ -1,0 +1,4583 @@
+"calcparse.ml" 52 1789 1793 "calcparse.ml" 52 1789 1809
+type(
+  expr -> string
+)
+ident(
+  def parsetree_string "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 52 1789 1810 "calcparse.ml" 52 1789 1814
+type(
+  expr
+)
+ident(
+  def expr "calcparse.ml" 53 1817 1819 "calcparse.ml" 115 3965 3986
+)
+"calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+type(
+  Buffer.t
+)
+ident(
+  def buf "calcparse.ml" 54 1903 1905 "calcparse.ml" 115 3965 3986
+)
+"calcparse.ml" 53 1817 1829 "calcparse.ml" 53 1817 1842
+type(
+  int -> Buffer.t
+)
+ident(
+  ext_ref Buffer.create
+)
+"calcparse.ml" 53 1817 1843 "calcparse.ml" 53 1817 1846
+type(
+  int
+)
+"calcparse.ml" 53 1817 1829 "calcparse.ml" 53 1817 1846
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+type(
+  int -> unit
+)
+ident(
+  def indent "calcparse.ml" 59 1989 1991 "calcparse.ml" 115 3965 3986
+)
+"calcparse.ml" 54 1903 1916 "calcparse.ml" 54 1903 1917
+type(
+  int
+)
+ident(
+  def n "calcparse.ml" 55 1920 1924 "calcparse.ml" 57 1974 1983
+)
+"calcparse.ml" 55 1920 1930 "calcparse.ml" 55 1920 1931
+type(
+  int
+)
+"calcparse.ml" 55 1920 1935 "calcparse.ml" 55 1920 1936
+type(
+  int
+)
+ident(
+  int_ref n "calcparse.ml" 54 1903 1916 "calcparse.ml" 54 1903 1917
+)
+"calcparse.ml" 56 1940 1946 "calcparse.ml" 56 1940 1963
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 56 1940 1964 "calcparse.ml" 56 1940 1967
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 56 1940 1968 "calcparse.ml" 56 1940 1972
+type(
+  string
+)
+"calcparse.ml" 56 1940 1946 "calcparse.ml" 56 1940 1973
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 55 1920 1924 "calcparse.ml" 57 1974 1983
+type(
+  unit
+)
+"calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+type(
+  expr -> int -> unit
+)
+ident(
+  def build "calcparse.ml" 59 1989 1991 "calcparse.ml" 115 3965 3986
+)
+"calcparse.ml" 59 1989 2005 "calcparse.ml" 59 1989 2009
+type(
+  expr
+)
+ident(
+  def expr "calcparse.ml" 59 1989 2010 "calcparse.ml" 112 3905 3943
+)
+"calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+type(
+  int
+)
+ident(
+  def depth "calcparse.ml" 60 2064 2068 "calcparse.ml" 112 3905 3943
+)
+"calcparse.ml" 60 2064 2068 "calcparse.ml" 60 2064 2074
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 60 2064 2075 "calcparse.ml" 60 2064 2080
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 60 2064 2068 "calcparse.ml" 60 2064 2080
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 61 2082 2092 "calcparse.ml" 61 2082 2096
+type(
+  expr
+)
+ident(
+  int_ref expr "calcparse.ml" 59 1989 2005 "calcparse.ml" 59 1989 2009
+)
+"calcparse.ml" 62 2102 2115 "calcparse.ml" 62 2102 2116
+ident(
+  def i "calcparse.ml" 63 2121 2128 "calcparse.ml" 63 2121 2177
+)
+"calcparse.ml" 62 2102 2114 "calcparse.ml" 62 2102 2117
+type(
+  int
+)
+"calcparse.ml" 62 2102 2108 "calcparse.ml" 62 2102 2117
+type(
+  expr
+)
+"calcparse.ml" 63 2121 2128 "calcparse.ml" 63 2121 2145
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 63 2121 2146 "calcparse.ml" 63 2121 2149
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 63 2121 2151 "calcparse.ml" 63 2121 2158
+type(
+  (int -> string, unit, string) format -> int -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 63 2121 2159 "calcparse.ml" 63 2121 2173
+type(
+  (int -> string, unit, string) format
+)
+"calcparse.ml" 63 2121 2174 "calcparse.ml" 63 2121 2175
+type(
+  int
+)
+ident(
+  int_ref i "calcparse.ml" 62 2102 2114 "calcparse.ml" 62 2102 2117
+)
+"calcparse.ml" 63 2121 2150 "calcparse.ml" 63 2121 2176
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 63 2121 2128 "calcparse.ml" 63 2121 2177
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 64 2178 2192 "calcparse.ml" 64 2178 2193
+ident(
+  def b "calcparse.ml" 65 2198 2205 "calcparse.ml" 65 2198 2255
+)
+"calcparse.ml" 64 2178 2191 "calcparse.ml" 64 2178 2194
+type(
+  bool
+)
+"calcparse.ml" 64 2178 2184 "calcparse.ml" 64 2178 2194
+type(
+  expr
+)
+"calcparse.ml" 65 2198 2205 "calcparse.ml" 65 2198 2222
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 65 2198 2223 "calcparse.ml" 65 2198 2226
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 65 2198 2228 "calcparse.ml" 65 2198 2235
+type(
+  (bool -> string, unit, string) format -> bool -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 65 2198 2236 "calcparse.ml" 65 2198 2251
+type(
+  (bool -> string, unit, string) format
+)
+"calcparse.ml" 65 2198 2252 "calcparse.ml" 65 2198 2253
+type(
+  bool
+)
+ident(
+  int_ref b "calcparse.ml" 64 2178 2191 "calcparse.ml" 64 2178 2194
+)
+"calcparse.ml" 65 2198 2227 "calcparse.ml" 65 2198 2254
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 65 2198 2205 "calcparse.ml" 65 2198 2255
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 66 2256 2270 "calcparse.ml" 66 2256 2271
+ident(
+  def s "calcparse.ml" 67 2276 2283 "calcparse.ml" 67 2276 2333
+)
+"calcparse.ml" 66 2256 2269 "calcparse.ml" 66 2256 2272
+type(
+  string
+)
+"calcparse.ml" 66 2256 2262 "calcparse.ml" 66 2256 2272
+type(
+  expr
+)
+"calcparse.ml" 67 2276 2283 "calcparse.ml" 67 2276 2300
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 67 2276 2301 "calcparse.ml" 67 2276 2304
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 67 2276 2306 "calcparse.ml" 67 2276 2313
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 67 2276 2314 "calcparse.ml" 67 2276 2329
+type(
+  (string -> string, unit, string) format
+)
+"calcparse.ml" 67 2276 2330 "calcparse.ml" 67 2276 2331
+type(
+  string
+)
+ident(
+  int_ref s "calcparse.ml" 66 2256 2269 "calcparse.ml" 66 2256 2272
+)
+"calcparse.ml" 67 2276 2305 "calcparse.ml" 67 2276 2332
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 67 2276 2283 "calcparse.ml" 67 2276 2333
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 68 2334 2346 "calcparse.ml" 68 2334 2347
+ident(
+  def o "calcparse.ml" 69 2352 2359 "calcparse.ml" 75 2619 2650
+)
+"calcparse.ml" 68 2334 2345 "calcparse.ml" 68 2334 2348
+type(
+  expr.Intop
+)
+"calcparse.ml" 68 2334 2340 "calcparse.ml" 68 2334 2348
+type(
+  expr
+)
+"calcparse.ml" 69 2352 2363 "calcparse.ml" 69 2352 2368
+type(
+  string
+)
+ident(
+  def opstr "calcparse.ml" 73 2534 2541 "calcparse.ml" 75 2619 2650
+)
+"calcparse.ml" 69 2352 2377 "calcparse.ml" 69 2352 2378
+type(
+  expr.Intop
+)
+ident(
+  int_ref o "calcparse.ml" 68 2334 2345 "calcparse.ml" 68 2334 2348
+)
+"calcparse.ml" 69 2352 2377 "calcparse.ml" 69 2352 2381
+type(
+  intop
+)
+"calcparse.ml" 70 2387 2398 "calcparse.ml" 70 2387 2401
+type(
+  intop
+)
+"calcparse.ml" 70 2387 2405 "calcparse.ml" 70 2387 2410
+type(
+  string
+)
+"calcparse.ml" 70 2387 2413 "calcparse.ml" 70 2387 2416
+type(
+  intop
+)
+"calcparse.ml" 70 2387 2420 "calcparse.ml" 70 2387 2425
+type(
+  string
+)
+"calcparse.ml" 70 2387 2428 "calcparse.ml" 70 2387 2431
+type(
+  intop
+)
+"calcparse.ml" 70 2387 2435 "calcparse.ml" 70 2387 2440
+type(
+  string
+)
+"calcparse.ml" 70 2387 2443 "calcparse.ml" 70 2387 2446
+type(
+  intop
+)
+"calcparse.ml" 70 2387 2450 "calcparse.ml" 70 2387 2455
+type(
+  string
+)
+"calcparse.ml" 71 2456 2467 "calcparse.ml" 71 2456 2471
+type(
+  intop
+)
+"calcparse.ml" 71 2456 2475 "calcparse.ml" 71 2456 2481
+type(
+  string
+)
+"calcparse.ml" 71 2456 2484 "calcparse.ml" 71 2456 2491
+type(
+  intop
+)
+"calcparse.ml" 71 2456 2495 "calcparse.ml" 71 2456 2504
+type(
+  string
+)
+"calcparse.ml" 71 2456 2507 "calcparse.ml" 71 2456 2512
+type(
+  intop
+)
+"calcparse.ml" 71 2456 2516 "calcparse.ml" 71 2456 2523
+type(
+  string
+)
+"calcparse.ml" 69 2352 2371 "calcparse.ml" 71 2456 2523
+type(
+  string
+)
+"calcparse.ml" 73 2534 2541 "calcparse.ml" 73 2534 2558
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 73 2534 2559 "calcparse.ml" 73 2534 2562
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 73 2534 2564 "calcparse.ml" 73 2534 2571
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 73 2534 2572 "calcparse.ml" 73 2534 2578
+type(
+  (string -> string, unit, string) format
+)
+"calcparse.ml" 73 2534 2579 "calcparse.ml" 73 2534 2584
+type(
+  string
+)
+ident(
+  int_ref opstr "calcparse.ml" 69 2352 2363 "calcparse.ml" 69 2352 2368
+)
+"calcparse.ml" 73 2534 2563 "calcparse.ml" 73 2534 2585
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 73 2534 2541 "calcparse.ml" 73 2534 2585
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 74 2587 2594 "calcparse.ml" 74 2587 2599
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 74 2587 2600 "calcparse.ml" 74 2587 2601
+type(
+  expr.Intop
+)
+ident(
+  int_ref o "calcparse.ml" 68 2334 2345 "calcparse.ml" 68 2334 2348
+)
+"calcparse.ml" 74 2587 2600 "calcparse.ml" 74 2587 2607
+type(
+  expr
+)
+"calcparse.ml" 74 2587 2609 "calcparse.ml" 74 2587 2614
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 74 2587 2614 "calcparse.ml" 74 2587 2615
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 74 2587 2615 "calcparse.ml" 74 2587 2616
+type(
+  int
+)
+"calcparse.ml" 74 2587 2608 "calcparse.ml" 74 2587 2617
+type(
+  int
+)
+"calcparse.ml" 74 2587 2594 "calcparse.ml" 74 2587 2617
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 75 2619 2626 "calcparse.ml" 75 2619 2631
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 75 2619 2632 "calcparse.ml" 75 2619 2633
+type(
+  expr.Intop
+)
+ident(
+  int_ref o "calcparse.ml" 68 2334 2345 "calcparse.ml" 68 2334 2348
+)
+"calcparse.ml" 75 2619 2632 "calcparse.ml" 75 2619 2639
+type(
+  expr
+)
+"calcparse.ml" 75 2619 2641 "calcparse.ml" 75 2619 2646
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 75 2619 2646 "calcparse.ml" 75 2619 2647
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 75 2619 2647 "calcparse.ml" 75 2619 2648
+type(
+  int
+)
+"calcparse.ml" 75 2619 2640 "calcparse.ml" 75 2619 2649
+type(
+  int
+)
+"calcparse.ml" 75 2619 2626 "calcparse.ml" 75 2619 2650
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 74 2587 2594 "calcparse.ml" 75 2619 2650
+type(
+  unit
+)
+"calcparse.ml" 73 2534 2541 "calcparse.ml" 75 2619 2650
+type(
+  unit
+)
+"calcparse.ml" 69 2352 2359 "calcparse.ml" 75 2619 2650
+type(
+  unit
+)
+"calcparse.ml" 76 2651 2664 "calcparse.ml" 76 2651 2665
+ident(
+  def o "calcparse.ml" 77 2670 2677 "calcparse.ml" 82 2837 2868
+)
+"calcparse.ml" 76 2651 2663 "calcparse.ml" 76 2651 2666
+type(
+  expr.Boolop
+)
+"calcparse.ml" 76 2651 2657 "calcparse.ml" 76 2651 2666
+type(
+  expr
+)
+"calcparse.ml" 77 2670 2681 "calcparse.ml" 77 2670 2686
+type(
+  string
+)
+ident(
+  def opstr "calcparse.ml" 80 2752 2759 "calcparse.ml" 82 2837 2868
+)
+"calcparse.ml" 77 2670 2695 "calcparse.ml" 77 2670 2696
+type(
+  expr.Boolop
+)
+ident(
+  int_ref o "calcparse.ml" 76 2651 2663 "calcparse.ml" 76 2651 2666
+)
+"calcparse.ml" 77 2670 2695 "calcparse.ml" 77 2670 2699
+type(
+  boolop
+)
+"calcparse.ml" 78 2705 2716 "calcparse.ml" 78 2705 2719
+type(
+  boolop
+)
+"calcparse.ml" 78 2705 2723 "calcparse.ml" 78 2705 2728
+type(
+  string
+)
+"calcparse.ml" 78 2705 2731 "calcparse.ml" 78 2705 2733
+type(
+  boolop
+)
+"calcparse.ml" 78 2705 2737 "calcparse.ml" 78 2705 2741
+type(
+  string
+)
+"calcparse.ml" 77 2670 2689 "calcparse.ml" 78 2705 2741
+type(
+  string
+)
+"calcparse.ml" 80 2752 2759 "calcparse.ml" 80 2752 2776
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 80 2752 2777 "calcparse.ml" 80 2752 2780
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 80 2752 2782 "calcparse.ml" 80 2752 2789
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 80 2752 2790 "calcparse.ml" 80 2752 2796
+type(
+  (string -> string, unit, string) format
+)
+"calcparse.ml" 80 2752 2797 "calcparse.ml" 80 2752 2802
+type(
+  string
+)
+ident(
+  int_ref opstr "calcparse.ml" 77 2670 2681 "calcparse.ml" 77 2670 2686
+)
+"calcparse.ml" 80 2752 2781 "calcparse.ml" 80 2752 2803
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 80 2752 2759 "calcparse.ml" 80 2752 2803
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 81 2805 2812 "calcparse.ml" 81 2805 2817
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 81 2805 2818 "calcparse.ml" 81 2805 2819
+type(
+  expr.Boolop
+)
+ident(
+  int_ref o "calcparse.ml" 76 2651 2663 "calcparse.ml" 76 2651 2666
+)
+"calcparse.ml" 81 2805 2818 "calcparse.ml" 81 2805 2825
+type(
+  expr
+)
+"calcparse.ml" 81 2805 2827 "calcparse.ml" 81 2805 2832
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 81 2805 2832 "calcparse.ml" 81 2805 2833
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 81 2805 2833 "calcparse.ml" 81 2805 2834
+type(
+  int
+)
+"calcparse.ml" 81 2805 2826 "calcparse.ml" 81 2805 2835
+type(
+  int
+)
+"calcparse.ml" 81 2805 2812 "calcparse.ml" 81 2805 2835
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 82 2837 2844 "calcparse.ml" 82 2837 2849
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 82 2837 2850 "calcparse.ml" 82 2837 2851
+type(
+  expr.Boolop
+)
+ident(
+  int_ref o "calcparse.ml" 76 2651 2663 "calcparse.ml" 76 2651 2666
+)
+"calcparse.ml" 82 2837 2850 "calcparse.ml" 82 2837 2857
+type(
+  expr
+)
+"calcparse.ml" 82 2837 2859 "calcparse.ml" 82 2837 2864
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 82 2837 2864 "calcparse.ml" 82 2837 2865
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 82 2837 2865 "calcparse.ml" 82 2837 2866
+type(
+  int
+)
+"calcparse.ml" 82 2837 2858 "calcparse.ml" 82 2837 2867
+type(
+  int
+)
+"calcparse.ml" 82 2837 2844 "calcparse.ml" 82 2837 2868
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 81 2805 2812 "calcparse.ml" 82 2837 2868
+type(
+  unit
+)
+"calcparse.ml" 80 2752 2759 "calcparse.ml" 82 2837 2868
+type(
+  unit
+)
+"calcparse.ml" 77 2670 2677 "calcparse.ml" 82 2837 2868
+type(
+  unit
+)
+"calcparse.ml" 83 2869 2880 "calcparse.ml" 83 2869 2881
+ident(
+  def c "calcparse.ml" 84 2886 2893 "calcparse.ml" 93 3208 3243
+)
+"calcparse.ml" 83 2869 2879 "calcparse.ml" 83 2869 2882
+type(
+  expr.Cond
+)
+"calcparse.ml" 83 2869 2875 "calcparse.ml" 83 2869 2882
+type(
+  expr
+)
+"calcparse.ml" 84 2886 2893 "calcparse.ml" 84 2886 2910
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 84 2886 2911 "calcparse.ml" 84 2886 2914
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 84 2886 2915 "calcparse.ml" 84 2886 2923
+type(
+  string
+)
+"calcparse.ml" 84 2886 2893 "calcparse.ml" 84 2886 2923
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 85 2925 2932 "calcparse.ml" 85 2925 2938
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 85 2925 2940 "calcparse.ml" 85 2925 2945
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 85 2925 2945 "calcparse.ml" 85 2925 2946
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 85 2925 2946 "calcparse.ml" 85 2925 2947
+type(
+  int
+)
+"calcparse.ml" 85 2925 2939 "calcparse.ml" 85 2925 2948
+type(
+  int
+)
+"calcparse.ml" 85 2925 2932 "calcparse.ml" 85 2925 2948
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 86 2950 2957 "calcparse.ml" 86 2950 2974
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 86 2950 2975 "calcparse.ml" 86 2950 2978
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 86 2950 2979 "calcparse.ml" 86 2950 2992
+type(
+  string
+)
+"calcparse.ml" 86 2950 2957 "calcparse.ml" 86 2950 2992
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 87 2994 3001 "calcparse.ml" 87 2994 3006
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 87 2994 3007 "calcparse.ml" 87 2994 3008
+type(
+  expr.Cond
+)
+ident(
+  int_ref c "calcparse.ml" 83 2869 2879 "calcparse.ml" 83 2869 2882
+)
+"calcparse.ml" 87 2994 3007 "calcparse.ml" 87 2994 3016
+type(
+  expr
+)
+"calcparse.ml" 87 2994 3020 "calcparse.ml" 87 2994 3025
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 87 2994 3025 "calcparse.ml" 87 2994 3026
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 87 2994 3026 "calcparse.ml" 87 2994 3027
+type(
+  int
+)
+"calcparse.ml" 87 2994 3019 "calcparse.ml" 87 2994 3028
+type(
+  int
+)
+"calcparse.ml" 87 2994 3001 "calcparse.ml" 87 2994 3028
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 88 3030 3037 "calcparse.ml" 88 3030 3043
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 88 3030 3045 "calcparse.ml" 88 3030 3050
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 88 3030 3050 "calcparse.ml" 88 3030 3051
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 88 3030 3051 "calcparse.ml" 88 3030 3052
+type(
+  int
+)
+"calcparse.ml" 88 3030 3044 "calcparse.ml" 88 3030 3053
+type(
+  int
+)
+"calcparse.ml" 88 3030 3037 "calcparse.ml" 88 3030 3053
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 89 3055 3062 "calcparse.ml" 89 3055 3079
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 89 3055 3080 "calcparse.ml" 89 3055 3083
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 89 3055 3084 "calcparse.ml" 89 3055 3099
+type(
+  string
+)
+"calcparse.ml" 89 3055 3062 "calcparse.ml" 89 3055 3099
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 90 3101 3108 "calcparse.ml" 90 3101 3113
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 90 3101 3114 "calcparse.ml" 90 3101 3115
+type(
+  expr.Cond
+)
+ident(
+  int_ref c "calcparse.ml" 83 2869 2879 "calcparse.ml" 83 2869 2882
+)
+"calcparse.ml" 90 3101 3114 "calcparse.ml" 90 3101 3125
+type(
+  expr
+)
+"calcparse.ml" 90 3101 3127 "calcparse.ml" 90 3101 3132
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 90 3101 3132 "calcparse.ml" 90 3101 3133
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 90 3101 3133 "calcparse.ml" 90 3101 3134
+type(
+  int
+)
+"calcparse.ml" 90 3101 3126 "calcparse.ml" 90 3101 3135
+type(
+  int
+)
+"calcparse.ml" 90 3101 3108 "calcparse.ml" 90 3101 3135
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 91 3137 3144 "calcparse.ml" 91 3137 3150
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 91 3137 3152 "calcparse.ml" 91 3137 3157
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 91 3137 3157 "calcparse.ml" 91 3137 3158
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 91 3137 3158 "calcparse.ml" 91 3137 3159
+type(
+  int
+)
+"calcparse.ml" 91 3137 3151 "calcparse.ml" 91 3137 3160
+type(
+  int
+)
+"calcparse.ml" 91 3137 3144 "calcparse.ml" 91 3137 3160
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 92 3162 3169 "calcparse.ml" 92 3162 3186
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 92 3162 3187 "calcparse.ml" 92 3162 3190
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 92 3162 3191 "calcparse.ml" 92 3162 3206
+type(
+  string
+)
+"calcparse.ml" 92 3162 3169 "calcparse.ml" 92 3162 3206
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 93 3208 3215 "calcparse.ml" 93 3208 3220
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 93 3208 3221 "calcparse.ml" 93 3208 3222
+type(
+  expr.Cond
+)
+ident(
+  int_ref c "calcparse.ml" 83 2869 2879 "calcparse.ml" 83 2869 2882
+)
+"calcparse.ml" 93 3208 3221 "calcparse.ml" 93 3208 3232
+type(
+  expr
+)
+"calcparse.ml" 93 3208 3234 "calcparse.ml" 93 3208 3239
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 93 3208 3239 "calcparse.ml" 93 3208 3240
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 93 3208 3240 "calcparse.ml" 93 3208 3241
+type(
+  int
+)
+"calcparse.ml" 93 3208 3233 "calcparse.ml" 93 3208 3242
+type(
+  int
+)
+"calcparse.ml" 93 3208 3215 "calcparse.ml" 93 3208 3243
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 92 3162 3169 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 91 3137 3144 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 90 3101 3108 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 89 3055 3062 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 88 3030 3037 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 87 2994 3001 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 86 2950 2957 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 85 2925 2932 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 84 2886 2893 "calcparse.ml" 93 3208 3243
+type(
+  unit
+)
+"calcparse.ml" 94 3244 3256 "calcparse.ml" 94 3244 3257
+ident(
+  def l "calcparse.ml" 95 3262 3269 "calcparse.ml" 101 3505 3538
+)
+"calcparse.ml" 94 3244 3255 "calcparse.ml" 94 3244 3258
+type(
+  expr.Letin
+)
+"calcparse.ml" 94 3244 3250 "calcparse.ml" 94 3244 3258
+type(
+  expr
+)
+"calcparse.ml" 95 3262 3269 "calcparse.ml" 95 3262 3286
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 95 3262 3287 "calcparse.ml" 95 3262 3290
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 95 3262 3292 "calcparse.ml" 95 3262 3299
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 95 3262 3300 "calcparse.ml" 95 3262 3315
+type(
+  (string -> string, unit, string) format
+)
+"calcparse.ml" 95 3262 3316 "calcparse.ml" 95 3262 3317
+type(
+  expr.Letin
+)
+ident(
+  int_ref l "calcparse.ml" 94 3244 3255 "calcparse.ml" 94 3244 3258
+)
+"calcparse.ml" 95 3262 3316 "calcparse.ml" 95 3262 3326
+type(
+  string
+)
+"calcparse.ml" 95 3262 3291 "calcparse.ml" 95 3262 3327
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 95 3262 3269 "calcparse.ml" 95 3262 3327
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 96 3329 3336 "calcparse.ml" 96 3329 3342
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 96 3329 3344 "calcparse.ml" 96 3329 3349
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 96 3329 3349 "calcparse.ml" 96 3329 3350
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 96 3329 3350 "calcparse.ml" 96 3329 3351
+type(
+  int
+)
+"calcparse.ml" 96 3329 3343 "calcparse.ml" 96 3329 3352
+type(
+  int
+)
+"calcparse.ml" 96 3329 3336 "calcparse.ml" 96 3329 3352
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 97 3354 3361 "calcparse.ml" 97 3354 3378
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 97 3354 3379 "calcparse.ml" 97 3354 3382
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 97 3354 3383 "calcparse.ml" 97 3354 3397
+type(
+  string
+)
+"calcparse.ml" 97 3354 3361 "calcparse.ml" 97 3354 3397
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 98 3399 3406 "calcparse.ml" 98 3399 3411
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 98 3399 3412 "calcparse.ml" 98 3399 3413
+type(
+  expr.Letin
+)
+ident(
+  int_ref l "calcparse.ml" 94 3244 3255 "calcparse.ml" 94 3244 3258
+)
+"calcparse.ml" 98 3399 3412 "calcparse.ml" 98 3399 3422
+type(
+  expr
+)
+"calcparse.ml" 98 3399 3426 "calcparse.ml" 98 3399 3431
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 98 3399 3431 "calcparse.ml" 98 3399 3432
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 98 3399 3432 "calcparse.ml" 98 3399 3433
+type(
+  int
+)
+"calcparse.ml" 98 3399 3425 "calcparse.ml" 98 3399 3434
+type(
+  int
+)
+"calcparse.ml" 98 3399 3406 "calcparse.ml" 98 3399 3434
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 99 3436 3443 "calcparse.ml" 99 3436 3449
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 99 3436 3451 "calcparse.ml" 99 3436 3456
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 99 3436 3456 "calcparse.ml" 99 3436 3457
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 99 3436 3457 "calcparse.ml" 99 3436 3458
+type(
+  int
+)
+"calcparse.ml" 99 3436 3450 "calcparse.ml" 99 3436 3459
+type(
+  int
+)
+"calcparse.ml" 99 3436 3443 "calcparse.ml" 99 3436 3459
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 100 3461 3468 "calcparse.ml" 100 3461 3485
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 100 3461 3486 "calcparse.ml" 100 3461 3489
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 100 3461 3490 "calcparse.ml" 100 3461 3503
+type(
+  string
+)
+"calcparse.ml" 100 3461 3468 "calcparse.ml" 100 3461 3503
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 101 3505 3512 "calcparse.ml" 101 3505 3517
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 101 3505 3518 "calcparse.ml" 101 3505 3519
+type(
+  expr.Letin
+)
+ident(
+  int_ref l "calcparse.ml" 94 3244 3255 "calcparse.ml" 94 3244 3258
+)
+"calcparse.ml" 101 3505 3518 "calcparse.ml" 101 3505 3527
+type(
+  expr
+)
+"calcparse.ml" 101 3505 3529 "calcparse.ml" 101 3505 3534
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 101 3505 3534 "calcparse.ml" 101 3505 3535
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 101 3505 3535 "calcparse.ml" 101 3505 3536
+type(
+  int
+)
+"calcparse.ml" 101 3505 3528 "calcparse.ml" 101 3505 3537
+type(
+  int
+)
+"calcparse.ml" 101 3505 3512 "calcparse.ml" 101 3505 3538
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 100 3461 3468 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 99 3436 3443 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 98 3399 3406 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 97 3354 3361 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 96 3329 3336 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 95 3262 3269 "calcparse.ml" 101 3505 3538
+type(
+  unit
+)
+"calcparse.ml" 102 3539 3552 "calcparse.ml" 102 3539 3553
+ident(
+  def l "calcparse.ml" 103 3558 3565 "calcparse.ml" 104 3628 3665
+)
+"calcparse.ml" 102 3539 3551 "calcparse.ml" 102 3539 3554
+type(
+  expr.Lambda
+)
+"calcparse.ml" 102 3539 3545 "calcparse.ml" 102 3539 3554
+type(
+  expr
+)
+"calcparse.ml" 103 3558 3565 "calcparse.ml" 103 3558 3582
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 103 3558 3583 "calcparse.ml" 103 3558 3586
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 103 3558 3588 "calcparse.ml" 103 3558 3595
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"calcparse.ml" 103 3558 3596 "calcparse.ml" 103 3558 3612
+type(
+  (string -> string, unit, string) format
+)
+"calcparse.ml" 103 3558 3613 "calcparse.ml" 103 3558 3614
+type(
+  expr.Lambda
+)
+ident(
+  int_ref l "calcparse.ml" 102 3539 3551 "calcparse.ml" 102 3539 3554
+)
+"calcparse.ml" 103 3558 3613 "calcparse.ml" 103 3558 3625
+type(
+  string
+)
+"calcparse.ml" 103 3558 3587 "calcparse.ml" 103 3558 3626
+call(
+  stack
+)
+type(
+  string
+)
+"calcparse.ml" 103 3558 3565 "calcparse.ml" 103 3558 3626
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 104 3628 3635 "calcparse.ml" 104 3628 3640
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 104 3628 3641 "calcparse.ml" 104 3628 3642
+type(
+  expr.Lambda
+)
+ident(
+  int_ref l "calcparse.ml" 102 3539 3551 "calcparse.ml" 102 3539 3554
+)
+"calcparse.ml" 104 3628 3641 "calcparse.ml" 104 3628 3652
+type(
+  expr
+)
+"calcparse.ml" 104 3628 3656 "calcparse.ml" 104 3628 3661
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 104 3628 3661 "calcparse.ml" 104 3628 3662
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 104 3628 3662 "calcparse.ml" 104 3628 3663
+type(
+  int
+)
+"calcparse.ml" 104 3628 3655 "calcparse.ml" 104 3628 3664
+type(
+  int
+)
+"calcparse.ml" 104 3628 3635 "calcparse.ml" 104 3628 3665
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 103 3558 3565 "calcparse.ml" 104 3628 3665
+type(
+  unit
+)
+"calcparse.ml" 105 3666 3678 "calcparse.ml" 105 3666 3679
+ident(
+  def a "calcparse.ml" 106 3684 3691 "calcparse.ml" 112 3905 3943
+)
+"calcparse.ml" 105 3666 3677 "calcparse.ml" 105 3666 3680
+type(
+  expr.Apply
+)
+"calcparse.ml" 105 3666 3672 "calcparse.ml" 105 3666 3680
+type(
+  expr
+)
+"calcparse.ml" 106 3684 3691 "calcparse.ml" 106 3684 3708
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 106 3684 3709 "calcparse.ml" 106 3684 3712
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 106 3684 3713 "calcparse.ml" 106 3684 3722
+type(
+  string
+)
+"calcparse.ml" 106 3684 3691 "calcparse.ml" 106 3684 3722
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 107 3724 3731 "calcparse.ml" 107 3724 3737
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 107 3724 3739 "calcparse.ml" 107 3724 3744
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 107 3724 3744 "calcparse.ml" 107 3724 3745
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 107 3724 3745 "calcparse.ml" 107 3724 3746
+type(
+  int
+)
+"calcparse.ml" 107 3724 3738 "calcparse.ml" 107 3724 3747
+type(
+  int
+)
+"calcparse.ml" 107 3724 3731 "calcparse.ml" 107 3724 3747
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 108 3749 3756 "calcparse.ml" 108 3749 3773
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 108 3749 3774 "calcparse.ml" 108 3749 3777
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 108 3749 3778 "calcparse.ml" 108 3749 3793
+type(
+  string
+)
+"calcparse.ml" 108 3749 3756 "calcparse.ml" 108 3749 3793
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 109 3795 3802 "calcparse.ml" 109 3795 3807
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 109 3795 3808 "calcparse.ml" 109 3795 3809
+type(
+  expr.Apply
+)
+ident(
+  int_ref a "calcparse.ml" 105 3666 3677 "calcparse.ml" 105 3666 3680
+)
+"calcparse.ml" 109 3795 3808 "calcparse.ml" 109 3795 3819
+type(
+  expr
+)
+"calcparse.ml" 109 3795 3823 "calcparse.ml" 109 3795 3828
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 109 3795 3828 "calcparse.ml" 109 3795 3829
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 109 3795 3829 "calcparse.ml" 109 3795 3830
+type(
+  int
+)
+"calcparse.ml" 109 3795 3822 "calcparse.ml" 109 3795 3831
+type(
+  int
+)
+"calcparse.ml" 109 3795 3802 "calcparse.ml" 109 3795 3831
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 110 3833 3840 "calcparse.ml" 110 3833 3846
+type(
+  int -> unit
+)
+ident(
+  int_ref indent "calcparse.ml" 54 1903 1909 "calcparse.ml" 54 1903 1915
+)
+"calcparse.ml" 110 3833 3848 "calcparse.ml" 110 3833 3853
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 110 3833 3853 "calcparse.ml" 110 3833 3854
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 110 3833 3854 "calcparse.ml" 110 3833 3855
+type(
+  int
+)
+"calcparse.ml" 110 3833 3847 "calcparse.ml" 110 3833 3856
+type(
+  int
+)
+"calcparse.ml" 110 3833 3840 "calcparse.ml" 110 3833 3856
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 111 3858 3865 "calcparse.ml" 111 3858 3882
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"calcparse.ml" 111 3858 3883 "calcparse.ml" 111 3858 3886
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 111 3858 3887 "calcparse.ml" 111 3858 3903
+type(
+  string
+)
+"calcparse.ml" 111 3858 3865 "calcparse.ml" 111 3858 3903
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 112 3905 3912 "calcparse.ml" 112 3905 3917
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 112 3905 3918 "calcparse.ml" 112 3905 3919
+type(
+  expr.Apply
+)
+ident(
+  int_ref a "calcparse.ml" 105 3666 3677 "calcparse.ml" 105 3666 3680
+)
+"calcparse.ml" 112 3905 3918 "calcparse.ml" 112 3905 3930
+type(
+  expr
+)
+"calcparse.ml" 112 3905 3934 "calcparse.ml" 112 3905 3939
+type(
+  int
+)
+ident(
+  int_ref depth "calcparse.ml" 59 1989 2010 "calcparse.ml" 59 1989 2015
+)
+"calcparse.ml" 112 3905 3939 "calcparse.ml" 112 3905 3940
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"calcparse.ml" 112 3905 3940 "calcparse.ml" 112 3905 3941
+type(
+  int
+)
+"calcparse.ml" 112 3905 3933 "calcparse.ml" 112 3905 3942
+type(
+  int
+)
+"calcparse.ml" 112 3905 3912 "calcparse.ml" 112 3905 3943
+call(
+  tail
+)
+type(
+  unit
+)
+"calcparse.ml" 111 3858 3865 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 110 3833 3840 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 109 3795 3802 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 108 3749 3756 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 107 3724 3731 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 106 3684 3691 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 61 2082 2086 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 60 2064 2068 "calcparse.ml" 112 3905 3943
+type(
+  unit
+)
+"calcparse.ml" 114 3949 3951 "calcparse.ml" 114 3949 3956
+type(
+  expr -> int -> unit
+)
+ident(
+  int_ref build "calcparse.ml" 59 1989 1999 "calcparse.ml" 59 1989 2004
+)
+"calcparse.ml" 114 3949 3957 "calcparse.ml" 114 3949 3961
+type(
+  expr
+)
+ident(
+  int_ref expr "calcparse.ml" 52 1789 1810 "calcparse.ml" 52 1789 1814
+)
+"calcparse.ml" 114 3949 3962 "calcparse.ml" 114 3949 3963
+type(
+  int
+)
+"calcparse.ml" 114 3949 3951 "calcparse.ml" 114 3949 3963
+call(
+  stack
+)
+type(
+  unit
+)
+"calcparse.ml" 115 3965 3967 "calcparse.ml" 115 3965 3982
+type(
+  Buffer.t -> string
+)
+ident(
+  ext_ref Buffer.contents
+)
+"calcparse.ml" 115 3965 3983 "calcparse.ml" 115 3965 3986
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "calcparse.ml" 53 1817 1823 "calcparse.ml" 53 1817 1826
+)
+"calcparse.ml" 115 3965 3967 "calcparse.ml" 115 3965 3986
+call(
+  tail
+)
+type(
+  string
+)
+"calcparse.ml" 114 3949 3951 "calcparse.ml" 115 3965 3986
+type(
+  string
+)
+"calcparse.ml" 59 1989 1991 "calcparse.ml" 115 3965 3986
+type(
+  string
+)
+"calcparse.ml" 54 1903 1905 "calcparse.ml" 115 3965 3986
+type(
+  string
+)
+"calcparse.ml" 53 1817 1819 "calcparse.ml" 115 3965 3986
+type(
+  string
+)
+"calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_expr "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 122 4212 4231 "calcparse.ml" 122 4212 4237
+type(
+  Calclex.token list
+)
+ident(
+  def tokens "calcparse.ml" 123 4240 4242 "calcparse.ml" 124 4295 4303
+)
+"calcparse.ml" 123 4240 4247 "calcparse.ml" 123 4240 4251
+type(
+  expr
+)
+ident(
+  def expr "calcparse.ml" 124 4295 4297 "calcparse.ml" 124 4295 4303
+)
+"calcparse.ml" 123 4240 4253 "calcparse.ml" 123 4240 4257
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 124 4295 4297 "calcparse.ml" 124 4295 4303
+)
+"calcparse.ml" 123 4240 4246 "calcparse.ml" 123 4240 4258
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 123 4240 4262 "calcparse.ml" 123 4240 4268
+ident(
+  def result "calcparse.ml" 124 4295 4297 "calcparse.ml" 124 4295 4303
+)
+"calcparse.ml" 123 4240 4246 "calcparse.ml" 123 4240 4268
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 123 4240 4271 "calcparse.ml" 123 4240 4284
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_compare "calcparse.ml" 128 4420 4424 "calcparse.ml" 128 4420 4437
+)
+"calcparse.ml" 123 4240 4285 "calcparse.ml" 123 4240 4291
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tokens "calcparse.ml" 122 4212 4231 "calcparse.ml" 122 4212 4237
+)
+"calcparse.ml" 123 4240 4271 "calcparse.ml" 123 4240 4291
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 124 4295 4297 "calcparse.ml" 124 4295 4303
+type(
+  expr * Calclex.token list
+)
+ident(
+  int_ref result "calcparse.ml" 123 4240 4246 "calcparse.ml" 123 4240 4268
+)
+"calcparse.ml" 123 4240 4242 "calcparse.ml" 124 4295 4303
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 128 4420 4424 "calcparse.ml" 128 4420 4437
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_compare "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 128 4420 4438 "calcparse.ml" 128 4420 4442
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 129 4445 4447 "calcparse.ml" 140 4838 4860
+)
+"calcparse.ml" 129 4445 4452 "calcparse.ml" 129 4445 4457
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 130 4488 4490 "calcparse.ml" 140 4838 4860
+)
+"calcparse.ml" 129 4445 4459 "calcparse.ml" 129 4445 4463
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 130 4488 4490 "calcparse.ml" 140 4838 4860
+)
+"calcparse.ml" 129 4445 4451 "calcparse.ml" 129 4445 4464
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 129 4445 4467 "calcparse.ml" 129 4445 4479
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_addsub "calcparse.ml" 143 4917 4921 "calcparse.ml" 143 4917 4933
+)
+"calcparse.ml" 129 4445 4480 "calcparse.ml" 129 4445 4484
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 128 4420 4438 "calcparse.ml" 128 4420 4442
+)
+"calcparse.ml" 129 4445 4467 "calcparse.ml" 129 4445 4484
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 130 4488 4496 "calcparse.ml" 130 4488 4500
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 129 4445 4459 "calcparse.ml" 129 4445 4463
+)
+"calcparse.ml" 131 4506 4510 "calcparse.ml" 131 4506 4519
+type(
+  Calclex.token
+)
+"calcparse.ml" 131 4506 4521 "calcparse.ml" 131 4506 4525
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 132 4529 4535 "calcparse.ml" 133 4576 4619
+)
+"calcparse.ml" 131 4506 4510 "calcparse.ml" 131 4506 4525
+type(
+  Calclex.token list
+)
+"calcparse.ml" 132 4529 4540 "calcparse.ml" 132 4529 4545
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 133 4576 4582 "calcparse.ml" 133 4576 4619
+)
+"calcparse.ml" 132 4529 4547 "calcparse.ml" 132 4529 4551
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 133 4576 4582 "calcparse.ml" 133 4576 4619
+)
+"calcparse.ml" 132 4529 4539 "calcparse.ml" 132 4529 4552
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 132 4529 4555 "calcparse.ml" 132 4529 4567
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_addsub "calcparse.ml" 143 4917 4921 "calcparse.ml" 143 4917 4933
+)
+"calcparse.ml" 132 4529 4568 "calcparse.ml" 132 4529 4572
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 131 4506 4521 "calcparse.ml" 131 4506 4525
+)
+"calcparse.ml" 132 4529 4555 "calcparse.ml" 132 4529 4572
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 133 4576 4592 "calcparse.ml" 133 4576 4599
+type(
+  intop
+)
+"calcparse.ml" 133 4576 4600 "calcparse.ml" 133 4576 4605
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 129 4445 4452 "calcparse.ml" 129 4445 4457
+)
+"calcparse.ml" 133 4576 4606 "calcparse.ml" 133 4576 4611
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 132 4529 4540 "calcparse.ml" 132 4529 4545
+)
+"calcparse.ml" 133 4576 4588 "calcparse.ml" 133 4576 4612
+type(
+  expr.Intop
+)
+"calcparse.ml" 133 4576 4583 "calcparse.ml" 133 4576 4612
+type(
+  expr
+)
+"calcparse.ml" 133 4576 4614 "calcparse.ml" 133 4576 4618
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 132 4529 4547 "calcparse.ml" 132 4529 4551
+)
+"calcparse.ml" 133 4576 4582 "calcparse.ml" 133 4576 4619
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 132 4529 4535 "calcparse.ml" 133 4576 4619
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 134 4620 4624 "calcparse.ml" 134 4620 4632
+type(
+  Calclex.token
+)
+"calcparse.ml" 134 4620 4634 "calcparse.ml" 134 4620 4638
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 135 4642 4648 "calcparse.ml" 136 4689 4729
+)
+"calcparse.ml" 134 4620 4624 "calcparse.ml" 134 4620 4638
+type(
+  Calclex.token list
+)
+"calcparse.ml" 135 4642 4653 "calcparse.ml" 135 4642 4658
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 136 4689 4695 "calcparse.ml" 136 4689 4729
+)
+"calcparse.ml" 135 4642 4660 "calcparse.ml" 135 4642 4664
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 136 4689 4695 "calcparse.ml" 136 4689 4729
+)
+"calcparse.ml" 135 4642 4652 "calcparse.ml" 135 4642 4665
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 135 4642 4668 "calcparse.ml" 135 4642 4680
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_addsub "calcparse.ml" 143 4917 4921 "calcparse.ml" 143 4917 4933
+)
+"calcparse.ml" 135 4642 4681 "calcparse.ml" 135 4642 4685
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 134 4620 4634 "calcparse.ml" 134 4620 4638
+)
+"calcparse.ml" 135 4642 4668 "calcparse.ml" 135 4642 4685
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 136 4689 4705 "calcparse.ml" 136 4689 4709
+type(
+  intop
+)
+"calcparse.ml" 136 4689 4710 "calcparse.ml" 136 4689 4715
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 129 4445 4452 "calcparse.ml" 129 4445 4457
+)
+"calcparse.ml" 136 4689 4716 "calcparse.ml" 136 4689 4721
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 135 4642 4653 "calcparse.ml" 135 4642 4658
+)
+"calcparse.ml" 136 4689 4701 "calcparse.ml" 136 4689 4722
+type(
+  expr.Intop
+)
+"calcparse.ml" 136 4689 4696 "calcparse.ml" 136 4689 4722
+type(
+  expr
+)
+"calcparse.ml" 136 4689 4724 "calcparse.ml" 136 4689 4728
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 135 4642 4660 "calcparse.ml" 135 4642 4664
+)
+"calcparse.ml" 136 4689 4695 "calcparse.ml" 136 4689 4729
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 135 4642 4648 "calcparse.ml" 136 4689 4729
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 137 4730 4734 "calcparse.ml" 137 4730 4739
+type(
+  Calclex.token
+)
+"calcparse.ml" 137 4730 4741 "calcparse.ml" 137 4730 4745
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 138 4749 4755 "calcparse.ml" 139 4796 4837
+)
+"calcparse.ml" 137 4730 4734 "calcparse.ml" 137 4730 4745
+type(
+  Calclex.token list
+)
+"calcparse.ml" 138 4749 4760 "calcparse.ml" 138 4749 4765
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 139 4796 4802 "calcparse.ml" 139 4796 4837
+)
+"calcparse.ml" 138 4749 4767 "calcparse.ml" 138 4749 4771
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 139 4796 4802 "calcparse.ml" 139 4796 4837
+)
+"calcparse.ml" 138 4749 4759 "calcparse.ml" 138 4749 4772
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 138 4749 4775 "calcparse.ml" 138 4749 4787
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_addsub "calcparse.ml" 143 4917 4921 "calcparse.ml" 143 4917 4933
+)
+"calcparse.ml" 138 4749 4788 "calcparse.ml" 138 4749 4792
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 137 4730 4741 "calcparse.ml" 137 4730 4745
+)
+"calcparse.ml" 138 4749 4775 "calcparse.ml" 138 4749 4792
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 139 4796 4812 "calcparse.ml" 139 4796 4817
+type(
+  intop
+)
+"calcparse.ml" 139 4796 4818 "calcparse.ml" 139 4796 4823
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 129 4445 4452 "calcparse.ml" 129 4445 4457
+)
+"calcparse.ml" 139 4796 4824 "calcparse.ml" 139 4796 4829
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 138 4749 4760 "calcparse.ml" 138 4749 4765
+)
+"calcparse.ml" 139 4796 4808 "calcparse.ml" 139 4796 4830
+type(
+  expr.Intop
+)
+"calcparse.ml" 139 4796 4803 "calcparse.ml" 139 4796 4830
+type(
+  expr
+)
+"calcparse.ml" 139 4796 4832 "calcparse.ml" 139 4796 4836
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 138 4749 4767 "calcparse.ml" 138 4749 4771
+)
+"calcparse.ml" 139 4796 4802 "calcparse.ml" 139 4796 4837
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 138 4749 4755 "calcparse.ml" 139 4796 4837
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 140 4838 4842 "calcparse.ml" 140 4838 4843
+type(
+  Calclex.token list
+)
+"calcparse.ml" 140 4838 4848 "calcparse.ml" 140 4838 4853
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 129 4445 4452 "calcparse.ml" 129 4445 4457
+)
+"calcparse.ml" 140 4838 4855 "calcparse.ml" 140 4838 4859
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 129 4445 4459 "calcparse.ml" 129 4445 4463
+)
+"calcparse.ml" 140 4838 4847 "calcparse.ml" 140 4838 4860
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 130 4488 4490 "calcparse.ml" 140 4838 4860
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 129 4445 4447 "calcparse.ml" 140 4838 4860
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 143 4917 4921 "calcparse.ml" 143 4917 4933
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_addsub "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 143 4917 4934 "calcparse.ml" 143 4917 4938
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 144 4941 4943 "calcparse.ml" 155 5712 5729
+)
+"calcparse.ml" 144 4941 4951 "calcparse.ml" 144 4941 4955
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def iter "calcparse.ml" 144 4941 4943 "calcparse.ml" 155 5712 5729
+)
+"calcparse.ml" 144 4941 4956 "calcparse.ml" 144 4941 4961
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 144 4941 4962 "calcparse.ml" 152 5586 5610
+)
+"calcparse.ml" 144 4941 4962 "calcparse.ml" 144 4941 4966
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 145 5044 5048 "calcparse.ml" 152 5586 5610
+)
+"calcparse.ml" 145 5044 5054 "calcparse.ml" 145 5044 5058
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 144 4941 4962 "calcparse.ml" 144 4941 4966
+)
+"calcparse.ml" 146 5064 5070 "calcparse.ml" 146 5064 5074
+type(
+  Calclex.token
+)
+"calcparse.ml" 146 5064 5078 "calcparse.ml" 146 5064 5082
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 147 5133 5140 "calcparse.ml" 148 5227 5271
+)
+"calcparse.ml" 146 5064 5070 "calcparse.ml" 146 5064 5082
+type(
+  Calclex.token list
+)
+"calcparse.ml" 147 5133 5145 "calcparse.ml" 147 5133 5150
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 148 5227 5234 "calcparse.ml" 148 5227 5271
+)
+"calcparse.ml" 147 5133 5151 "calcparse.ml" 147 5133 5155
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 148 5227 5234 "calcparse.ml" 148 5227 5271
+)
+"calcparse.ml" 147 5133 5144 "calcparse.ml" 147 5133 5156
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 147 5133 5159 "calcparse.ml" 147 5133 5171
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_muldiv "calcparse.ml" 158 5862 5866 "calcparse.ml" 158 5862 5878
+)
+"calcparse.ml" 147 5133 5172 "calcparse.ml" 147 5133 5176
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 146 5064 5078 "calcparse.ml" 146 5064 5082
+)
+"calcparse.ml" 147 5133 5159 "calcparse.ml" 147 5133 5176
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 148 5227 5234 "calcparse.ml" 148 5227 5238
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 144 4941 4951 "calcparse.ml" 144 4941 4955
+)
+"calcparse.ml" 148 5227 5249 "calcparse.ml" 148 5227 5252
+type(
+  intop
+)
+"calcparse.ml" 148 5227 5253 "calcparse.ml" 148 5227 5258
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 144 4941 4956 "calcparse.ml" 144 4941 4961
+)
+"calcparse.ml" 148 5227 5259 "calcparse.ml" 148 5227 5264
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 147 5133 5145 "calcparse.ml" 147 5133 5150
+)
+"calcparse.ml" 148 5227 5245 "calcparse.ml" 148 5227 5265
+type(
+  expr.Intop
+)
+"calcparse.ml" 148 5227 5239 "calcparse.ml" 148 5227 5266
+type(
+  expr
+)
+"calcparse.ml" 148 5227 5267 "calcparse.ml" 148 5227 5271
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 147 5133 5151 "calcparse.ml" 147 5133 5155
+)
+"calcparse.ml" 148 5227 5234 "calcparse.ml" 148 5227 5271
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 147 5133 5140 "calcparse.ml" 148 5227 5271
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 149 5325 5331 "calcparse.ml" 149 5325 5336
+type(
+  Calclex.token
+)
+"calcparse.ml" 149 5325 5340 "calcparse.ml" 149 5325 5344
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 150 5394 5401 "calcparse.ml" 151 5488 5532
+)
+"calcparse.ml" 149 5325 5331 "calcparse.ml" 149 5325 5344
+type(
+  Calclex.token list
+)
+"calcparse.ml" 150 5394 5406 "calcparse.ml" 150 5394 5411
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 151 5488 5495 "calcparse.ml" 151 5488 5532
+)
+"calcparse.ml" 150 5394 5412 "calcparse.ml" 150 5394 5416
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 151 5488 5495 "calcparse.ml" 151 5488 5532
+)
+"calcparse.ml" 150 5394 5405 "calcparse.ml" 150 5394 5417
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 150 5394 5420 "calcparse.ml" 150 5394 5432
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_muldiv "calcparse.ml" 158 5862 5866 "calcparse.ml" 158 5862 5878
+)
+"calcparse.ml" 150 5394 5433 "calcparse.ml" 150 5394 5437
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 149 5325 5340 "calcparse.ml" 149 5325 5344
+)
+"calcparse.ml" 150 5394 5420 "calcparse.ml" 150 5394 5437
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 151 5488 5495 "calcparse.ml" 151 5488 5499
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 144 4941 4951 "calcparse.ml" 144 4941 4955
+)
+"calcparse.ml" 151 5488 5510 "calcparse.ml" 151 5488 5513
+type(
+  intop
+)
+"calcparse.ml" 151 5488 5514 "calcparse.ml" 151 5488 5519
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 144 4941 4956 "calcparse.ml" 144 4941 4961
+)
+"calcparse.ml" 151 5488 5520 "calcparse.ml" 151 5488 5525
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 150 5394 5406 "calcparse.ml" 150 5394 5411
+)
+"calcparse.ml" 151 5488 5506 "calcparse.ml" 151 5488 5526
+type(
+  expr.Intop
+)
+"calcparse.ml" 151 5488 5500 "calcparse.ml" 151 5488 5527
+type(
+  expr
+)
+"calcparse.ml" 151 5488 5528 "calcparse.ml" 151 5488 5532
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 150 5394 5412 "calcparse.ml" 150 5394 5416
+)
+"calcparse.ml" 151 5488 5495 "calcparse.ml" 151 5488 5532
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 150 5394 5401 "calcparse.ml" 151 5488 5532
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 152 5586 5592 "calcparse.ml" 152 5586 5593
+type(
+  Calclex.token list
+)
+"calcparse.ml" 152 5586 5598 "calcparse.ml" 152 5586 5603
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 144 4941 4956 "calcparse.ml" 144 4941 4961
+)
+"calcparse.ml" 152 5586 5605 "calcparse.ml" 152 5586 5609
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 144 4941 4962 "calcparse.ml" 144 4941 4966
+)
+"calcparse.ml" 152 5586 5597 "calcparse.ml" 152 5586 5610
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 145 5044 5048 "calcparse.ml" 152 5586 5610
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 154 5616 5623 "calcparse.ml" 154 5616 5628
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 155 5712 5714 "calcparse.ml" 155 5712 5729
+)
+"calcparse.ml" 154 5616 5630 "calcparse.ml" 154 5616 5634
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 155 5712 5714 "calcparse.ml" 155 5712 5729
+)
+"calcparse.ml" 154 5616 5622 "calcparse.ml" 154 5616 5635
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 154 5616 5638 "calcparse.ml" 154 5616 5650
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_muldiv "calcparse.ml" 158 5862 5866 "calcparse.ml" 158 5862 5878
+)
+"calcparse.ml" 154 5616 5651 "calcparse.ml" 154 5616 5655
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 143 4917 4934 "calcparse.ml" 143 4917 4938
+)
+"calcparse.ml" 154 5616 5638 "calcparse.ml" 154 5616 5655
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 155 5712 5714 "calcparse.ml" 155 5712 5718
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 144 4941 4951 "calcparse.ml" 144 4941 4955
+)
+"calcparse.ml" 155 5712 5719 "calcparse.ml" 155 5712 5724
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 154 5616 5623 "calcparse.ml" 154 5616 5628
+)
+"calcparse.ml" 155 5712 5725 "calcparse.ml" 155 5712 5729
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 154 5616 5630 "calcparse.ml" 154 5616 5634
+)
+"calcparse.ml" 155 5712 5714 "calcparse.ml" 155 5712 5729
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 154 5616 5618 "calcparse.ml" 155 5712 5729
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 144 4941 4943 "calcparse.ml" 155 5712 5729
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 158 5862 5866 "calcparse.ml" 158 5862 5878
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_muldiv "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 158 5862 5879 "calcparse.ml" 158 5862 5883
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 159 5886 5888 "calcparse.ml" 170 6234 6251
+)
+"calcparse.ml" 159 5886 5896 "calcparse.ml" 159 5886 5900
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def iter "calcparse.ml" 159 5886 5888 "calcparse.ml" 170 6234 6251
+)
+"calcparse.ml" 159 5886 5901 "calcparse.ml" 159 5886 5906
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 159 5886 5907 "calcparse.ml" 167 6162 6186
+)
+"calcparse.ml" 159 5886 5907 "calcparse.ml" 159 5886 5911
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 160 5914 5918 "calcparse.ml" 167 6162 6186
+)
+"calcparse.ml" 160 5914 5924 "calcparse.ml" 160 5914 5928
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 159 5886 5907 "calcparse.ml" 159 5886 5911
+)
+"calcparse.ml" 161 5934 5940 "calcparse.ml" 161 5934 5945
+type(
+  Calclex.token
+)
+"calcparse.ml" 161 5934 5949 "calcparse.ml" 161 5934 5953
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 162 5957 5964 "calcparse.ml" 163 6003 6047
+)
+"calcparse.ml" 161 5934 5940 "calcparse.ml" 161 5934 5953
+type(
+  Calclex.token list
+)
+"calcparse.ml" 162 5957 5969 "calcparse.ml" 162 5957 5974
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 163 6003 6010 "calcparse.ml" 163 6003 6047
+)
+"calcparse.ml" 162 5957 5975 "calcparse.ml" 162 5957 5979
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 163 6003 6010 "calcparse.ml" 163 6003 6047
+)
+"calcparse.ml" 162 5957 5968 "calcparse.ml" 162 5957 5980
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 162 5957 5983 "calcparse.ml" 162 5957 5994
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_letin "calcparse.ml" 173 6285 6289 "calcparse.ml" 173 6285 6300
+)
+"calcparse.ml" 162 5957 5995 "calcparse.ml" 162 5957 5999
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 161 5934 5949 "calcparse.ml" 161 5934 5953
+)
+"calcparse.ml" 162 5957 5983 "calcparse.ml" 162 5957 5999
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 163 6003 6010 "calcparse.ml" 163 6003 6014
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 159 5886 5896 "calcparse.ml" 159 5886 5900
+)
+"calcparse.ml" 163 6003 6025 "calcparse.ml" 163 6003 6028
+type(
+  intop
+)
+"calcparse.ml" 163 6003 6029 "calcparse.ml" 163 6003 6034
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 159 5886 5901 "calcparse.ml" 159 5886 5906
+)
+"calcparse.ml" 163 6003 6035 "calcparse.ml" 163 6003 6040
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 162 5957 5969 "calcparse.ml" 162 5957 5974
+)
+"calcparse.ml" 163 6003 6021 "calcparse.ml" 163 6003 6041
+type(
+  expr.Intop
+)
+"calcparse.ml" 163 6003 6015 "calcparse.ml" 163 6003 6042
+type(
+  expr
+)
+"calcparse.ml" 163 6003 6043 "calcparse.ml" 163 6003 6047
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 162 5957 5975 "calcparse.ml" 162 5957 5979
+)
+"calcparse.ml" 163 6003 6010 "calcparse.ml" 163 6003 6047
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 162 5957 5964 "calcparse.ml" 163 6003 6047
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 164 6048 6054 "calcparse.ml" 164 6048 6059
+type(
+  Calclex.token
+)
+"calcparse.ml" 164 6048 6063 "calcparse.ml" 164 6048 6067
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 165 6071 6078 "calcparse.ml" 166 6117 6161
+)
+"calcparse.ml" 164 6048 6054 "calcparse.ml" 164 6048 6067
+type(
+  Calclex.token list
+)
+"calcparse.ml" 165 6071 6083 "calcparse.ml" 165 6071 6088
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 166 6117 6124 "calcparse.ml" 166 6117 6161
+)
+"calcparse.ml" 165 6071 6089 "calcparse.ml" 165 6071 6093
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 166 6117 6124 "calcparse.ml" 166 6117 6161
+)
+"calcparse.ml" 165 6071 6082 "calcparse.ml" 165 6071 6094
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 165 6071 6097 "calcparse.ml" 165 6071 6108
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_letin "calcparse.ml" 173 6285 6289 "calcparse.ml" 173 6285 6300
+)
+"calcparse.ml" 165 6071 6109 "calcparse.ml" 165 6071 6113
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 164 6048 6063 "calcparse.ml" 164 6048 6067
+)
+"calcparse.ml" 165 6071 6097 "calcparse.ml" 165 6071 6113
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 166 6117 6124 "calcparse.ml" 166 6117 6128
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 159 5886 5896 "calcparse.ml" 159 5886 5900
+)
+"calcparse.ml" 166 6117 6139 "calcparse.ml" 166 6117 6142
+type(
+  intop
+)
+"calcparse.ml" 166 6117 6143 "calcparse.ml" 166 6117 6148
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 159 5886 5901 "calcparse.ml" 159 5886 5906
+)
+"calcparse.ml" 166 6117 6149 "calcparse.ml" 166 6117 6154
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 165 6071 6083 "calcparse.ml" 165 6071 6088
+)
+"calcparse.ml" 166 6117 6135 "calcparse.ml" 166 6117 6155
+type(
+  expr.Intop
+)
+"calcparse.ml" 166 6117 6129 "calcparse.ml" 166 6117 6156
+type(
+  expr
+)
+"calcparse.ml" 166 6117 6157 "calcparse.ml" 166 6117 6161
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 165 6071 6089 "calcparse.ml" 165 6071 6093
+)
+"calcparse.ml" 166 6117 6124 "calcparse.ml" 166 6117 6161
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 165 6071 6078 "calcparse.ml" 166 6117 6161
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 167 6162 6168 "calcparse.ml" 167 6162 6169
+type(
+  Calclex.token list
+)
+"calcparse.ml" 167 6162 6174 "calcparse.ml" 167 6162 6179
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 159 5886 5901 "calcparse.ml" 159 5886 5906
+)
+"calcparse.ml" 167 6162 6181 "calcparse.ml" 167 6162 6185
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 159 5886 5907 "calcparse.ml" 159 5886 5911
+)
+"calcparse.ml" 167 6162 6173 "calcparse.ml" 167 6162 6186
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 160 5914 5918 "calcparse.ml" 167 6162 6186
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 169 6192 6199 "calcparse.ml" 169 6192 6204
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 170 6234 6236 "calcparse.ml" 170 6234 6251
+)
+"calcparse.ml" 169 6192 6206 "calcparse.ml" 169 6192 6210
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 170 6234 6236 "calcparse.ml" 170 6234 6251
+)
+"calcparse.ml" 169 6192 6198 "calcparse.ml" 169 6192 6211
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 169 6192 6214 "calcparse.ml" 169 6192 6225
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_letin "calcparse.ml" 173 6285 6289 "calcparse.ml" 173 6285 6300
+)
+"calcparse.ml" 169 6192 6226 "calcparse.ml" 169 6192 6230
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 158 5862 5879 "calcparse.ml" 158 5862 5883
+)
+"calcparse.ml" 169 6192 6214 "calcparse.ml" 169 6192 6230
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 170 6234 6236 "calcparse.ml" 170 6234 6240
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 159 5886 5896 "calcparse.ml" 159 5886 5900
+)
+"calcparse.ml" 170 6234 6241 "calcparse.ml" 170 6234 6246
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 169 6192 6199 "calcparse.ml" 169 6192 6204
+)
+"calcparse.ml" 170 6234 6247 "calcparse.ml" 170 6234 6251
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 169 6192 6206 "calcparse.ml" 169 6192 6210
+)
+"calcparse.ml" 170 6234 6236 "calcparse.ml" 170 6234 6251
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 169 6192 6194 "calcparse.ml" 170 6234 6251
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 159 5886 5888 "calcparse.ml" 170 6234 6251
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 173 6285 6289 "calcparse.ml" 173 6285 6300
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_letin "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 173 6285 6301 "calcparse.ml" 173 6285 6305
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 174 6308 6310 "calcparse.ml" 184 6911 6935
+)
+"calcparse.ml" 174 6308 6316 "calcparse.ml" 174 6308 6320
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 173 6285 6301 "calcparse.ml" 173 6285 6305
+)
+"calcparse.ml" 175 6326 6330 "calcparse.ml" 175 6326 6333
+type(
+  Calclex.token
+)
+"calcparse.ml" 175 6326 6343 "calcparse.ml" 175 6326 6351
+type(
+  string
+)
+ident(
+  def var_name "calcparse.ml" 176 6427 6432 "calcparse.ml" 183 6902 6910
+)
+"calcparse.ml" 175 6326 6337 "calcparse.ml" 175 6326 6351
+type(
+  Calclex.token
+)
+"calcparse.ml" 175 6326 6355 "calcparse.ml" 175 6326 6360
+type(
+  Calclex.token
+)
+"calcparse.ml" 175 6326 6364 "calcparse.ml" 175 6326 6368
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 176 6427 6432 "calcparse.ml" 183 6902 6910
+)
+"calcparse.ml" 175 6326 6355 "calcparse.ml" 175 6326 6368
+type(
+  Calclex.token list
+)
+"calcparse.ml" 175 6326 6337 "calcparse.ml" 175 6326 6368
+type(
+  Calclex.token list
+)
+"calcparse.ml" 175 6326 6330 "calcparse.ml" 175 6326 6368
+type(
+  Calclex.token list
+)
+"calcparse.ml" 177 6438 6450 "calcparse.ml" 177 6438 6458
+type(
+  expr
+)
+ident(
+  def var_expr "calcparse.ml" 178 6532 6539 "calcparse.ml" 182 6825 6901
+)
+"calcparse.ml" 177 6438 6459 "calcparse.ml" 177 6438 6463
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 178 6532 6539 "calcparse.ml" 182 6825 6901
+)
+"calcparse.ml" 177 6438 6449 "calcparse.ml" 177 6438 6464
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 177 6438 6467 "calcparse.ml" 177 6438 6477
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 177 6438 6478 "calcparse.ml" 177 6438 6482
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 175 6326 6364 "calcparse.ml" 175 6326 6368
+)
+"calcparse.ml" 177 6438 6467 "calcparse.ml" 177 6438 6482
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 178 6532 6545 "calcparse.ml" 178 6532 6549
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 177 6438 6459 "calcparse.ml" 177 6438 6463
+)
+"calcparse.ml" 179 6555 6564 "calcparse.ml" 179 6555 6566
+type(
+  Calclex.token
+)
+"calcparse.ml" 179 6555 6570 "calcparse.ml" 179 6555 6574
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 180 6648 6658 "calcparse.ml" 181 6731 6783
+)
+"calcparse.ml" 179 6555 6564 "calcparse.ml" 179 6555 6574
+type(
+  Calclex.token list
+)
+"calcparse.ml" 180 6648 6663 "calcparse.ml" 180 6648 6670
+type(
+  expr
+)
+ident(
+  def in_expr "calcparse.ml" 181 6731 6741 "calcparse.ml" 181 6731 6783
+)
+"calcparse.ml" 180 6648 6671 "calcparse.ml" 180 6648 6675
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 181 6731 6741 "calcparse.ml" 181 6731 6783
+)
+"calcparse.ml" 180 6648 6662 "calcparse.ml" 180 6648 6676
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 180 6648 6679 "calcparse.ml" 180 6648 6689
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 180 6648 6690 "calcparse.ml" 180 6648 6694
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 179 6555 6570 "calcparse.ml" 179 6555 6574
+)
+"calcparse.ml" 180 6648 6679 "calcparse.ml" 180 6648 6694
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 181 6731 6748 "calcparse.ml" 181 6731 6756
+type(
+  string
+)
+ident(
+  int_ref var_name "calcparse.ml" 175 6326 6343 "calcparse.ml" 175 6326 6351
+)
+"calcparse.ml" 181 6731 6758 "calcparse.ml" 181 6731 6766
+type(
+  expr
+)
+ident(
+  int_ref var_expr "calcparse.ml" 177 6438 6450 "calcparse.ml" 177 6438 6458
+)
+"calcparse.ml" 181 6731 6768 "calcparse.ml" 181 6731 6775
+type(
+  expr
+)
+ident(
+  int_ref in_expr "calcparse.ml" 180 6648 6663 "calcparse.ml" 180 6648 6670
+)
+"calcparse.ml" 181 6731 6747 "calcparse.ml" 181 6731 6776
+type(
+  expr.Letin
+)
+"calcparse.ml" 181 6731 6742 "calcparse.ml" 181 6731 6776
+type(
+  expr
+)
+"calcparse.ml" 181 6731 6778 "calcparse.ml" 181 6731 6782
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 180 6648 6671 "calcparse.ml" 180 6648 6675
+)
+"calcparse.ml" 181 6731 6741 "calcparse.ml" 181 6731 6783
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 180 6648 6658 "calcparse.ml" 181 6731 6783
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 182 6825 6834 "calcparse.ml" 182 6825 6835
+type(
+  Calclex.token list
+)
+"calcparse.ml" 182 6825 6839 "calcparse.ml" 182 6825 6844
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 182 6825 6861 "calcparse.ml" 182 6825 6888
+type(
+  string
+)
+"calcparse.ml" 182 6825 6895 "calcparse.ml" 182 6825 6899
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 177 6438 6459 "calcparse.ml" 177 6438 6463
+)
+"calcparse.ml" 182 6825 6856 "calcparse.ml" 182 6825 6900
+type(
+  ParseError
+)
+"calcparse.ml" 182 6825 6845 "calcparse.ml" 182 6825 6901
+type(
+  exn
+)
+"calcparse.ml" 182 6825 6839 "calcparse.ml" 182 6825 6901
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 178 6532 6539 "calcparse.ml" 182 6825 6901
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 176 6427 6432 "calcparse.ml" 183 6902 6910
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 184 6911 6915 "calcparse.ml" 184 6911 6916
+type(
+  Calclex.token list
+)
+"calcparse.ml" 184 6911 6920 "calcparse.ml" 184 6911 6930
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_cond "calcparse.ml" 187 7066 7070 "calcparse.ml" 187 7066 7080
+)
+"calcparse.ml" 184 6911 6931 "calcparse.ml" 184 6911 6935
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 173 6285 6301 "calcparse.ml" 173 6285 6305
+)
+"calcparse.ml" 184 6911 6920 "calcparse.ml" 184 6911 6935
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 174 6308 6310 "calcparse.ml" 184 6911 6935
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 187 7066 7070 "calcparse.ml" 187 7066 7080
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_cond "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 187 7066 7081 "calcparse.ml" 187 7066 7085
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 188 7088 7088 "calcparse.ml" 202 7937 7963
+)
+"calcparse.ml" 188 7088 7094 "calcparse.ml" 188 7088 7098
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 187 7066 7081 "calcparse.ml" 187 7066 7085
+)
+"calcparse.ml" 189 7104 7108 "calcparse.ml" 189 7104 7110
+type(
+  Calclex.token
+)
+"calcparse.ml" 189 7104 7114 "calcparse.ml" 189 7104 7118
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 190 7193 7198 "calcparse.ml" 201 7928 7936
+)
+"calcparse.ml" 189 7104 7108 "calcparse.ml" 189 7104 7118
+type(
+  Calclex.token list
+)
+"calcparse.ml" 190 7193 7203 "calcparse.ml" 190 7193 7210
+type(
+  expr
+)
+ident(
+  def if_expr "calcparse.ml" 191 7275 7280 "calcparse.ml" 201 7928 7936
+)
+"calcparse.ml" 190 7193 7211 "calcparse.ml" 190 7193 7215
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 191 7275 7280 "calcparse.ml" 201 7928 7936
+)
+"calcparse.ml" 190 7193 7202 "calcparse.ml" 190 7193 7216
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 190 7193 7219 "calcparse.ml" 190 7193 7229
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 190 7193 7230 "calcparse.ml" 190 7193 7234
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 189 7104 7114 "calcparse.ml" 189 7104 7118
+)
+"calcparse.ml" 190 7193 7219 "calcparse.ml" 190 7193 7234
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 191 7275 7292 "calcparse.ml" 191 7275 7296
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 190 7193 7211 "calcparse.ml" 190 7193 7215
+)
+"calcparse.ml" 192 7302 7310 "calcparse.ml" 192 7302 7314
+type(
+  Calclex.token
+)
+"calcparse.ml" 192 7302 7318 "calcparse.ml" 192 7302 7322
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 193 7391 7400 "calcparse.ml" 199 7849 7861
+)
+"calcparse.ml" 192 7302 7310 "calcparse.ml" 192 7302 7322
+type(
+  Calclex.token list
+)
+"calcparse.ml" 193 7391 7405 "calcparse.ml" 193 7391 7414
+type(
+  expr
+)
+ident(
+  def then_expr "calcparse.ml" 194 7473 7482 "calcparse.ml" 199 7849 7861
+)
+"calcparse.ml" 193 7391 7415 "calcparse.ml" 193 7391 7419
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 194 7473 7482 "calcparse.ml" 199 7849 7861
+)
+"calcparse.ml" 193 7391 7404 "calcparse.ml" 193 7391 7420
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 193 7391 7423 "calcparse.ml" 193 7391 7433
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 193 7391 7434 "calcparse.ml" 193 7391 7438
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 192 7302 7318 "calcparse.ml" 192 7302 7322
+)
+"calcparse.ml" 193 7391 7423 "calcparse.ml" 193 7391 7438
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 194 7473 7494 "calcparse.ml" 194 7473 7498
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 193 7391 7415 "calcparse.ml" 193 7391 7419
+)
+"calcparse.ml" 195 7504 7516 "calcparse.ml" 195 7504 7520
+type(
+  Calclex.token
+)
+"calcparse.ml" 195 7504 7524 "calcparse.ml" 195 7504 7528
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 196 7595 7608 "calcparse.ml" 197 7677 7733
+)
+"calcparse.ml" 195 7504 7516 "calcparse.ml" 195 7504 7528
+type(
+  Calclex.token list
+)
+"calcparse.ml" 196 7595 7613 "calcparse.ml" 196 7595 7622
+type(
+  expr
+)
+ident(
+  def else_expr "calcparse.ml" 197 7677 7690 "calcparse.ml" 197 7677 7733
+)
+"calcparse.ml" 196 7595 7623 "calcparse.ml" 196 7595 7627
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 197 7677 7690 "calcparse.ml" 197 7677 7733
+)
+"calcparse.ml" 196 7595 7612 "calcparse.ml" 196 7595 7628
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 196 7595 7631 "calcparse.ml" 196 7595 7641
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 196 7595 7642 "calcparse.ml" 196 7595 7646
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 195 7504 7524 "calcparse.ml" 195 7504 7528
+)
+"calcparse.ml" 196 7595 7631 "calcparse.ml" 196 7595 7646
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 197 7677 7696 "calcparse.ml" 197 7677 7703
+type(
+  expr
+)
+ident(
+  int_ref if_expr "calcparse.ml" 190 7193 7203 "calcparse.ml" 190 7193 7210
+)
+"calcparse.ml" 197 7677 7705 "calcparse.ml" 197 7677 7714
+type(
+  expr
+)
+ident(
+  int_ref then_expr "calcparse.ml" 193 7391 7405 "calcparse.ml" 193 7391 7414
+)
+"calcparse.ml" 197 7677 7716 "calcparse.ml" 197 7677 7725
+type(
+  expr
+)
+ident(
+  int_ref else_expr "calcparse.ml" 196 7595 7613 "calcparse.ml" 196 7595 7622
+)
+"calcparse.ml" 197 7677 7695 "calcparse.ml" 197 7677 7726
+type(
+  expr.Cond
+)
+"calcparse.ml" 197 7677 7691 "calcparse.ml" 197 7677 7726
+type(
+  expr
+)
+"calcparse.ml" 197 7677 7728 "calcparse.ml" 197 7677 7732
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 196 7595 7623 "calcparse.ml" 196 7595 7627
+)
+"calcparse.ml" 197 7677 7690 "calcparse.ml" 197 7677 7733
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 196 7595 7608 "calcparse.ml" 197 7677 7733
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 198 7779 7791 "calcparse.ml" 198 7779 7792
+type(
+  Calclex.token list
+)
+"calcparse.ml" 198 7779 7796 "calcparse.ml" 198 7779 7801
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 198 7779 7818 "calcparse.ml" 198 7779 7836
+type(
+  string
+)
+"calcparse.ml" 198 7779 7842 "calcparse.ml" 198 7779 7846
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 193 7391 7415 "calcparse.ml" 193 7391 7419
+)
+"calcparse.ml" 198 7779 7813 "calcparse.ml" 198 7779 7847
+type(
+  ParseError
+)
+"calcparse.ml" 198 7779 7802 "calcparse.ml" 198 7779 7848
+type(
+  exn
+)
+"calcparse.ml" 198 7779 7796 "calcparse.ml" 198 7779 7848
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 194 7473 7482 "calcparse.ml" 199 7849 7861
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 193 7391 7400 "calcparse.ml" 199 7849 7861
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 200 7862 7870 "calcparse.ml" 200 7862 7871
+type(
+  Calclex.token list
+)
+"calcparse.ml" 200 7862 7875 "calcparse.ml" 200 7862 7880
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 200 7862 7897 "calcparse.ml" 200 7862 7915
+type(
+  string
+)
+"calcparse.ml" 200 7862 7921 "calcparse.ml" 200 7862 7925
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 190 7193 7211 "calcparse.ml" 190 7193 7215
+)
+"calcparse.ml" 200 7862 7892 "calcparse.ml" 200 7862 7926
+type(
+  ParseError
+)
+"calcparse.ml" 200 7862 7881 "calcparse.ml" 200 7862 7927
+type(
+  exn
+)
+"calcparse.ml" 200 7862 7875 "calcparse.ml" 200 7862 7927
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 191 7275 7280 "calcparse.ml" 201 7928 7936
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 190 7193 7198 "calcparse.ml" 201 7928 7936
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 202 7937 7941 "calcparse.ml" 202 7937 7942
+type(
+  Calclex.token list
+)
+"calcparse.ml" 202 7937 7946 "calcparse.ml" 202 7937 7958
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_lambda "calcparse.ml" 205 7996 8000 "calcparse.ml" 205 7996 8012
+)
+"calcparse.ml" 202 7937 7959 "calcparse.ml" 202 7937 7963
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 187 7066 7081 "calcparse.ml" 187 7066 7085
+)
+"calcparse.ml" 202 7937 7946 "calcparse.ml" 202 7937 7963
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 188 7088 7088 "calcparse.ml" 202 7937 7963
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 205 7996 8000 "calcparse.ml" 205 7996 8012
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_lambda "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 205 7996 8013 "calcparse.ml" 205 7996 8017
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 207 8051 8053 "calcparse.ml" 213 8311 8336
+)
+"calcparse.ml" 207 8051 8059 "calcparse.ml" 207 8051 8063
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 205 7996 8013 "calcparse.ml" 205 7996 8017
+)
+"calcparse.ml" 208 8069 8073 "calcparse.ml" 208 8069 8075
+type(
+  Calclex.token
+)
+"calcparse.ml" 208 8069 8085 "calcparse.ml" 208 8069 8095
+type(
+  string
+)
+ident(
+  def param_name "calcparse.ml" 209 8107 8113 "calcparse.ml" 210 8156 8199
+)
+"calcparse.ml" 208 8069 8079 "calcparse.ml" 208 8069 8095
+type(
+  Calclex.token
+)
+"calcparse.ml" 208 8069 8099 "calcparse.ml" 208 8069 8103
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 209 8107 8113 "calcparse.ml" 210 8156 8199
+)
+"calcparse.ml" 208 8069 8079 "calcparse.ml" 208 8069 8103
+type(
+  Calclex.token list
+)
+"calcparse.ml" 208 8069 8073 "calcparse.ml" 208 8069 8103
+type(
+  Calclex.token list
+)
+"calcparse.ml" 209 8107 8118 "calcparse.ml" 209 8107 8127
+type(
+  expr
+)
+ident(
+  def code_expr "calcparse.ml" 210 8156 8162 "calcparse.ml" 210 8156 8199
+)
+"calcparse.ml" 209 8107 8129 "calcparse.ml" 209 8107 8133
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 210 8156 8162 "calcparse.ml" 210 8156 8199
+)
+"calcparse.ml" 209 8107 8117 "calcparse.ml" 209 8107 8134
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 209 8107 8137 "calcparse.ml" 209 8107 8147
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 209 8107 8148 "calcparse.ml" 209 8107 8152
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 208 8069 8099 "calcparse.ml" 208 8069 8103
+)
+"calcparse.ml" 209 8107 8137 "calcparse.ml" 209 8107 8152
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 210 8156 8170 "calcparse.ml" 210 8156 8180
+type(
+  string
+)
+ident(
+  int_ref param_name "calcparse.ml" 208 8069 8085 "calcparse.ml" 208 8069 8095
+)
+"calcparse.ml" 210 8156 8182 "calcparse.ml" 210 8156 8191
+type(
+  expr
+)
+ident(
+  int_ref code_expr "calcparse.ml" 209 8107 8118 "calcparse.ml" 209 8107 8127
+)
+"calcparse.ml" 210 8156 8169 "calcparse.ml" 210 8156 8192
+type(
+  expr.Lambda
+)
+"calcparse.ml" 210 8156 8163 "calcparse.ml" 210 8156 8192
+type(
+  expr
+)
+"calcparse.ml" 210 8156 8194 "calcparse.ml" 210 8156 8198
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 209 8107 8129 "calcparse.ml" 209 8107 8133
+)
+"calcparse.ml" 210 8156 8162 "calcparse.ml" 210 8156 8199
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 209 8107 8113 "calcparse.ml" 210 8156 8199
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 211 8200 8204 "calcparse.ml" 211 8200 8206
+type(
+  Calclex.token
+)
+"calcparse.ml" 211 8200 8210 "calcparse.ml" 211 8200 8211
+type(
+  Calclex.token
+)
+"calcparse.ml" 211 8200 8215 "calcparse.ml" 211 8200 8219
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 212 8222 8226 "calcparse.ml" 212 8222 8310
+)
+"calcparse.ml" 211 8200 8210 "calcparse.ml" 211 8200 8219
+type(
+  Calclex.token list
+)
+"calcparse.ml" 211 8200 8204 "calcparse.ml" 211 8200 8219
+type(
+  Calclex.token list
+)
+"calcparse.ml" 212 8222 8226 "calcparse.ml" 212 8222 8231
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 212 8222 8248 "calcparse.ml" 212 8222 8298
+type(
+  string
+)
+"calcparse.ml" 212 8222 8304 "calcparse.ml" 212 8222 8308
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 211 8200 8215 "calcparse.ml" 211 8200 8219
+)
+"calcparse.ml" 212 8222 8243 "calcparse.ml" 212 8222 8309
+type(
+  ParseError
+)
+"calcparse.ml" 212 8222 8232 "calcparse.ml" 212 8222 8310
+type(
+  exn
+)
+"calcparse.ml" 212 8222 8226 "calcparse.ml" 212 8222 8310
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 213 8311 8315 "calcparse.ml" 213 8311 8316
+type(
+  Calclex.token list
+)
+"calcparse.ml" 213 8311 8320 "calcparse.ml" 213 8311 8331
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_apply "calcparse.ml" 217 8475 8479 "calcparse.ml" 217 8475 8490
+)
+"calcparse.ml" 213 8311 8332 "calcparse.ml" 213 8311 8336
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 205 7996 8013 "calcparse.ml" 205 7996 8017
+)
+"calcparse.ml" 213 8311 8320 "calcparse.ml" 213 8311 8336
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 207 8051 8053 "calcparse.ml" 213 8311 8336
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 217 8475 8479 "calcparse.ml" 217 8475 8490
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_apply "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 217 8475 8491 "calcparse.ml" 217 8475 8495
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 218 8498 8500 "calcparse.ml" 226 8804 8821
+)
+"calcparse.ml" 218 8498 8508 "calcparse.ml" 218 8498 8512
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def iter "calcparse.ml" 218 8498 8500 "calcparse.ml" 226 8804 8821
+)
+"calcparse.ml" 218 8498 8513 "calcparse.ml" 218 8498 8518
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 218 8498 8519 "calcparse.ml" 223 8733 8756
+)
+"calcparse.ml" 218 8498 8519 "calcparse.ml" 218 8498 8523
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 219 8526 8530 "calcparse.ml" 223 8733 8756
+)
+"calcparse.ml" 219 8526 8536 "calcparse.ml" 219 8526 8540
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 218 8498 8519 "calcparse.ml" 218 8498 8523
+)
+"calcparse.ml" 220 8546 8559 "calcparse.ml" 220 8546 8560
+type(
+  int
+)
+"calcparse.ml" 220 8546 8552 "calcparse.ml" 220 8546 8560
+type(
+  Calclex.token
+)
+"calcparse.ml" 220 8546 8564 "calcparse.ml" 220 8546 8568
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 221 8627 8634 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 220 8546 8552 "calcparse.ml" 220 8546 8568
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8579 "calcparse.ml" 220 8546 8580
+type(
+  bool
+)
+"calcparse.ml" 220 8546 8571 "calcparse.ml" 220 8546 8580
+type(
+  Calclex.token
+)
+"calcparse.ml" 220 8546 8584 "calcparse.ml" 220 8546 8588
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 221 8627 8634 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 220 8546 8571 "calcparse.ml" 220 8546 8588
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8552 "calcparse.ml" 220 8546 8588
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8597 "calcparse.ml" 220 8546 8598
+type(
+  string
+)
+"calcparse.ml" 220 8546 8591 "calcparse.ml" 220 8546 8598
+type(
+  Calclex.token
+)
+"calcparse.ml" 220 8546 8602 "calcparse.ml" 220 8546 8606
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 221 8627 8634 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 220 8546 8591 "calcparse.ml" 220 8546 8606
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8552 "calcparse.ml" 220 8546 8606
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8609 "calcparse.ml" 220 8546 8615
+type(
+  Calclex.token
+)
+"calcparse.ml" 220 8546 8619 "calcparse.ml" 220 8546 8623
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 221 8627 8634 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 220 8546 8609 "calcparse.ml" 220 8546 8623
+type(
+  Calclex.token list
+)
+"calcparse.ml" 220 8546 8552 "calcparse.ml" 220 8546 8623
+type(
+  Calclex.token list
+)
+"calcparse.ml" 221 8627 8639 "calcparse.ml" 221 8627 8644
+type(
+  expr
+)
+ident(
+  def rexpr "calcparse.ml" 222 8673 8680 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 221 8627 8645 "calcparse.ml" 221 8627 8649
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 222 8673 8680 "calcparse.ml" 222 8673 8732
+)
+"calcparse.ml" 221 8627 8638 "calcparse.ml" 221 8627 8650
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 221 8627 8653 "calcparse.ml" 221 8627 8664
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_ident "calcparse.ml" 229 8895 8899 "calcparse.ml" 229 8895 8910
+)
+"calcparse.ml" 221 8627 8665 "calcparse.ml" 221 8627 8669
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 218 8498 8519 "calcparse.ml" 218 8498 8523
+)
+"calcparse.ml" 221 8627 8653 "calcparse.ml" 221 8627 8669
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 222 8673 8680 "calcparse.ml" 222 8673 8684
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 218 8498 8508 "calcparse.ml" 218 8498 8512
+)
+"calcparse.ml" 222 8673 8702 "calcparse.ml" 222 8673 8707
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 218 8498 8513 "calcparse.ml" 218 8498 8518
+)
+"calcparse.ml" 222 8673 8720 "calcparse.ml" 222 8673 8725
+type(
+  expr
+)
+ident(
+  int_ref rexpr "calcparse.ml" 221 8627 8639 "calcparse.ml" 221 8627 8644
+)
+"calcparse.ml" 222 8673 8691 "calcparse.ml" 222 8673 8726
+type(
+  expr.Apply
+)
+"calcparse.ml" 222 8673 8685 "calcparse.ml" 222 8673 8727
+type(
+  expr
+)
+"calcparse.ml" 222 8673 8728 "calcparse.ml" 222 8673 8732
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 221 8627 8645 "calcparse.ml" 221 8627 8649
+)
+"calcparse.ml" 222 8673 8680 "calcparse.ml" 222 8673 8732
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 221 8627 8634 "calcparse.ml" 222 8673 8732
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 223 8733 8739 "calcparse.ml" 223 8733 8740
+type(
+  Calclex.token list
+)
+"calcparse.ml" 223 8733 8745 "calcparse.ml" 223 8733 8750
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 218 8498 8513 "calcparse.ml" 218 8498 8518
+)
+"calcparse.ml" 223 8733 8751 "calcparse.ml" 223 8733 8755
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 218 8498 8519 "calcparse.ml" 218 8498 8523
+)
+"calcparse.ml" 223 8733 8744 "calcparse.ml" 223 8733 8756
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 219 8526 8530 "calcparse.ml" 223 8733 8756
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 225 8762 8769 "calcparse.ml" 225 8762 8774
+type(
+  expr
+)
+ident(
+  def lexpr "calcparse.ml" 226 8804 8806 "calcparse.ml" 226 8804 8821
+)
+"calcparse.ml" 225 8762 8776 "calcparse.ml" 225 8762 8780
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 226 8804 8806 "calcparse.ml" 226 8804 8821
+)
+"calcparse.ml" 225 8762 8768 "calcparse.ml" 225 8762 8781
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 225 8762 8784 "calcparse.ml" 225 8762 8795
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_ident "calcparse.ml" 229 8895 8899 "calcparse.ml" 229 8895 8910
+)
+"calcparse.ml" 225 8762 8796 "calcparse.ml" 225 8762 8800
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 217 8475 8491 "calcparse.ml" 217 8475 8495
+)
+"calcparse.ml" 225 8762 8784 "calcparse.ml" 225 8762 8800
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 226 8804 8806 "calcparse.ml" 226 8804 8810
+type(
+  expr -> Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref iter "calcparse.ml" 218 8498 8508 "calcparse.ml" 218 8498 8512
+)
+"calcparse.ml" 226 8804 8811 "calcparse.ml" 226 8804 8816
+type(
+  expr
+)
+ident(
+  int_ref lexpr "calcparse.ml" 225 8762 8769 "calcparse.ml" 225 8762 8774
+)
+"calcparse.ml" 226 8804 8817 "calcparse.ml" 226 8804 8821
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 225 8762 8776 "calcparse.ml" 225 8762 8780
+)
+"calcparse.ml" 226 8804 8806 "calcparse.ml" 226 8804 8821
+call(
+  tail
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 225 8762 8764 "calcparse.ml" 226 8804 8821
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 218 8498 8500 "calcparse.ml" 226 8804 8821
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 229 8895 8899 "calcparse.ml" 229 8895 8910
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  def parse_ident "calcparse.ml" 122 4212 4212 "calcparse.ml" 1 0 -1
+)
+"calcparse.ml" 229 8895 8911 "calcparse.ml" 229 8895 8915
+type(
+  Calclex.token list
+)
+ident(
+  def toks "calcparse.ml" 230 8918 8920 "calcparse.ml" 242 9480 9539
+)
+"calcparse.ml" 230 8918 8926 "calcparse.ml" 230 8918 8930
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 229 8895 8911 "calcparse.ml" 229 8895 8915
+)
+"calcparse.ml" 231 8936 8940 "calcparse.ml" 231 8936 8942
+type(
+  Calclex.token list
+)
+"calcparse.ml" 231 8936 8959 "calcparse.ml" 231 8936 8964
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 231 8936 8982 "calcparse.ml" 231 8936 9006
+type(
+  string
+)
+"calcparse.ml" 231 8936 9013 "calcparse.ml" 231 8936 9017
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 229 8895 8911 "calcparse.ml" 229 8895 8915
+)
+"calcparse.ml" 231 8936 8977 "calcparse.ml" 231 8936 9018
+type(
+  ParseError
+)
+"calcparse.ml" 231 8936 8965 "calcparse.ml" 231 8936 9019
+type(
+  exn
+)
+"calcparse.ml" 231 8936 8959 "calcparse.ml" 231 8936 9019
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 232 9020 9031 "calcparse.ml" 232 9020 9032
+type(
+  int
+)
+ident(
+  def n "calcparse.ml" 232 9020 9046 "calcparse.ml" 232 9020 9062
+)
+"calcparse.ml" 232 9020 9024 "calcparse.ml" 232 9020 9032
+type(
+  Calclex.token
+)
+"calcparse.ml" 232 9020 9038 "calcparse.ml" 232 9020 9042
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 232 9020 9046 "calcparse.ml" 232 9020 9062
+)
+"calcparse.ml" 232 9020 9024 "calcparse.ml" 232 9020 9042
+type(
+  Calclex.token list
+)
+"calcparse.ml" 232 9020 9053 "calcparse.ml" 232 9020 9056
+type(
+  int
+)
+ident(
+  int_ref n "calcparse.ml" 232 9020 9031 "calcparse.ml" 232 9020 9032
+)
+"calcparse.ml" 232 9020 9047 "calcparse.ml" 232 9020 9056
+type(
+  expr
+)
+"calcparse.ml" 232 9020 9057 "calcparse.ml" 232 9020 9061
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 232 9020 9038 "calcparse.ml" 232 9020 9042
+)
+"calcparse.ml" 232 9020 9046 "calcparse.ml" 232 9020 9062
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 233 9063 9075 "calcparse.ml" 233 9063 9076
+type(
+  bool
+)
+ident(
+  def b "calcparse.ml" 233 9063 9089 "calcparse.ml" 233 9063 9106
+)
+"calcparse.ml" 233 9063 9067 "calcparse.ml" 233 9063 9076
+type(
+  Calclex.token
+)
+"calcparse.ml" 233 9063 9081 "calcparse.ml" 233 9063 9085
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 233 9063 9089 "calcparse.ml" 233 9063 9106
+)
+"calcparse.ml" 233 9063 9067 "calcparse.ml" 233 9063 9085
+type(
+  Calclex.token list
+)
+"calcparse.ml" 233 9063 9097 "calcparse.ml" 233 9063 9100
+type(
+  bool
+)
+ident(
+  int_ref b "calcparse.ml" 233 9063 9075 "calcparse.ml" 233 9063 9076
+)
+"calcparse.ml" 233 9063 9090 "calcparse.ml" 233 9063 9100
+type(
+  expr
+)
+"calcparse.ml" 233 9063 9101 "calcparse.ml" 233 9063 9105
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 233 9063 9081 "calcparse.ml" 233 9063 9085
+)
+"calcparse.ml" 233 9063 9089 "calcparse.ml" 233 9063 9106
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 234 9107 9117 "calcparse.ml" 234 9107 9118
+type(
+  string
+)
+ident(
+  def s "calcparse.ml" 234 9107 9130 "calcparse.ml" 234 9107 9147
+)
+"calcparse.ml" 234 9107 9111 "calcparse.ml" 234 9107 9118
+type(
+  Calclex.token
+)
+"calcparse.ml" 234 9107 9122 "calcparse.ml" 234 9107 9126
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 234 9107 9130 "calcparse.ml" 234 9107 9147
+)
+"calcparse.ml" 234 9107 9111 "calcparse.ml" 234 9107 9126
+type(
+  Calclex.token list
+)
+"calcparse.ml" 234 9107 9138 "calcparse.ml" 234 9107 9141
+type(
+  string
+)
+ident(
+  int_ref s "calcparse.ml" 234 9107 9117 "calcparse.ml" 234 9107 9118
+)
+"calcparse.ml" 234 9107 9131 "calcparse.ml" 234 9107 9141
+type(
+  expr
+)
+"calcparse.ml" 234 9107 9142 "calcparse.ml" 234 9107 9146
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 234 9107 9122 "calcparse.ml" 234 9107 9126
+)
+"calcparse.ml" 234 9107 9130 "calcparse.ml" 234 9107 9147
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 235 9148 9152 "calcparse.ml" 235 9148 9158
+type(
+  Calclex.token
+)
+"calcparse.ml" 235 9148 9163 "calcparse.ml" 235 9148 9167
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 236 9233 9238 "calcparse.ml" 241 9471 9479
+)
+"calcparse.ml" 235 9148 9152 "calcparse.ml" 235 9148 9167
+type(
+  Calclex.token list
+)
+"calcparse.ml" 237 9244 9256 "calcparse.ml" 237 9244 9260
+type(
+  expr
+)
+ident(
+  def expr "calcparse.ml" 238 9338 9345 "calcparse.ml" 240 9398 9470
+)
+"calcparse.ml" 237 9244 9261 "calcparse.ml" 237 9244 9265
+type(
+  Calclex.token list
+)
+ident(
+  def rest "calcparse.ml" 238 9338 9345 "calcparse.ml" 240 9398 9470
+)
+"calcparse.ml" 237 9244 9255 "calcparse.ml" 237 9244 9266
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 237 9244 9269 "calcparse.ml" 237 9244 9279
+type(
+  Calclex.token list -> expr * Calclex.token list
+)
+ident(
+  int_ref parse_expr "calcparse.ml" 122 4212 4220 "calcparse.ml" 122 4212 4230
+)
+"calcparse.ml" 237 9244 9280 "calcparse.ml" 237 9244 9284
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 235 9148 9163 "calcparse.ml" 235 9148 9167
+)
+"calcparse.ml" 237 9244 9269 "calcparse.ml" 237 9244 9284
+call(
+  stack
+)
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 238 9338 9351 "calcparse.ml" 238 9338 9355
+type(
+  Calclex.token list
+)
+ident(
+  int_ref rest "calcparse.ml" 237 9244 9261 "calcparse.ml" 237 9244 9265
+)
+"calcparse.ml" 239 9361 9370 "calcparse.ml" 239 9361 9376
+type(
+  Calclex.token
+)
+"calcparse.ml" 239 9361 9378 "calcparse.ml" 239 9361 9382
+type(
+  Calclex.token list
+)
+ident(
+  def tail "calcparse.ml" 239 9361 9386 "calcparse.ml" 239 9361 9397
+)
+"calcparse.ml" 239 9361 9370 "calcparse.ml" 239 9361 9382
+type(
+  Calclex.token list
+)
+"calcparse.ml" 239 9361 9387 "calcparse.ml" 239 9361 9391
+type(
+  expr
+)
+ident(
+  int_ref expr "calcparse.ml" 237 9244 9256 "calcparse.ml" 237 9244 9260
+)
+"calcparse.ml" 239 9361 9392 "calcparse.ml" 239 9361 9396
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 239 9361 9378 "calcparse.ml" 239 9361 9382
+)
+"calcparse.ml" 239 9361 9386 "calcparse.ml" 239 9361 9397
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 240 9398 9407 "calcparse.ml" 240 9398 9408
+type(
+  Calclex.token list
+)
+"calcparse.ml" 240 9398 9412 "calcparse.ml" 240 9398 9417
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 240 9398 9435 "calcparse.ml" 240 9398 9457
+type(
+  string
+)
+"calcparse.ml" 240 9398 9464 "calcparse.ml" 240 9398 9468
+type(
+  Calclex.token list
+)
+ident(
+  int_ref tail "calcparse.ml" 235 9148 9163 "calcparse.ml" 235 9148 9167
+)
+"calcparse.ml" 240 9398 9430 "calcparse.ml" 240 9398 9469
+type(
+  ParseError
+)
+"calcparse.ml" 240 9398 9418 "calcparse.ml" 240 9398 9470
+type(
+  exn
+)
+"calcparse.ml" 240 9398 9412 "calcparse.ml" 240 9398 9470
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 238 9338 9345 "calcparse.ml" 240 9398 9470
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 236 9233 9238 "calcparse.ml" 241 9471 9479
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 242 9480 9484 "calcparse.ml" 242 9480 9485
+type(
+  Calclex.token list
+)
+"calcparse.ml" 242 9480 9489 "calcparse.ml" 242 9480 9494
+type(
+  exn -> expr * Calclex.token list
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"calcparse.ml" 242 9480 9512 "calcparse.ml" 242 9480 9526
+type(
+  string
+)
+"calcparse.ml" 242 9480 9533 "calcparse.ml" 242 9480 9537
+type(
+  Calclex.token list
+)
+ident(
+  int_ref toks "calcparse.ml" 229 8895 8911 "calcparse.ml" 229 8895 8915
+)
+"calcparse.ml" 242 9480 9507 "calcparse.ml" 242 9480 9538
+type(
+  ParseError
+)
+"calcparse.ml" 242 9480 9495 "calcparse.ml" 242 9480 9539
+type(
+  exn
+)
+"calcparse.ml" 242 9480 9489 "calcparse.ml" 242 9480 9539
+type(
+  expr * Calclex.token list
+)
+"calcparse.ml" 230 8918 8920 "calcparse.ml" 242 9480 9539
+type(
+  expr * Calclex.token list
+)

@@ -116,9 +116,23 @@ let rec eval_expr varmap expr =
     end
 
   | Boolop(o) ->                                                     (* boolean operations *)
-     begin                                                           (* PATCH PROBLEM *)
-       raise (eval_error "Boolean operations not yet impelemented" varmap expr)
-     end
+    begin
+     let ldata = eval_expr varmap o.lexpr in
+     let rdata = eval_expr varmap o.rexpr in
+     match ldata,rdata with
+     | (BoolDat li),(BoolDat ri) ->
+        begin
+         match o.op with
+         | And     -> BoolDat  (li && ri)
+         | Or     -> BoolDat  (li || ri)
+       end
+     | (BoolDat li),rerr ->
+        let msg = sprintf "Expect Bool for right boolean expression, found '%s'" (data_string rerr) in
+        raise (eval_error msg varmap expr)
+     | lerr,_ ->
+        let msg = sprintf "Expect Bool for right boolean expression, found '%s'" (data_string lerr) in
+        raise (eval_error msg varmap expr)
+   end
 
   | Cond(c) ->
     begin                                                (* IMPLEMENT #1: conditionals *)
@@ -137,9 +151,17 @@ let rec eval_expr varmap expr =
   | Letin(l) ->                                                      (* let/in expressions *)
      begin
        let var_data = eval_expr varmap l.var_expr in
-       let new_varmap = Varmap.add l.var_name var_data varmap in
-       eval_expr new_varmap l.in_expr
-     end
+       match var_data with
+       | Closure(c) ->
+          c.varmap <- Varmap.add l.var_name var_data c.varmap;
+          eval_expr c.varmap l.in_expr
+       | _ ->
+        let new_varmap = Varmap.add l.var_name var_data varmap in
+        let rec_let = eval_expr new_varmap l.in_expr in
+        rec_let
+
+     end;
+
 
   | Lambda(l) ->                                                     (* lambda expressions *)
      Closure{param_name = l.param_name; code_expr = l.code_expr; varmap = varmap}

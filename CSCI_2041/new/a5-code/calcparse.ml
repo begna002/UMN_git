@@ -120,8 +120,30 @@ let parsetree_string expr =
    tree from a series of tokens. Starts a series of mutually recursive
    functions. *)
 let rec parse_expr tokens =
-  let (expr, rest) as result = parse_compare tokens in
+  let (expr, rest) as result = parse_or tokens in
   result
+
+and parse_or toks =
+  let rec iter lexpr toks =
+    match toks with
+    | OrTok :: rest ->
+       let (rexpr,rest) = parse_and rest in
+     iter (Boolop{op=Or;lexpr;rexpr}) rest
+    | _ -> (lexpr, toks)
+  in
+  let (lexpr, rest) = parse_and toks in
+  iter lexpr rest
+
+and parse_and toks =
+  let rec iter lexpr toks =
+    match toks with
+    | AndTok :: rest ->
+      let (rexpr,rest) = parse_compare rest in
+      iter (Boolop{op=And;lexpr;rexpr}) rest
+    | _ -> (lexpr, toks)
+  in
+  let (lexpr, rest) = parse_compare toks in
+  iter lexpr rest
 
 (* parse a number comparison using <, >, or =. These cannot be chained
    together so are simpler than add/sub. *)

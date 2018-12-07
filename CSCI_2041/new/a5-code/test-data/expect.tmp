@@ -1,62 +1,26 @@
-calculon> def doubsum = 
-  let doub = @n 2*n in
-  @n 
+calculon> def transum = 
+@trans
+  let help = @n
     if n=0 
     then 0
-    else (doub n)+(doubsum (n-1));
-doubsum : Closure(n, <fun>)
-calculon> doubsum 5;
-- : IntDat(30)
-calculon> doubsum 8;
-- : IntDat(72)
-calculon> def transum = @trans @n 
-  if n=0
-  then 0
-  else (trans n) + (transum trans (n-1));
+    else (trans n) + (help (n-1))
+  in
+  help;
 transum : Closure(trans, <fun>)
-calculon> transum (@x 2*x) 5;
-- : IntDat(30)
-calculon> transum (@m m+1) 20;
+calculon> def double = @n n*2;
+double : Closure(n, <fun>)
+calculon> def incr   = @x x+1;
+incr : Closure(x, <fun>)
+calculon> transum double 10;
+- : IntDat(110)
+calculon> transum incr 20;
 - : IntDat(230)
-calculon> def fact = @n if n=1 then 1 else n*(fact (n-1));
-fact : Closure(n, <fun>)
-calculon> fact 3;
-- : IntDat(6)
-calculon> fact 8;
-- : IntDat(40320)
-calculon> def compute = @t @x @y if let u=7 in t*u>30 then x=5 else y<12;
-compute : Closure(t, <fun>)
-calculon> compute 5 5 5;
-- : BoolDat(true)
-calculon> compute 5 6 5;
-- : BoolDat(false)
-calculon> compute 4 6 5;
-- : BoolDat(true)
-calculon> def sumboth = 
-@m @n 
-  if m>0 then 
-    if n>0 then 
-      let diff = m-n in
-      if diff > 0 then
-        m+(sumboth (m-n) n) 
-      else 
-        n+(sumboth m (n-m)) 
-    else 0 
-  else 0;
-sumboth : Closure(m, <fun>)
-calculon> sumboth 8 2;
-- : IntDat(20)
-calculon> sumboth 8 3;
-- : IntDat(19)
-calculon> sumboth 8 4;
-- : IntDat(12)
-calculon> sumboth 10 4;
-- : IntDat(22)
-calculon> def sumten = sumboth 10;
-sumten : Closure(n, <fun>)
-calculon> sumten 60;
-- : IntDat(210)
-calculon> sumten 20;
-- : IntDat(30)
+calculon> let fib = @n
+  if n=0 then 0
+  else if n=1 then 1
+  else (fib (n-1)) + (fib (n-2))
+in
+transum fib 8;
+- : IntDat(54)
 calculon> 
 That was so terrible I think you gave me cancer!

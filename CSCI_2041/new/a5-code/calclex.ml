@@ -125,6 +125,8 @@ let lex_string string =
            | "if"    -> If
            | "then"  -> Then
            | "else"  -> Else
+           | "and" -> AndTok
+           | "or" -> OrTok
            | _ -> Ident(ident)
          in
          tok :: (lex !stop)                                  (* and tack onto the stream of tokens *)

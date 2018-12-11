@@ -1,26 +1,30 @@
-calculon> def transum = 
-@trans
-  let help = @n
-    if n=0 
-    then 0
-    else (trans n) + (help (n-1))
-  in
-  help;
-transum : Closure(trans, <fun>)
-calculon> def double = @n n*2;
-double : Closure(n, <fun>)
-calculon> def incr   = @x x+1;
-incr : Closure(x, <fun>)
-calculon> transum double 10;
-- : IntDat(110)
-calculon> transum incr 20;
-- : IntDat(230)
-calculon> let fib = @n
-  if n=0 then 0
-  else if n=1 then 1
-  else (fib (n-1)) + (fib (n-2))
-in
-transum fib 8;
-- : IntDat(54)
+calculon> def between = @bot @mid @top  (bot < mid or bot = mid) and (mid = top or mid < top);
+between : Closure(bot, <fun>)
+calculon> show between;
+Closure(param_name: bot, varmap={between: Closure(bot, <fun>)} code=
+Lambda( mid )
+  Lambda( top )
+    And
+      Or
+        Less
+          Varname(bot)
+          Varname(mid)
+        Equal
+          Varname(bot)
+          Varname(mid)
+      Or
+        Equal
+          Varname(mid)
+          Varname(top)
+        Less
+          Varname(mid)
+          Varname(top)
+)
+calculon> between 1 2 3;
+- : BoolDat(true)
+calculon> between 5 7 7;
+- : BoolDat(true)
+calculon> between 5 7 6;
+- : BoolDat(false)
 calculon> 
 That was so terrible I think you gave me cancer!

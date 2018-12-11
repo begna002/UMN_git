@@ -1,5 +1,3 @@
-# All required AND optional tests
-
 COMPFLAGS = -g -annot
 OCC = ocamlc $(COMPFLAGS)
 LIBS = 
@@ -51,7 +49,6 @@ test : test-p1 test-p2 test-p3 test-p4 test-p5
 
 clean-tmp : test-data
 	rm -f test-data/*.tmp
-	rm -f *.tmp
 
 test-data :
 	mkdir -p test-data
@@ -89,42 +86,4 @@ test-p5 : calculon clean-tmp
 	@chmod u+x test_calculon.sh
 	@printf "===TESTS for P5===\n"
 	./test_calculon.sh test_p5_data.sh
-	@printf "\n"
-
-# Run all optional tests
-test-op : test-op1 test-op2 test-op3 test-op4 test-op5
-
-# OPTIONAL PROBLEM 1
-test-op1 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for OP1===\n"
-	./test_calculon.sh test_op1_data.sh
-	@printf "\n"
-
-# OPTIONAL PROBLEM 2
-test-op2 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for OP2===\n"
-	./test_calculon.sh test_op2_data.sh
-	@printf "\n"
-
-# OPTIONAL PROBLEM 3
-test-op3 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for OP3===\n"
-	./test_calculon.sh test_op3_data.sh
-	@printf "\n"
-
-# OPTIONAL PROBLEM 4
-test-op4 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for OP4===\n"
-	./test_calculon.sh test_op4_data.sh
-	@printf "\n"
-
-# OPTIONAL PROBLEM 5
-test-op5 : calculon clean-tmp
-	@chmod u+x test_calculon.sh
-	@printf "===TESTS for OP5===\n"
-	./test_calculon.sh test_op5_data.sh
 	@printf "\n"

@@ -1,0 +1,7 @@
+#cs_main_head {
+	background-image: url('../../assets/img/cs-hdr-960x95.jpg');
+}
+
+#cse_main_head, #main_head {
+	background-image: url('../../assets/img/cs-default-hdr-960x95.jpg');
+}

@@ -15,11 +15,11 @@ let pow base exp =
 (* print successive powers *)
 let print_powers base start stop =
   for i=start to stop do
-    let x = pow base in
+    let x = pow base i in
     printf "%d^%d is %d\n" base i x;
   done;
 ;;
-      
+
 (* main function *)
 let _ =
   if Array.length Sys.argv < 4 then
@@ -32,4 +32,4 @@ let _ =
   let stop  = int_of_string Sys.argv.(3) in
   print_powers base start stop;
 ;;
-  
+print_powers(2, 3, 4);;

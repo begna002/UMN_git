@@ -1,0 +1,26 @@
+table#directory_table {
+	width: 100%;
+    margin: 0px 0px 0px 15px;
+}
+
+#directory_table tr {
+	vertical-align: top;
+}
+
+#directory_table th {
+	text-align: left;
+    font-weight: bold;
+}
+
+#directory_table td {
+	padding: 2px 0px 2px 0px;
+}
+
+div#center-content  {
+    margin: 5px;
+    padding: 5px;
+}
+
+ul.announcements > li {
+    padding-bottom: 15px;
+}

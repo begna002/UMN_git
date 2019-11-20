@@ -1,4 +1,3 @@
-
 (define (odd-only l)
  (if (null? l)
   '()
@@ -10,7 +9,7 @@
  (define (test actual expected ver)
   (if (equal? actual expected)
    (display "Passed Test ")
-   (display "Passed Test "))
+   (display "Failed Test "))
   (display ver)
   (newline)
  )

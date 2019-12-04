@@ -86,6 +86,8 @@ print("\nInserting 1\n");
 val intTree4 = insert(equality, intOrd, 1, intTree3);
 print("\nInserting 6\n");
 val intTree5 = insert(equality, intOrd, 6, intTree4);
+val intTree5 = insert(equality, intOrd, "hello", intTree4);
+
 print("\nInteger Tree elements:\n");
 printTree(printInt, intTree5);
 

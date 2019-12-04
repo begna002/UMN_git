@@ -1,1 +1,1 @@
-datatype 'a tree= Leaf of 'a | Node of 'a tree * 'a * 'a tree
+datatype 'a tree = empty | node of 'a * a tree * 'a tree;

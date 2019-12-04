@@ -49,20 +49,26 @@ fun eval (List, (var x)) = truthValue List x
    if head = str then removeDupes rest str else head::(removeDupes rest str)
  ;
 
-fun varsInExp (List, (var x)) = removeDupes List x
- | varsInExp (List, (AND(left, right))) =
-  let val x = (varsInExp (List, left))
-  in
-  (varsInExp (x, right))
-  end
- | varsInExp (List, (OR(left, right))) =
-  let val x = (varsInExp (List, left))
-  in
-  (varsInExp (x, right))
-  end
- | varsInExp (List, (NOT(value))) =
-  (varsInExp (List, value))
-;
+fun varsInExp (expr) =
+ let
+  fun helper (List, (var x)) = removeDupes List x
+   | helper (List, (AND(left, right))) =
+    let val x = (helper (List, left))
+    in
+    (helper (x, right))
+    end
+   | helper (List, (OR(left, right))) =
+    let val x = (helper (List, left))
+    in
+    (helper (x, right))
+    end
+   | helper (List, (NOT(value))) =
+    (helper (List, value))
+ in
+  helper([], expr)
+ end;
+
+
 
 (*Problem 3.5 A function that takes a logical expression as argument and
  returns true if the expression is a tautology and false otherwise. Uses 2
@@ -94,7 +100,7 @@ fun isTaut (expr) =
     if newL = [("END", false)] then true else checker newL E
     end
    else false
-  val varList = varsInExp([], expr)
+  val varList = varsInExp(expr)
   val inititalAssignemnt = combine varList false
  in
   checker inititalAssignemnt expr
@@ -113,7 +119,7 @@ val assignment1 = [("p", false), ("q", true)];
 val expression1Eval = eval(assignment1, expresion1);
 
 (*Testing varsInExp function - should return true*)
-val allVars = varsInExp([], expresion1);
+val allVars = varsInExp(expresion1);
 
 (*Testing isTaut function*)
 val expresion2 = OR(var("p"), NOT(var("p")));

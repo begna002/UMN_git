@@ -45,7 +45,8 @@ fun insert(eq, ord, i, Empty) = Node(i, Empty, Empty)
    else Node(j, ltree, insert(eq, ord, i, rtree))
 ;
 
-(*Problem 1.4: A function to insert an element into a binary search tree*)
+(*Problem 1.4: A function to print elements of a binary search tree and
+displays the contents of the tree using an in-order traversal*)
 
 fun printInt(x) =
  print(Int.toString(x)^ "\n")

@@ -1,3 +1,4 @@
+(*PROBLEM 3*)
 (*Problem 3.1: A datatype declaration that can be used to represent
  logical expressions *)
 

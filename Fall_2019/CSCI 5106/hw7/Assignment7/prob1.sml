@@ -1,3 +1,4 @@
+(*PROBLEM 1*)
 (*Problem 1.1: A type that is capable of representing a binary search tree
 of any kind*)
 
@@ -68,15 +69,25 @@ Control.Print.printLength := 100;
 
 val intTree1 = Node(7, Node(5, Empty, Empty), Empty);
 
-(*Test 1: 5 is a member*);
-print("\nInteger Tree Test1: 5 is a member\n");
+(*Test 1: 5 is a member. The purpose of this test is to ensure that the member
+ function correctly returns true upon finding a queried item in a tree*)
+
+print("\nInteger Tree Test1: 5 is a member?\n");
 val test1 = member(equality, intOrd, 5, intTree1);
 
-(*Test 2: 10 is not a member*);
-print("\nInteger Tree Test2: 10 is not a member\n");
+(*Test 2: 10 is not a member. The purpose of this test is to ensure that the
+ member function correctly returns false upon not finding a queried item in a
+ tree*)
+
+print("\nInteger Tree Test2: 10 is a member?\n");
 val test2 = member(equality, intOrd, 10, intTree1);
 
-(*Test 3: Multiple insertions and print*);
+(*Test3: Multiple insertions and print. The purpose of this test is to ensure
+ that the insert function correctly inserts integer elements into an integer
+ tree, while not inserting duplicates, and printing the result to test that the
+ print function correctly uses an in-order traversal method of printing elements
+*)
+
 print("\nInteger Tree Test3: Multiple insertions and print\n");
 print("\nInserting 0\n");
 val intTree2 = insert(equality, intOrd, 0, intTree1);
@@ -84,25 +95,35 @@ print("\nInserting 17\n");
 val intTree3 = insert(equality, intOrd, 17, intTree2);
 print("\nInserting 1\n");
 val intTree4 = insert(equality, intOrd, 1, intTree3);
+print("\nInserting 1 again\n");
+val intTree4 = insert(equality, intOrd, 1, intTree3);
 print("\nInserting 6\n");
 val intTree5 = insert(equality, intOrd, 6, intTree4);
-val intTree5 = insert(equality, intOrd, "hello", intTree4);
-
-print("\nInteger Tree elements:\n");
+print("\nPrinting Tree:\n");
 printTree(printInt, intTree5);
 
 
 val strTree1 = Node("Hotel", Empty, Node("Whiskey", Empty, Empty));
 
-(*Test 4: Hotel is a member*);
-print("\nString Tree Test4: Hotel is a member\n");
-val test2 = member(equality, strOrd, "Hotel", strTree1);
+(*Test 4: Hotel is a member. The purpose of this test is to ensure that the member
+ function correctly returns true upon finding a queried item in a tree*)
 
-(*Test 5: Alpha is not a member*);
-print("\nString Tree Test5: Alpha is not a member\n");
-val test3 = member(equality, strOrd, "Alpha", strTree1);
+print("\nString Tree Test4: Hotel is a member?\n");
+val test4 = member(equality, strOrd, "Hotel", strTree1);
 
-(*Test 6: Multiple insertions and print*);
+(*Test 5: Alpha is not a member. The purpose of this test is to ensure that the
+ member function correctly returns false upon not finding a queried item in a
+ tree*)
+
+print("\nString Tree Test5: Alpha is a member?\n");
+val test5 = member(equality, strOrd, "Alpha", strTree1);
+
+(*Test6: Multiple insertions and print. The purpose of this test is to ensure
+ that the insert function correctly inserts string elements into an string
+ tree, while not inserting duplicates, and printing the result to test that the
+ print function correctly uses an in-order traversal method of printing elements
+*)
+
 print("\nString Tree Test6: Multiple insertions and print\n");
 print("\nInserting Alpha\n");
 val strTree2 = insert(equality, strOrd, "Alpha", strTree1);
@@ -112,5 +133,9 @@ print("\nInserting Bravo\n");
 val strTree4 = insert(equality, strOrd, "Bravo", strTree3);
 print("\nInserting India\n");
 val strTree5 = insert(equality, strOrd, "India", strTree4);
-print("\nString Tree elements:\n");
+print("\nInserting India again\n");
+val strTree5 = insert(equality, strOrd, "India", strTree4);
+print("\nInserting Bravo again\n");
+val strTree5 = insert(equality, strOrd, "Bravo", strTree4);
+print("\nPrinting Tree:\n");
 printTree(printStr, strTree5);

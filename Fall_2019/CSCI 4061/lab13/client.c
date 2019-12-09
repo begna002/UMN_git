@@ -14,6 +14,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <errno.h>
+#include <cstdlib>
 
 #define SERVER_PORT 4061
 #define MAX_MSG_SIZE 1000
@@ -42,13 +43,13 @@ int main(int argc, char** argv) {
 		char rspbuf[MAX_MSG_SIZE];
 		printf("Enter a message to send: ");
 		scanf("%s", msgbuf);
-		
+
 		write(sockfd, msgbuf, strlen(msgbuf));
-		
+
 		read(sockfd, rspbuf, MAX_MSG_SIZE);
-		
+
 		printf("%s\n", rspbuf);
-		
+
 		//close connection
 		close(sockfd);
 

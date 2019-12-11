@@ -9,7 +9,7 @@ evenList(L) :- length(L, X), 0 is mod(X, 2).
 /* Problem 4.1 In order to describe an abstract syntax representation for
 logical expressions, we can use a linear notation in which, using
 the following predicates, we can define the logical operators and, or, not. Thus,
-we can represent logical expresions such as and(not(A), or(A, B))*/
+we can represent logical expresions such as and(not(var(a)), or(var(a), var(b)))*/
 
 and(E1,E2):- E1, E2.
 or(E1,E2):- E1; E2.

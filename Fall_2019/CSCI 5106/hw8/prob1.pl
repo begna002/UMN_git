@@ -23,13 +23,13 @@ istrue(var(A), L):- member((A, true), L).
 
 /*Problem 3.4 A function that takes a logical expression and returns a list of
  all the propositional variables appearing in that list. */
-varsInExp(and(A,B), LST):- varsInExp(A,ALIST), varsInExp(B,BLST), union(ALIST,BLST,LST).
-varsInExp(or(A,B), LST):- varsInExp(A,ALIST), varsInExp(B,BLST), union(ALIST,BLST,LST).
-varsInExp(not(A), LST):- varsInExp(A,ALIST), union([],ALIST,LST).
-varsInExp(var(A), LST):- union([], [A], LST).
+varsOf(and(A,B), LST):- varsOf(A,ALIST), varsOf(B,BLST), union(ALIST,BLST,LST).
+varsOf(or(A,B), LST):- varsOf(A,ALIST), varsOf(B,BLST), union(ALIST,BLST,LST).
+varsOf(not(A), LST):- varsOf(A,ALIST), union([],ALIST,LST).
+varsOf(var(A), LST):- union([], [A], LST).
 
 assignment([],[], _).
-assignment([H|T1],[H:B|T2], V):- member(B, V), assignment(T1,T2,V).
+assignment([H|T1],[(H, B)|T2], V):- member(B, V), assignment(T1,T2,V).
 
 
 

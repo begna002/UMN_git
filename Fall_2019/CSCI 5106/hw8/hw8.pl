@@ -1,4 +1,12 @@
-/* Problem 4.1: In order to describe an abstract syntax representation for
+/* Problem 2.1: Is a list L1 a permutation of another list L2? */
+
+permutation(L1, L2) :- sort(L1, X), sort(L2, X).
+
+/* Problem 2.2: Does a list have an even number of elements? */
+
+evenList(L) :- length(L, X), 0 is mod(X, 2).
+
+/* Problem 4.1 In order to describe an abstract syntax representation for
 logical expressions, we can use a linear notation in which, using
 the following predicates, we can define the logical operators and, or, not. Thus,
 we can represent logical expresions such as and(not(A), or(A, B))*/
@@ -41,5 +49,5 @@ true if every assignment for the expression evaluates to true*/
 isTaut(E) :- not(isNotTaut(E)).
 isNotTaut(E) :- varsOf(E, Varlist), assignment(Varlist, L, [true, false]), not(istrue(E, L)).
 
-assignment([],[], TFLIST).
-assignment([VAR|VARLIST],[(VAR, ASSGN)|T2], TFLIST):- member(ASSGN, TFLIST), assignment(VARLIST,T2,TFLIST).
+assignment([VAR],LST, TFLIST):- member(ASSGN, TFLIST), append([], [(VAR, ASSGN)], LST).
+assignment([VAR|VARLIST],LST, TFLIST):- member(ASSGN, TFLIST), assignment(VARLIST,RETLST,TFLIST), append([(VAR, ASSGN)], RETLST, LST).

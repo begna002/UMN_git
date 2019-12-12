@@ -1,6 +1,9 @@
 /* Problem 2.1: Is a list L1 a permutation of another list L2? */
 
-permutation(L1, L2) :- sort(L1, X), sort(L2, X).
+permutation(L1, L2) :- length(L1, X1), length(L2, X2), X2 is X1, isMember(L1, L2).
+
+isMember([], _).
+isMember([H|T], L2) :- member(H, L2), isMember(T, L2).
 
 /* Problem 2.2: Does a list have an even number of elements? */
 
@@ -21,7 +24,7 @@ not(E):- \+ E.
  [(p, true), (q, true)] is an assignment list whereby the propositional
  variables q and p within some given expression both have the value true.*/
 
-/*Problem 4.3 A function that returns the truth value of a logical Expression E
+/*Problem 4.3 A predicate that returns the truth value of a logical Expression E
  and an assignment L of truth values for propositional variables. Example,
  istrue(and(var(a), not(var(b))), [(a, true), (b, false)]) returns true.*/
 
@@ -32,7 +35,7 @@ evaluate(or(E1,E2), L):- or(evaluate(E1, L), evaluate(E2, L)).
 evaluate(not(E), L):- not(evaluate(E, L)).
 evaluate(var(E), L):- member((E, true), L).
 
-/*Problem 4.4 A function that takes a logical expression E and returns a list of
+/*Problem 4.4 A predicate that takes a logical expression E and returns a list of
  all the propositional variables appearing in that list. */
 
 varsOf(E, LST):- varList(E, LST).
@@ -43,11 +46,11 @@ varList(not(E), LST):- varList(E,ELIST), union([],ELIST,LST).
 varList(var(E), LST):- union([], [E], LST).
 
 
-/*Problem 4.5 A tautology function that takes a logical expression E and returns
-true if every assignment for the expression evaluates to true*/
+/*Problem 4.5 A predicate that takes a logical expression E and succeeds when E
+ is a tautology, i.e. when every assignment for the expression evaluates to true. */
 
 isTaut(E) :- not(isNotTaut(E)).
-isNotTaut(E) :- varsOf(E, Varlist), assignment(Varlist, L, [true, false]), not(istrue(E, L)).
+isNotTaut(E) :- varsOf(E, Varlist), isAssignment(Varlist, L, [true, false]), not(istrue(E, L)).
 
-assignment([VAR],LST, TFLIST):- member(ASSGN, TFLIST), append([], [(VAR, ASSGN)], LST).
-assignment([VAR|VARLIST],LST, TFLIST):- member(ASSGN, TFLIST), assignment(VARLIST,RETLST,TFLIST), append([(VAR, ASSGN)], RETLST, LST).
+isAssignment([VAR],LST, TFLIST):- member(ASSGN, TFLIST), append([], [(VAR, ASSGN)], LST).
+isAssignment([VAR|VARLIST],LST, TFLIST):- member(ASSGN, TFLIST), isAssignment(VARLIST,RETLST,TFLIST), append([(VAR, ASSGN)], RETLST, LST).

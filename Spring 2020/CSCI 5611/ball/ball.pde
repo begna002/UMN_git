@@ -15,7 +15,7 @@ void setup() {
 }
 
 void drawScene() {
-  background(0);
+  background(173, 216, 230);
   lights();
   stroke(255);
   fill(220,220,220);
@@ -107,9 +107,9 @@ void keyPressed() {
     } 
   } else if (keyPressed) {
       if (key == 'a') {
-      translateX += 5;
+      translateX -= 5;
       } else if (key == 'd') {
-        translateX -= 5;
+        translateX += 5;
       } else if (key == 's') {
          translateY += 5;
       } 

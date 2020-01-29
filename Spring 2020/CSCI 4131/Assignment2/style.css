@@ -1,0 +1,98 @@
+body{
+  background-color: #055a8c;
+}
+h1{
+  color:white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+  background-color: #0c3953;
+  color: white;
+  text-shadow: none;
+}
+tr:nth-child(even) {
+  background-color: #bcd9ea;
+}
+tr:nth-child(odd) {
+  background-color: #e4f0f6;
+}
+tr:hover{
+  background-color: #026aa7;
+  color: white;
+}
+
+nav{
+  width: 100%;
+  height: 47px;
+  background-color: #0c3953;
+  border-radius: 10px;
+}
+a.current, a.nav1, a.nav2{
+  display: inline-block;
+  text-decoration:none;
+  color:white;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+a.current:hover, a.nav1:hover, a.nav2:hover{
+  background-color:#026aa7;
+}
+a.current:link, a.current:visited {
+  background-color:#0079bf;
+}
+a.contact1:hover, a.contact2:hover, a.contact3:hover, a.contact4:hover{
+  text-decoration: underline;
+}
+a{
+  text-decoration:none;
+  color:#0c3953;
+  font-weight: bold;
+}
+
+.images{
+  padding: 0px 50px;
+  width:322px;
+  length:250px;
+
+}
+.image1, .image2, .image3, .image4{
+  width:30px;
+  length:30px;
+}
+
+tr.formRow{
+  background-color: #bcd9ea;
+  padding: 50px;
+}
+tr.formRow:hover{
+  background-color: #bcd9ea;
+  color: black;
+}
+input{
+  border-radius: 5px;
+}
+input.submit{
+  background-color: #2eb82e;
+  color: white;
+  width:200px;
+  height:30px;
+}
+input.submit:hover{
+  background-color: #1f7a1f;
+}
+input.clear{
+  background-color: #999999;
+  color:white;
+  width:200px;
+  height:30px;
+}
+input.clear:hover{
+  background-color: #666666;
+}

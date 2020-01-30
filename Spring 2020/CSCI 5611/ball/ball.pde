@@ -6,6 +6,7 @@ int radius1 = 70;
 float zoom = 0; //Zoom magnitude
 float translateX = 0; 
 float translateY = 0;
+int rot=0;
 
 void setup() {
   size(1000,1000, P3D);
@@ -16,9 +17,15 @@ void setup() {
 
 void drawScene() {
   background(173, 216, 230);
+  
+  float x = (width/2)*cos(rot*.0174);
+  float z = (width/2)*sin(rot*.0174);
+  camera(x, height/2, z, width/2, height/2, 0, 0 ,1, 0);
   lights();
   stroke(255);
   fill(220,220,220);
+  
+  
   
   //bottom
   beginShape();
@@ -100,10 +107,15 @@ void computePhysics(float dt){
 
 void keyPressed() {
   if (key == CODED) {
-    if (keyCode == UP & zoom < 300) {
+    if (keyCode == UP) {
       zoom += 5;
     } else if (keyCode == DOWN) {
       zoom -=5;
+    } 
+    if (keyCode == LEFT) {
+      rot += 1;
+    } else if (keyCode == RIGHT) {
+      rot -=1;
     } 
   } else if (keyPressed) {
       if (key == 'a') {

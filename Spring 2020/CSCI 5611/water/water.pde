@@ -1,6 +1,7 @@
-import processing.opengl.*;
+import peasy.*;
 
 int numParticles = 5000;
+PeasyCam camera;
 PVector[] ball = new PVector[numParticles];  // ball1of shape
 PVector[] velocity = new PVector[numParticles];  // Velocity of shape
 int[] numBounces = new int[numParticles];  // Return particle after a certain amount
@@ -17,6 +18,7 @@ String projectTitle = "Water";
 
 void setup() {
   size(1280,720, P3D);
+    camera = new PeasyCam(this, 0, 0, 0, 50);
   noStroke();
   img = loadImage("fountain.jpg");
   for(int i = 0; i < numParticles; i++) {

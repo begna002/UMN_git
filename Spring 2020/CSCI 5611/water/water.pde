@@ -34,7 +34,7 @@ void setup() {
   s.scale(100);
   s2 = loadShape("EagleFolder/Eagle.obj");
   s2.scale(18.0);
-  fountainSound = new Soundfile(this, "rain.mp3");
+  //fountainSound = new SoundFile(this, "rain.mp3");
   camera = new PeasyCam(this, 690+translateX, 360+translateY, 0+zoom, 1000);
   for(int i = 0; i < numParticles; i++) {
     float angle = 360/random(30);
@@ -45,9 +45,10 @@ void setup() {
     delay[i] = random(0, 100);
     hasStarted[i] = false;
     transperency[i]=500;
-    col[i] = color(51,142,233);
+    col[i] = color(21,112,233);
   }
   gravity = new PVector(0,3);
+  //fountainSound.play();
 }
 
 void drawScene() {
@@ -82,7 +83,7 @@ void drawScene() {
   popMatrix();
   noStroke();
   strokeWeight(7);
-  blendMode(ADD);
+  blendMode(SCREEN);
   for(int i = 0; i < numParticles; i++){
       //Only draw when inital delay point is reached
     if(hasStarted[i]) {
@@ -96,20 +97,20 @@ void drawScene() {
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      zoom += 5;
+      zoom += 10;
     } else if (keyCode == DOWN) {
-      zoom -=5;
+      zoom -=10;
     }  
   } else if (keyPressed) {
       if (key == 'a') {
-      translateX += 5;
+      translateX += 10;
       } else if (key == 'd') {
-        translateX -= 5;
+        translateX -= 10;
       } else if (key == 's') {
-         translateY -= 5;
+         translateY -= 10;
       } 
       else if (key == 'w') {
-         translateY += 5;
+         translateY += 10;
       } 
   }
 }
@@ -147,13 +148,15 @@ void draw() {
     velocity[i].y = random(-40, -20);
     numBounces[i] = 0;
     transperency[i] = 500;
-    col[i] = color(51,142,233);
+        col[i] = color(21,112,233);
+
     }
     //Hits ground
-    if (ball[i].y + radius/2> (height-550)) {
+    if (ball[i].y + radius/2> (height-551)) {
       // Reduce y velocity by random amount
       velocity[i].y = velocity[i].y * -.2; 
       velocity[i].x *= .5;
+      col[i] = color(121,212,255);
       if(ball[i].x>500 && ball[i].z > 0){
         velocity[i].z = 0;
       } else {
@@ -168,7 +171,7 @@ void draw() {
       velocity[i].z *= .05;
       numBounces[i]++;
       transperency[i] = 900;
-      col[i] = color(51,142,255);
+      col[i] = color(121,212,255);
     }
     if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 70){
       velocity[i].y = velocity[i].y * -.05; 
@@ -176,7 +179,7 @@ void draw() {
       velocity[i].z *= .05;
       numBounces[i]++;
       transperency[i] = 900;
-      col[i] = color(51,142,255);
+      col[i] = color(121,212,255);
     }
   }
   float endPhysics = millis();

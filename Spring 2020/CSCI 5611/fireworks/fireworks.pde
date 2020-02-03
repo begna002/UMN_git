@@ -35,7 +35,7 @@ void explodePhysics(Firework curr){
       curr.particles[i].y += curr.velocity[i].y;
       curr.particles[i].z += curr.velocity[i].z;
       
-      curr.velocity[i].y += .1; 
+      curr.velocity[i].y += .2; 
   }
 }
 
@@ -43,8 +43,11 @@ void drawExplode(Firework curr){
   noStroke();
   strokeWeight(5);
   for(int i = 0; i < numParticles; i++) {
-    stroke(curr.particleColor[i], curr.fade);
-    point(curr.particles[i].x, curr.particles[i].y, curr.particles[i].z);
+    stroke(curr.particleColor[i][0], curr.particleColor[i][1], curr.particleColor[i][2], curr.fade);
+    line(curr.particles[i].x, curr.particles[i].y, curr.particles[i].z, curr.particles[i].x + curr.velocity[i].x*5, curr.particles[i].y + curr.velocity[i].y*5, curr.particles[i].z + curr.velocity[i].z*5);
+    curr.particleColor[i][0] += random(-10, 10);
+    curr.particleColor[i][1] += random(-10, 10);
+    curr.particleColor[i][2] += random(-10, 10);
   }
   curr.fade -=4;
 }
@@ -74,15 +77,18 @@ void draw() {
     if (f.get(i).initalLaunch.y < f.get(i).maxHeight&&f.get(i).launching == true){
       explode.play();
       int num = int(random(0, 3));
-      color col;
+      float[] col = new float[3];
       switch(num){
-        case 0: col = color(255, random(0, 255), random(0, 255));break;
-        case 1: col = color(random(0, 255), 255, random(0, 255));break;
-        case 2: col = color(random(0, 255), random(0, 255), 255);break;
-        default: col = color(255, 255, 255);
+        case 0: col[0] = 255; col[1] = random(0, 255); col[2] = random(0, 255);break;
+        case 1: col[0] = random(0, 255); col[1] =  255; col[2] = random(0, 255);break;
+        case 2: col[0] = random(0, 255); col[1] = random(0, 255); col[2] = 255;break;
+        default: col[0] = 255; col[0] = 255; col[0] = 255;
       }
       for(int j = 0; j < numParticles; j++){
-        f.get(i).particleColor[j] = col;
+        f.get(i).particleColor[j][0] = col[0];
+        f.get(i).particleColor[j][1] = col[1];
+        f.get(i).particleColor[j][2] = col[2];
+
       }
       f.get(i).exploding = true;
       f.get(i).launching = false;
@@ -112,7 +118,7 @@ class Firework{
  PVector[] velocity = new PVector[numParticles];
  PVector[] time = new PVector[numParticles];
  boolean launching, exploding;
- color[] particleColor = new color[numParticles];
+ float[][] particleColor = new float[numParticles][3];
  int fade = 300;
  float maxHeight ;
  
@@ -122,6 +128,7 @@ class Firework{
     launching = true;
     exploding = false;
     maxHeight = y;
+    float mult = random(2, 10);
     for (int i = 0; i < numParticles; i++){
         particles[i] = new PVector(0, 0, 0);
         //Sphere Equation derived from CORY SIMON (http://corysimon.github.io/articles/uniformdistn-on-sphere/)
@@ -130,7 +137,7 @@ class Firework{
         float xVel = sin(phi) * cos(theta);
         float yVel = sin(phi) * sin(theta);
         float zVel = cos(phi);
-        velocity[i] = new PVector(xVel*5, yVel*5, zVel*5);
+        velocity[i] = new PVector(xVel*mult, yVel*mult, zVel*mult);
         launching = true;
         exploding = false;
     }

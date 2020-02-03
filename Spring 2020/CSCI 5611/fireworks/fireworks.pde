@@ -98,7 +98,6 @@ void draw() {
      }
    }
   }
-  line(500,300,0, 500,300, -500);
   float endFrame = millis();
     String runtimeReport = "Frame: "+str(endFrame-startFrame)+"ms,"+
         " Physics: "+ str(endPhysics-startFrame)+"ms,"+
@@ -125,8 +124,13 @@ class Firework{
     maxHeight = y;
     for (int i = 0; i < numParticles; i++){
         particles[i] = new PVector(0, 0, 0);
-        float angle = 360/random(30);
-        velocity[i] = new PVector(sin(radians(angle*i))*random(1, 7), cos(radians(angle*i))*random(1, 7), sin(radians(angle*i))*random(1, 7));
+        //Sphere Equation derived from CORY SIMON (http://corysimon.github.io/articles/uniformdistn-on-sphere/)
+        float theta = 2*PI*random(5);
+        float phi = acos(1 - 2 * random(5));
+        float xVel = sin(phi) * cos(theta);
+        float yVel = sin(phi) * sin(theta);
+        float zVel = cos(phi);
+        velocity[i] = new PVector(xVel*5, yVel*5, zVel*5);
         launching = true;
         exploding = false;
     }

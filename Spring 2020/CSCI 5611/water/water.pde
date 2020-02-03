@@ -1,8 +1,11 @@
+import processing.sound.*;
 import peasy.*;
 
 PShape s;
 PShape s2;
 PImage img;
+SoundFile fountainSound;
+
 
 int numParticles = 20000;
 PeasyCam camera;
@@ -31,6 +34,7 @@ void setup() {
   s.scale(100);
   s2 = loadShape("EagleFolder/Eagle.obj");
   s2.scale(18.0);
+  fountainSound = new Soundfile(this, "rain.mp3");
   camera = new PeasyCam(this, 690+translateX, 360+translateY, 0+zoom, 1000);
   for(int i = 0; i < numParticles; i++) {
     float angle = 360/random(30);
@@ -158,18 +162,18 @@ void draw() {
       numBounces[i]++;
     }
     //Hits top car
-    if (ball[i].y>530 && ball[i].x>750 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
+    if (ball[i].y>530 && ball[i].x>750 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 70){
       velocity[i].y = velocity[i].y * -.05; 
-      velocity[i].x *= .5;
-      velocity[i].z *= .5;
+      velocity[i].x *= .05;
+      velocity[i].z *= .05;
       numBounces[i]++;
       transperency[i] = 900;
       col[i] = color(51,142,255);
     }
-    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 100){
+    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 70){
       velocity[i].y = velocity[i].y * -.05; 
-      velocity[i].x *= .5;
-      velocity[i].z *= .5;
+      velocity[i].x *= .05;
+      velocity[i].z *= .05;
       numBounces[i]++;
       transperency[i] = 900;
       col[i] = color(51,142,255);

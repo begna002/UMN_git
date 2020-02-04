@@ -89,7 +89,7 @@ void drawScene() {
     if(hasStarted[i]) {
         stroke(col[i], transperency[i]);
         point(ball[i].x+translateX,ball[i].y+translateY, ball[i].z+zoom);
-        transperency[i]-=5;
+        transperency[i]-=20;
       }
   }
 }
@@ -147,7 +147,7 @@ void draw() {
     waterDirection*=-1;
     velocity[i].y = random(-40, -20);
     numBounces[i] = 0;
-    transperency[i] = 500;
+    transperency[i] = 300;
         col[i] = color(21,112,233);
 
     }
@@ -165,20 +165,27 @@ void draw() {
       numBounces[i]++;
     }
     //Hits top car
-    if (ball[i].y>530 && ball[i].x>750 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 70){
+    if (ball[i].y>530 && ball[i].x>750 && ball[i].x<930 && ball[i].z < 300 && ball[i].z > 100){
       velocity[i].y = velocity[i].y * -.05; 
       velocity[i].x *= .05;
       velocity[i].z *= .05;
       numBounces[i]++;
-      transperency[i] = 900;
       col[i] = color(121,212,255);
     }
-    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 70){
+    //Hits Hood
+    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 100){
       velocity[i].y = velocity[i].y * -.05; 
       velocity[i].x *= .05;
       velocity[i].z *= .05;
       numBounces[i]++;
-      transperency[i] = 900;
+      col[i] = color(121,212,255);
+    }
+    //Hits Trunk
+    if (ball[i].y>600 && ball[i].x>930 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
+      velocity[i].y = velocity[i].y * -.05; 
+      velocity[i].x *= .05;
+      velocity[i].z *= .05;
+      numBounces[i]++;
       col[i] = color(121,212,255);
     }
   }

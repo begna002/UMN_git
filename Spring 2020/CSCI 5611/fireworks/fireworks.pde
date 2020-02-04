@@ -5,28 +5,56 @@ SoundFile launch;
 SoundFile explode;
 PeasyCam camera;
 
+PImage grass;
+ArrayList<PShape> people = new ArrayList();
+ArrayList<JSONObject> peopleCord = new ArrayList();
+JSONArray locations;
+
+
 
 int numParticles = 1000;
 String projectTitle = "Fireworks";
+float gravity = .05;
+float zoom = 0; //Zoom magnitude
+float translateX = 0; 
+float translateY = 0;
+boolean firing = false;
+boolean movingLoc = false;
 
 ArrayList<Firework> f = new ArrayList();
+ArrayList<Trail> trail = new ArrayList();
 
 void setup() {
-  size(1280,720, P3D);
+  size(1780,1220, P3D);
   launch = new SoundFile(this, "Launch.mp3");
   explode = new SoundFile(this, "Explode.mp3");
-  camera = new PeasyCam(this, 690, 360, 0, 750);
+  camera = new PeasyCam(this, 690, 360, 700, 1000);
+  people.add(loadShape("Audience/Female_LookingUp.obj"));
+  people.add(loadShape("Audience/Female_Standing_CoveringEyes.obj"));
+  people.add(loadShape("Audience/Female_Standing_Hips.obj"));
+    people.add(loadShape("Audience/Female_Walking.obj"));
+  people.add(loadShape("Audience/Male_LookingUp.obj"));
+  people.add(loadShape("Audience/Male_Standing_Hips.obj"));
+  people.add(loadShape("Audience/Male_PickingUp.obj"));
+  people.add(loadShape("Audience/Male_Standing_Waving.obj"));
+  people.add(loadShape("Audience/Woman_Standing_Waving.obj"));
+
+  locations = loadJSONArray("Audience/positions.json");
+  for(int i = 0; i < people.size(); i++){
+    people.get(i).scale(50);
+    peopleCord.add(locations.getJSONObject(i));
+  }
+
+  grass = loadImage("grass.jpg");
 
 }
 
 void launchPhysics(Firework curr){
   curr.initalLaunch.y += curr.initalLaunchVel.y;  
-}
-
-void drawLaunch(Firework curr){
-  noStroke();
-  fill(255, 255, 255);
-  rect(curr.initalLaunch.x, curr.initalLaunch.y, 10, 20);
+  curr.timer++;
+  if (curr.timer % 5 == 0){
+    trail.add(new Trail(curr.initalLaunch.x, curr.initalLaunch.y, curr.initalLaunch.z));
+  }
 }
 
 void explodePhysics(Firework curr){
@@ -35,8 +63,42 @@ void explodePhysics(Firework curr){
       curr.particles[i].y += curr.velocity[i].y;
       curr.particles[i].z += curr.velocity[i].z;
       
-      curr.velocity[i].y += .2; 
+      curr.velocity[i].y += gravity; 
   }
+}
+
+void smokePhysics(Trail trl){
+  trl.smoke.x += trl.velocity.x;
+  trl.smoke.y += trl.velocity.y;
+  trl.smoke.z += trl.velocity.z;
+
+}
+
+void drawTrail(Trail trl){
+    if(!trl.isSmokeOn){
+      strokeWeight(7);
+      stroke(trl.col, trl.life);
+      point(trl.position.x+random(-10, 10)+translateX, trl.position.y+random(10, 20)+translateY, trl.position.z+random(-10, 10)+zoom);
+      stroke(trl.col, trl.life-100);
+      point(trl.position.x+random(-10, 10)+translateX, trl.position.y+random(10, 20)+translateY, trl.position.z+random(-10, 10)+zoom);
+      stroke(trl.col, trl.life-50);
+      point(trl.position.x+random(-10, 10)+translateX, trl.position.y+random(10, 20)+translateY, trl.position.z+random(-10, 10)+zoom);
+      trl.life-=10;
+    } else {
+      strokeWeight(20);
+      stroke(trl.col, trl.life);
+      point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
+      stroke(trl.col, trl.life-20);
+      point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
+      trl.life-=.3;
+    }
+} 
+
+void drawLaunch(Firework curr){
+  noStroke();
+  strokeWeight(5);
+  stroke(200, 200, 200);
+  line(curr.initalLaunch.x+translateX, curr.initalLaunch.y+translateY, curr.initalLaunch.z+zoom, curr.initalLaunch.x+translateX, curr.initalLaunch.y+translateY-30, curr.initalLaunch.z+zoom);
 }
 
 void drawExplode(Firework curr){
@@ -44,7 +106,8 @@ void drawExplode(Firework curr){
   strokeWeight(5);
   for(int i = 0; i < numParticles; i++) {
     stroke(curr.particleColor[i][0], curr.particleColor[i][1], curr.particleColor[i][2], curr.fade);
-    line(curr.particles[i].x, curr.particles[i].y, curr.particles[i].z, curr.particles[i].x + curr.velocity[i].x*5, curr.particles[i].y + curr.velocity[i].y*5, curr.particles[i].z + curr.velocity[i].z*5);
+    line(curr.particles[i].x+translateX, curr.particles[i].y+translateY, curr.particles[i].z+zoom, curr.particles[i].x + curr.velocity[i].x*5+translateX, curr.particles[i].y + curr.velocity[i].y*5+translateY, curr.particles[i].z + curr.velocity[i].z*5+zoom);
+    line(curr.particles[i].x+translateX, curr.particles[i].y+translateY, curr.particles[i].z+zoom, curr.particles[i].x - curr.velocity[i].x*5+translateX, curr.particles[i].y - curr.velocity[i].y*5+translateY, curr.particles[i].z - curr.velocity[i].z*5+zoom);
     curr.particleColor[i][0] += random(-10, 10);
     curr.particleColor[i][1] += random(-10, 10);
     curr.particleColor[i][2] += random(-10, 10);
@@ -52,22 +115,88 @@ void drawExplode(Firework curr){
   curr.fade -=4;
 }
 
-void setExplodePosition(Firework curr, float x, float y){
+void setExplodePosition(Firework curr, float x, float y, float z){
   for(int i = 0; i < numParticles; i++){
     curr.particles[i].x = x;
     curr.particles[i].y = y;
+    curr.particles[i].z = z;
   }
 }
 
-void mousePressed(){
-  f.add(new Firework(mouseX, mouseY));
-  launch.play();
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      zoom += 10;
+    } else if (keyCode == DOWN) {
+      zoom -=10;
+    }  
+  } else if (keyPressed) {
+      if (key == 'a') {
+        translateX += 10;
+      } else if (key == 'd') {
+        translateX -= 10;
+      } else if (key == 's') {
+         translateY -= 10;
+      } else if (key == 'w') {
+         translateY += 10;
+      } else if (key == ' ' && !firing) {
+         f.add(new Firework(random(0, 1200), random(-400, -200)));
+         launch.play();
+         firing = true;
+      } 
+      else if (key == '1' && !movingLoc) {
+         camera.lookAt(0, 100, -300, 750);
+         camera.setRotations(camera.getRotations()[0],camera.getRotations()[1]-1.5,camera.getRotations()[2]);
+         movingLoc = true;
+      } 
+      else if (key == '2' && !movingLoc) {
+         camera.lookAt(1200, 100, -300, 750);
+         camera.setRotations(camera.getRotations()[0],camera.getRotations()[1]+1.5,camera.getRotations()[2]);
+         movingLoc = true;
+      } 
+  }
+}
+void keyReleased(){
+  if (key == ' ' && firing) {
+     firing = false;
+   } 
+  if (key == '1') {
+     movingLoc = false;
+   } 
 }
 
 void draw() {
   background(0);
+  lights();
   float startFrame = millis(); //Time how long various components are taking
+    if(keyPressed) {
+      keyPressed();
+  }
   float endPhysics = millis();
+  //Ground
+  pushMatrix();
+  beginShape();
+  noStroke();
+  texture(grass);
+  vertex(-1000+translateX, 720+translateY, 2000+zoom, 0, 0);
+  vertex(-1000+translateX, 720+translateY, -2000+zoom, grass.width, 0);
+  vertex(2000+translateX, 720+translateY, -2000+zoom, grass.width, grass.height);
+  vertex(2000+translateX, 720+translateY, 2000+zoom, 0, grass.height);
+  endShape();
+  popMatrix();
+  //People
+  for(int i = 0; i < people.size(); i++){
+    pushMatrix();
+    int x = peopleCord.get(i).getInt("x");
+    int y = peopleCord.get(i).getInt("y");
+    int z = peopleCord.get(i).getInt("z");
+
+    translate(x+translateX,y+translateY, z+zoom);
+    rotateY(PI);
+    rotateZ(PI);
+    shape(people.get(i));
+    popMatrix();
+  }
   for(int i = 0; i < f.size(); i++){
     if (f.get(i).launching) {
     launchPhysics(f.get(i));
@@ -92,7 +221,7 @@ void draw() {
       }
       f.get(i).exploding = true;
       f.get(i).launching = false;
-      setExplodePosition(f.get(i), f.get(i).initalLaunch.x, f.get(i).initalLaunch.y);
+      setExplodePosition(f.get(i), f.get(i).initalLaunch.x, f.get(i).initalLaunch.y, f.get(i).initalLaunch.z);
     }
    }
    if (f.get(i).exploding){
@@ -104,12 +233,51 @@ void draw() {
      }
    }
   }
+  for(int i = 0; i < trail.size(); i++){
+     drawTrail(trail.get(i));
+     if (trail.get(i).life <100 && !trail.get(i).isSmokeOn){
+       trail.get(i).life = random(70, 100);
+       trail.get(i).smoke = new PVector(trail.get(i).position.x+random(-5, 5), trail.get(i).position.y+random(-20, 0), trail.get(i).position.z);
+       trail.get(i).isSmokeOn = true;
+       trail.get(i).col = color(220, 220, 220);
+       trail.get(i).velocity = new PVector(random(0, .5), -.5, 0);
+       trail.get(i).offSet = random(20);
+     } 
+     if (trail.get(i).isSmokeOn == true){
+       smokePhysics(trail.get(i));
+       drawTrail(trail.get(i));
+       if (trail.get(i).life < 0) {
+         trail.remove(i);
+       }
+     }
+   }
+  
+  
   float endFrame = millis();
     String runtimeReport = "Frame: "+str(endFrame-startFrame)+"ms,"+
         " Physics: "+ str(endPhysics-startFrame)+"ms,"+
         " FPS: "+ str(round(frameRate)) +"\n";
   surface.setTitle(projectTitle+ "  -  " +runtimeReport);
   print(runtimeReport);
+}
+
+class Trail{
+  PVector position;
+  PVector velocity;
+  PVector smoke;
+  float life;
+  float smokeLife;
+  boolean isSmokeOn;
+  color col;
+  float offSet;
+  
+  Trail(float x, float y, float z){
+    position = new PVector(x, y, z);
+    velocity = new PVector(0, 0, 0); 
+    life = 300;
+    isSmokeOn = false;
+    col = color(255, random(0, 255), 0);
+  }
 }
 
 class Firework{
@@ -121,14 +289,15 @@ class Firework{
  float[][] particleColor = new float[numParticles][3];
  int fade = 300;
  float maxHeight ;
+ float timer = 0;
  
   Firework(float x, float y){
-    initalLaunch = new PVector(x, 720, 0);
+    initalLaunch = new PVector(x, 720, -300);
     initalLaunchVel = new PVector(0, -5);
     launching = true;
     exploding = false;
     maxHeight = y;
-    float mult = random(2, 10);
+    float mult = random(2, 9);
     for (int i = 0; i < numParticles; i++){
         particles[i] = new PVector(0, 0, 0);
         //Sphere Equation derived from CORY SIMON (http://corysimon.github.io/articles/uniformdistn-on-sphere/)

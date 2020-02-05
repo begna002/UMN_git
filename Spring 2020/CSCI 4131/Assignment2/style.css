@@ -133,31 +133,39 @@ margin-top: 40px;
 #register label{
 margin-right:5px;
 }
-#register input {
-padding: 5px 14px;
+#meterBack {
 border: 1px solid #d5d9da;
 box-shadow: 0 0 9px #0E34F5 inset;
-width: 272px;
+width: 400px;
 font-size: 1em;
-height: 25px;
+height: 30px;
+border-radius: 10px;
 }
-#register .short{
-font-weight:bold;
-color:#FF0000;
-font-size:larger;
+ .short{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 100px;
+   height: 30px;
+   background-color:#FF0000;
+   border-radius: 10px;
 }
-#register .weak{
-font-weight:bold;
-color:orange;
-font-size:larger;
+ .weak{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 200px;
+   height: 30px;
+   background-color:#FFA500;
+   border-radius: 10px;
 }
-#register .good{
-font-weight:bold;
-color:#2D98F3;
-font-size:larger;
+ .good{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 300px;
+   height: 30px;
+   background-color:#2D98F3;
+   border-radius: 10px;
 }
-#register .strong{
-font-weight:bold;
-color: limegreen;
-font-size:larger;
+.strong{
+  box-shadow: 0 0 9px #0E34F5 inset;
+  width: 400px;
+  height: 30px;
+  background-color:#32cd32;
+  border-radius: 10px;
 }

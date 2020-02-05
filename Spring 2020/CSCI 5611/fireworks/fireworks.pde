@@ -87,9 +87,21 @@ void drawTrail(Trail trl){
     } else {
       strokeWeight(20);
       stroke(trl.col, trl.life);
-      point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
-      stroke(trl.col, trl.life-20);
+      point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
+      stroke(trl.col, trl.life-3); 
+      point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
+      //stroke(trl.col, trl.life-6);
+      //point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
+      //stroke(trl.col, trl.life-9);
+      //point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
+      //stroke(trl.col, trl.life-12);
+      //point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
+      stroke(trl.col, trl.life-15);
       point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
+      stroke(trl.col, trl.life-18);
+      point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
+      stroke(trl.col, trl.life-21);
+      point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
       trl.life-=.3;
     }
 } 
@@ -239,7 +251,8 @@ void draw() {
        trail.get(i).life = random(70, 100);
        trail.get(i).smoke = new PVector(trail.get(i).position.x+random(-5, 5), trail.get(i).position.y+random(-20, 0), trail.get(i).position.z);
        trail.get(i).isSmokeOn = true;
-       trail.get(i).col = color(220, 220, 220);
+       float darken = random(50, 200);
+       trail.get(i).col = color(darken, darken, darken);
        trail.get(i).velocity = new PVector(random(0, .5), -.5, 0);
        trail.get(i).offSet = random(20);
      } 
@@ -276,7 +289,7 @@ class Trail{
     velocity = new PVector(0, 0, 0); 
     life = 300;
     isSmokeOn = false;
-    col = color(255, random(0, 255), 0);
+    col = color(255, random(180, 255), 0);
   }
 }
 

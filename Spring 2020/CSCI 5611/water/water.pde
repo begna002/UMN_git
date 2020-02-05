@@ -166,7 +166,7 @@ void draw() {
     }
     //Hits top car
     if (ball[i].y>530 && ball[i].x>750 && ball[i].x<930 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * -.05; 
+      velocity[i].y = velocity[i].y * 0; 
       velocity[i].x *= .05;
       velocity[i].z *= .05;
       numBounces[i]++;
@@ -174,15 +174,15 @@ void draw() {
     }
     //Hits Hood
     if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * -.05; 
+      velocity[i].y = velocity[i].y * 0; 
       velocity[i].x *= .05;
       velocity[i].z *= .05;
       numBounces[i]++;
       col[i] = color(121,212,255);
     }
     //Hits Trunk
-    if (ball[i].y>600 && ball[i].x>930 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * -.05; 
+    if (ball[i].y>610 && ball[i].x>930 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
+      velocity[i].y = velocity[i].y * -.01; 
       velocity[i].x *= .05;
       velocity[i].z *= .05;
       numBounces[i]++;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset = "utf-8">
+  <title>Simple Form</title>
+</head>
+<script>
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  function display_click(){
+    alert("You clicked the button");
+  }
+  window_onload = function() {
+    $("buttonDisplay").onclick = display_click;
+  }
+</script>
+<body>
+  <p><input type="butten" value="Click to Trigger" id="buttonDisplay"/></p>
+</body>
+</html>

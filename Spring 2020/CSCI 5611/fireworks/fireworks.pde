@@ -6,12 +6,14 @@ SoundFile explode;
 PeasyCam camera;
 
 PImage grass;
+JSONArray locations;
+PShape rocket = new PShape();
 ArrayList<PShape> people = new ArrayList();
 ArrayList<JSONObject> peopleCord = new ArrayList();
-JSONArray locations;
+ArrayList<Firework> f = new ArrayList();
+ArrayList<Trail> trail = new ArrayList();
 
-
-
+float[] fireworkPos = new float[7];
 int numParticles = 1000;
 String projectTitle = "Fireworks";
 float gravity = .05;
@@ -21,9 +23,6 @@ float translateY = 0;
 boolean firing = false;
 boolean movingLoc = false;
 
-ArrayList<Firework> f = new ArrayList();
-ArrayList<Trail> trail = new ArrayList();
-
 void setup() {
   size(1780,1220, P3D);
   launch = new SoundFile(this, "Launch.mp3");
@@ -32,17 +31,22 @@ void setup() {
   people.add(loadShape("Audience/Female_LookingUp.obj"));
   people.add(loadShape("Audience/Female_Standing_CoveringEyes.obj"));
   people.add(loadShape("Audience/Female_Standing_Hips.obj"));
-    people.add(loadShape("Audience/Female_Walking.obj"));
+  people.add(loadShape("Audience/Female_Walking.obj"));
   people.add(loadShape("Audience/Male_LookingUp.obj"));
   people.add(loadShape("Audience/Male_Standing_Hips.obj"));
   people.add(loadShape("Audience/Male_PickingUp.obj"));
   people.add(loadShape("Audience/Male_Standing_Waving.obj"));
   people.add(loadShape("Audience/Woman_Standing_Waving.obj"));
+  rocket = loadShape("rocket/rocket.obj");
+  rocket.scale(.03);
 
   locations = loadJSONArray("Audience/positions.json");
   for(int i = 0; i < people.size(); i++){
     people.get(i).scale(50);
     peopleCord.add(locations.getJSONObject(i));
+  }
+  for(int i = 1; i < 6; i++){
+    fireworkPos[i] = fireworkPos[i-1] + 200;
   }
 
   grass = loadImage("grass.jpg");
@@ -90,12 +94,6 @@ void drawTrail(Trail trl){
       point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
       stroke(trl.col, trl.life-3); 
       point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
-      //stroke(trl.col, trl.life-6);
-      //point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
-      //stroke(trl.col, trl.life-9);
-      //point(trl.smoke.x+trl.offSet+translateX, trl.smoke.y-trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
-      //stroke(trl.col, trl.life-12);
-      //point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z+trl.offSet+zoom);
       stroke(trl.col, trl.life-15);
       point(trl.smoke.x-trl.offSet+translateX, trl.smoke.y+trl.offSet+translateY, trl.smoke.z-trl.offSet+zoom);
       stroke(trl.col, trl.life-18);
@@ -108,9 +106,12 @@ void drawTrail(Trail trl){
 
 void drawLaunch(Firework curr){
   noStroke();
-  strokeWeight(5);
-  stroke(200, 200, 200);
-  line(curr.initalLaunch.x+translateX, curr.initalLaunch.y+translateY, curr.initalLaunch.z+zoom, curr.initalLaunch.x+translateX, curr.initalLaunch.y+translateY-30, curr.initalLaunch.z+zoom);
+  pushMatrix();
+  translate(curr.initalLaunch.x+translateX,curr.initalLaunch.y-50+translateY, curr.initalLaunch.z+zoom);
+  rotateY(PI);
+  rotateZ(PI);
+  shape(rocket);
+  popMatrix();
 }
 
 void drawExplode(Firework curr){
@@ -152,7 +153,7 @@ void keyPressed() {
       } else if (key == 'w') {
          translateY += 10;
       } else if (key == ' ' && !firing) {
-         f.add(new Firework(random(0, 1200), random(-400, -200)));
+         f.add(new Firework(floor(random(0, 6)), random(-400, -200)));
          launch.play();
          firing = true;
       } 
@@ -180,11 +181,9 @@ void keyReleased(){
 void draw() {
   background(0);
   lights();
-  float startFrame = millis(); //Time how long various components are taking
     if(keyPressed) {
       keyPressed();
   }
-  float endPhysics = millis();
   //Ground
   pushMatrix();
   beginShape();
@@ -209,10 +208,17 @@ void draw() {
     shape(people.get(i));
     popMatrix();
   }
+  //holes
+  for(int i = 0; i < 6; i++){
+    pushMatrix();
+    translate(fireworkPos[i], 700, -300); 
+    box(40, 20, 40);
+    popMatrix();
+  }
+  //Fireworks
   for(int i = 0; i < f.size(); i++){
     if (f.get(i).launching) {
     launchPhysics(f.get(i));
-    endPhysics = millis();
     drawLaunch(f.get(i));
     //Firework is now exploding
     if (f.get(i).initalLaunch.y < f.get(i).maxHeight&&f.get(i).launching == true){
@@ -238,7 +244,6 @@ void draw() {
    }
    if (f.get(i).exploding){
      explodePhysics(f.get(i));
-     endPhysics = millis();
      drawExplode(f.get(i));
      if (f.get(i).fade < 0) {
        f.remove(i);
@@ -264,13 +269,23 @@ void draw() {
        }
      }
    }
+   int numParticles = f.size() + trail.size();
+   //Number of exploding particles or just inital launch, for all fireworks
+   for(Firework elem : f) {
+     if(elem.launching) {
+       numParticles += 1;
+     } else {
+       numParticles += elem.particles.length;
+     }
+    }
+   
+   //Number of trail particles plus 3 (3 points drawn per particle), for all trails
+   for(Trail elem : trail) {numParticles += 3;};
   
-  
-  float endFrame = millis();
-    String runtimeReport = "Frame: "+str(endFrame-startFrame)+"ms,"+
-        " Physics: "+ str(endPhysics-startFrame)+"ms,"+
+ String runtimeReport = "Number of Particles: "+str(numParticles)+
         " FPS: "+ str(round(frameRate)) +"\n";
   surface.setTitle(projectTitle+ "  -  " +runtimeReport);
+  print(runtimeReport);
   print(runtimeReport);
 }
 
@@ -304,8 +319,8 @@ class Firework{
  float maxHeight ;
  float timer = 0;
  
-  Firework(float x, float y){
-    initalLaunch = new PVector(x, 720, -300);
+  Firework(int x, float y){
+    initalLaunch = new PVector(fireworkPos[x], 720, -300);
     initalLaunchVel = new PVector(0, -5);
     launching = true;
     exploding = false;

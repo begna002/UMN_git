@@ -1,30 +1,29 @@
 import processing.sound.*;
 import peasy.*;
 
+SoundFile fountainSound;
+PeasyCam camera;
+int numParticles = 20000;
+
 PShape s;
 PShape s2;
-PImage img;
-SoundFile fountainSound;
-
-
-int numParticles = 20000;
-PeasyCam camera;
+PImage grass;
+PVector gravity;   // Gravity acts at the shape's acceleration
+PVector carLoc;
 PVector[] ball = new PVector[numParticles];  // ball1of shape
 PVector[] velocity = new PVector[numParticles];  // Velocity of shape
+
+
 int[] numBounces = new int[numParticles];  // Return particle after a certain amount
 float[] delay = new float[numParticles]; //Starting Delay for particles
 boolean[] hasStarted = new boolean[numParticles]; //Particle is starting
-int[] transperency = new int[numParticles];
-
-
-PVector gravity;   // Gravity acts at the shape's acceleration
+float[] transperency = new float[numParticles];
 int radius = 7;
 int waterDirection = 1;
-String projectTitle = "Water";
+String projectTitle = "Water Fountain";
 float zoom = 0; //Zoom magnitude
 float translateX = 0; 
 float translateY = 0;
-PVector carLoc;
 color[] col = new color[numParticles];
 
 void setup() {
@@ -34,7 +33,9 @@ void setup() {
   s.scale(100);
   s2 = loadShape("EagleFolder/Eagle.obj");
   s2.scale(18.0);
-  //fountainSound = new SoundFile(this, "rain.mp3");
+  fountainSound = new SoundFile(this, "rain.mp3");
+  fountainSound.loop(1.0, .5, .7);
+  grass = loadImage("grass.jpg");
   camera = new PeasyCam(this, 690+translateX, 360+translateY, 0+zoom, 1000);
   for(int i = 0; i < numParticles; i++) {
     float angle = 360/random(30);
@@ -44,7 +45,7 @@ void setup() {
     numBounces[i]=0;
     delay[i] = random(0, 100);
     hasStarted[i] = false;
-    transperency[i]=500;
+    transperency[i]=300;
     col[i] = color(21,112,233);
   }
   gravity = new PVector(0,3);
@@ -57,13 +58,13 @@ void drawScene() {
   lights();
   //Ground
   pushMatrix();
-  noStroke();
-  fill(70, 70, 70);
   beginShape();
-  vertex(-1000+translateX, 720+translateY, 1000+zoom);
-  vertex(-1000+translateX, 720+translateY, -2000+zoom);
-  vertex(2000+translateX, 720+translateY, -2000+zoom);
-  vertex(2000+translateX, 720+translateY, 1000+zoom);
+  noStroke();
+  texture(grass);
+  vertex(-1000+translateX, 720+translateY, 1000+zoom, 0, 0);
+  vertex(-1000+translateX, 720+translateY, -2000+zoom, grass.width, 0);
+  vertex(2000+translateX, 720+translateY, -2000+zoom, grass.width, grass.height);
+  vertex(2000+translateX, 720+translateY, 1000+zoom, 0, grass.height);
   endShape();
   popMatrix();
   // Display Car
@@ -94,6 +95,80 @@ void drawScene() {
   }
 }
 
+void computePhysics(float dt){
+  // Add velocity to the ball1.
+  for(int i = 0; i < numParticles; i++){
+    //If delay point is reached, start movement
+    if (delay[i] > 75){
+      hasStarted[i] = true;
+      ball[i].x += velocity[i].x*dt;
+      ball[i].y += velocity[i].y*dt;
+      ball[i].z += velocity[i].z*dt;
+      velocity[i].x += gravity.x*dt;
+      velocity[i].y += gravity.y*dt;
+    }
+    delay[i] += 1;
+    
+    //when water has bounced 4 times, send back to middle
+    if (numBounces[i] > 4) {
+      ball[i].x = random(640, 650);
+      ball[i].y = random(400, 475);
+      ball[i].z = 0;
+      float angle = 360/random(30);
+      velocity[i].x = cos(radians(angle*i))*random(1, 15);
+      velocity[i].z = sin(radians(angle*i))*random(1, 15);
+      waterDirection*=-1;
+      velocity[i].y = random(-40, -20);
+      numBounces[i] = 0;
+      transperency[i] = 300;
+      col[i] = color(21,50,233);
+    }
+    //Hits ground
+    if (ball[i].y + radius/2> (height-551)) {
+      // Calculate Reflection
+      PVector normal = new PVector(0, -1, 0);
+      PVector Vnorm = normal.mult(velocity[i].dot(normal));
+      velocity[i] = velocity[i].sub(Vnorm.mult((1+.1)));
+      col[i] = color(121,212,255);
+      
+      numBounces[i]++;
+    }
+    //Hits top car
+    if (ball[i].y>528 && ball[i].x>750 && ball[i].x<930 && ball[i].z < 300 && ball[i].z > 100){
+      PVector normal = new PVector(0, -1, 0);
+      PVector Vnorm = normal.mult(velocity[i].dot(normal));
+      velocity[i] = velocity[i].sub(Vnorm.mult((1+.05)));
+      numBounces[i]++;
+      col[i] = color(121,212,255);
+    }
+    //Hits Hood
+    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 100){
+      PVector normal = new PVector(0, -1, 0);
+      PVector Vnorm = normal.mult(velocity[i].dot(normal));
+      velocity[i] = velocity[i].sub(Vnorm.mult((1+.1)));
+      numBounces[i]++;
+      col[i] = color(121,212,255);
+    } 
+    //Hits Side of car
+    if (ball[i].y>600 && ball[i].y<720 && ball[i].x>580 && ball[i].x<1000 && ball[i].z > 100){
+      PVector normal = new PVector(0, 0, -1);
+      PVector Vnorm = normal.mult(velocity[i].dot(normal));
+      velocity[i] = velocity[i].sub(Vnorm.mult((1+.1)));
+      numBounces[i]++;
+      col[i] = color(121,212,255);
+    }
+    
+    //Hits Trunk
+    if (ball[i].y>610 && ball[i].x>930 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
+      PVector normal = new PVector(0, -1, 0);
+      PVector Vnorm = normal.mult(velocity[i].dot(normal));
+      velocity[i] = velocity[i].sub(Vnorm.mult((1+.1)));
+      numBounces[i]++;
+      col[i] = color(121,212,255);
+    }
+  }
+}
+
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
@@ -101,100 +176,28 @@ void keyPressed() {
     } else if (keyCode == DOWN) {
       zoom -=10;
     }  
-  } else if (keyPressed) {
-      if (key == 'a') {
-      translateX += 10;
-      } else if (key == 'd') {
-        translateX -= 10;
-      } else if (key == 's') {
-         translateY -= 10;
-      } 
-      else if (key == 'w') {
-         translateY += 10;
-      } 
-  }
+    } else if (keyPressed) {
+        if (key == 'a') {
+        translateX += 10;
+        } else if (key == 'd') {
+          translateX -= 10;
+        } else if (key == 's') {
+           translateY -= 10;
+        } 
+        else if (key == 'w') {
+           translateY += 10;
+        } 
+    }
 }
 
 void draw() {
   background(0);
-  float startFrame = millis(); //Time how long various components are taking
   if(keyPressed) {
       keyPressed();
   }
-  
-  // Add velocity to the ball1.
-  for(int i = 0; i < numParticles; i++){
-    //If delay point is reached, start movement
-    if (delay[i] > 75){
-      hasStarted[i] = true;
-      ball[i].x += velocity[i].x;
-      ball[i].y += velocity[i].y;
-      ball[i].z += velocity[i].z;
-      velocity[i].x += gravity.x;
-      velocity[i].y += gravity.y;
-      transperency[i] -=5;
-    }
-    delay[i] += 1;
-    
-    //when water has bounced 4 times, send back to middle
-    if (numBounces[i] == 4) {
-    ball[i].x = random(640, 650);
-    ball[i].y = random(400, 475);
-    ball[i].z = 0;
-    float angle = 360/random(30);
-    velocity[i].x = cos(radians(angle*i))*random(1, 15);
-    velocity[i].z = sin(radians(angle*i))*random(1, 15);
-    waterDirection*=-1;
-    velocity[i].y = random(-40, -20);
-    numBounces[i] = 0;
-    transperency[i] = 300;
-        col[i] = color(21,112,233);
-
-    }
-    //Hits ground
-    if (ball[i].y + radius/2> (height-551)) {
-      // Reduce y velocity by random amount
-      velocity[i].y = velocity[i].y * -.2; 
-      velocity[i].x *= .5;
-      col[i] = color(121,212,255);
-      if(ball[i].x>500 && ball[i].z > 0){
-        velocity[i].z = 0;
-      } else {
-          velocity[i].z *= .5;
-      }
-      numBounces[i]++;
-    }
-    //Hits top car
-    if (ball[i].y>530 && ball[i].x>750 && ball[i].x<930 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * 0; 
-      velocity[i].x *= .05;
-      velocity[i].z *= .05;
-      numBounces[i]++;
-      col[i] = color(121,212,255);
-    }
-    //Hits Hood
-    if (ball[i].y>600 && ball[i].x>580 && ball[i].x<750 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * 0; 
-      velocity[i].x *= .05;
-      velocity[i].z *= .05;
-      numBounces[i]++;
-      col[i] = color(121,212,255);
-    }
-    //Hits Trunk
-    if (ball[i].y>610 && ball[i].x>930 && ball[i].x<1000 && ball[i].z < 300 && ball[i].z > 100){
-      velocity[i].y = velocity[i].y * -.01; 
-      velocity[i].x *= .05;
-      velocity[i].z *= .05;
-      numBounces[i]++;
-      col[i] = color(121,212,255);
-    }
-  }
-  float endPhysics = millis();
-
+  computePhysics(.9);
   drawScene();
-  float endFrame = millis();
-    String runtimeReport = "Frame: "+str(endFrame-startFrame)+"ms,"+
-        " Physics: "+ str(endPhysics-startFrame)+"ms,"+
+    String runtimeReport = "Number of Particles: "+str(numParticles)+
         " FPS: "+ str(round(frameRate)) +"\n";
   surface.setTitle(projectTitle+ "  -  " +runtimeReport);
   print(runtimeReport);

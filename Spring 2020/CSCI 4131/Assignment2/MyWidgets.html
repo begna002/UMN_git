@@ -50,25 +50,33 @@
       const input = document.querySelector('input');
       const result = document.getElementById('result');
       var meter = document.getElementById('meter');
-      var strength = 0
+      var strength = 0;
+      var letter = false;
+      var letterNum = false;
+      var specialChar = false;
+      var twoSpecialChar = false;
 
       input.addEventListener('input', updateValue);
       function updateValue(e){
         var val = e.target.value;
-        if (val.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)){
+        if (val.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/) && !letter){
           strength += 1;
+          letter=true;
         }
       //   // If it has numbers and characters, increase strength value.
-        if (val.match(/([a-zA-Z])/) && val.match(/([0-9])/)){
+        if (val.match(/([a-zA-Z])/) && val.match(/([0-9])/) && !letterNum){
           strength += 1;
+          letterNum=true;
         }
       //   // If it has one special character, increase strength value.
-        if (val.match(/([!,%,&,@,#,$,^,*,?,_,~])/)){
+        if (val.match(/([!,%,&,@,#,$,^,*,?,_,~])/) && !specialChar){
           strength += 1;
+          specialChar=true;
         }
       //   // If it has two special characters, increase strength value.
-        if (val.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)){
+        if (val.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/) && !twoSpecialChar){
            strength += 1;
+           twoSpecialChar=true;
         }
 
         if(val.length > 7){
@@ -80,6 +88,10 @@
           meter.classList.remove("weak");
           meter.classList.remove("good");
           meter.classList.remove("strong");
+          etter = false;
+          letterNum = false;
+          specialChar = false;
+          twoSpecialChar = false;
         }
         else if(val.length < 6){
             result.textContent = "Too Short";

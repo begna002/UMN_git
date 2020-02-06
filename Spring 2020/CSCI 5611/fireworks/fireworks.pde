@@ -13,8 +13,8 @@ ArrayList<JSONObject> peopleCord = new ArrayList();
 ArrayList<Firework> f = new ArrayList();
 ArrayList<Trail> trail = new ArrayList();
 
-float[] fireworkPos = new float[7];
-int numParticles = 1000;
+float[] fireworkPos = new float[8];
+int numParticles = 5000;
 String projectTitle = "Fireworks";
 float gravity = .05;
 float zoom = 0; //Zoom magnitude
@@ -45,7 +45,7 @@ void setup() {
     people.get(i).scale(50);
     peopleCord.add(locations.getJSONObject(i));
   }
-  for(int i = 1; i < 6; i++){
+  for(int i = 1; i < 7; i++){
     fireworkPos[i] = fireworkPos[i-1] + 200;
   }
 
@@ -153,7 +153,7 @@ void keyPressed() {
       } else if (key == 'w') {
          translateY += 10;
       } else if (key == ' ' && !firing) {
-         f.add(new Firework(floor(random(0, 6)), random(-400, -200)));
+         f.add(new Firework(floor(random(0, 7)), random(-400, -200)));
          launch.play();
          firing = true;
       } 
@@ -209,9 +209,9 @@ void draw() {
     popMatrix();
   }
   //holes
-  for(int i = 0; i < 6; i++){
+  for(int i = 0; i < 7; i++){
     pushMatrix();
-    translate(fireworkPos[i], 700, -300); 
+    translate(fireworkPos[i]+translateX, 700+translateY, -300+zoom); 
     box(40, 20, 40);
     popMatrix();
   }

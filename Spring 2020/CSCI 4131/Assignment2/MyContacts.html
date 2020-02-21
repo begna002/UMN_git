@@ -4,6 +4,7 @@
       <title>My Contacts</title>
       <meta charset = "utf-8" />
       <link rel="stylesheet" type="text/css" href="style.css">
+      <script src = "ContactsScript.js"></script>
     </head>
     <body>
       <header>
@@ -16,7 +17,19 @@
         </div>
       </header>
       <h1><b><br>My Contacts</b></h1>
-      <img class = "images" id ="imageSet" src="gophers-mascot.png" alt="">
+      <table class="imgTable">
+        <tr class="imgRow">
+          <td class="imgElem">
+            <div>
+              <img class = "images" id ="imageSet" src="gophers-mascot.png" alt="Go Gophers">
+                <div id="Buttons">
+                  <button id="Start" onclick="startImg()">Start</button>
+                  <button id="Stop" onclick="int=clearInterval(int)">Stop</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
       <table id ="contactTable">
         <tr>
           <th>Name</th>
@@ -25,41 +38,89 @@
           <th>Phone Number</th>
           <th>Favorite Place</th>
         </tr>
-        <tr onmouseover="document.getElementById('imageSet').src='Moti.jpg';
-          document.getElementById('small1').src='Moti.jpg'; document.getElementById('small1').style.visibility='visible'"
+        <tr onmouseover="document.getElementById('small1').src='Moti.jpg'; document.getElementById('small1').style.visibility='visible'"
             onmouseout="document.getElementById('small1').src=''; document.getElementById('small1').style.visibility='hidden'">
           <td>Moti Begna <br><img class = "image1" id = "small1" src="stock" alt=" "> </td>
           <td>begna002@umn.edu</td>
-          <td>860 10th Ave SE <br> Minneapolis, MN 55414</td>
+          <td id="address1">The Radius at 15th <br>701 15th Ave SE<br> Minneapolis,MN 55414</td>
           <td>(952)200-9973</td>
           <td><a class="contact1" href="https://www.google.com/maps/place/University+Recreation+and+Wellness+Center/@44.9752593,-93.2317048,17z/data=!4m8!1m2!2m1!1suniversity+rec+center!3m4!1s0x52b32d19ce6a30a9:0xe269c6d3df824786!8m2!3d44.9754866!4d-93.2300849">University Recreation and Wellness Center</a></td>
-        <tr onmouseover="document.getElementById('imageSet').src='Yassin.jpg';
-          document.getElementById('small2').src='Yassin.jpg'; document.getElementById('small2').style.visibility='visible'"
+        <tr onmouseover="document.getElementById('small2').src='Yassin.jpg'; document.getElementById('small2').style.visibility='visible'"
             onmouseout="document.getElementById('small2').src=''; document.getElementById('small2').style.visibility='hidden'">
           <td>Yassin Abasher <br><img class = "image2" id = "small2" src="stock" alt=" "> </td>
           <td>Yassin.Abasher@gmail.com</td>
-          <td>860 10th Ave SE <br> Minneapolis, MN 55414</td>
+          <td id="address2">Classic City Apt<br> 860 10th Ave SE<br> Minneapolis, MN 55414</td>
           <td>(952)794-5866</td>
           <td><a class="contact2" href="https://www.google.com/maps?q=walter+library&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjVo8a-paLnAhWOU80KHQjBDR0Q_AUoAXoECA4QAw">Walter Library</a></td>
         </tr>
-        <tr onmouseover="document.getElementById('imageSet').src='Benny.jpg';
-          document.getElementById('small3').src='Benny.jpg'; document.getElementById('small3').style.visibility='visible'"
+        <tr onmouseover="document.getElementById('small3').src='Benny.jpg'; document.getElementById('small3').style.visibility='visible'"
             onmouseout="document.getElementById('small3').src=''; document.getElementById('small3').style.visibility='hidden'">
           <td>Benny Young <br><img class = "image3" id = "small3" src="stock" alt=" "> </td>
           <td>Benny.Young@gmail.com</td>
-          <td>860 10th Ave SE <br> Minneapolis, MN 55414</td>
+          <td id="address3">Classic City Apt<br> 860 10th Ave S<br> Minneapolis, MN 55414</td>
           <td>(651)599-7869</td>
           <td><a class="contact3" href="https://www.google.com/maps/place/Green+Mill+Restaurant+%26+Bar/@44.9773435,-93.2731689,12z/data=!4m8!1m2!2m1!1sgreenmill!3m4!1s0x0:0x86051c0dfb1f50b1!8m2!3d45.0127839!4d-93.1700492">Green Mill Restaurant & Bar</a></td>
         </tr>
-        <tr onmouseover="document.getElementById('imageSet').src='Brandon.jpg';
-          document.getElementById('small4').src='Brandon.jpg'; document.getElementById('small4').style.visibility='visible'"
+        <tr onmouseover="document.getElementById('small4').src='Brandon.jpg'; document.getElementById('small4').style.visibility='visible'"
             onmouseout="document.getElementById('small4').src=''; document.getElementById('small4').style.visibility='hidden'">
           <td>Brandon Kisch <br><img class = "image4" id = "small4" src="stock" alt=" "> </td>
           <td>Brandon.Kisch@gmail.com</td>
-          <td>2508 Delaware St SE <br> Minneapolis, MN 55414</td>
+          <td id="address4">The Quad on Delaware<br> 2508 Delaware St SE <br>Minneapolis, MN 55414</td>
           <td>(612)898-2531</td>
           <td><a class="contact4" href="https://www.google.com/maps/place/University+Recreation+and+Wellness+Center/@44.9752593,-93.2317048,17z/data=!4m8!1m2!2m1!1suniversity+rec+center!3m4!1s0x52b32d19ce6a30a9:0xe269c6d3df824786!8m2!3d44.9754866!4d-93.2300849">University Recreation and Wellness Center</a></td>
         </tr>
       </table>
+      <table class = "bottomContainer">
+        <tr class ="searchRow">
+          <td rowspan ="2" id="dirElem"><div id="directionsPanel">
+             Directions</div></td>
+          <td rowspan="2" id="map"></td>
+          <td id="searchElem"><img id ="searchLogo" src="search.png" alt="Search"></td>
+          <td id="searchForm"><form id="mapForm">
+            <p>
+              <label>Find: </label>
+               <select id = "myList" onchange="PlaceOption(this.value)" required>
+                 <option value="">None</option>
+                 <option value ="restaurant">Restaurant</option>
+                 <option value ="hospital">Hospital</option>
+                 <option value ="parking">Parking</option>
+                 <option value ="supermarket">Supermarket</option>
+                 <option value ="movie_theater">Movie Theatre</option>
+                 <option value ="library">Library</option>
+                 <option value ="airport">Airport</option>
+                 <option value ="other">Other</option>
+               </select>
+            </p>
+            <input id="otherOption" placeholder="Enter Other Place" disabled required/>
+            <p>
+              <label>in: </label>
+              <input id="radius" placeholder="0" pattern="[0-9]+" required/>
+              <label>meters </label>
+            </p>
+            <p id="search"><button class="search" type="button" id="Search" onclick="findNearby()">Search</button></p>
+
+          </form></td>
+            <tr id="routRow" class="routeRow">
+              <td id="searchElem2"><img id ="searchLogo2" src="direction.png" alt="Direction"></td>
+              <td><form id="dirForm">
+                <p>
+                  <label>From: </label>
+                  <input id="from" placeholder="Coffman Union" required/>
+                  <label>to </label>
+                </p>
+              <p>
+              <input id="to" placeholder="TCF Stadium" required/>
+              <label>by </label>
+              </p>
+              <label><input type="radio" name="dirType" value="DRIVING" required>DRIVE</label>
+              <label><input type="radio" name="dirType" value="WALKING" >WALK</label>
+              <p><label><input type="radio" name="dirType" value="TRANSIT">TRANSIT</label><p>
+              <p id="go"><button class="go" type="button" id="Go" onclick="directions()">Go</button></p>
+            </form></td>
+            </tr>
+          </table>
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDfPeEScIJm4H7kdo2jqqAQIOJdOzE_tE&callback=initMap&libraries=places" async defer>
+      </script>
     </body>
   </html>

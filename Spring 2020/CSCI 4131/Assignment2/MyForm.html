@@ -4,6 +4,7 @@
       <title>My Form</title>
       <meta charset = "utf-8" />
       <link rel="stylesheet" type="text/css" href="style.css">
+      <script src = "FormScript.js"></script>
     </head>
     <body>
       <header>
@@ -16,11 +17,12 @@
         </div>
       </header>
       <h1 id="formHeading"><b>Add a Contact</b></h1>
-      <form method="get" action="http://www-users.cselabs.umn.edu/~liux4189/echo.php">
+      <form>
         <table id="formTable">
           <tr class="formRow">
             <td>Name<br></td>
             <td><input id="name" name="name" type="text" pattern="[A-Za-z0-9 ]+" placeholder="John Smith" size="25" maxlength="30" required /></td>
+            <td rowspan="6" id="map2">
           </tr>
           <tr class="formRow">
             <td>Email<br></td>
@@ -44,5 +46,8 @@
           </tr>
         </table>
       </form>
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDfPeEScIJm4H7kdo2jqqAQIOJdOzE_tE&callback=initMap&libraries=places" async defer>
+      </script>
     </body>
   </html>

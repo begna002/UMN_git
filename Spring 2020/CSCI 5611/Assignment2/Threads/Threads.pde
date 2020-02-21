@@ -18,6 +18,7 @@ ArrayList<Strings> strings = new ArrayList();
 void setup() {
   size(1500, 1500, P3D);
   camera = new Camera();
+  frameRate(30);
   
   surface.setTitle("Strings");
   float stringX = -400;
@@ -164,7 +165,7 @@ void draw() {
   background(0,0,0);
   lights();
   camera.Update( 1.0/frameRate );
-  for (int i = 0; i < 10; i++){
+  for (int i = 0; i < 20; i++){
     update(1/(10.0*frameRate));
   }
   for(int j = 0; j < numStrings; j++){

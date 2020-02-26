@@ -20,9 +20,12 @@ boolean[] burningString = new boolean[31];
 boolean isBurning = false;
 boolean moveFire = false;
 int burnCounter = 0;
+int burnInc = 0;
 int burnMov = 1;
 ArrayList<Trail> trail = new ArrayList();
 boolean removeTrail = false;
+int createMovingSmoke = 0;
+boolean removeSmoke = false;
 
 
 
@@ -69,26 +72,33 @@ void setup() {
 }
 
 void burnCloth(){
-  if(burnCounter%10 == 0){
+  if(burnCounter%(10+burnInc) == 0){
     for(int i = 0; i < numStrings; i++){
       //if (burningString[i]){
            for(int j = 0; j < numPoints; j++){
         if(burnSeg[i][j] == true){
           if( j > 0){
             if(burnSeg[i][j-1] == false & moveFire){
-               trail.add(new Trail(strings.get(i).point.get(j).x, strings.get(i).point.get(j).y, strings.get(i).point.get(j).z, strings.get(i).vel.get(j), i, j));
+               trail.add(new Trail(strings.get(i).point.get(j).x, strings.get(i).point.get(j).y, strings.get(i).point.get(j).z, strings.get(i).vel.get(j), i, j, false));
             }
             burnSeg[i][j-1] = true;
           }
            if( i < 30){
              if(burnSeg[i+1][j] == false & moveFire){
-               trail.add(new Trail(strings.get(i).point.get(j).x, strings.get(i).point.get(j).y, strings.get(i).point.get(j).z, strings.get(i).vel.get(j), i, j));
+               trail.add(new Trail(strings.get(i).point.get(j).x, strings.get(i).point.get(j).y, strings.get(i).point.get(j).z, strings.get(i).vel.get(j), i, j, false));
               }
             burnSeg[i+1][j] = true;
           }
         }
       }
       //}
+    }
+    if(createMovingSmoke%5 == 0 && !removeSmoke){
+      for(int i = 0; i < 10; i++){
+        int ind = floor(random(0,trail.size()));
+        trail.add(new Trail(trail.get(ind).smokePosition.x, trail.get(ind).smokePosition.y, trail.get(ind).smokePosition.z, strings.get(0).vel.get(0), 0, 0, true));
+      }
+      
     }
   }
   if(burnMov < numStrings){
@@ -100,28 +110,39 @@ void burnCloth(){
 
 
 void firePhysics(Trail trl){
-  trl.smoke.x = strings.get(trl.i).point.get(trl.j-trl.pos).x;
-  trl.smoke.y = strings.get(trl.i).point.get(trl.j-trl.pos).y+10;
-  trl.smoke.z = strings.get(trl.i).point.get(trl.j-trl.pos).z+30;
-  if(burnCounter%10 == 0 & trl.pos<numPoints){
-    trl.pos+=1;
+  if(!trl.isMovingSmoke){
+    trl.smoke.x = strings.get(trl.i).point.get(trl.j-trl.pos).x;
+    trl.smoke.y = strings.get(trl.i).point.get(trl.j-trl.pos).y+10;
+    trl.smoke.z = strings.get(trl.i).point.get(trl.j-trl.pos).z+30;
+    if(burnCounter%(10+burnInc) == 0 & trl.pos<numPoints){
+      trl.pos+=1;
+    }
+    if(trl.pos >= numPoints -1){
+      trl.pos = numPoints-1;
+    }
   }
-  if(trl.pos >= numPoints -1){
-    trl.pos = numPoints-1;
-  }
+  
 }
 
 void smokePhysics(Trail trl){
-  if(trl.pos >= numPoints -1){
-    trl.smokePosition.x += trl.velocity.x;
-    trl.smokePosition.y += trl.velocity.y;
-    trl.smokePosition.z += trl.velocity.z;
-    trl.smokeLife -= random(5, 10);
-  } else {
-     trl.smokePosition.x = strings.get(trl.i).point.get(trl.j-trl.pos).x;
-     trl.smokePosition.y = strings.get(trl.i).point.get(trl.j-trl.pos).y-30 + trl.velocity.y;
-     trl.smokePosition.z = strings.get(trl.i).point.get(trl.j-trl.pos).z+30;
+  if(trl.isMovingSmoke){
+      trl.smokePosition.x += trl.velocity.x;
+      trl.smokePosition.y += trl.velocity.y;
+      trl.smokePosition.z += trl.velocity.z;
+      trl.smokeLife -= random(5, 10);
+  } else{
+    if(trl.pos >= numPoints -1){
+      trl.smokePosition.x += trl.velocity.x;
+      trl.smokePosition.y += trl.velocity.y;
+      trl.smokePosition.z += trl.velocity.z;
+      trl.smokeLife -= random(5, 10);
+    } else {
+       trl.smokePosition.x = strings.get(trl.i).point.get(trl.j-trl.pos).x;
+       trl.smokePosition.y = strings.get(trl.i).point.get(trl.j-trl.pos).y-30 + trl.velocity.y;
+       trl.smokePosition.z = strings.get(trl.i).point.get(trl.j-trl.pos).z+30;
+    }
   }
+
  
 }
 
@@ -140,11 +161,14 @@ void drawTrail(Trail trl){
       strokeWeight(10);
       int[] offsetDir = {-1, 1};
       int life = 3;
-      for(int i = 0; i < 30; i++){
-        stroke(trl.col, trl.life-life);
-        point(trl.smoke.x+trl.offSet*offsetDir[floor(random(2))]+ random(5, 50)*offsetDir[floor(random(2))], trl.smoke.y+trl.offSet*offsetDir[floor(random(2))]-random(20, 200), trl.smoke.z+trl.offSet*offsetDir[floor(random(2))]);
-        life+=1;
+      if(!trl.isMovingSmoke){
+        for(int i = 0; i < 30; i++){
+          stroke(trl.col, trl.life-life);
+          point(trl.smoke.x+trl.offSet*offsetDir[floor(random(2))]+ random(5, 50)*offsetDir[floor(random(2))], trl.smoke.y+trl.offSet*offsetDir[floor(random(2))]-random(20, 200), trl.smoke.z+trl.offSet*offsetDir[floor(random(2))]);
+          life+=1;
+        }
       }
+  
       //stroke(trl.col, trl.life);
       //point(trl.smoke.x+trl.offSet, trl.smoke.y+trl.offSet-30, trl.smoke.z+trl.offSet);
       //stroke(trl.col, trl.life-3); 
@@ -277,14 +301,24 @@ void keyPressed()
     else if (key == 'x') {
       addWind = -20;
     } 
-    else if (key == 'l') {
+    else if (key == 'l') { //Start Burn
       burnSeg[0][numPoints-1] = true;
       burningString[0] = true;
       isBurning = true;
       moveFire = true;
     } 
-    else if (key == 'u') {
-      println(camera.position.x + " " + camera.position.y + " " + camera.position.z + " " + str(camera.theta) + str(camera.phi));
+    else if (key == 'i') { //Increase Burn Rate
+      if (isBurning){
+        burnInc -= 1;
+        if (burnInc <= -10){
+          burnInc = 1;
+        }
+      }
+    } 
+    else if (key == 'o') { //Decrease Burn Rate
+      if (isBurning){
+        burnInc += 1;
+      }
     } 
    }
 }
@@ -410,17 +444,24 @@ void draw() {
          moveFire = false;
 
      } 
-     if (trail.get(i).isSmokeOn == true){
-       firePhysics(trail.get(i));
-       smokePhysics(trail.get(i));
-       drawTrail(trail.get(i));
-       if (removeTrail) {
-         trail.get(i).life = 0;
-         if(trail.get(i).smokeLife < 0){
-           trail.remove(i);
+     if (trail.get(i).isMovingSmoke == true && trail.get(i).smokeLife < 3){
+       trail.remove(i);
+     } 
+     if(i >= 0 && i < trail.size()){
+       if (trail.get(i).isSmokeOn == true){
+         firePhysics(trail.get(i));
+         smokePhysics(trail.get(i));
+         drawTrail(trail.get(i));
+         if (removeTrail) {
+           trail.get(i).life = 0;
+           if(trail.get(i).smokeLife < 0){
+             trail.remove(i);
+             removeSmoke = true;
+           }
          }
        }
      }
+
    }
   //pushMatrix();
   //fill(200,0,0);
@@ -431,6 +472,7 @@ void draw() {
   if(isBurning){
         lights();
     burnCounter++;
+    createMovingSmoke++;
     burnCloth();
   }
   
@@ -485,18 +527,25 @@ class Trail{
   int i;
   int j;
   int pos = 0;
+  boolean isMovingSmoke;
   
-  Trail(float x, float y, float z, PVector vel, int iIn, int jIn){
+  
+  Trail(float x, float y, float z, PVector vel, int iIn, int jIn, boolean movingSmoke){
     position = new PVector(x, y, z);
     smokePosition = new PVector(x, y, z);
     velocity = new PVector(0, 0, 0); 
-    life = 300;
+    isMovingSmoke = movingSmoke;
+    if(movingSmoke){
+      life = 0;
+    } else {
+      life = 300;
+    }
     lifeF = 300;
     smokeLife = 300;
     isSmokeOn = false;
     col = color(255, random(180, 255), 0);
     i = iIn;
     j = jIn;
-    velocity = new PVector(random(-20, 20), random(-20, -60), random(-20, 20));
+    velocity = new PVector(random(-20, 20), random(-20, -60), random(-10, 10));
   }
 }

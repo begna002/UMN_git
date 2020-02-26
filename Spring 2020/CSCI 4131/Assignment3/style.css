@@ -1,0 +1,275 @@
+body{
+  background-color: #055a8c;
+}
+h1{
+  color:white;
+}
+table, th, td {
+  border: .5px solid gray;
+  border-collapse: collapse;
+}
+#contactTable{
+  float:left;
+}
+th, td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+  background-color: #0c3953;
+  color: white;
+  text-shadow: none;
+}
+tr:nth-child(even) {
+  background-color: #bcd9ea;
+}
+tr:nth-child(odd) {
+  background-color: #e4f0f6;
+}
+tr:hover{
+  background-color: #026aa7;
+  color: white;
+}
+nav{
+  width: 100%;
+  height: 47px;
+  border-radius: 10px;
+}
+#navCo{
+  background-image: linear-gradient(to right, #0c3953, #79c2ec);
+}
+#small1, #small2, #small3, #small4{
+  visibility:hidden;
+}
+a.current, a.nav1, a.nav2{
+  display: inline-block;
+  text-decoration:none;
+  color:white;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+a.current:hover, a.nav1:hover, a.nav2:hover{
+  background-color:#026aa7;
+}
+a.current:link, a.current:visited {
+  background-color:#0079bf;
+}
+a.contact1:hover, a.contact2:hover, a.contact3:hover, a.contact4:hover{
+  text-decoration: underline;
+}
+a{
+  text-decoration:none;
+  color:#0c3953;
+  font-weight: bold;
+}
+
+.images{
+  padding: 0px 50px;
+  width:322px;
+}
+.image1, .image2, .image3, .image4{
+  width:30px;
+}
+#Buttons{
+  text-align:center;
+}
+.imgTable{
+  float:right;
+  border-style:none;
+}
+tr.imgRow{
+  background-color: #055a8c;
+  padding: 50px;
+  border-style:none;
+}
+td.imgElem{
+  border-style:none;
+}
+
+.bottomContainer{
+  width: 1500px;
+  float:right;
+  text-align:center;
+
+}
+tr.searchRow, tr.routeRow, tr.searchRow:hover, tr.routeRow:hover{
+  background-color: #bcd9ea;
+  color:black;
+}
+#dirElem{
+  background-color: #0c3953;
+  bottom:0;
+  top:0;
+  /* visibility: hidden; */
+}
+#directionsPanel{
+   width:100%;
+   max-height:450px;
+   overflow:auto;
+   background-color: #0c3953;
+   color:white;
+
+}
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 50%;  /* The width is the width of the web page */
+  text-align:center;
+ }
+
+#map2{
+  height: 300px;  /* The height is 400 pixels */
+  width: 50%;  /* The width is the width of the web page */
+  text-align:right;
+}
+
+#mapContainer{
+  margin-left:auto;
+  margin-right:auto;
+}
+#mapForm, .mapFormTable{
+  margin-left:auto;
+  margin-right:auto;
+  display: inline-block;
+}
+.mapFormTable{
+  border-style:none;
+  border-collapse:collapse;
+}
+
+#formHeading, .clear, .submit{
+   text-align:center;
+}
+#searchElem, #searchElem2{
+  width: 10%;  /* The width is the width of the web page */
+  text-align:center;
+}
+#searchForm{
+  width: 10%;
+}
+
+#formTable{
+  margin-left:auto;
+  margin-right:auto;
+}
+button.search:hover{
+  background-color: #666666;
+}
+button.go:hover{
+  background-color: #666666;
+}
+
+#searchLogo, #searchLogo2{
+  max-width:40%;
+  max-height:40%;
+}
+#search, #go{
+  padding: 0px 50px;
+}
+
+tr.formRow{
+  background-color: #bcd9ea;
+  padding: 50px;
+}
+tr.formRow:hover{
+  background-color: #bcd9ea;
+  color: black;
+}
+input{
+  border-radius: 5px;
+}
+input.submit{
+  background-color: #2eb82e;
+  color: white;
+  width:200px;
+  height:30px;
+}
+input.submit:hover{
+  background-color: #1f7a1f;
+}
+input.clear{
+  background-color: #999999;
+  color:white;
+  width:200px;
+  height:30px;
+}
+input.clear:hover{
+  background-color: #666666;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  grid-template-columns: auto auto;
+  padding: 0px 30px;
+}
+.grid-item {
+  text-align: left;
+}
+
+#container {
+width: 600px;
+background-color:#e4f0f6;
+padding: 20px;
+border-radius: 5px;
+height: 200px;
+border: 2px solid gray;
+}
+#header {
+text-align: center;
+color:white;
+background-color: #0c3953;
+border-radius: 5px;
+margin: -39px -20px 10px -20px;
+}
+h2{
+padding-top: 10px;
+}
+#content {
+margin-left: 57px;
+margin-top: 40px;
+}
+#register label{
+margin-right:5px;
+}
+#meterBack {
+border: 1px solid #d5d9da;
+box-shadow: 0 0 9px #0E34F5 inset;
+width: 400px;
+font-size: 1em;
+height: 30px;
+border-radius: 10px;
+background-color:#d3d3d3;
+}
+ .short{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 100px;
+   height: 30px;
+   background-color:#FF0000;
+   border-radius: 10px;
+}
+ .weak{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 200px;
+   height: 30px;
+   background-color:#FFA500;
+   border-radius: 10px;
+}
+ .good{
+   box-shadow: 0 0 9px #0E34F5 inset;
+   width: 300px;
+   height: 30px;
+   background-color:#2D98F3;
+   border-radius: 10px;
+}
+.strong{
+  box-shadow: 0 0 9px #0E34F5 inset;
+  width: 400px;
+  height: 30px;
+  background-color:#32cd32;
+  border-radius: 10px;
+}
+
+.youtubeWidget{
+  border: 0px;
+}

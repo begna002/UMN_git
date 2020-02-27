@@ -10,8 +10,7 @@ int numStrings = 31;
 Camera camera;
 int showSpheres = -1;
 int addWind;
-int sphereZ = 0;
-PVector ball = new PVector(-100, 1300, -2000);
+PVector ball = new PVector(-100, 3000, -2000);
 int ballRad = 500;
 String projectTitle = "Cloth";
 PImage texture;
@@ -26,19 +25,31 @@ ArrayList<Trail> trail = new ArrayList();
 boolean removeTrail = false;
 int createMovingSmoke = 0;
 boolean removeSmoke = false;
+boolean setUpBall = false;
 
 
 
 ArrayList<Strings> strings = new ArrayList();
 
-
-void setup() {
-  size(1500, 1500, P3D);
+void init(){
   camera = new Camera();
-  frameRate(30);
   texture = loadImage("cloth.jpg");
+  showSpheres = -1;
+  ball.x = 200; ball.y = 2500; ball.z = -2000;
+  ballRad = 500;
+  burnSeg = new boolean[31][31];
+  burningString = new boolean[31];
+  isBurning = false;
+  moveFire = false;
+  burnCounter = 0;
+  burnInc = 0;
+  burnMov = 1;
+  strings = new ArrayList();
+  trail = new ArrayList();
+  removeTrail = false;
+  createMovingSmoke = 0;
+  removeSmoke = false;
   
-  surface.setTitle("Strings");
   float stringX = -400;
   float windX = 0;
   float windZ = 0;
@@ -57,9 +68,6 @@ void setup() {
       float windx = random(0, 75);
       float windy = random(0, 200);
       float windz = random(0, 200);
-      //if(j > numStrings/2 - 10 && j < numStrings/2 + 10){
-      //  windz = random(100, 300);
-      //}
 
       strings.get(j).vel.add(new PVector(100+windx, 100+windy, 100+windz));
       strings.get(j).accel.add(new PVector(0, 0, 0));
@@ -69,6 +77,14 @@ void setup() {
     }
     stringX += 50;
   }
+}
+
+void setup() {
+  size(1500, 1500, P3D);
+  frameRate(30);
+    surface.setTitle("Strings");
+  init();
+  
 }
 
 void burnCloth(){
@@ -93,7 +109,7 @@ void burnCloth(){
       }
       //}
     }
-    if(createMovingSmoke%5 == 0 && !removeSmoke){
+    if(createMovingSmoke%2 == 0 && !removeSmoke){
       for(int i = 0; i < 10; i++){
         int ind = floor(random(0,trail.size()));
         trail.add(new Trail(trail.get(ind).smokePosition.x, trail.get(ind).smokePosition.y, trail.get(ind).smokePosition.z, strings.get(0).vel.get(0), 0, 0, true));
@@ -125,7 +141,7 @@ void firePhysics(Trail trl){
 }
 
 void smokePhysics(Trail trl){
-  if(trl.isMovingSmoke){
+  if(trl.isMovingSmoke){//Dispersing smoke objs
       trl.smokePosition.x += trl.velocity.x;
       trl.smokePosition.y += trl.velocity.y;
       trl.smokePosition.z += trl.velocity.z;
@@ -148,13 +164,6 @@ void smokePhysics(Trail trl){
 
 void drawTrail(Trail trl){
     if(!trl.isSmokeOn || trl.lifeF > 10){
-      //strokeWeight(20);
-      //stroke(trl.col, trl.life);
-      //point(trl.position.x+random(-10, 10), trl.position.y+random(10, 20), trl.position.z+random(-10, 10));
-      //stroke(trl.col, trl.life-100);
-      //point(trl.position.x+random(-10, 10), trl.position.y+random(10, 20), trl.position.z+random(-10, 10));
-      //stroke(trl.col, trl.life-50);
-      //point(trl.position.x+random(-10, 10), trl.position.y+random(10, 20), trl.position.z+random(-10, 10));
       trl.lifeF-=10;
     } 
     if (trl.isSmokeOn) {
@@ -168,17 +177,7 @@ void drawTrail(Trail trl){
           life+=1;
         }
       }
-  
-      //stroke(trl.col, trl.life);
-      //point(trl.smoke.x+trl.offSet, trl.smoke.y+trl.offSet-30, trl.smoke.z+trl.offSet);
-      //stroke(trl.col, trl.life-3); 
-      //point(trl.smoke.x+trl.offSet, trl.smoke.y+trl.offSet-30, trl.smoke.z-trl.offSet);
-      //stroke(trl.col, trl.life-15);
-      //point(trl.smoke.x-trl.offSet, trl.smoke.y+trl.offSet-30, trl.smoke.z-trl.offSet);
-      //stroke(trl.col, trl.life-18);
-      //point(trl.smoke.x-trl.offSet, trl.smoke.y-trl.offSet-30, trl.smoke.z+trl.offSet);
-      //stroke(trl.col, trl.life-21);
-      //point(trl.smoke.x-trl.offSet, trl.smoke.y-trl.offSet-30, trl.smoke.z-trl.offSet);
+
       life = -15;
       for(int i = 0; i < 20; i++){
         stroke(trl.smokeCol, trl.smokeLife-15);
@@ -186,15 +185,6 @@ void drawTrail(Trail trl){
         point(trl.smokePosition.x+trl.offSet*offsetDir[floor(random(2))], trl.smokePosition.y+trl.offSet*offsetDir[floor(random(2))]-random(50, 200), trl.smokePosition.z+trl.offSet*offsetDir[floor(random(2))]);
         life-=2;
       }
-      //stroke(trl.smokeCol, trl.smokeLife-15);
-      //point(trl.smokePosition.x-trl.offSet, trl.smokePosition.y+trl.offSet-20, trl.smokePosition.z-trl.offSet);
-      //stroke(trl.smokeCol, trl.smokeLife-18);
-      //point(trl.smokePosition.x-trl.offSet, trl.smokePosition.y-trl.offSet-20, trl.smokePosition.z+trl.offSet);
-      //stroke(trl.smokeCol, trl.smokeLife-21);
-      //point(trl.smokePosition.x-trl.offSet, trl.smokePosition.y-trl.offSet-20, trl.smokePosition.z-trl.offSet);
-      
-      //trl.life-=.5;
-      //trl.smokeLife -= 5;
     }
 } 
 
@@ -242,6 +232,7 @@ void update(float dt){
           str.vel.get(i).x += ((.5*str.force.get(i).x - .5*str.force.get(i+1).x)/mass)*dt;
           str.vel.get(i).z += ((.5*str.force.get(i).z - .5*str.force.get(i+1).z)/mass)*dt+addWind;
           str.vel.get(i).y += (grav + (.5*str.force.get(i).y - .5*str.force.get(i+1).y)/mass)*dt;
+          
         }
   
 
@@ -301,6 +292,12 @@ void keyPressed()
     else if (key == 'x') {
       addWind = -20;
     } 
+    else if (key == 'c') {
+      init();
+    } 
+    else if (key == 'u') {
+      setUpBall = true;
+    } 
     else if (key == 'l') { //Start Burn
       burnSeg[0][numPoints-1] = true;
       burningString[0] = true;
@@ -346,7 +343,7 @@ void draw() {
       sphereMovement();
   }
   camera.Update( 1.0/frameRate );
-  for (int i = 0; i < 35; i++){
+  for (int i = 0; i < 50; i++){
     update(1/(10.0*frameRate));
   }
   for(int j = 0; j < numStrings; j++){
@@ -356,29 +353,14 @@ void draw() {
       stroke(200);
       float distance = (strings.get(j).point.get(i)).dist(ball);
       if(distance < ballRad+radius+.9) {
-        //strings.get(j).vel.get(i).x -= vNorm.x - .7*vNorm.x;
-        //strings.get(j).vel.get(i).y -= vNorm.y - .7*vNorm.y;
-        //strings.get(j).vel.get(i).z -= vNorm.z - .7*vNorm.z;
-
-
-        //PVector normal = new PVector((ball.x-strings.get(j).vel.get(i).x)*-1, (ball.y-strings.get(j).vel.get(i).y)*-1, (ball.z-strings.get(j).vel.get(i).z)*-1);
-        //normal.normalize();
-  
-
-        //PVector bounce = new PVector();
-        //normal.mult(normal.dot(strings.get(j).vel.get(i)));
-        //bounce.x = normal.x*(strings.get(j).vel.get(i).x*normal.x + strings.get(j).vel.get(i).y*normal.y+strings.get(j).vel.get(i).z*normal.z);
-        //bounce.y = normal.y*(strings.get(j).vel.get(i).x*normal.x + strings.get(j).vel.get(i).y*normal.y+strings.get(j).vel.get(i).z*normal.z);
-        //bounce.z = normal.z*(strings.get(j).vel.get(i).x*normal.x + strings.get(j).vel.get(i).y*normal.y+strings.get(j).vel.get(i).z*normal.z);
-
-        //strings.get(j).vel.get(i).x -= 1.5*bounce.x;
-        //strings.get(j).vel.get(i).y -= 1.5*bounce.y;
-        //strings.get(j).vel.get(i).z -= 1.5*bounce.z;
-        
-        //strings.get(j).point.get(i).x += normal.x*(.1+ballRad-distance);
-        //strings.get(j).point.get(i).y += normal.y*(.1+ballRad-distance);
-        //strings.get(j).point.get(i).z += normal.z*(.1+ballRad-distance);      
-
+       PVector dist = new PVector(strings.get(j).point.get(i).x - ball.x, strings.get(j).point.get(i).y - ball.y, strings.get(j).point.get(i).z - ball.z).normalize();
+       strings.get(j).point.get(i).x = ball.x + dist.x*ballRad*1.15;
+       strings.get(j).point.get(i).y = ball.y + dist.y*ballRad*1.15;
+       strings.get(j).point.get(i).z = ball.z + dist.z*ballRad*1.15;
+       
+       strings.get(j).vel.get(i).x *= -.0000001;
+       strings.get(j).vel.get(i).y *= -.0000001;
+       strings.get(j).vel.get(i).z *= -.0000001;
 
       }
       noStroke();
@@ -394,40 +376,109 @@ void draw() {
         sphere(radius);
       }
       popMatrix();
+      for(int m = 0; m < trail.size(); m++){//string point and smoke collision detection
+         float distanceS = (strings.get(j).point.get(i)).dist(trail.get(m).smokePosition);
+         if (distanceS < 3){
+           trail.get(m).velocity.z *= -1;
+           }
+         
+      }
     }
   }
-  //directionalLight(255, 255, 255, -1, 0, -1); 
+  //if(setUpBall){
+  //    directionalLight(255, 255, 255, 0, 0, -1); 
+  //}
   for(int k = 0; k < numStrings - 1; k++){
         for(int l = 0; l < numPoints - 1; l++){
-          pushMatrix();
-          beginShape();
-          noStroke();
-          if (burnSeg[k][l]){
-            fill(0, 0, 0);
-          } else {
-            texture(texture);
-          }
-          vertex(strings.get(k).point.get(l).x,strings.get(k).point.get(l).y, strings.get(k).point.get(l).z, 0, 0);
-          vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
-          vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
-          endShape();
-          popMatrix();
-          pushMatrix();
-          beginShape();
-          noStroke();
-          if (burnSeg[k][l]){
-            fill(0, 0, 0);
-            if(l == 0){
-              removeTrail = true;
+          if(showSpheres == -1){
+            pushMatrix();
+            beginShape();
+            noStroke();
+            if (burnSeg[k][l]){
+              fill(0, 0, 0);
+            } else {
+              texture(texture);
             }
-          } else {
-            texture(texture);
+            if(!setUpBall){
+              vertex(strings.get(k).point.get(l).x,strings.get(k).point.get(l).y, strings.get(k).point.get(l).z, 0, 0);
+              vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+              vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+              
+              endShape();
+              popMatrix();
+              pushMatrix();
+              beginShape();
+              noStroke();
+              if (burnSeg[k][l]){
+                fill(0, 0, 0);
+                if(l == 0){
+                  removeTrail = true;
+                }
+              } else {
+                texture(texture);
+              }
+              vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+              vertex(strings.get(k+1).point.get(l+1).x,strings.get(k+1).point.get(l+1).y, strings.get(k+1).point.get(l+1).z, texture.width, texture.height);
+              vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+              endShape();
+              popMatrix();
+              
+            } else {
+              if ((strings.get(k).point.get(l)).dist(strings.get(k+1).point.get(l)) > 50){
+              PVector dist = new PVector(strings.get(k+1).point.get(l).x - strings.get(k).point.get(l).x, strings.get(k+1).point.get(l).y - strings.get(k).point.get(l).y, strings.get(k+1).point.get(l).z - strings.get(k).point.get(l).z);
+      
+              strings.get(k+1).point.get(l).x = strings.get(k).point.get(l).x + dist.x*.9;
+              strings.get(k+1).point.get(l).y = strings.get(k).point.get(l).y + dist.y*.9;
+              strings.get(k+1).point.get(l).z = strings.get(k).point.get(l).z + dist.z*.9;
+
+              
+              vertex(strings.get(k).point.get(l).x,strings.get(k).point.get(l).y, strings.get(k).point.get(l).z, 0, 0);
+              vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+              vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+            } else {
+               vertex(strings.get(k).point.get(l).x,strings.get(k).point.get(l).y, strings.get(k).point.get(l).z, 0, 0);
+               vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+               vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+            }
+            endShape();
+            popMatrix();
+            
+            pushMatrix();
+            beginShape();
+            noStroke();
+            if (burnSeg[k][l]){
+              fill(0, 0, 0);
+              if(l == 0){
+                removeTrail = true;
+              }
+            } else {
+              texture(texture);
+            }
+            if((strings.get(k).point.get(l+1)).dist(strings.get(k+1).point.get(l+1)) > 50){
+              PVector dist = new PVector(strings.get(k+1).point.get(l+1).x - strings.get(k).point.get(l+1).x, strings.get(k+1).point.get(l+1).y - strings.get(k).point.get(l+1).y, strings.get(k+1).point.get(l+1).z - strings.get(k).point.get(l+1).z);
+              
+              strings.get(k+1).point.get(l+1).x = strings.get(k).point.get(l+1).x + dist.x*.9;
+              strings.get(k+1).point.get(l+1).y = strings.get(k).point.get(l+1).y + dist.y*.9;
+              strings.get(k+1).point.get(l+1).z = strings.get(k).point.get(l+1).z + dist.z*.9;
+              
+              vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+              vertex(strings.get(k+1).point.get(l+1).x,strings.get(k+1).point.get(l+1).y, strings.get(k+1).point.get(l+1).z, texture.width, texture.height);
+              vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+            } else {
+              vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
+              vertex(strings.get(k+1).point.get(l+1).x,strings.get(k+1).point.get(l+1).y, strings.get(k+1).point.get(l+1).z, texture.width, texture.height);
+              vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
+            }
+           
+            endShape();
+            popMatrix();
+            }
+            
+             
+        
+          
+        
           }
-          vertex(strings.get(k).point.get(l+1).x,strings.get(k).point.get(l+1).y, strings.get(k).point.get(l+1).z, texture.width, 0);
-          vertex(strings.get(k+1).point.get(l+1).x,strings.get(k+1).point.get(l+1).y, strings.get(k+1).point.get(l+1).z, texture.width, texture.height);
-          vertex(strings.get(k+1).point.get(l).x,strings.get(k+1).point.get(l).y, strings.get(k+1).point.get(l).z, 0, texture.height);
-          endShape();
-          popMatrix();
         
         }
       }
@@ -463,17 +514,18 @@ void draw() {
      }
 
    }
-  //pushMatrix();
-  //fill(200,0,0);
-  //translate(ball.x, ball.y, ball.z);
-  //noStroke();
-  //sphere(ballRad);
-  //popMatrix();
   if(isBurning){
-        lights();
+    lights();
     burnCounter++;
     createMovingSmoke++;
     burnCloth();
+  } else {
+    pushMatrix();
+    fill(200,0,0);
+    translate(ball.x, ball.y, ball.z);
+    noStroke();
+    sphere(ballRad);
+    popMatrix();
   }
   
   String runtimeReport = "Size: "+str(numStrings-1)+ "x"+str(numPoints-1)+

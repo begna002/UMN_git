@@ -125,19 +125,30 @@ class EchoServer:
            if "&" in val:
                newstr1 = ""
                newstr2 = ""
+               count1 = 3
+               count2 = 3
                ampersand = val.split("&")
                for i in range(len(ampersand[0])):
                    if ampersand[0][i] == "%":
                        newstr1 += bytes.fromhex(ampersand[0][i+1: i+3]).decode('utf-8')
+                       count1 = 0
                    else:
-                       newstr1 += ampersand[0][i]
+                       if (count1 < 2):
+                           count1 += 1
+                       else:
+                           newstr1 += ampersand[0][i]
+                           count1 +=1
                    i += 3
                for i in range(len(ampersand[1])):
                    if ampersand[0][i] == "%":
                        newstr2 += bytes.fromhex(ampersand[1][i+1: i+3]).decode('utf-8')
-
+                       count2 = 0
                    else:
-                       newstr2 += ampersand[1][i]
+                       if (count2 < 2):
+                           count2 += 1
+                       else:
+                           newstr2 += ampersand[1][i]
+                           count2 +=1
                    i += 3
 
                allVals.append(newstr1)
@@ -155,7 +166,6 @@ class EchoServer:
                        if (count < 2):
                            count += 1
                        else:
-                           print(val[i])
                            newstrA += val[i]
                            count +=1
 

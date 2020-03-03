@@ -1,6 +1,6 @@
 var iconImg;
 var int;
-var pictures = ["Moti.jpg", "Brandon.jpg", "Benny.jpg", "Yassin.jpg"];
+var pictures = ["Moti.png", "Brandon.png", "Benny.png", "Yassin.png"];
 var descriptions = ["1", "2", "3", "4"];
 var index = 0;
 function showImage(){

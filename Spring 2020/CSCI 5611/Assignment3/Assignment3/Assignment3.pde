@@ -8,6 +8,7 @@ ArrayList<PVector> flockPos;
 ArrayList<PVector> flockGoals;
 private static final int NO_PARENT = -1; 
 float dt = .99;
+ArrayList<PVector> count = new ArrayList();
 
 
 ArrayList<Obstacle> obstacles;
@@ -37,7 +38,7 @@ PVector createGoal(PVector start){
   float distanceToGoal = (goal).dist(start);
 
   //randomize points until they don't collide with obstacle
-  while(distanceToObst1 < r + obstacleRad && distanceToObst2 < r + obstacleRad && distanceToObst3 < r + obstacleRad && distanceToObst4 < r + obstacleRad && distanceToGoal > 500) {
+  while(distanceToObst1 < r + obstacleRad +100|| distanceToObst2 < r + obstacleRad  +100|| distanceToObst3 < r + obstacleRad +100 || distanceToObst4 < r + obstacleRad +100 || distanceToGoal < 500) {
     x = random(0 + r, width - r);
     y = random(0 + r, height - r);
     goal = new PVector(x, y);
@@ -54,7 +55,7 @@ PVector createGoal(PVector start){
 void init(){
   numBoids = 300;
   numFlocks = 4;
-  numObstacles = 5;
+  numObstacles = 4;
   r = 7;
   obstacleRad = 100;
   maxVelocity = 4;
@@ -64,7 +65,17 @@ void init(){
   obstacles = new ArrayList();
   
   for(int i = 0; i < numObstacles; i++){
-    obstacles.add(new Obstacle(random(0 + obstacleRad, width - obstacleRad), random(0 + obstacleRad, height - obstacleRad)));
+    PVector pos = new PVector(random(0 + obstacleRad, width - obstacleRad), random(0 + obstacleRad, height - obstacleRad));
+    for(int j = 0; j < obstacles.size(); j++){
+      if(i != j){
+        float distance = pos.dist(obstacles.get(j).position);
+        while(distance < obstacleRad + obstacleRad + 10){
+          pos = new PVector(random(0 + obstacleRad, width - obstacleRad), random(0 + obstacleRad, height - obstacleRad));
+          distance = pos.dist(obstacles.get(j).position);
+        }
+      }
+    }
+    obstacles.add(new Obstacle(pos.x, pos.y));
   }
   
   //Randomize position of flocks
@@ -79,7 +90,7 @@ void init(){
     float distanceToObst4 = (pos).dist(obstacles.get(3).position);
 
     //randomize points until they don't collide with obstacle
-    while(distanceToObst1 < r + obstacleRad && distanceToObst2 < r + obstacleRad && distanceToObst3 < r + obstacleRad && distanceToObst4 < r + obstacleRad) {
+    while(distanceToObst1 < r + obstacleRad || distanceToObst2 < r + obstacleRad || distanceToObst3 < r + obstacleRad || distanceToObst4 < r + obstacleRad) {
       x = random(0 + r, width - r);
       y = random(0 + r, height - r);
       pos = new PVector(x, y);
@@ -107,13 +118,13 @@ void setup() {
 
 void draw() {
   background(0, 0, 0);
-  //for(int i = 0; i < numObstacles; i++){
-  //  beginShape();
-  //  fill(255,255,255);
-  //  noStroke();
-  //  circle(obstacles.get(i).position.x, obstacles.get(i).position.y, obstacles.get(i).radius);
-  //  endShape(CLOSE);
-  //}
+  for(int i = 0; i < numObstacles; i++){
+    beginShape();
+    fill(255,255,255);
+    noStroke();
+    circle(obstacles.get(i).position.x, obstacles.get(i).position.y, obstacles.get(i).radius);
+    endShape(CLOSE);
+  }
   //for(int i = 0; i < flockGoals.size(); i++){
   //  beginShape();
   //  fill(255,255,255);
@@ -149,6 +160,8 @@ class Boid {
   PVector velocity;
   PVector acceleration;
   PVector endGoal;
+  float endX;
+  float endY;
   float maxforce;    
   PVector colVals;
   color col;
@@ -163,7 +176,7 @@ class Boid {
   ArrayList<PVector> mileStones;
   ArrayList<MileStone> mileStoneObjs;
   float neighborLimit = 4;
-  int numVertices = 10;
+  int numVertices = 30;
   ArrayList<PVector> startEnd;
   int[][] adjacencyMatrix = new int[numVertices][numVertices];
   private static final int NO_PARENT = -1; 
@@ -176,13 +189,15 @@ class Boid {
     acceleration = new PVector(0, 0);
     flockId = id;
     endGoal = end;
+    endX = end.x;
+    endY = end.y;
 
     float angle = random(TWO_PI);
     velocity = new PVector(cos(angle), sin(angle));
 
     position = new PVector(x, y);
     maxforce = 0.03;
-    //currentInd = 1;
+    currentInd = 1;
     robotX = x;
     robotY = y;
     
@@ -207,6 +222,12 @@ class Boid {
     int ind = floor(finalPath.get(currentInd).x);
     for(int i = 0; i < mileStoneObjs.size(); i++){
       if(ind == mileStoneObjs.get(i).id){
+        beginShape();
+        fill(128,0,128);
+        noStroke();
+        circle(mileStoneObjs.get(i).position.x, mileStoneObjs.get(i).position.y, 5);
+        endShape(CLOSE);
+    
         nextX = mileStoneObjs.get(i).position.x;
         nextY = mileStoneObjs.get(i).position.y;
         PVector goal = new PVector(nextX, nextY);
@@ -217,10 +238,10 @@ class Boid {
   }
   
   void computePhysics(float dt){
-    if(abs(position.x - nextX) < 5 && abs(position.y - nextY) < 5){
+    if(abs(position.x - nextX) <100 && abs(position.y - nextY) < 30){
       if (currentInd+1 > finalPath.size()-1){//Robot is 1 milestone away from end
-        nextX = endGoal.x;
-        nextY = endGoal.y;
+        nextX = endX;
+        nextY = endY;
         
         PVector nextGoal = new PVector(nextX, nextY);
         endGoal = nextGoal;
@@ -234,7 +255,6 @@ class Boid {
             nextY = mileStoneObjs.get(i).position.y;
             PVector nextGoal = new PVector(nextX, nextY);
             endGoal = nextGoal;
-            println("here");
             flockGoals.set(flockId, endGoal);
             break;
           }
@@ -250,7 +270,7 @@ class Boid {
       //robot.position.y -= robot.trajectory.y*dt;
     }
     if(abs(position.x - endGoal.x) < 3 && abs(position.y - endGoal.y) < 3){
-       Speed = 0;
+       createNewGoal();
     }
   }
   
@@ -284,26 +304,42 @@ class Boid {
   }
 
   boolean checkIntersections(MileStone e, MileStone s){
-    //https://forum.processing.org/one/topic/2d-intersection-between-lines-and-circle-how-to.html by User tfguy44
-    float dx = e.position.x - s.position.x; 
-    float dy = e.position.y - s.position.y;
-    float a = dx*dx + dy*dy;
-    float b = 2 * (dx * (s.position.x - 1000) + dy * (s.position.y - 1000));
-    float c = (1000*1000)*2;
-    c += s.position.x*s.position.x + s.position.y * s.position.y;
-    c -= 2*(1000*s.position.x+1000*s.position.y);
-    c -= (obstacleRad/2)*(obstacleRad/2);
-    float delt = b*b-4*a*c;
-    
-    
-    if(delt >= 0){
-      return false;
+    for(int i = 0; i < obstacles.size(); i++){
+      float distance1 = dist(e.position.x, e.position.y, obstacles.get(i).position.x,  obstacles.get(i).position.y);
+      float distance2 = dist(s.position.x, s.position.y, obstacles.get(i).position.x,  obstacles.get(i).position.y);
+      //Bug where points are created in an obstacle, so ignore those
+      if(distance1 < r + obstacleRad +200 || distance2 < r + obstacleRad +200){
+        return false;
+      }
+      
+      
+      float vx,vy;
+      vx = e.position.x - s.position.x; 
+      vy = e.position.y - s.position.y;
+      float lenv = sqrt(vx*vx+vy*vy);
+      vx /= lenv; vy /= lenv;
+      
+      //Step 2: Compute W - a displacement vector pointing from the start of the line segment to the center of the circle
+      float wx, wy;
+      wx = obstacles.get(i).position.x - s.position.x;
+      wy = obstacles.get(i).position.y - s.position.y;
+      
+      //Step 3: Solve quadratic equation for intersection point (in terms of V and W)
+      float a = 1;  //Lenght of V (we noramlized it)
+      float b = -2*(vx*wx + vy*wy); //-2*dot(V,W)
+      float c = wx*wx + wy*wy - (obstacleRad/2)*(obstacleRad/2); //different of squared distances
+      
+      float d = b*b - 4*a*c; //discriminant 
+      if (d >=0 ){ 
+        //If d is positive we know the line is colliding, but we need to check if the collision line within the line segment
+        //  ... this means t will be between 0 and the lenth of the line segment
+        float t = (-b - sqrt(d))/(2*a); //Optimization: we only need the first collision
+        if (t > 0 && t < lenv){
+          return false;
+        }
+      }
     }
-    
-   
-    
-    
-    return true;
+        return true;
   
   }
   void findNeighbors(){
@@ -324,10 +360,9 @@ class Boid {
         //  neighborInd = j;
         //}
         if(distanceToMilestone <= 700 & mileStoneObjs.get(i).neighbors.size() <= neighborLimit && checkIntersections(mileStoneObjs.get(j), mileStoneObjs.get(i))){
-          if(mileStoneObjs.get(j).neighbors.size() <= neighborLimit){
             mileStoneObjs.get(i).neighbors.add(mileStoneObjs.get(j));
             mileStoneObjs.get(i).distToNeighbors.add(distanceToMilestone);
-          }
+          
           
         }
       }
@@ -371,19 +406,25 @@ class Boid {
     mileStones = new ArrayList();
     for(int i = 1; i < numVertices-1; i++){
       PVector goal = new PVector(random(0 + r, width - r),random(0 + r, height - r));
-      float distanceToObst1 = (goal).dist(obstacles.get(0).position);
-      float distanceToObst2 = (goal).dist(obstacles.get(1).position);
-      float distanceToObst3 = (goal).dist(obstacles.get(2).position);
-      float distanceToObst4 = (goal).dist(obstacles.get(3).position);
+      float distanceToObst1 = dist(goal.x, goal.y, obstacles.get(0).position.x, obstacles.get(0).position.y);
+      float distanceToObst2 = dist(goal.x, goal.y, obstacles.get(1).position.x, obstacles.get(1).position.y);
+      float distanceToObst3 = dist(goal.x, goal.y, obstacles.get(2).position.x, obstacles.get(2).position.y);
+      float distanceToObst4 = dist(goal.x, goal.y, obstacles.get(3).position.x, obstacles.get(3).position.y);
       //randomize points until they don't collide with obstacle
-       while(distanceToObst1 < r + obstacleRad && distanceToObst2 < r + obstacleRad && distanceToObst3 < r + obstacleRad && distanceToObst4 < r) {
+       do{
          goal = new PVector(random(0 + r, width - r), random(0 + r, height - r));
           
-          distanceToObst1 = (goal).dist(obstacles.get(0).position);
-          distanceToObst2 = (goal).dist(obstacles.get(1).position);
-          distanceToObst3 = (goal).dist(obstacles.get(2).position);
-          distanceToObst4 = (goal).dist(obstacles.get(3).position);
+          distanceToObst1 = dist(goal.x, goal.y, obstacles.get(0).position.x, obstacles.get(0).position.y);
+      distanceToObst2 = dist(goal.x, goal.y, obstacles.get(1).position.x, obstacles.get(1).position.y);
+      distanceToObst3 = dist(goal.x, goal.y, obstacles.get(2).position.x, obstacles.get(2).position.y);
+      distanceToObst4 = dist(goal.x, goal.y, obstacles.get(3).position.x, obstacles.get(3).position.y);
+      
        }
+       while(distanceToObst1 < r + obstacleRad +100 || distanceToObst2 < r + obstacleRad  +100|| distanceToObst3 +100 < r + obstacleRad || distanceToObst4 < r + obstacleRad +100);
+       if(distanceToObst1 < r + obstacleRad +100 || distanceToObst2 < r + obstacleRad  +100|| distanceToObst3 +100 < r + obstacleRad || distanceToObst4 < r + obstacleRad +100) {
+         exit();
+       }
+
 
        mileStones.add(goal);    
       }
@@ -406,17 +447,15 @@ class Boid {
 
   }
   
-  void goalReached(){
-    float distance = position.dist(endGoal);
-    if(distance < 30){ // near enough to the goal
-      // If new goal hasn't changed
-      if (flockGoals.get(flockId).x == endGoal.x & flockGoals.get(flockId).y == endGoal.y){
-        endGoal = createGoal(position);
+  void createNewGoal(){
+    endGoal = createGoal(position);
+        endX = endGoal.x;
+        endY = endGoal.y;
         robotX = position.x;
         robotY = position.y;
           Speed = 8;
 
-    //currentInd = 1;
+    currentInd = 1;
       mileStoneObjs = new ArrayList();
       finalPath = new ArrayList();
       
@@ -436,6 +475,7 @@ class Boid {
       makeMatrix();
       dijkstra(adjacencyMatrix, 0);
       int ind = floor(finalPath.get(currentInd).x);
+      //Finds start milestone
       for(int i = 0; i < mileStoneObjs.size(); i++){
         if(ind == mileStoneObjs.get(i).id){
           nextX = mileStoneObjs.get(i).position.x;
@@ -446,26 +486,85 @@ class Boid {
         }
       }
       flockGoals.set(flockId, endGoal);
-      }
+      
     }
-    if (flockGoals.get(flockId).x != endGoal.x & flockGoals.get(flockId).y != endGoal.y){//This indicates a Boid that is laging behind
-        if(distance < 100){
+    
+  
+  
+  void goalReached(){
+    PVector end = new PVector(endX, endY);
+    float distance = position.dist(end);
+    if (flockGoals.get(flockId).x != endX & flockGoals.get(flockId).y != endY){//This indicates a Boid that is laging behind
+        //if(distance < 100){
            endGoal = flockGoals.get(flockId);
+        //}
+    } else {
+      if(distance < 30){ // near enough to the goal
+      // If new goal hasn't changed
+        endGoal = createGoal(position);
+        endX = endGoal.x;
+        endY = endGoal.y;
+        robotX = position.x;
+        robotY = position.y;
+          Speed = 8;
+
+    currentInd = 1;
+      mileStoneObjs = new ArrayList();
+      finalPath = new ArrayList();
+      
+      
+      for(int i = 0; i < numVertices; i ++){
+        for(int j = 0; j < numVertices; j ++){
+          adjacencyMatrix[i][j] = 0;
         }
+      }
+      mileStoneRad = 10;
+      obstacleRad = 100;
+      mileStones();
+      for(int i = 0; i < mileStones.size(); i++){
+        mileStoneObjs.add(new MileStone(mileStones.get(i), i+1));
+      }
+      findNeighbors();
+      makeMatrix();
+      dijkstra(adjacencyMatrix, 0);
+      int ind = floor(finalPath.get(currentInd).x);
+      //Finds start milestone
+      for(int i = 0; i < mileStoneObjs.size(); i++){
+        if(ind == mileStoneObjs.get(i).id){
+          nextX = mileStoneObjs.get(i).position.x;
+          nextY = mileStoneObjs.get(i).position.y;
+          PVector goal = new PVector(nextX, nextY);
+          endGoal = goal;
+          break;
+        }
+      }
+      flockGoals.set(flockId, endGoal);
+      
     }
+    }
+    
+
   }
 
   void avoidObstacles(){
     for(int i = 0; i < numObstacles; i++){
       float distance = position.dist(obstacles.get(i).position);
-      if(distance < obstacleRad) {
-       println(distance);
+      if(distance < obstacleRad-10) {
        PVector dist = new PVector(position.x - obstacles.get(i).position.x, position.y - obstacles.get(i).position.y).normalize();
-       position.x = obstacles.get(i).position.x + dist.x*obstacleRad*1.05;
-       position.y = obstacles.get(i).position.y + dist.y*obstacleRad*1.05;
-       float angle = velocity.heading() + radians(10);
-       velocity.x = cos(angle);
-       velocity.y = sin(angle);
+       //position.x = obstacles.get(i).position.x + dist.x*obstacleRad*1.1;
+       //position.y = obstacles.get(i).position.y + dist.y*obstacleRad*1.1;
+     float xVel = obstacles.get(i).position.x - position.x;
+    float yVel = obstacles.get(i).position.y - position.y;
+    float dir = atan2(yVel, xVel);
+        PVector goalVelocity = new PVector(maxVelocity*cos(dir),maxVelocity*sin(dir));
+
+        float xVelDiff = goalVelocity.x - velocity.x;
+    float yVelDiff = goalVelocity.y - velocity.y;
+      velocity.x -= xVelDiff/3;
+      velocity.y -= yVelDiff/3;
+   
+
+    
 
       }
     }
@@ -479,8 +578,8 @@ class Boid {
     PVector cohesionForce = cohesion(boids);  
     
 
-    acceleration.x += seperationForce.x*2.5 + alignmentForce.x + cohesionForce.x; 
-    acceleration.y += seperationForce.y*2.5 + alignmentForce.y + cohesionForce.y; 
+    acceleration.x += seperationForce.x*2.5 + alignmentForce.x*.5 + cohesionForce.x; 
+    acceleration.y += seperationForce.y*2.5 + alignmentForce.y*.5 + cohesionForce.y; 
     
     velocity.x += acceleration.x*dt;
     velocity.y += acceleration.y*dt;
@@ -488,12 +587,12 @@ class Boid {
     velocity.limit(maxVelocity);
 
     //updateTrajectory();
-    goalReached();
-        //avoidObstacles();
     position.x += velocity.x*dt;
     position.y += velocity.y*dt;
         computePhysics(.9);
     acceleration = new PVector(0, 0);
+        avoidObstacles();
+    goalReached();
 
     
     //Curve boids away from borders
@@ -552,11 +651,70 @@ class Boid {
     vertex(r, r);
     endShape();
     popMatrix();
-    //beginShape();
-    //fill(128,0,128);
+    //for(int i = 0; i < mileStones.size(); i++){
+    //  pushMatrix();
+    //   fill(0,0,255);
     //noStroke();
-    //circle(endGoal.x, endGoal.y, 5);
+    //   beginShape();  
+    //   circle(mileStones.get(i).x, mileStones.get(i).y, 30);
+    
     //endShape(CLOSE);
+    //popMatrix();
+    //}
+    
+    //beginShape();
+    ////fill(128,0,128);
+    ////noStroke();
+    ////circle(endX, endY, 20);
+    ////endShape(CLOSE);
+    //// beginShape();
+    //fill(255,0,0);
+    //noStroke();
+    //circle(endX, endY, 40);
+    //endShape(CLOSE);
+    
+  //for(int i = 0; i < mileStoneObjs.size(); i++){
+  //    for(int j = 0; j < mileStoneObjs.get(i).neighbors.size(); j++){
+  //      if(j < neighborLimit){//Don't draw extra edges that seem to come up due to some bug, they don't exist in the adjacency matrix anyway
+  //        beginShape();
+  //        strokeWeight(2);
+  //        PVector line1 = new PVector(mileStoneObjs.get(i).id, -1);
+  //        PVector line2 = new PVector(mileStoneObjs.get(i).neighbors.get(j).id, -1);
+  //        if(finalPath.contains(line1) && finalPath.contains(line2) || mileStoneObjs.get(i).Start.size() != 0 && mileStoneObjs.get(i).neighbors.get(j).id < 1|| mileStoneObjs.get(i).End.size() != 0 && mileStoneObjs.get(i).neighbors.get(j).id >20){
+  //            strokeWeight(7);
+  //            stroke(0, 200, 0);
+  //                      line(mileStoneObjs.get(i).position.x, mileStoneObjs.get(i).position.y, mileStoneObjs.get(i).neighbors.get(j).position.x, mileStoneObjs.get(i).neighbors.get(j).position.y);
+  //        float midpointX = mileStoneObjs.get(i).position.x -mileStoneObjs.get(i).neighbors.get(j).position.x;
+  //        float midpointY = mileStoneObjs.get(i).position.y -mileStoneObjs.get(i).neighbors.get(j).position.y;
+  //        PVector mid = new PVector(midpointX, midpointY);
+  //        PVector midNorm = mid.normalize();
+  //        PVector pos = new PVector(mid.x/midNorm.x, mid.y/midNorm.y);
+  //        //float dist = sqrt(midpointX*midpointX + midpointY*midpointY);
+    
+  //        textSize(20);
+  //        text(floor(mileStoneObjs.get(i).distToNeighbors.get(j)),mileStoneObjs.get(i).position.x+midpointX/2,mileStoneObjs.get(i).position.y+midpointY/2);
+  //        endShape(CLOSE);
+  //        } 
+  //      }
+  //    }
+  //  }
+  //  for(int i = 0; i < mileStoneObjs.size(); i++){
+  //    if(mileStoneObjs.get(i).Start.size() > 0){
+  //       beginShape();
+  //       strokeWeight(7);
+  //       stroke(0, 200, 0);
+  //       line(mileStoneObjs.get(i).Start.get(0).position.x, mileStoneObjs.get(i).Start.get(0).position.y, mileStoneObjs.get(i).position.x, mileStoneObjs.get(i).position.y);
+  //       endShape(CLOSE);
+  //    }
+  //    if(mileStoneObjs.get(i).End.size() > 0){
+  //       beginShape();
+  //       strokeWeight(7);
+  //       stroke(0, 200, 0);
+  //       line(mileStoneObjs.get(i).position.x, mileStoneObjs.get(i).position.y, mileStoneObjs.get(i).End.get(0).position.x, mileStoneObjs.get(i).End.get(0).position.y);
+  //       endShape(CLOSE);
+  //    }
+  //  }
+  
   
   
   }

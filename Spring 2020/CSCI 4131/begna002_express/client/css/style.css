@@ -1,0 +1,47 @@
+body.loginBody{
+  background-color: #0077be;
+}
+
+#loginHeader{
+  text-align:center;
+  color:white;
+}
+
+#invalid{
+  border-radius: 5px;
+  margin: 0 auto;
+  width:32%;
+  background-color: #FFCCCB;
+  text-align:center;
+  color:#BF0A30;
+}
+
+#stockHeader{
+  border-style: solid;
+  margin: 0 auto;
+  width:75%;
+  text-align:center;
+}
+
+table.stock, tr.stock, td.stock{
+  border-style: solid;
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align:center;
+}
+
+tr.stock, td.stock{
+  padding: 15px;
+}
+
+table.stockInfo{
+  margin: 0 auto;
+}
+
+#headerCode, #infoCode{
+   width:450px;
+   height:300px;
+   overflow:auto;
+   background-color: black;
+   color:white;
+}

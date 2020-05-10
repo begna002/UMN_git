@@ -33,7 +33,7 @@ app.use(session({
 ));
 
 // server listens on port 9007 for incoming connections
-app.listen(9007, () => console.log('Listening on port 9007!'));
+app.listen(9270, () => console.log('Listening on port 9270!'));
 
 app.get('/',function(req, res) {
 	res.sendFile(__dirname + '/client/welcome.html');
@@ -42,7 +42,7 @@ app.get('/',function(req, res) {
 // // GET method route for the contact page.
 // It serves contact.html present in client folder
 app.get('/contact',function(req, res) {
-  //Add Details
+  res.send(__dirname + '/client/contact.html');
 });
 
 // GET method route for the addContact page.

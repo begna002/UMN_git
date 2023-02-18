@@ -1,3 +1,0 @@
-function invalid(){
-  alert("invalid");
-}

@@ -1,0 +1,365 @@
+--- Moti Begna ---
+--- SENG 5801 ---
+--- 12/12/2022 ---
+
+
+MODULE main
+
+VAR
+--- declare environment variables ---
+
+-- Altitude Input:
+-- We elect to abstract away the numeric altitude and only model if we are below
+-- the threshold, above the threshold plus hysteresis, or in between.
+e_altitude : {alt_BelowThres, alt_Between, alt_AboveThresPlusHyst};
+
+-- This input will remain True as long as the ASW is inhibited.
+-- The environment can initiate an inhibit at any time
+e_inhibit : boolean;
+
+
+-- When true, this input indicates that the ASW shall be reset per the requirements.
+-- The environment can initiate a reset at any time
+e_reset : boolean;
+
+-- Statue of the
+e_DOICommand : {On, Off, None};
+
+-- State of the alarm DOI_Command
+e_AlarmCommand : {On, Off, None};
+
+--- DEFINE SYSTEM ARCHITECTURE ---
+resetButton           : Button(e_reset);
+inhibitButton         : Button(e_inhibit);
+altimeterSensor       : Altimeter(e_altitude);
+ASWMachine            : ASW (altimeterSensor.altOut,
+                             altimeterSensor.altQualOut,
+                             inhibitButton.out,
+                             resetButton.out);
+Channel1              : Channel(ASWMachine.o_DOICommand);
+Channel2              : Channel(ASWMachine.o_DOICommand);
+Voter                 : Voter(Channel1.out, Channel2.out);
+alarmActuator         : OutputDevice(ASWMachine.o_AlarmCommand);
+DOI_Command           : OutputDevice(Voter.out);
+
+-- Allow no failures
+INVAR (Channel1.fail = FALSE & Channel2.fail = FALSE)
+
+
+ASSIGN
+-- Using the output from the components
+e_AlarmCommand := alarmActuator.out;
+e_DOICommand := DOI_Command.out;
+
+-- Here we capture W constraints. The world (W) can only behave
+-- in certain ways due to the nature of the aircraft. We can simply not
+-- go from alt_BelowThres to alt_AboveThresPlusHyst in one step (and vice versa),
+-- we have to spend at least one step in Between.
+-- This is an environmental contraints enforced by physical laws.
+
+next(e_altitude) :=
+   case
+      e_altitude=alt_BelowThres         : {alt_BelowThres, alt_Between};
+      e_altitude=alt_Between            : {alt_BelowThres, alt_Between, alt_AboveThresPlusHyst};
+      e_altitude=alt_AboveThresPlusHyst : {alt_Between, alt_AboveThresPlusHyst};
+      TRUE                              : {alt_BelowThres, alt_Between, alt_AboveThresPlusHyst};
+   esac;
+
+--- Define our requirements.
+
+-- Checking if channel and voter work
+SPEC AG (ASWMachine.o_DOICommand=Off -> e_DOICommand=Off)
+SPEC AG (ASWMachine.o_DOICommand=On -> e_DOICommand=On)
+
+-- It shall be possible to turn the DOI on.
+-- Formalize:
+SPEC EF (e_DOICommand = On);
+
+-- If the DOI has been turned on, it shall be possible to turn it off again.
+SPEC AG (e_DOICommand = On -> EF(e_DOICommand = Off))
+
+-- When inhibited, and the ASW is not reset, if the DOI is OFF then the DOI
+-- shall never be turned Off
+-- Formalize:
+SPEC AG ((e_inhibit = TRUE & e_reset = FALSE & e_DOICommand != Off) -> AX(e_DOICommand != Off))
+
+-- It shall be possible to turn the alarm on.
+-- Formalize:
+SPEC EF(e_AlarmCommand = On)
+
+-- It shall be possible to turn the alarm off if it has been turned on.
+-- Formalize:
+SPEC AG ((e_AlarmCommand = On) -> EF(e_AlarmCommand = Off))
+
+-- When inhibited, the Alarm shall never be turned on.
+-- Formalize:
+SPEC AG ((e_inhibit -> AX(ASWMachine.o_AlarmCommand != On)))
+
+-- If there is an alarm, the DOI cannot turn Off
+-- Formalize:
+SPEC AG ((e_AlarmCommand = On & e_reset = FALSE) -> AX(Voter.out != Off))
+
+
+MODULE ASW (i_altitude, i_altitudeQuality, i_inhibit, i_reset)
+
+VAR
+
+--- Declare Output Variables ---
+
+-- The ASW issues the o_DOICommand On or Off when the DOI shall be turned on or off respectively.
+-- If the DOI shall remain unchanged (stay On or stay Off), the o_DOICommand shall be None
+-- (indicating that no change is needed).
+o_DOICommand : {On, Off, None};
+
+-- The ASW issues the o_AlarmCommand On or Off when the Alarm shall be turned
+-- on or off respectively.
+-- If the Alarm shall remain unchanged (stay On or stay Off), the
+-- o_AlarmCommand shall be None (indicating that no change is needed).
+o_AlarmCommand : {On, Off, None};
+
+--- Declare state variables for our model of the system to be devleoped
+--- Note that there variables are computed in the model and shall be
+--- condeired to be hidded from the external environment.
+altitudeStatus: {Above, Below, Undefined} ;
+crossedDown : boolean;
+crossedUp   : boolean;
+
+-- Counter for number of bad altitude readings.
+badAltCount : 0..4;
+
+-- Determines if the alarm has been triggered
+alarmOn : boolean;
+
+ASSIGN
+
+--- Counter keeping track of the number of bad altitude readings.
+init(badAltCount) := 0;
+next(badAltCount) :=
+  case
+    i_altitudeQuality = Good | i_reset : 0;
+    (i_altitudeQuality = Bad & badAltCount < 3) : badAltCount + 1;
+    TRUE : badAltCount;
+  esac;
+
+-- Now we capture our model (the Specification S in the WRSPM nomenclature)
+-- This defines the mapping between the visible environment variables
+-- that we here call inpits (refaced with i_) and the visible system
+-- variables that we here call outputs (prefaced with o_)
+
+-- Define the initial state of the internal variables.
+-- Note that we have no control of the input variables.
+--   They are what they are based on our environemtn (subject to the
+--   W constraints.
+
+init(altitudeStatus) := Undefined;
+init(crossedDown) := FALSE;
+init(crossedUp) := FALSE;
+
+
+-- Define the state changes for the internal state variables.
+next(altitudeStatus) :=
+  case
+    i_reset                    : Undefined;
+
+    i_altitude=alt_BelowThres           : Below ;
+
+    altitudeStatus=Undefined &
+    (i_altitude=alt_Between |
+     i_altitude=alt_AboveThresPlusHyst) : Above ;
+
+    altitudeStatus=Below &
+    i_altitude=alt_AboveThresPlusHyst   : Above ;
+
+    TRUE                                : altitudeStatus;
+  esac;
+
+-- Defining these so we can use these to only turn the DOI on only when
+-- we are actually crossing the thresholds.
+
+next(crossedDown) := (altitudeStatus = Above & next(altitudeStatus) = Below) |
+                      (altitudeStatus = Undefined & (next(altitudeStatus) = Below));
+next(crossedUp)   := (altitudeStatus = Below & next(altitudeStatus) = Above) |
+                      (altitudeStatus = Undefined & (next(altitudeStatus) = Above));
+
+--- Define changes to the output variables.
+init(o_AlarmCommand) := Off;
+next(o_AlarmCommand) :=
+  case
+    i_reset                   : Off;
+    i_inhibit                 : None;
+    next(badAltCount) >= 3    : On;
+    TRUE                      : None;
+  esac;
+
+init(alarmOn) := FALSE;
+next(alarmOn) :=
+  case
+    i_reset                                  : FALSE ;
+    alarmOn | next(o_AlarmCommand)=On        : TRUE;
+    TRUE                                     : alarmOn;
+  esac;
+
+init(o_DOICommand) := Off;
+next(o_DOICommand):=
+  case
+    i_reset                     : Off;
+    i_inhibit | alarmOn         : None;
+    next(crossedDown)           : On;
+    next(crossedUp)             : Off;
+    TRUE                        : None;
+  esac;
+
+--- Define our requirements.
+-- These are the R statements in the WRSPM reference model.
+
+-- It shall be possible to turn the DOI on.
+-- Formalize:
+SPEC EF (o_DOICommand = On);
+
+-- Check that we have gotten this right. Assert that there is no way to
+-- turn on the DOI and challenge the tool to find one
+-- SPEC AG (o_DOICommand != On);
+
+
+-- If the DOI has been turned on, it shall be possible to turn it off again.
+-- Formalize:
+SPEC AG ((o_DOICommand = On) -> EF(o_DOICommand = Off))
+
+
+
+-- It shall be possible to immediately turn the DOI off.
+-- Interpret as, no mattter what state we are in, of the DOI_Commant is On or
+-- None, there will alwasy be a possible next state where the DOI_Command is Off.
+-- Formalize:
+SPEC AG (EX(i_reset))
+SPEC AG (i_reset -> AX(o_DOICommand = Off))
+
+-- Original Requirement:
+-- When the altitude it below the threshold, the DOI shall be turned on.
+-- First, note that in this model we turn on the DOI only when we *cross*
+-- thresholds. Thus, after consultation with the customer, we rewrite this
+-- requirement to be:
+-- When we cross the threshold going down, as long as the ASW is not reset or
+-- inhibitied or the alarm is on, we shall turn the DOI on.
+-- Formalize:
+SPEC AG ((i_reset = FALSE & i_inhibit = FALSE & alarmOn = FALSE) -> AX(crossedDown -> o_DOICommand = On));
+
+-- When inhibited, the DOI shall never be turned on.
+-- Formalize:
+SPEC AG (i_inhibit -> AX(o_DOICommand != On))
+
+-- When inhibited, and the ASW is not being reset, the DOI shall never be
+-- turned Off.
+-- Formalize:
+SPEC AG ((i_inhibit & i_reset = FALSE) -> AX(o_DOICommand != Off))
+
+-- When reset, the altitudeStatus shall be undefined and the DOI shall be
+-- turned off.
+-- Formalize:
+SPEC AG (i_reset -> AX(o_DOICommand = Off & altitudeStatus=Undefined & alarmOn = FALSE))
+
+
+-- It shall be possible to turn the alarm on.
+-- Formalize:
+SPEC EF (o_AlarmCommand = On)
+
+
+-- It shall be possible to turn the alarm off if it has been turned on.
+-- Formalize:
+SPEC (o_AlarmCommand = On -> EF(o_AlarmCommand = Off))
+
+
+-- When inhibited, the Alarm shall never be turned.
+-- Formalize:
+SPEC AG(i_inhibit -> AX(o_AlarmCommand != On))
+
+
+-- If there is an alarm, the DOI cannot be turned off.
+-- Formalize:
+SPEC AG ((o_AlarmCommand = On & i_reset = FALSE) -> AX(o_DOICommand != Off))
+
+MODULE Button (input)
+
+VAR
+out : boolean;
+
+ASSIGN
+out := input;
+
+MODULE OutputDevice (input)
+
+VAR
+out : {On, Off};
+
+ASSIGN
+init(out) := Off;
+next(out) :=
+    case
+      next(input) = On : On;
+      next(input) = Off : Off;
+      TRUE              : out;
+    esac;
+
+MODULE Altimeter (alt)
+
+VAR
+altOut : {alt_BelowThres, alt_Between, alt_AboveThresPlusHyst};
+altQualOut : {Good, Bad};
+
+ASSIGN
+altOut := alt;
+altQualOut := {Good, Bad};
+
+MODULE Channel (input)
+
+VAR
+out : {On, Off, None};
+fail : boolean;
+
+ASSIGN
+init(out) := {None};
+next(out) :=
+  case
+    next(fail) : None;
+    TRUE       : next(input);
+  esac;
+
+MODULE Voter (input1, input2)
+
+VAR
+out : {On, Off, None};
+fail : boolean;
+
+-- If both Channels indicate either Off or On, then the voter will output
+-- the same.
+ASSIGN
+init(out) := {None};
+next(out) :=
+  case
+    (next(input1) = Off | next(input2) = Off)   : Off;
+    (next(input1) = On | next(input2) = On)     : On;
+    TRUE                                        : None;
+  esac;
+
+--- Transcript of verification run ---
+-- specification AG (EX i_reset) IN ASWMachine is true
+-- specification EF o_AlarmCommand = On IN ASWMachine is true
+-- specification (o_AlarmCommand = On -> EF o_AlarmCommand = Off) IN ASWMachine is true
+-- specification AG (i_inhibit -> AX o_AlarmCommand != On) IN ASWMachine is true
+-- specification AG (e_inhibit -> AX ASWMachine.o_AlarmCommand != On)  is true
+-- specification EF e_AlarmCommand = On  is true
+-- specification AG (e_AlarmCommand = On -> EF e_AlarmCommand = Off)  is true
+-- specification EF o_DOICommand = On IN ASWMachine is true
+-- specification AG (o_DOICommand = On -> EF o_DOICommand = Off) IN ASWMachine is true
+-- specification AG (i_reset -> AX o_DOICommand = Off) IN ASWMachine is true
+-- specification AG (((i_reset = FALSE & i_inhibit = FALSE) & alarmOn = FALSE) -> AX (crossedDown -> o_DOICommand = On)) IN ASWMachine is true
+-- specification AG (i_inhibit -> AX o_DOICommand != On) IN ASWMachine is true
+-- specification AG ((i_inhibit & i_reset = FALSE) -> AX o_DOICommand != Off) IN ASWMachine is true
+-- specification AG (i_reset -> AX ((o_DOICommand = Off & altitudeStatus = Undefined) & alarmOn = FALSE)) IN ASWMachine is true
+-- specification AG ((o_AlarmCommand = On & i_reset = FALSE) -> AX o_DOICommand != Off) IN ASWMachine is true
+-- specification AG (ASWMachine.o_DOICommand = Off -> e_DOICommand = Off)  is true
+-- specification AG (ASWMachine.o_DOICommand = On -> e_DOICommand = On)  is true
+-- specification EF e_DOICommand = On  is true
+-- specification AG (e_DOICommand = On -> EF e_DOICommand = Off)  is true
+-- specification AG (((e_inhibit = TRUE & e_reset = FALSE) & e_DOICommand != Off) -> AX e_DOICommand != Off)  is true
+-- specification AG ((e_AlarmCommand = On & e_reset = FALSE) -> AX Voter.out != Off)  is true

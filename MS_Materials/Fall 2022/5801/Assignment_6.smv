@@ -1,0 +1,160 @@
+--- Moti Begna ---
+--- SENG 5801 ---
+--- 12/9/2022 ---
+
+MODULE main
+
+
+VAR
+--- declare input variables ---
+
+-- Altitude Input:
+-- We elect to abstract away the numeric altitude and only model if we are below
+-- the threshold, above the threshold plus hysteresis, or in between.
+i_altitude : {alt_Below, alt_Between, alt_Above};
+
+-- This input will remain True as long as the ASW is inhibited.
+i_inhibit : boolean;
+
+-- When true, this input indicates that the ASW shall be reset per the requirements.
+i_reset : boolean;
+
+
+--- declare state variables ---
+altitudeStatus: {Above, Below, Undefined} ;
+crossedDown : boolean;
+crossedUp   : boolean;
+
+--- Declare Output Variables ---
+-- The ASW issues the o_DOICommand On or Off when the DOI shall be turned on or off respectively.
+-- If the DOI shall remain unchanged (stay On or stay Off), the o_DOICommand shall be None
+-- (indicating that no change is needed).
+o_DOICommand : {On, Off, None};
+
+
+ASSIGN
+
+-- Here we capture W constraints. The world (W) can only behave
+-- in certain ways due to the nature of he aircraft. We can simply not
+-- go from Below to Above in one step (and vice versa), we have to
+-- spend at least one step in Between.
+
+    next(i_altitude) :=
+        case
+            i_altitude=alt_Below      : {alt_Below, alt_Between};
+            i_altitude=alt_Between    : {alt_Below, alt_Between, alt_Above};
+            i_altitude=alt_Above      : {alt_Between, alt_Above};
+        esac;
+
+
+
+-- Now we capture our model (the Specification S in the WRSPM nomenclature)
+
+-- Define the initial state of the internal variables.
+-- Note that we have no control of the input variables.
+--   They are what they are. (except for i_altitude that cannot
+--   change freely, see above.)
+init(altitudeStatus) := Undefined;
+init(crossedDown) := FALSE;
+init(crossedUp) := FALSE;
+
+-- Define the state changes for the internal state variables.
+-- SOME NOTES.
+-- No notes for now.
+
+    next(altitudeStatus) :=
+      case
+        i_reset                    : Undefined ;
+
+        i_altitude=alt_Below       : Below ;
+
+        altitudeStatus=Undefined &
+        i_altitude=alt_Between     : Above ;
+
+        i_altitude=alt_Above       : Above ;
+
+        TRUE                       : altitudeStatus;
+      esac;
+
+
+
+
+-- Defining these so we can use these to only turn the DOI on only when
+-- we are actually crossing the thresholds.
+
+next(crossedDown) := (altitudeStatus = Above & next(altitudeStatus) = Below) |
+                      (altitudeStatus = Undefined & (next(altitudeStatus) = Below));
+next(crossedUp)   := (altitudeStatus = Below & next(altitudeStatus) = Above) |
+                      (altitudeStatus = Undefined & (next(altitudeStatus) = Above));
+
+
+
+--- Define changes to the output variables.
+init(o_DOICommand) := Off;
+
+    next(o_DOICommand):=
+      case
+        i_reset           : Off;
+
+        i_inhibit         : None;
+
+        next(crossedDown) : On;
+
+        next(crossedUp)   : Off;
+
+        TRUE              : o_DOICommand;
+      esac;
+
+
+
+--- Define our requirements.
+-- These are the R statements in the WRSPM reference model.
+
+-- It shall be possible to turn the DOI on.
+-- Formalize:
+SPEC EF (o_DOICommand = On);
+
+-- If the DOI has been turned on, it shall be possible to turn it off again.
+SPEC AG (o_DOICommand = On -> EF(o_DOICommand = Off))
+
+-- It shall be possible to immediately turn the DOI off.
+-- Formalize:
+SPEC AG (o_DOICommand != Off -> EX(!i_inhibit -> o_DOICommand = Off))
+
+-- Original Requirement:
+-- When the altitude it below the threshold, the DOI shall be turned on.
+-- First, note that in this model we turn on the DOI only when we *cross*
+-- thresholds. Thus, after consultation with the customer, we rewrite this
+-- requirement to be:
+-- When we cross the threshold going down, we shall turn the DOI on.
+-- Formalize:
+SPEC AG ((!i_reset & !i_inhibit) -> AX(crossedDown -> o_DOICommand = On));
+
+-- Original Requirement:
+-- When the altitude it above the threshold plus hysteresis, the DOI shall be
+-- turned off.
+-- This must be treated as the requirement above (only apply when crossing).
+-- Thus, rewrite as:
+-- When we cross the threshold plus hysteresis going up, we shall turn
+-- the DOI off.
+-- Formalize:
+SPEC AG ((!i_reset & !i_inhibit) -> AX(crossedUp -> o_DOICommand = Off));
+
+
+-- When inhibited, the DOI shall never be turned on.
+-- Formalize:
+SPEC AG (i_inhibit -> AX(o_DOICommand != On))
+
+-- When reset, the altitudeStatus shall be undefined
+-- and the DOI shall be turned off.
+-- Formalize:
+SPEC AG (i_reset -> AX((altitudeStatus = Undefined) & (o_DOICommand = Off)))
+
+--- Transcript of verification run ---
+-- specification EF o_DOICommand = On  is true
+-- specification AG (o_DOICommand = On -> EF o_DOICommand = Off)  is true
+-- specification AG (o_DOICommand != Off -> EX (!i_inhibit -> o_DOICommand = Off))  is true
+-- specification AG ((!i_reset & !i_inhibit) -> AX (crossedDown -> o_DOICommand = On))  is true
+-- specification AG ((!i_reset & !i_inhibit) -> AX (crossedUp -> o_DOICommand = Off))  is true
+-- specification AG (i_inhibit -> AX o_DOICommand != On)  is true
+-- specification AG (i_reset -> AX (altitudeStatus = Undefined & o_DOICommand = Off))  is true

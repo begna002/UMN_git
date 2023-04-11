@@ -1,0 +1,21 @@
+		 Tournament Ranking Report
+golfer name 20000005		Rank:  1
+	Course ID: a	Raw score: 24	Ranking score:	108
+	Course ID: b	Raw score: 42	Ranking score:	54
+						TOTAL:	162
+golfer name 20000001		Rank:  2
+	Course ID: a	Raw score: 96	Ranking score:	0
+	Course ID: b	Raw score: 24	Ranking score:	108
+						TOTAL:	108
+golfer name 20000004		Rank:  3
+	Course ID: a	Raw score: 42	Ranking score:	54
+	Course ID: b	Raw score: 78	Ranking score:	18
+						TOTAL:	72
+golfer name 20000003		Rank:  4
+	Course ID: a	Raw score: 60	Ranking score:	36
+	Course ID: b	Raw score: 78	Ranking score:	18
+						TOTAL:	54
+golfer name 20000002		Rank:  5
+	Course ID: a	Raw score: 78	Ranking score:	18
+	Course ID: b	Raw score: 96	Ranking score:	0
+						TOTAL:	18

@@ -1,1 +1,10 @@
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Microwave.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Preset.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Controller.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Timer.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Counter.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Controller$Prog.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Controller$Mode.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Controller$1.class
+/Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/microwave/Microwave$1.class
 /Users/motibegna/IdeaProjects/MiniProject3/build/classes/java/main/org/example/Main.class
